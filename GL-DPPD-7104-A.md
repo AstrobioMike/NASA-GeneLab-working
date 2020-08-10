@@ -49,7 +49,7 @@ Anushree Sonic (Genelab Configuration Manager)
 
 # General processing overview with example code  
 
-> Exact processing code for specific datasets is provided in their [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects). 
+> **Exact processing code for specific datasets is provided in their [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).** 
 
 ---
 
