@@ -1,4 +1,4 @@
-# Bioinformatics pipeline for diversity amplicon Illumina sequencing Data
+# Bioinformatics pipeline for amplicon Illumina sequencing data
 
 **Date:** May 13, 2020  
 **Revision:** A  
