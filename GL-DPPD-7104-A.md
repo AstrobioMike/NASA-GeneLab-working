@@ -1,4 +1,4 @@
-# Bioinformatics pipeline for amplicon Illumina sequencing data
+# Bioinformatics pipeline for amplicon Illumina sequencing data  
 
 **Date:** May 13, 2020  
 **Revision:** A  
@@ -14,7 +14,7 @@ Homer Fogle (GeneLab Data Processing Representative)
 Jonathan Galazka (GeneLab Project Scientist)  
 Anushree Sonic (Genelab Configuration Manager)  
 
-# Table of contents
+# Table of contents  
 
 - [**Software used**](#software-used)
 - [**General processing overview with example code**](#general-processing-overview-with-example-code)
@@ -34,7 +34,7 @@ Anushree Sonic (Genelab Configuration Manager)
     - [Generating and writing out standard outputs](#generating-and-writing-out-standard-outputs)
 
 
-# Software used
+# Software used  
 
 |Program|Version|Relevant Links|
 |:------|:-----:|-------------:|
@@ -47,12 +47,14 @@ Anushree Sonic (Genelab Configuration Manager)
 
 ---
 
-# General processing overview with example code
+# General processing overview with example code  
+
 > Exact processing code for specific datasets is provided in their [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects). 
 
 ---
 
-## 1. Raw Data QC
+## 1. Raw Data QC  
+
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
 ```
@@ -63,7 +65,8 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
 
 <br>
-### Compile Raw Data QC
+### Compile Raw Data QC  
+
 ```
 multiqc -o raw_multiqc_output raw_fastqc_output
 ```
@@ -75,7 +78,8 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 ---
 
-## 2. Trim Primers
+## 2. Trim Primers  
+
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
 The following example code shows how it was done for some samples of [GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/), which was 2x250 sequencing of the 16S gene using these primers:  
