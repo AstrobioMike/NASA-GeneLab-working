@@ -39,6 +39,7 @@ Anushree Sonic (Genelab Configuration Manager)
     - [Assigning taxonomy](#assigning-taxonomy)
     - [Generating and writing out standard outputs](#generating-and-writing-out-standard-outputs)
 
+---
 
 # Software used  
 
