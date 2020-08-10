@@ -62,6 +62,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `-o` – the output directory to store results
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
 
+<br>
 ### Compile Raw Data QC
 ```
 multiqc -o raw_multiqc_output raw_fastqc_output
@@ -166,6 +167,7 @@ fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 *	`-o` – the output directory to store results  
 *	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them  
 
+<br>
 ### Compile Filtered Data QC
 ```
 multiqc -o filtered_multiqc_output  filtered_fastqc_output
@@ -183,6 +185,7 @@ The following is run in an R environment.
 
 This example code as written assumes paired-end data, with notes included on what would be different if working with single-end data. The taxonomy reference database used below is as an example only, suitable for the example 16S dataset ([GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/)) used here. But others designed for DECIPHER can be found here: [http://www2.decipher.codes/Downloads.html](http://www2.decipher.codes/Downloads.html)  
 
+<br>
 ### Learning the error rates
 ```
 forward_errors <- learnErrors(fls=“Filtered-R1.fq.gz”, multithread=TRUE)
@@ -206,6 +209,7 @@ reverse_errors <- learnErrors(fls=“Filtered-R2.fq.gz”, multithread=TRUE)
 
 *	same as above, but providing reverse filtered reads; not needed if data are single-end
 
+<br>
 ### Inferring sequences
 ```
 forward_seqs <- dada(derep=“Filtered-R1.fq.gz”, err=forward_errors, pool=“pseudo”, multithread=TRUE)
@@ -233,6 +237,7 @@ reverse_seqs <- dada(derep=“Filtered-R2.fq.gz”, err=reverse_errors, pool=“
 
 *	same as above, but providing reverse filtered reads and reverse error-profile object; not needed if data are single-end
 
+<br>
 ### Merging forward and reverse reads
 ```
 merged_contigs <- mergePairs(dadaF=forward_seqs, derepF=“Filtered-R1.fq.gz”, dadaR=reverse_seqs, derepR=“Filtered-R2.fq.gz”)
@@ -254,6 +259,7 @@ merged_contigs <- mergePairs(dadaF=forward_seqs, derepF=“Filtered-R1.fq.gz”,
 
 *	`derepR=` – specifying the path to the filtered reverse reads
 
+<br>
 ### Generating sequence table with counts per sample
 ```
 seqtab <- makeSequenceTable(merged_contigs)
@@ -263,7 +269,7 @@ seqtab <- makeSequenceTable(merged_contigs)
 
 *	If single-end data, instead of “merged_contigs”, the forward_seqs object would be provided to the `makeSequenceTable()` function here
 
-
+<br>
 ### Removing putative chimeras
 ```
 seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multithread=TRUE)
@@ -281,6 +287,7 @@ seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multith
 
 *	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
 
+<br>
 ### Assigning taxonomy
 
 Creating a DNAStringSet object from the ASVs:
@@ -325,6 +332,7 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 
 *	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
 
+<br>
 ### Generating and writing out standard outputs
 
 Giving sequences more manageable names (e.g. ASV_1, ASV_2, …,):
