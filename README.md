@@ -17,4 +17,6 @@ Anushree Sonic (Genelab Configuration Manager)
 
 ---
 
-Or maybe we just want the revision history info here, and all versions can be maintained above, and in them will have the specific above info (submitter/approvers) for that specific version
+>Or maybe we just want the revision history info here, and all versions can be maintained above, and in them will have the specific above info (submitter/approvers) for that specific version
+
+---
