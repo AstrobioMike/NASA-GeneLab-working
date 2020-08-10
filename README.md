@@ -1,6 +1,4 @@
-# mock-temp
-
-## Bioinformatics pipeline for diversity amplicon Illumina sequencing Data
+# Bioinformatics pipeline for diversity amplicon Illumina sequencing Data
 
 **Date:** May 13, 2020  
 **Revision:** A  
