@@ -64,8 +64,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `-o` – the output directory to store results
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
 
-<br>
-
+<br>  
 ### Compile Raw Data QC  
 
 ```
