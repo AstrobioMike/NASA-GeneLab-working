@@ -1,3 +1,23 @@
+# Table of contents
+
+- [Software used](#software-used)
+- [General processing overview with example code](#general-processing-overview-with-example-code)
+  - [1. Raw Data QC](#1-raw-data-qc)
+    - [Compile Raw Data QC](#compile-raw-data-qc)
+  - [2. Trim Primers](#2-trim-primers)
+  - [3. Quality filtering](#3-quality-filtering)
+  - [4. Filtered Data QC](#4-filtered-data-qc)
+    - [Compile Filtered Data QC](#compile-filtered-data-qc)
+  - [5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables](#5-calculate-error-model-apply-dada2-algorithm-assign-taxonomy-and-create-output-tables)
+    - [Learning the error rates](#learning-the-error-rates)
+    - [Inferring sequences](#inferring-sequences)
+    - [Merging forward and reverse reads](#merging-forward-and-reverse-reads)
+    - [Generating sequence table with counts per sample](#generating-sequence-table-with-counts-per-sample)
+    - [Removing putative chimeras](#removing-putative-chimeras)
+    - [Assigning taxonomy](#assigning-taxonomy)
+    - [Generating and writing out standard outputs](#generating-and-writing-out-standard-outputs)
+
+
 # Software used
 
 |Program|Version|Relevant Links|
@@ -16,7 +36,7 @@
 
 ---
 
-## Raw Data QC
+## 1. Raw Data QC
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
 ```
@@ -38,7 +58,7 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 ---
 
-## Trim Primers
+## 2. Trim Primers
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
 The following example code shows how it was done for some samples of [GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/), which was 2x250 sequencing of the 16S gene using these primers:  
@@ -71,7 +91,7 @@ cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT
 
 ---
 
-## Quality filtering
+## 3. Quality filtering
 > The following is run in an R environment.  
 
 Specific settings required will depend on the dataset being processing. These include parameters such as `truncLen`, which might depend on the target amplicon and its size, and `maxEE` which might depend on the quality of the sequencing run. For instance, when working with ITS data, it may be preferable to omit using the `truncLen` parameter at all if the target amplified region is expected to vary to lengths greater than the read size. A start for more information on these parameters can be found at these sites:  
@@ -120,7 +140,7 @@ filtered_out <- filterAndTrim(fwd=“Primer-trimmed-R1.fq.gz”, filt=“Filtere
 
 ---
 
-## Filtered Data QC
+## 4. Filtered Data QC
 ```
 fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 ```
@@ -142,7 +162,7 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 
 ---
 
-## Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables
+## 5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables
 The following is run in an R environment.  
 
 This example code as written assumes paired-end data, with notes included on what would be different if working with single-end data. The taxonomy reference database used below is as an example only, suitable for the example 16S dataset ([GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/)) used here. But others designed for DECIPHER can be found here: [http://www2.decipher.codes/Downloads.html](http://www2.decipher.codes/Downloads.html)  
