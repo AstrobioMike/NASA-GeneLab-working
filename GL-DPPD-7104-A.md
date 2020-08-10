@@ -1,6 +1,8 @@
 # Bioinformatics pipeline for amplicon Illumina sequencing data  
 
-This page holds the overview and example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> **This page holds the overview and example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+
+---
 
 **Date:** May 13, 2020  
 **Revision:** A  
@@ -15,6 +17,8 @@ Samrawit Gebre (GeneLab Deputy Project Manager)
 Homer Fogle (GeneLab Data Processing Representative)  
 Jonathan Galazka (GeneLab Project Scientist)  
 Anushree Sonic (Genelab Configuration Manager)  
+
+---
 
 # Table of contents  
 
@@ -51,7 +55,7 @@ Anushree Sonic (Genelab Configuration Manager)
 
 # General processing overview with example code  
 
-> **Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).** 
+> Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ---
 
