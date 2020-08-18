@@ -1,4 +1,4 @@
-# Bioinformatics processing protocol for amplicon Illumina sequencing data
+# Bioinformatics processing protocol for Illumina amplicon sequencing data
 
 **Date:** May 13, 2020  
 **Revision:** A  
