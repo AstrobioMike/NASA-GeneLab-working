@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for amplicon Illumina sequencing data  
 
-> **This page holds an overview and example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets that have been released is available in this repository [here]() and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and some example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets that have been released is available in this repository [here]() and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
