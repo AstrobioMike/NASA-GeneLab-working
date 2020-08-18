@@ -43,14 +43,16 @@ Anushree Sonic (Genelab Configuration Manager)
 
 # Software used  
 
-|Program|Version|Relevant Links|
+|Program|Version*|Relevant Links|
 |:------|:-----:|-------------:|
-|FastQC|0.11.8|[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|
-|MultiQC|1.7|[https://multiqc.info/](https://multiqc.info/)|
-|Cutadapt|2.3|[https://cutadapt.readthedocs.io/en/stable/](https://cutadapt.readthedocs.io/en/stable/)|
-|DADA2|1.12|[https://www.bioconductor.org/packages/release/bioc/html/dada2.html](https://www.bioconductor.org/packages/release/bioc/html/dada2.html)|
-|DECIPHER|2.14|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
-|biomformat|1.12.0|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
+|FastQC|`fastqc -v`|[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|
+|MultiQC|`multiqc -v`|[https://multiqc.info/](https://multiqc.info/)|
+|Cutadapt|`cutadapt --version`|[https://cutadapt.readthedocs.io/en/stable/](https://cutadapt.readthedocs.io/en/stable/)|
+|DADA2|`packageVersion("dada2")`|[https://www.bioconductor.org/packages/release/bioc/html/dada2.html](https://www.bioconductor.org/packages/release/bioc/html/dada2.html)|
+|DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
+|biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
+
+>**\*** Exact versions are available in the processing code for specific datasets.
 
 ---
 
@@ -71,6 +73,16 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `-o` – the output directory to store results
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
 
+**Input file types:**
+
+* fastq, compressed or uncompressed
+
+**Output file types:**
+
+* fastqc.html (FastQC output html summary)
+* fastqc.zip (FastQC output data)
+
+
 <br>  
 
 ### Compile Raw Data QC  
@@ -83,6 +95,17 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 *	`-o` – the output directory to store results
 *	`raw_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
+
+**Input file types:**
+
+* fastqc.zip (FastQC output data)
+
+**Output file types:**
+
+* multiqc_report.html (multiqc output html summary)
+* multiqc_data (directory containing multiqc output data)
+
+<br>  
 
 ---
 
@@ -117,6 +140,18 @@ cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT
 -	`Input_R1_raw.fastq.gz` – this and following “R2” version are positional arguments specifying the forward and reverse reads for input
 
 -	`--discard-untrimmed` – this filters out those where the primers were not found as expected
+
+**Input file types:**
+
+* fastq, compressed or uncompressed (original reads)
+
+**Output file types:**
+
+* fastq, compressed or uncompressed (trimmed reads)
+* tsv (per sample read counts before and after trimming)
+* log (log file of standard output and error from cutadapt)
+
+<br>
 
 ---
 
@@ -167,6 +202,17 @@ filtered_out <- filterAndTrim(fwd=“Primer-trimmed-R1.fq.gz”, filt=“Filtere
 
 *	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
 
+**Input file types:**
+
+* fastq, compressed or uncompressed (primer-trimmed reads)
+
+**Output file types:**
+
+* fastq, compressed or uncompressed (filtered reads)
+* tsv (per sample read counts before and after filtering)
+
+<br>
+
 ---
 
 ## 4. Filtered Data QC
@@ -179,6 +225,15 @@ fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 *	`-o` – the output directory to store results  
 *	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them  
 
+**Input file types:**
+
+* fastq, compressed or uncompressed (filtered reads)
+
+**Output file types:**
+
+* fastqc.html (FastQC output html summary)
+* fastqc.zip (FastQC output data)
+
 <br>
 
 ### Compile Filtered Data QC
@@ -190,6 +245,17 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 
 *	`-o` – the output directory to store results
 *	`filtered_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
+
+**Input file types:**
+
+* fastqc.zip (FastQC output data)
+
+**Output file types:**
+
+* multiqc_report.html (multiqc output html summary)
+* multiqc_data (directory containing multiqc output data)
+
+<br>
 
 ---
 
@@ -243,6 +309,8 @@ forward_seqs <- dada(derep=“Filtered-R1.fq.gz”, err=forward_errors, pool=“
 *	`pool=“pseudo”` – setting the method of incorporating information from multiple samples
 
 *	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+
+<br>
 
 ```
 reverse_seqs <- dada(derep=“Filtered-R2.fq.gz”, err=reverse_errors, pool=“pseudo”, multithread=TRUE)
@@ -327,6 +395,8 @@ download.file( url=“http://www2.decipher.codes/Classification/TrainingSets/SIL
 
 *	`destfile=` – specifying the path/name of the file after downloading
 
+<br>
+
 Loading taxonomy object:
 ```
 load(“SILVA_SSU_r138_2019.RData”)
@@ -399,4 +469,16 @@ Generating and writing out biom file format:
 biom_object <- make_biom(data=asv_tab, observation_metadata=tax_tab)
 write_biom(biom_object, "Taxonomy_and_counts.biom")
 ```
+
+**Input file types:**
+
+* fastq, compressed or uncompressed (filtered reads)
+
+**Output data files:**
+
+* fasta (inferred sequences)
+* count_table.tsv (count table)
+* taxonomy_table.tsv (taxonomy table)
+* biom (count and taxonomy table in biom format)
+* read_count_tracking.tsv (read counts at each processing step)
 
