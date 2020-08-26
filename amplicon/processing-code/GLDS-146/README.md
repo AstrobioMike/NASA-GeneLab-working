@@ -2,7 +2,7 @@
 
 The raw and processed data are available from: [https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-146/](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-146/)
 
-The `full-command-line-log.sh` file holds all commands as the processing was performed, which calls the R scripts `full-R-processing.R`. 
+The `full-command-line-log.sh` file holds all commands as the processing was performed, which calls the R script `full-R-processing.R`. 
 
 
 ## Software used  
