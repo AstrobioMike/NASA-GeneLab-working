@@ -58,7 +58,7 @@ Anushree Sonic (Genelab Configuration Manager)
 
 # General processing overview with example code  
 
-> Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> Exact processing code for specific datasets is available in the [processing-code](https://github.com/AstrobioMike/mock-temp/tree/master/amplicon/processing-code) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ---
 
