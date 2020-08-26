@@ -267,7 +267,7 @@ This example code as written assumes paired-end data, with notes included on wha
 <br>
 
 ### Learning the error rates
-```
+```R
 forward_errors <- learnErrors(fls=“Filtered-R1.fq.gz”, multithread=TRUE)
 ```
 
@@ -281,7 +281,7 @@ forward_errors <- learnErrors(fls=“Filtered-R1.fq.gz”, multithread=TRUE)
 
 *	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
 
-```
+```R
 reverse_errors <- learnErrors(fls=“Filtered-R2.fq.gz”, multithread=TRUE)
 ```
 
@@ -292,7 +292,7 @@ reverse_errors <- learnErrors(fls=“Filtered-R2.fq.gz”, multithread=TRUE)
 <br>
 
 ### Inferring sequences
-```
+```R
 forward_seqs <- dada(derep=“Filtered-R1.fq.gz”, err=forward_errors, pool=“pseudo”, multithread=TRUE)
 ```
 
@@ -312,7 +312,7 @@ forward_seqs <- dada(derep=“Filtered-R1.fq.gz”, err=forward_errors, pool=“
 
 <br>
 
-```
+```R
 reverse_seqs <- dada(derep=“Filtered-R2.fq.gz”, err=reverse_errors, pool=“pseudo”, multithread=TRUE)
 ```
 
@@ -323,7 +323,7 @@ reverse_seqs <- dada(derep=“Filtered-R2.fq.gz”, err=reverse_errors, pool=“
 <br>
 
 ### Merging forward and reverse reads
-```
+```R
 merged_contigs <- mergePairs(dadaF=forward_seqs, derepF=“Filtered-R1.fq.gz”, dadaR=reverse_seqs, derepR=“Filtered-R2.fq.gz”)
 ```
 
@@ -346,7 +346,7 @@ merged_contigs <- mergePairs(dadaF=forward_seqs, derepF=“Filtered-R1.fq.gz”,
 <br>
 
 ### Generating sequence table with counts per sample
-```
+```R
 seqtab <- makeSequenceTable(merged_contigs)
 ```
 
@@ -357,7 +357,7 @@ seqtab <- makeSequenceTable(merged_contigs)
 <br>
 
 ### Removing putative chimeras
-```
+```R
 seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multithread=TRUE)
 ```
 
@@ -378,12 +378,12 @@ seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multith
 ### Assigning taxonomy
 
 Creating a DNAStringSet object from the ASVs:
-```
+```R
 dna <- DNAStringSet(getSequences(seqtab.nochim))
 ```
 
 Downloading the reference R taxonomy object:
-```
+```R
 download.file( url=“http://www2.decipher.codes/Classification/TrainingSets/SILVA_SSU_r138_2019.RData”, destfile=“SILVA_SSU_r138_2019.RData”)
 ```
 
@@ -398,12 +398,12 @@ download.file( url=“http://www2.decipher.codes/Classification/TrainingSets/SIL
 <br>
 
 Loading taxonomy object:
-```
+```R
 load(“SILVA_SSU_r138_2019.RData”)
 ```
 
 Classifying sequences:
-```
+```R
 tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, processors=NULL)
 ```
 
@@ -426,7 +426,7 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 ### Generating and writing out standard outputs
 
 Giving sequences more manageable names (e.g. ASV_1, ASV_2, …,):
-```
+```R
 asv_seqs <- colnames(seqtab.nochim)
 asv_headers <- vector(dim(seqtab.nochim)[2], mode="character")
 
@@ -436,13 +436,13 @@ for (i in 1:dim(seqtab.nochim)[2]) {
 ```
 
 Making and writing out a fasta of final ASV seqs:
-```
+```R
 asv_fasta <- c(rbind(asv_headers, asv_seqs))
 write(asv_fasta, "ASVs.fa")
 ```
 
 Making and writing out a count table:
-```
+```R
 asv_tab <- t(seqtab.nochim)
 row.names(asv_tab) <- sub(">", "", asv_headers)
 
@@ -450,7 +450,7 @@ write.table(asv_tab, "ASVs_counts.tsv", sep="\t", quote=F, col.names=NA)
 ```
 
 Creating table of taxonomy and setting any that are unclassified as "NA":
-```
+```R
 ranks <- c("domain", "phylum", "class", "order", "family", "genus", "species")
 tax_tab <- t(sapply(tax_info, function(x) {
   m <- match(ranks, x$rank)
@@ -465,7 +465,7 @@ write.table(tax_tab, "Taxonomy.tsv", sep = "\t", quote=F, col.names=NA)
 ```
 
 Generating and writing out biom file format:
-```
+```R
 biom_object <- make_biom(data=asv_tab, observation_metadata=tax_tab)
 write_biom(biom_object, "Taxonomy_and_counts.biom")
 ```
