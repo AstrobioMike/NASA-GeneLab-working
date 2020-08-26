@@ -51,7 +51,7 @@ Anushree Sonic (Genelab Configuration Manager)
 |MultiQC|`multiqc -v`|[https://multiqc.info/](https://multiqc.info/)|
 |bbduk|`bbduk.sh --version`|[https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)|
 |Kraken2|`kraken2 -v`|[https://ccb.jhu.edu/software/kraken2/index.shtml](https://ccb.jhu.edu/software/kraken2/index.shtml)|
-|Bracken|`conda list | grep bracken`|[https://ccb.jhu.edu/software/bracken/index.shtml](https://ccb.jhu.edu/software/bracken/index.shtml)|
+|Bracken|`conda list \| grep bracken`|[https://ccb.jhu.edu/software/bracken/index.shtml](https://ccb.jhu.edu/software/bracken/index.shtml)|
 |TaxonKit|`taxonkit -h`|[https://github.com/shenwei356/taxonkit](https://github.com/shenwei356/taxonkit)|
 |HUMAnN2|`humann2 --version`|[https://huttenhower.sph.harvard.edu/humann](https://huttenhower.sph.harvard.edu/humann)|
 
