@@ -71,13 +71,13 @@ fastqc -o raw_fastqc_output *.fastq.gz
 **Parameter Definitions:**
 
 * `-o` – the output directory to store results
-* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
+* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed
 
-**Output file types:**
+**Output files:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -114,8 +114,8 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
 The following example code shows how it was done for some samples of [GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/), which was 2x250 sequencing of the 16S gene using these primers:  
-* forward: 5’-GTGCCAGCMGCCGCGGTAA-3’  
-* reverse: 5’- GGACTACVSGGGTATCTAAT-3’  
+* forward: 5’-GTGCCAGCMGCCGCGGTAA-3’  ## Is there supposed to be a M in the sequence? If so, please define what M represents ##
+* reverse: 5’- GGACTACVSGGGTATCTAAT-3’  ## Is there supposed to be a V and S in the sequence? If so, please define what V and S represent ##
 
 Due to the size of the target amplicon and the type of sequencing done here, both forward and reverse primers are expected to be on each of the forward and reverse reads. It therefore takes “linked” primers as input for forward and reverse reads, specified above by the `...` between them. It also expects that the primers start at the first position of the reads (“anchored”), specified with the leading `^` characters.  
 
@@ -123,6 +123,7 @@ The following website is useful for reverse complementing primers and dealing wi
 
 ```
 cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT...TTACCGCGGCKGCTGGCAC \
+         ## Define what B represents; and define what K represents ##
          -o Primer-trimmed-R1.fq.gz -p Primer-trimmed-R2.fq.gz Input_R1_raw.fastq.gz Input_R2_raw.fastq.gz \
          --discard-untrimmed
 ```
@@ -137,15 +138,15 @@ cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT
 
 *	`-p` – specifies output of reverse, primer-trimmed reads
 
--	`Input_R1_raw.fastq.gz` – this and following “R2” version are positional arguments specifying the forward and reverse reads for input
+-	`Input_R1_raw.fastq.gz` – this and following “R2” version are positional arguments specifying the forward and reverse reads, respectively, for input
 
--	`--discard-untrimmed` – this filters out those where the primers were not found as expected
+-	`--discard-untrimmed` – this filters out those reads? where the primers were not found as expected
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (original reads)
 
-**Output file types:**
+**Output files:**
 
 * fastq, compressed or uncompressed (trimmed reads)
 * tsv (per sample read counts before and after trimming)
@@ -158,7 +159,7 @@ cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT
 ## 3. Quality filtering
 > The following is run in an R environment.  
 
-Specific settings required will depend on the dataset being processing. These include parameters such as `truncLen`, which might depend on the target amplicon and its size, and `maxEE` which might depend on the quality of the sequencing run. For instance, when working with ITS data, it may be preferable to omit using the `truncLen` parameter at all if the target amplified region is expected to vary to lengths greater than the read size. A start for more information on these parameters can be found at these sites:  
+Specific settings required will depend on the dataset being processing. These include parameters such as `truncLen`, which might depend on the target amplicon and its size, and `maxEE` which might depend on the quality of the sequencing run. For instance, when working with ITS data, it may be preferable to omit using the `truncLen` parameter if the target amplified region is expected to vary to lengths greater than the read size. More information on these parameters can be found at these sites:  
 * [https://benjjneb.github.io/dada2/tutorial.html](https://benjjneb.github.io/dada2/tutorial.html)  
 * [https://astrobiomike.github.io/amplicon/dada2_workflow_ex](https://astrobiomike.github.io/amplicon/dada2_workflow_ex)  
 
@@ -176,7 +177,7 @@ filtered_out <- filterAndTrim(fwd=“Primer-trimmed-R1.fq.gz”, filt=“Filtere
 
 **Parameter Definitions:**
 
-*	`filtered_out <-` – specifies the variable we are going to store the summary results within in our R environment
+*	`filtered_out <-` – specifies the variable that will store the summary results within in our R environment
 
 *	`filterAndTrim()` – the DADA2 function we are calling, with the following parameters set within it
 
@@ -200,7 +201,7 @@ filtered_out <- filterAndTrim(fwd=“Primer-trimmed-R1.fq.gz”, filt=“Filtere
 
 *	`compress=TRUE` – gzip-compress the output filtered reads
 
-*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 **Input file types:**
 
@@ -223,13 +224,13 @@ fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results  
-*	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them  
+*	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them  
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output file types:**
+**Output files:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -246,11 +247,11 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 *	`-o` – the output directory to store results
 *	`filtered_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input file types:**
+**Input files:**
 
 * fastqc.zip (FastQC output data)
 
-**Output file types:**
+**Output files:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -260,7 +261,7 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 ---
 
 ## 5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables
-The following is run in an R environment.  
+> The following is run in an R environment.  
 
 This example code as written assumes paired-end data, with notes included on what would be different if working with single-end data. The taxonomy reference database used below is as an example only, suitable for the example 16S dataset ([GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/)) used here. But others designed for DECIPHER can be found here: [http://www2.decipher.codes/Downloads.html](http://www2.decipher.codes/Downloads.html)  
 
@@ -273,13 +274,13 @@ forward_errors <- learnErrors(fls=“Filtered-R1.fq.gz”, multithread=TRUE)
 
 **Parameter Definitions:**  
 
-*	`forward_errors <-` – specifies the variable we are going to store the results within in our R environment
+*	`forward_errors <-` – specifies the variable that will store the results within in our R environment
 
 *	`learnErrors()` – the DADA2 function we are calling, with the following parameters set within it
 
-*	`fls=` – the path to the forward filtered reads, if not paired-end data, this would be the only reads and the following “reverse_errors” object would not be created
+*	`fls=` – the path to the forward filtered reads
 
-*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 ```R
 reverse_errors <- learnErrors(fls=“Filtered-R2.fq.gz”, multithread=TRUE)
@@ -298,17 +299,17 @@ forward_seqs <- dada(derep=“Filtered-R1.fq.gz”, err=forward_errors, pool=“
 
 **Parameter Definitions:**  
 
-*	`forward_seqs <-` – specifies the variable we are going to store the results within in our R environment
+*	`forward_seqs <-` – specifies the variable that will store the results within in our R environment
 
 *	`dada()` – the DADA2 function we are calling, with the following parameters set within it
 
-*	`derep=` – the path to the forward filtered reads, if not paired-end data, this would be the only reads and the following “reverse_seqs” object would not be created
+*	`derep=` – the path to the forward filtered reads
 
 *	`err=` – the object holding the error profile for the forward reads created in above step, if not paired-end data, this would be the error-profile object created and the following “reverse_seqs” object would not be created
 
 *	`pool=“pseudo”` – setting the method of incorporating information from multiple samples
 
-*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 <br>
 
@@ -322,16 +323,14 @@ reverse_seqs <- dada(derep=“Filtered-R2.fq.gz”, err=reverse_errors, pool=“
 
 <br>
 
-### Merging forward and reverse reads
+### Merging forward and reverse reads; not needed if data are single-end
 ```R
 merged_contigs <- mergePairs(dadaF=forward_seqs, derepF=“Filtered-R1.fq.gz”, dadaR=reverse_seqs, derepR=“Filtered-R2.fq.gz”)
 ```
 
 **Parameter Definitions:** 
 
-*	not needed if data are single-end
-
-*	`merged_contigs <-` – specifies the variable we are going to store the results within in our R environment
+*	`merged_contigs <-` – specifies the variable that will store the results within in our R environment
 
 *	`mergePairs()` – the DADA2 function we are calling, with the following parameters set within it
 
@@ -363,7 +362,7 @@ seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multith
 
 **Parameter Definitions:**  
 
-*	`seqtab.nochim <-` – specifies the variable we are going to store the results within in our R environment
+*	`seqtab.nochim <-` – specifies the variable that will store the results within in our R environment
 
 *	`removeBimeraDenovo()` – the DADA2 function we are calling, with the following parameters set within it
 
@@ -371,7 +370,7 @@ seqtab.nochim <- removeBimeraDenovo(unqs=seqtab, method=“consensus”, multith
 
 *	`method=` – specifying the method for putative-chimera identification and removal
 
-*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+*	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 <br>
 
@@ -409,7 +408,7 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 
 **Parameter Definitions:**  
 
-*	`tax_info <-` – specifies the variable we are going to store the results within in our R environment
+*	`tax_info <-` – specifies the variable that will store the results within in our R environment
 
 *	`IdTaxa()` – the DECIPHER function we are calling, with the following parameters set within it
 
@@ -417,13 +416,13 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 
 *	`trainingSet=` – specifying the reference database we downloaded and loaded above
 
-*	`strand=“both”` – specifying to check taxonomy assignment in both orientations
+*	`strand=“both”` – specifying to check taxonomy assignment in both orientations ## What would this need to be if SE? ##
 
-*	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying number to run)
+*	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 <br>
 
-### Generating and writing out standard outputs
+### Generating and writing standard outputs
 
 Giving sequences more manageable names (e.g. ASV_1, ASV_2, …,):
 ```R
@@ -435,13 +434,13 @@ for (i in 1:dim(seqtab.nochim)[2]) {
 }
 ```
 
-Making and writing out a fasta of final ASV seqs:
+Making then writing a fasta of final ASV seqs:
 ```R
 asv_fasta <- c(rbind(asv_headers, asv_seqs))
 write(asv_fasta, "ASVs.fa")
 ```
 
-Making and writing out a count table:
+Making then writing a count table:
 ```R
 asv_tab <- t(seqtab.nochim)
 row.names(asv_tab) <- sub(">", "", asv_headers)
@@ -464,17 +463,17 @@ rownames(tax_tab) <- gsub(pattern=">", replacement="", x=asv_headers)
 write.table(tax_tab, "Taxonomy.tsv", sep = "\t", quote=F, col.names=NA)
 ```
 
-Generating and writing out biom file format:
+Generating then writing biom file format:
 ```R
 biom_object <- make_biom(data=asv_tab, observation_metadata=tax_tab)
 write_biom(biom_object, "Taxonomy_and_counts.biom")
 ```
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output data files:**
+**Output files:**
 
 * fasta (inferred sequences)
 * count_table.tsv (count table)
