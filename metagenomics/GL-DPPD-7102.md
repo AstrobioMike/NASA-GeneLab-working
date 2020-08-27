@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for Illumina metagenomics data (read-based analysis)  
 
-> **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets. Exact processing code for specific datasets that have been released is available in this repository [here](https://github.com/AstrobioMike/mock-temp/tree/master/metagenomics/processing-code) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using a read-based analysis approach. Exact processing code for specific datasets that have been released is available in this repository [here](https://github.com/AstrobioMike/mock-temp/tree/master/metagenomics/processing-code) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
@@ -74,13 +74,13 @@ fastqc -o raw_fastqc_output *.fastq.gz
 **Parameter Definitions:**
 
 * `-o` – the output directory to store results
-* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them
+* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed
 
-**Output file types:**
+**Output files:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -99,11 +99,11 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 *	`-o` – the output directory to store results
 *	`raw_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input file types:**
+**Input files:**
 
 * fastqc.zip (FastQC output data)
 
-**Output file types:**
+**Output files:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -143,11 +143,11 @@ bbduk.sh in=raw-R1.fastq.gz in2=raw-R2.fastq.gz out1=R1-trimmed.fastq.gz out2=R2
 
 *	`> bbduk.log 2>&1` – redirects the stderr and stdout (which is informative in this case) to a log file for saving
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (original reads)
 
-**Output file types:**
+**Output files:**
 
 * fastq, compressed or uncompressed (filtered reads)
 * tsv (per sample read counts before and after filtering)
@@ -165,13 +165,13 @@ fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results  
-*	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildecards like this, or as individual arguments with spaces in between them  
+*	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them  
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output file types:**
+**Output files:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -188,11 +188,11 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 *	`-o` – the output directory to store results
 *	`filtered_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input file types:**
+**Input files:**
 
 * fastqc.zip (FastQC output data)
 
-**Output file types:**
+**Output files:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -255,7 +255,7 @@ combine_bracken_outputs.py --files bracken-taxonomy-sample-1.tsv bracken-taxonom
 
 *	`--files` – specifies the input files, output from the bracken command above
 
-*	`--names` – specifies the names of the samples to put in the column headers (must be in same order as sample files provided
+*	`--names` – specifies the names of the samples to put in the column headers (must be in same order as sample files provided)
 
 *	`-o` – specifies the name of the output, combined file
 
@@ -273,11 +273,11 @@ paste lineages-tab.tmp <(cut -f 2- combined-taxonomy.tmp) > taxonomy.tsv
 rm *.tmp
 ```
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output data files:**
+**Output files:**
 
 * taxonomy.tsv (read counts and relative abundances of classified taxa)
 
@@ -286,7 +286,7 @@ rm *.tmp
 ---
 
 ## 5. Functional profiling 
-HUMAnN2 treats forward and reverse reads independently, and does not take them as input separately unfortunately. So, they need to be concatenated first such that each sample has one fastq.gz that holds both forward and reverse reads. 
+HUMAnN2 treats forward and reverse reads independently, and does not take them as input separately, unfortunately. So, for paired-end studies, the reads need to be concatenated first such that each sample has one fastq.gz that holds both forward and reverse reads. 
 
 <br>
 
@@ -386,11 +386,11 @@ humann2_regroup_table -i genefamilies-cpm.tsv -g uniref90_ko | humann2_rename_ta
 
 *	`-n` – specifying we are converting Kegg orthology IDs into Kegg orthology human-readable names
 
-**Input file types:**
+**Input files:**
 
 * fastq, compressed or uncompressed (filtered reads, forward and reverse reads concatenated if paired-end)
 
-**Output data files:**
+**Output files:**
 
 * genefamilies_unstratified.tsv (gene-family abundances)
 * genefamilies_stratified.tsv (grouped by limited taxonomy)
