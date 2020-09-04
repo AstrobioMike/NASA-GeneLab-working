@@ -1,3 +1,0 @@
-Quit bein' so nosy!
-
-😂
