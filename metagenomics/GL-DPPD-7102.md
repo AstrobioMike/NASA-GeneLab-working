@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for Illumina metagenomics data (read-based analysis)  
 
-> **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using a read-based analysis approach. Exact processing code for specific datasets that have been released is available in this repository [here](https://github.com/AstrobioMike/mock-temp/tree/master/metagenomics/processing-code) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using a read-based analysis approach. Exact processing code for specific datasets that have been released is available in this repository [here](glds_processing_scripts) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
@@ -61,7 +61,7 @@ Anushree Sonic (Genelab Configuration Manager)
 
 # General processing overview with example code  
 
-> Exact processing code for specific datasets is currently provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> > Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](glds_processing_scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  .  
 
 ---
 

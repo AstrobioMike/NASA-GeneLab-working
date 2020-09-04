@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for amplicon Illumina sequencing data  
 
-> **This page holds an overview and some example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets that have been released is available in this repository [here](https://github.com/AstrobioMike/mock-temp/tree/master/amplicon/processing-code) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and some example code of how GeneLab processes Illumina amplicon datasets. Exact processing code for specific datasets that have been released is available in this repository [here](glds_processing_scripts) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
@@ -52,13 +52,13 @@ Anushree Sonic (Genelab Configuration Manager)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
->**\*** Exact versions are available along with the processing code for each specific dataset.
+>**\*** Exact versions are available along with the [processing code](glds_processing_scripts) for each specific dataset.
 
 ---
 
 # General processing overview with example code  
 
-> Exact processing code for specific datasets is available in the [processing-code](https://github.com/AstrobioMike/mock-temp/tree/master/amplicon/processing-code) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](glds_processing_scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ---
 
