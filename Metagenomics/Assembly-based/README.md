@@ -1,7 +1,7 @@
 
 # GeneLab bioinformatics processing protocol for Illumina metagenomics data (assembly-based analysis)
 
-> **[`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach.    
+[`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach. 
 
 **Date:** September 16, 2020  
 **Revision:** -  
