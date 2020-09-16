@@ -626,7 +626,9 @@ rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
 ---
 
 ## 13. Generating normalized, gene-level coverage summary tables of KO-annotations and taxonomy across samples
-
+> **Notes**  
+> * To combine across samples to generate these summary tables, we need the same "units". This is done for annotations based on the assigned KO terms, and all non-annotated functions are included together as "Not annotated". It is done for taxonomic classifications based on taxids (full lineages included in the table), and any not classified are included together as "Not classified". 
+> * The values we are working with are coverage per gene (so they are number of bps recruited to the gene normalized by the length of the gene). These have been normalized by making the total coverage of a sample 1,000,000 and setting each individual gene-level coverage its proportion of that 1,000,000 total. So basically percent, but out of 1,000,000 instead of 100 to make the numbers more friendly. 
 
 ```
 bit-GL-combine-KO-and-tax-tables *-gene-coverage-annotation-and-tax.tsv -o GLDS-286
