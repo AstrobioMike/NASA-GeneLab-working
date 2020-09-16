@@ -70,7 +70,7 @@ Summary of contents:
 
     - Combined_Outputs/                         - summary outputs with all samples combined
         - GLDS-286-KO-function-coverages.tsv    - table of combined, normalized KO coverages
-        - GLDS-286-gene-taxonomy-coverages.tsv  - table of combined, normalized taxonomy coverages
+        - GLDS-286-taxonomy-coverages.tsv       - table of combined, normalized gene-level taxonomy coverages
 
     - processing_info                           - processing code and files
         - Snakefile                             - Snakemake workflow file
