@@ -1,7 +1,7 @@
 
 # GeneLab bioinformatics processing protocol for Illumina metagenomics data (assembly-based analysis)
 
-> **[`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach. Exact processing code for specific datasets that have been released is available in this repository [here](GLDS_Processing_Scripts) and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **[`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach.    
 
 **Date:** September 16, 2020  
 **Revision:** -  
