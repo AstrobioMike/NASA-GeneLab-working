@@ -14,7 +14,7 @@ Michael D. Lee
 
 # Details for reviewing
 
-* The primary GeneLab protocol document for review highlighting the main steps/programs and with some example code is [here](GL-DPPD-XXXX.md).
+* The primary GeneLab protocol document for review, highlighting the main steps and programs with example code, is [here](GL-DPPD-XXXX.md).
 
 * An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/). 
   * The above [example-output directory](example-output) holds the output files for your perusing pleasure, or the whole thing can be downloaded to your computer as a zip file by [clicking here](https://ndownloader.figshare.com/files/24696695) (it is ~63MB compressed and ~243MB uncompressed).
