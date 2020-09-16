@@ -37,7 +37,7 @@ Contents of [example-output directory](example-output):
 ##                                                                              ##
 ## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
 ## Based on GL-DPPD-XXXX for Illumina metagenomics data (assembly-based)        ##
-## Annotated code is in "processing_info.tar"                                   ##
+## Annotated code is in "processing_info/"                                      ##
 ##################################################################################
 
 Summary of contents:
@@ -72,7 +72,7 @@ Summary of contents:
         - GLDS-286-KO-function-coverages.tsv    - table of combined, normalized KO coverages
         - GLDS-286-gene-taxonomy-coverages.tsv  - table of combined, normalized taxonomy coverages
 
-    - processing_info.tar                       - a tar'd directory holding processing code and files
+    - processing_info                           - processing code and files
         - Snakefile                             - Snakemake workflow file
         - unique-sample-IDs.txt                 - single-column file of unique sample identifiers
 ```
