@@ -1,7 +1,5 @@
 
-# GeneLab bioinformatics processing protocol for Illumina metagenomics data (assembly-based analysis)
-
-> **[`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach.**  
+# GeneLab bioinformatics processing protocol for Illumina metagenomics data (assembly-based analysis) – in review
 
 **Date:** September 16, 2020  
 **Revision:** -  
@@ -14,21 +12,21 @@ Michael D. Lee
 
 # Details for reviewing
 
-* The primary GeneLab protocol document for review, highlighting the main steps and programs with example code, is [here](GL-DPPD-XXXX.md) (if also the previous word doc type is wanted, one can be downloaded by [clicking here](https://ndownloader.figshare.com/files/24697292)).
+* The primary GeneLab protocol document for review, highlighting the main steps and programs with example code, is ['GL-DPPD-XXXX.md' here](GL-DPPD-XXXX.md) (if also the previous word-doc type is wanted, one can be downloaded by [clicking here](https://ndownloader.figshare.com/files/24697292)).
 
 * An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/). 
-  * The [example-output directory](example-output) holds the output files for your perusing pleasure, or the whole thing can be downloaded to your computer as a zip file by [clicking here](https://ndownloader.figshare.com/files/24696695) (it is ~63MB compressed and ~243MB uncompressed).
+  * The ['example-output' directory](example-output) in this repo holds the output files for your perusing pleasure, or the whole thing can be downloaded to your computer as a zip file by [clicking here](https://ndownloader.figshare.com/files/24696695) (it is ~63MB compressed and ~243MB uncompressed).
 
-  * It is done with a Snakemake workflow, the primary snakefile is [here](example-output/processing_info/Snakefile).
+  * The processing is implemented as a Snakemake workflow. The primary snakefile is [here](example-output/processing_info/Snakefile).
 
-  * The `README.txt` in the example-output directory describes the contents and can be found [here](example-output/README.txt), and is also pasted below.
+  * The `README.txt` in the ['example-output' directory](example-output) describes the output contents and can be found [here](example-output/README.txt), and is also pasted below.
   
 Thanks! 🙂
 
 
 ---
 
-Contents of [example-output directory](example-output):
+Contents of ['example-output' directory](example-output):
 
 ```
 ##################################################################################
