@@ -50,6 +50,7 @@ This variable can be permanentily added to the conda environment like noted abov
     # then deactivate and reactivate conda environment for it to take effect
 """
 
+
 ########################################
 ######## Setting some variables ########
 ########################################
@@ -281,6 +282,7 @@ rule run_tax_classification:
         rm -rf annotations_and_tax_dir{wildcards.ID}*tmp*
         """
 
+
 rule run_KO_annotation:
     input:
         genes_dir + "{ID}-genes.faa"
@@ -353,8 +355,8 @@ rule raw_fastqc:
         raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+	fastqc {input} -t {num_threads} -q
+	"""
 
 
 rule raw_multiqc:
@@ -401,8 +403,8 @@ rule trimmed_fastqc:
         filtered_reads_dir + filename_prefix + "{ID}" + trimmed_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+	fastqc {input} -t {num_threads} -q
+	"""
 
 
 rule trimmed_multiqc:
