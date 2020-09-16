@@ -1,0 +1,26 @@
+java -ea -Xmx30269m -Xms30269m -cp /data1/mlee/miniconda3/envs/GL-mg-assembly/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Reads/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Reads/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz ref=/data1/mlee/miniconda3/envs/GL-mg-assembly/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl trimq=10 mlf=0.5 maxns=0
+Executing jgi.BBDuk [in=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz, in2=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz, out1=../Filtered_Reads/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, out2=../Filtered_Reads/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz, ref=/data1/mlee/miniconda3/envs/GL-mg-assembly/opt/bbmap-38.86-0/resources/adapters.fa, ktrim=l, k=17, ftm=5, qtrim=rl, trimq=10, mlf=0.5, maxns=0]
+Version 38.86
+
+0.027 seconds.
+Initial:
+Memory: max=31742m, total=31742m, free=31709m, used=33m
+
+Added 2258 kmers; time: 	0.058 seconds.
+Memory: max=31742m, total=31742m, free=31683m, used=59m
+
+Input is being processed as paired
+Started output streams:	0.083 seconds.
+Processing time:   		222.927 seconds.
+
+Input:                  	66322072 reads 		6698529272 bases.
+QTrimmed:               	8305332 reads (12.52%) 	143660023 bases (2.14%)
+FTrimmed:               	66322072 reads (100.00%) 	66322072 bases (0.99%)
+KTrimmed:               	64478 reads (0.10%) 	3183058 bases (0.05%)
+Low quality discards:   	28966 reads (0.04%) 	2598070 bases (0.04%)
+Total Removed:          	1051786 reads (1.59%) 	215763223 bases (3.22%)
+Result:                 	65270286 reads (98.41%) 	6482766049 bases (96.78%)
+
+Time:                         	223.075 seconds.
+Reads Processed:      66322k 	297.31k reads/sec
+Bases Processed:       6698m 	30.03m bases/sec
