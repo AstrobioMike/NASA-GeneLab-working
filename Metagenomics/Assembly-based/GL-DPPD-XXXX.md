@@ -590,7 +590,7 @@ rm sample-1*tmp sample-1-gene-coverages.tsv sample-1-annotations.tsv sample-1-ge
 
 **Output files and/or types:**
 
-* tsv, table with combined gene coverage, annotaiton, and taxonomy info
+* tsv, table with combined gene coverage, annotation, and taxonomy info
 
 <br>
 
