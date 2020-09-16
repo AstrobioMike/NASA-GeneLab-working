@@ -15,7 +15,7 @@ Summary of contents:
 
     - Filtered_Reads/                           - quality-filtered sequence fastq files
         - *.fastq.gz                            - quality-filtered reads
-        - *.log                           - log file of stdout/stderr from bbduk
+        - *.log                                 - log file of stdout/stderr from bbduk
 
     - Assemblies/                               - assembly files
         - *-assembly.fasta                      - fasta files of individual sample assemblies
