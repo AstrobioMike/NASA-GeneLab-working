@@ -374,7 +374,7 @@ rule raw_multiqc:
         mv {fastqc_out_dir}raw_tmp_qc/multiqc_report.html {fastqc_out_dir}raw_multiqc_report.html
         zip -q {fastqc_out_dir}raw_multiqc_report.html.zip {fastqc_out_dir}raw_multiqc_report.html && rm {fastqc_out_dir}raw_multiqc_report.html
           # removing the individual fastqc files
-        rm {raw_reads_dir}*fastqc* {fastqc_out_dir}raw_tmp_qc/
+        rm -rf {raw_reads_dir}*fastqc* {fastqc_out_dir}raw_tmp_qc/
         """
 
 
