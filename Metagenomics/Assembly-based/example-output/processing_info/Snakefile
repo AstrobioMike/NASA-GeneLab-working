@@ -17,7 +17,7 @@ import os
 Expected to be run in the following conda environment (or with specified programs versions accessible):
 
 # conda create -y -n GL-mg-assembly -c conda-forge -c bioconda -c defaults -c astrobiomike \
-#              fastqc=0.11.9 multiqc=1.8 bbmap=38.86 megahit=1.2.9 bit=1.8.10 bowtie2=2.3.5.1 \
+#              fastqc=0.11.9 multiqc=1.8 bbmap=38.86 megahit=1.2.9 bit=1.8.11 bowtie2=2.3.5.1 \
 #              samtools=1.9 prodigal=2.6.3 kofamscan=1.3.0 blast=2.9.0 cat=5.1.2 snakemake=5.5.4
 
 # conda activate GL-mg-assembly
@@ -32,7 +32,7 @@ As written, the directory holding them should be in this "KO_DIR" shell env. var
 # KO_DIR=$(pwd)
     # this would set it if ran in the directory they were just downloaded and unpacked in
 
-This variable can be permanently added to the conda environment like so (modified to be the path to the directory, 
+This variable can be permanently added to the conda environment like so (modified to be the path to the directory,
 but this location will work if the conda environment was named the same way as above):
 # echo 'export KO_DIR=/path/to/kofamscan_db' >> ${CONDA_PREFIX}/etc/conda/activate.d/set_env_vars.sh
     # then deactivate and reactivate conda environment for it to take effect (same goes for CAT_DIR next)
@@ -49,7 +49,6 @@ This variable can be permanentily added to the conda environment like noted abov
 # echo 'export CAT_DIR=/path/to/CAT_prepare_20200618' >> ${CONDA_PREFIX}/etc/conda/activate.d/set_env_vars.sh
     # then deactivate and reactivate conda environment for it to take effect
 """
-
 
 ########################################
 ######## Setting some variables ########
@@ -110,7 +109,7 @@ sample_ID_list = [line.strip() for line in open(sample_IDs_file)]
 ######## Setting up directories ########
 ########################################
 
-for dir in [fastqc_out_dir, filtered_reads_dir, assemblies_dir, genes_dir, 
+for dir in [fastqc_out_dir, filtered_reads_dir, assemblies_dir, genes_dir,
             annotations_and_tax_dir, mapping_dir, combined_output_dir]:
 	try:
 		os.mkdir(dir)
@@ -127,7 +126,7 @@ rule all:
         combined_output_dir + curr_GLDS + "-KO-function-coverages.tsv",
         combined_output_dir + curr_GLDS + "-taxonomy-coverages.tsv",
         expand(annotations_and_tax_dir + "{ID}-contig-coverage-and-tax.tsv", ID = sample_ID_list),
-        expand(annotations_and_tax_dir + "{ID}-annotations.tsv", ID = sample_ID_list),
+        expand(annotations_and_tax_dir + "{ID}-gene-coverage-annotation-and-tax.tsv", ID = sample_ID_list),
         assemblies_dir + "assembly-summaries.tsv",
         fastqc_out_dir + "raw_multiqc_report.html.zip",
         fastqc_out_dir + "raw_multiqc_data.zip",
@@ -158,7 +157,7 @@ rule combine_contig_tax_and_coverage:
         tax = annotations_and_tax_dir + "{ID}-contig-tax.tsv"
     params:
         contig_tmp = annotations_and_tax_dir + "{ID}-contig.tmp",
-        header_tmp = annotations_and_tax_dir + "{ID}-header.tmp"
+        header_tmp = annotations_and_tax_dir + "{ID}-contig-header.tmp"
     output:
         annotations_and_tax_dir + "{ID}-contig-coverage-and-tax.tsv"
     shell:
@@ -166,7 +165,7 @@ rule combine_contig_tax_and_coverage:
         paste <( tail -n +2 {input.cov} | sort -V -k 1 ) <( tail -n +2 {input.tax} | sort -V -k 1 | cut -f 2- ) > {params.contig_tmp}
         paste <( head -n 1 {input.cov} ) <( head -n 1 {input.tax} | cut -f 2- ) > {params.header_tmp}
         cat {params.header_tmp} {params.contig_tmp} > {output}
-        rm {params}
+        rm {params} {input}
         """
 
 
@@ -177,7 +176,7 @@ rule combine_gene_annots_tax_and_coverage:
         tax = annotations_and_tax_dir + "{ID}-gene-tax.tsv"
     params:
         gene_tmp = annotations_and_tax_dir + "{ID}-gene.tmp",
-        header_tmp = annotations_and_tax_dir + "{ID}-header.tmp"
+        header_tmp = annotations_and_tax_dir + "{ID}-gene-header.tmp"
     output:
         annotations_and_tax_dir + "{ID}-gene-coverage-annotation-and-tax.tsv"
     shell:
@@ -187,7 +186,7 @@ rule combine_gene_annots_tax_and_coverage:
 
         cat {params.header_tmp} {params.gene_tmp} > {output}
 
-        rm {params}
+        rm {params} {input}
         """
 
 
@@ -295,11 +294,11 @@ rule run_KO_annotation:
         tmp_dir = annotations_and_tax_dir + "{ID}-tmp-KO-dir"
     shell:
         """
-        exec_annotation -p {params.KO_profiles} -k {params.KO_list} --cpu {num_cpus} -f detail-tsv -o {params.tmp_out} --tmp-dir {params.tmp_dir} --report-unannotated {input} 
+        exec_annotation -p {params.KO_profiles} -k {params.KO_list} --cpu {num_cpus} -f detail-tsv -o {params.tmp_out} --tmp-dir {params.tmp_dir} --report-unannotated {input}
 
         bit-filter-KOFamScan-results -i {params.tmp_out} -o {output}
 
-        rm -rf {params.tmp_out} {params.tmp_dir} 
+        rm -rf {params.tmp_out} {params.tmp_dir}
         """
 
 
@@ -349,14 +348,14 @@ rule assemble:
 rule raw_fastqc:
     input:
         raw_reads_dir + filename_prefix + "{ID}" + filename_R1_suffix,
-        raw_reads_dir + filename_prefix + "{ID}" + filename_R2_suffix        
+        raw_reads_dir + filename_prefix + "{ID}" + filename_R2_suffix
     output:
         raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R1_suffix,
         raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R2_suffix
     shell:
         """
-	fastqc {input} -t {num_threads} -q
-	"""
+		fastqc {input} -t {num_threads} -q
+		"""
 
 
 rule raw_multiqc:
@@ -403,8 +402,8 @@ rule trimmed_fastqc:
         filtered_reads_dir + filename_prefix + "{ID}" + trimmed_fastqc_R2_suffix
     shell:
         """
-	fastqc {input} -t {num_threads} -q
-	"""
+		fastqc {input} -t {num_threads} -q
+		"""
 
 
 rule trimmed_multiqc:
