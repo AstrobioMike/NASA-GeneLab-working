@@ -206,7 +206,7 @@ multiqc -o trimmed_multiqc_output  trimmed_fastqc_output
 ### Sample assembly
 ```
 megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
-        -o sample-1-assembly -t 10 -m 500 > sample-1-assembly.log 2>&1
+        -o sample-1-assembly -t 10 --min-contig-length 500 > sample-1-assembly.log 2>&1
 ```
 
 **Parameter Definitions:**  
@@ -217,7 +217,7 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 *	`-t` – specifies the number of threads to use
 
-*	`-m` – specifies the minimum contig length to write out
+*	`--min-contig-length` – specifies the minimum contig length to write out
 
 *	`> sample-1-assembly.log 2>&1` – sends stdout/stderr to log file
 
