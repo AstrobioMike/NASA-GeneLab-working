@@ -544,7 +544,7 @@ rule assemble:
         assemblies_dir + "{ID}-assembly.log"
     shell:
         """
-        megahit -1 {input.R1} -2 {input.R1} -m {max_mem} -t {num_threads} -o {assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
+        megahit -1 {input.R1} -2 {input.R1} -m {max_mem} -t {num_threads} --min-contig-len 500 -o {assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
         bit-rename-fasta-headers -i {assemblies_dir}{wildcards.ID}-megahit-out/final.contigs.fa -w c_{wildcards.ID} -o {output}
 
         rm -rf {assemblies_dir}{wildcards.ID}-megahit-out/
