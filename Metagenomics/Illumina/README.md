@@ -35,7 +35,7 @@ Contents of ['example-output' directory](example-output):
 ## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/                ##
 ##                                                                              ##
 ## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
-## Based on GL-DPPD-XXXX for Illumina metagenomics data
+## Based on GL-DPPD-XXXX for Illumina metagenomics data                         ##
 ## Annotated code is in "processing_info/"                                      ##
 ##################################################################################
 
