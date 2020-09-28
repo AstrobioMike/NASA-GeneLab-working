@@ -563,8 +563,8 @@ rule raw_fastqc:
         raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+        fastqc {input} -t {num_threads} -q
+        """
 
 
 rule raw_multiqc:
@@ -621,8 +621,8 @@ rule trimmed_fastqc:
         filtered_reads_dir + filename_prefix + "{ID}" + trimmed_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+        fastqc {input} -t {num_threads} -q
+        """
 
 
 rule trimmed_multiqc:
