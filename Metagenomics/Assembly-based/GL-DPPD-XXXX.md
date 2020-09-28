@@ -1,4 +1,4 @@
-# Bioinformatics pipeline for Illumina metagenomics data (assembly-based analysis)  
+# Bioinformatics pipeline for Illumina metagenomics data (assembly-based analysis)
 
 > **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets using an assembly-based analysis approach.**
 
@@ -15,7 +15,26 @@ Michael D. Lee
 
 ---
 
-# Table of contents  
+# Table of contents
+
+- [Software used](#software-used)
+- [General processing overview with example code  ](#general-processing-overview-with-example-code)
+  - [1. Raw Data QC](#1-raw-data-qc)
+    - [Compile Raw Data QC](#compile-raw-data-qc)
+  - [2. Quality filtering/trimming](#2-quality-filteringtrimming)
+  - [3. Filtered/Trimmed Data QC](#3-filteredtrimmed-data-qc)
+    - [Compile Filtered Data QC](#compile-filtered-data-qc)
+  - [4. Sample assembly](#4-sample-assembly)
+  - [5. Renaming contigs and summarizing assemblies](#5-renaming-contigs-and-summarizing-assemblies)
+  - [6. Gene prediction](#6-gene-prediction)
+  - [7. Functional annotation](#7-functional-annotation)
+  - [8. Taxonomic classification](#8-taxonomic-classification)
+  - [9. Read-mapping](#9-read-mapping)
+  - [10. Getting coverage and detection information from bam files, and filtering coverages based on detection](#10-getting-coverage-and-detection-information-from-bam-files-and-filtering-coverages-based-on-detection)
+  - [11. Combining gene coverages, taxonomy, and functional annotations into one table for each sample](#11-combining-gene-coverages-taxonomy-and-functional-annotations-into-one-table-for-each-sample)
+  - [12. Combining contig coverages and taxonomy info into one table for each sample](#12-combining-contig-coverages-and-taxonomy-info-into-one-table-for-each-sample)
+  - [13. Generating normalized, gene-level coverage summary tables of KO-annotations and taxonomy across samples](#13-generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
+
 
 ---
 
@@ -39,13 +58,13 @@ Michael D. Lee
 
 ---
 
-# General processing overview with example code  
+# General processing overview with example code
 
 > Exact processing code for the review example dataset is in the [Snakefile here](example-output/processing_info/Snakefile).  
 
 ---
 
-## 1. Raw Data QC  
+## 1. Raw Data QC
 
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
@@ -66,7 +85,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * fastqc.zip (FastQC output data)
 
 
-### Compile Raw Data QC  
+### Compile Raw Data QC
 
 ```
 multiqc -o raw_multiqc_output raw_fastqc_output
