@@ -41,7 +41,7 @@ Michael D. Lee
 
 # General processing overview with example code  
 
-> Exact processing code for the review example dataset is in the [Snakefile here](Assembly-based/example-output/processing_info/Snakefile).  
+> Exact processing code for the review example dataset is in the [Snakefile here](example-output/processing_info/Snakefile).  
 
 ---
 
