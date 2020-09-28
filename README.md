@@ -3,5 +3,6 @@ This repository holds [GeneLab](https://genelab-data.ndc.nasa.gov/genelab/projec
 
 [Amplicon](Amplicon)  
 [Metagenomics](Metagenomics)
-  * [Assembly-based processing](Metagenomics/Assembly-based)
-  * [Read-based processing](Metagenomics/Read-Based_Processing)
+  * [Illumina](Metagenomics/Illumina)
+  * [Assembly-based processing (deprecated)](Metagenomics/Assembly-based)
+  * [Read-based processing (deprecated)](Metagenomics/Read-Based_Processing)
