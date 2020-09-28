@@ -107,6 +107,11 @@ num_threads = 15
     # passed to KOFamScan and CAT
 num_cpus = 15
 
+  # max memory allowed, passed to megahit assembler
+    # either by proportion of available on system, e.g. 0.5
+    # or by absolute value in bytes, e.g. 100e9 would be 100 GB
+max_mem = 0.5
+
   # getting KOFamScan ref directory location (see General Info above)
 KO_DIR = os.environ.get("KO_DIR")
 
@@ -535,13 +540,11 @@ rule assemble:
         R2 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R2_suffix
     output:
         assemblies_dir + "{ID}-assembly.fasta"
-    params:
-        num_threads
     log:
         assemblies_dir + "{ID}-assembly.log"
     shell:
         """
-        megahit -1 {input.R1} -2 {input.R1} -m 500 -t {params} -o {assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
+        megahit -1 {input.R1} -2 {input.R1} -m {max_mem} -t {num_threads} -o {assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
         bit-rename-fasta-headers -i {assemblies_dir}{wildcards.ID}-megahit-out/final.contigs.fa -w c_{wildcards.ID} -o {output}
 
         rm -rf {assemblies_dir}{wildcards.ID}-megahit-out/
