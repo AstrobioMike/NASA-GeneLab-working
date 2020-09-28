@@ -51,12 +51,13 @@ This variable can be permanentily added to the conda environment like noted abov
     # then deactivate and reactivate conda environment for it to take effect
 
 # humann3 and metaphlan3 databases downloaded with the following:
-# humann3_databases --download chocophlan full
-# humann3_databases --download uniref uniref90_diamond
-# humann3_databases --download utility_mapping full
+# humann3_databases --download chocophlan full <location>
+# humann3_databases --download uniref uniref90_ec_filtered_diamond <location>
+# humann3_databases --download utility_mapping full <location>
 # metaphlan --install
 
-Again, any not put in the default locations the programs are searching can be added to the conda environment like shown above.
+The humann3 db locations are automatically tracked by the program, if not putting metaphlan in the default location, 
+it can be added to the conda environment like shown above.
 """
 
 ########################################
@@ -184,7 +185,7 @@ rule run_humann3:
     shell:
         """
         cat {input.R1} {input.R1} > {params.combined_reads}
-        humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db {MPA_DIR} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" > /dev/null 2>&1
+        humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db {MPA_DIR} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
         rm {params.combined_reads}
         """
 

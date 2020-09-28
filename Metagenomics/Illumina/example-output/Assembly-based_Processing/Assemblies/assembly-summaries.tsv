@@ -1,0 +1,20 @@
+Assembly	5492_S3-assembly	5501_S5-assembly
+Total contigs	25715	24626
+Total length	37491400	32058468
+Ambiguous characters	0	0
+GC content	65.74	65.91
+Maximum contig length	60642	46880
+Minimum contig length	500	500
+N50	2025	1527
+N75	901	775
+N90	617	587
+L50	4079	3744
+L75	11315	11525
+L90	18933	18696
+Num. contigs >= 100	25715	24626
+Num. contigs >= 500	25715	24626
+Num. contigs >= 1000	9877	7353
+Num. contigs >= 5000	1029	870
+Num. contigs >= 10000	272	316
+Num. contigs >= 50000	3	0
+Num. contigs >= 100000	0	0

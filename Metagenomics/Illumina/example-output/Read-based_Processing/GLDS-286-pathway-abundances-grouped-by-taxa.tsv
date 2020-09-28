@@ -1,0 +1,754 @@
+# Pathway	5492_S3_Abundance	5501_S5_Abundance
+UNINTEGRATED|g__Acidovorax.s__Acidovorax_avenae	802933.2163660611	2000349.0467930161
+UNINTEGRATED|g__Caulobacter.s__Caulobacter_sp_774	530898.5178958919	1159451.7625363534
+UNINTEGRATED|g__Massilia.s__Massilia_sp_BSC265	878110.6820685883	0
+UNINTEGRATED|g__Massilia.s__Massilia_sp_LC238	3683079.5792029095	2572494.3326583491
+UNINTEGRATED|g__Sphingobium.s__Sphingobium_yanoikuyae	43944.1776595888	98746.3402988460
+UNINTEGRATED|unclassified	195268.1051072056	263448.3314311189
+1CMET2-PWY: N10-formyl-tetrahydrofolate biosynthesis|g__Acidovorax.s__Acidovorax_avenae	298.2122927948	798.0710632016
+1CMET2-PWY: N10-formyl-tetrahydrofolate biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	301.6022271191	585.4210311142
+1CMET2-PWY: N10-formyl-tetrahydrofolate biosynthesis|g__Massilia.s__Massilia_sp_LC238	2491.2245293501	1925.4821880635
+1CMET2-PWY: N10-formyl-tetrahydrofolate biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	0	35.3017628338
+1CMET2-PWY: N10-formyl-tetrahydrofolate biosynthesis|unclassified	642.3833443668	803.7911115894
+ANAEROFRUCAT-PWY: homolactic fermentation|unclassified	261.9706395908	411.8504491475
+ANAGLYCOLYSIS-PWY: glycolysis III (from glucose)|g__Caulobacter.s__Caulobacter_sp_774	253.5466388509	512.6265617011
+ANAGLYCOLYSIS-PWY: glycolysis III (from glucose)|unclassified	605.1314751158	650.4767947790
+ARG+POLYAMINE-SYN: superpathway of arginine and polyamine biosynthesis|unclassified	188.9739710440	269.2099760887
+ARGININE-SYN4-PWY: L-ornithine de novo  biosynthesis|unclassified	361.2915220722	83.0305937997
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|g__Acidovorax.s__Acidovorax_avenae	1032.4927753001	2282.9294963418
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|g__Caulobacter.s__Caulobacter_sp_774	274.4887286495	578.8175625741
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|g__Massilia.s__Massilia_sp_BSC265	1401.0399517680	0
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|g__Massilia.s__Massilia_sp_LC238	2927.0569512427	2647.3020813791
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|g__Sphingobium.s__Sphingobium_yanoikuyae	34.3401459363	58.3544538194
+ARGSYN-PWY: L-arginine biosynthesis I (via L-ornithine)|unclassified	437.4489609709	583.1428704950
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|g__Acidovorax.s__Acidovorax_avenae	1105.4892433728	2511.4991247564
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|g__Caulobacter.s__Caulobacter_sp_774	261.0145264528	525.2377377645
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|g__Massilia.s__Massilia_sp_BSC265	1523.7385593919	0
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|g__Massilia.s__Massilia_sp_LC238	3244.9610535804	2912.6958076551
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|g__Sphingobium.s__Sphingobium_yanoikuyae	33.0922167520	56.7008392993
+ARGSYNBSUB-PWY: L-arginine biosynthesis II (acetyl cycle)|unclassified	499.9064434147	673.3821989516
+ARO-PWY: chorismate biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	303.7732197929	796.8521062919
+ARO-PWY: chorismate biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	272.2822129978	600.8401365039
+ARO-PWY: chorismate biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	534.2471153997	0
+ARO-PWY: chorismate biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2462.2451174246	1754.8334450529
+ARO-PWY: chorismate biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	43.7075752092
+ARO-PWY: chorismate biosynthesis I|unclassified	861.3527080219	1318.3942336687
+ASPASN-PWY: superpathway of L-aspartate and L-asparagine biosynthesis|unclassified	92.0627979485	413.6333770986
+AST-PWY: L-arginine degradation II (AST pathway)|unclassified	282.9479266499	328.7604168376
+BIOTIN-BIOSYNTHESIS-PWY: biotin biosynthesis I|unclassified	684.1843470212	929.0880157494
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1450.6437426147	3171.8659629475
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	345.3772764008	678.0688146063
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1172.0050888584	0
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|g__Massilia.s__Massilia_sp_LC238	3940.8076692876	3163.8859494428
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	38.2722159206	65.8239883285
+BRANCHED-CHAIN-AA-SYN-PWY: superpathway of branched amino acid biosynthesis|unclassified	602.4828546994	871.8979263322
+CALVIN-PWY: Calvin-Benson-Bassham cycle|g__Acidovorax.s__Acidovorax_avenae	694.3109742865	1596.0390136076
+CALVIN-PWY: Calvin-Benson-Bassham cycle|g__Caulobacter.s__Caulobacter_sp_774	268.8848888484	527.8138943150
+CALVIN-PWY: Calvin-Benson-Bassham cycle|unclassified	808.6798669399	633.7855127751
+CATECHOL-ORTHO-CLEAVAGE-PWY: catechol degradation to &beta;-ketoadipate|unclassified	1260.6615010474	633.2773465100
+CITRULBIO-PWY: L-citrulline biosynthesis|g__Acidovorax.s__Acidovorax_avenae	842.7440406451	2183.8609005409
+CITRULBIO-PWY: L-citrulline biosynthesis|unclassified	368.0713582430	489.5304281464
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|g__Acidovorax.s__Acidovorax_avenae	402.4742983905	960.2147518525
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|g__Caulobacter.s__Caulobacter_sp_774	270.2820902636	591.3222816938
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|g__Massilia.s__Massilia_sp_BSC265	478.8212724466	0
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|g__Massilia.s__Massilia_sp_LC238	2610.9842114638	1783.1298552219
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	53.5090136639
+COA-PWY-1: coenzyme A biosynthesis II (mammalian)|unclassified	1256.1543916526	1848.5763269164
+COA-PWY: coenzyme A biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	559.7860736604	1351.2179138514
+COA-PWY: coenzyme A biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	270.2820902636	591.3222816938
+COA-PWY: coenzyme A biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	527.5773833123	0
+COA-PWY: coenzyme A biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2839.9442310390	2038.3563669012
+COA-PWY: coenzyme A biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	61.3655844972
+COA-PWY: coenzyme A biosynthesis I|unclassified	1031.0745756562	1502.5070548595
+COBALSYN-PWY: adenosylcobalamin salvage from cobinamide I|g__Caulobacter.s__Caulobacter_sp_774	196.7880929613	439.5380688526
+COBALSYN-PWY: adenosylcobalamin salvage from cobinamide I|g__Massilia.s__Massilia_sp_BSC265	223.3266945714	0
+COBALSYN-PWY: adenosylcobalamin salvage from cobinamide I|g__Massilia.s__Massilia_sp_LC238	1965.8417634463	1105.8238127565
+COBALSYN-PWY: adenosylcobalamin salvage from cobinamide I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	36.4938252543
+COBALSYN-PWY: adenosylcobalamin salvage from cobinamide I|unclassified	1250.8850899961	1196.1020384612
+COLANSYN-PWY: colanic acid building blocks biosynthesis|unclassified	731.2803498666	1234.2945669948
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|g__Acidovorax.s__Acidovorax_avenae	336.9238481726	885.2381207939
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	274.9595754382	608.4694025694
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|g__Massilia.s__Massilia_sp_BSC265	586.7023639000	0
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|g__Massilia.s__Massilia_sp_LC238	2682.4122322936	1903.7708462803
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	0	45.1825451430
+COMPLETE-ARO-PWY: superpathway of aromatic amino acid biosynthesis|unclassified	908.2659635426	1405.6390682834
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	637.7086902683	1537.5072568538
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	286.9674713362	581.4692865370
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	849.9812785618	0
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2366.8503193243	1960.8227639277
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	54.7154908425
+DAPLYSINESYN-PWY: L-lysine biosynthesis I|unclassified	477.9397080032	648.6299514388
+DENITRIFICATION-PWY: nitrate reduction I (denitrification)|unclassified	167.4309701741	31.7972281160
+DENOVOPURINE2-PWY: superpathway of purine nucleotides de novo biosynthesis II|unclassified	293.5200619374	0
+DTDPRHAMSYN-PWY: dTDP-L-rhamnose biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	670.1856754226	1470.1574407119
+DTDPRHAMSYN-PWY: dTDP-L-rhamnose biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	542.5871835390	1171.3146126484
+DTDPRHAMSYN-PWY: dTDP-L-rhamnose biosynthesis I|g__Massilia.s__Massilia_sp_LC238	1029.4643443070	212.7741325845
+DTDPRHAMSYN-PWY: dTDP-L-rhamnose biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	30.4620715251	65.9667877823
+DTDPRHAMSYN-PWY: dTDP-L-rhamnose biosynthesis I|unclassified	2432.3392540444	2294.8548349604
+FAO-PWY: fatty acid &beta;-oxidation I|g__Acidovorax.s__Acidovorax_avenae	1565.1355753017	3830.2806223827
+FAO-PWY: fatty acid &beta;-oxidation I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	39.5527877025
+FAO-PWY: fatty acid &beta;-oxidation I|unclassified	3175.6024519691	2553.7555136737
+FASYN-ELONG-PWY: fatty acid elongation -- saturated|g__Acidovorax.s__Acidovorax_avenae	1631.1071815642	4329.8870691435
+FASYN-ELONG-PWY: fatty acid elongation -- saturated|g__Caulobacter.s__Caulobacter_sp_774	372.2050442207	818.0125913908
+FASYN-ELONG-PWY: fatty acid elongation -- saturated|unclassified	847.8306458685	1225.9081442201
+FASYN-INITIAL-PWY: superpathway of fatty acid biosynthesis initiation (E. coli)|g__Acidovorax.s__Acidovorax_avenae	786.8500902074	2187.7520723040
+FASYN-INITIAL-PWY: superpathway of fatty acid biosynthesis initiation (E. coli)|g__Caulobacter.s__Caulobacter_sp_774	246.2881752149	486.9795392815
+FASYN-INITIAL-PWY: superpathway of fatty acid biosynthesis initiation (E. coli)|g__Massilia.s__Massilia_sp_BSC265	91.3330108953	0
+FASYN-INITIAL-PWY: superpathway of fatty acid biosynthesis initiation (E. coli)|g__Massilia.s__Massilia_sp_LC238	207.0302286866	243.7922380963
+FASYN-INITIAL-PWY: superpathway of fatty acid biosynthesis initiation (E. coli)|unclassified	748.0121236606	993.1697767588
+FERMENTATION-PWY: mixed acid fermentation|unclassified	0	197.4100294571
+FOLSYN-PWY: superpathway of tetrahydrofolate biosynthesis and salvage|unclassified	179.8314786648	407.6583252463
+GALACTARDEG-PWY: D-galactarate degradation I|unclassified	156.9382756280	191.4002655074
+GALACTUROCAT-PWY: D-galacturonate degradation I|unclassified	0	27.6997673834
+GALLATE-DEGRADATION-I-PWY: gallate degradation II|unclassified	192.5718457895	77.2034889370
+GLUCARDEG-PWY: D-glucarate degradation I|unclassified	159.0546271012	197.0775662733
+GLUCARGALACTSUPER-PWY: superpathway of D-glucarate and D-galactarate degradation|unclassified	156.9382756280	191.4002655074
+GLUCONEO-PWY: gluconeogenesis I|unclassified	132.1094812898	0
+GLUCOSE1PMETAB-PWY: glucose and glucose-1-phosphate degradation|g__Massilia.s__Massilia_sp_BSC265	449.0606527125	0
+GLUCOSE1PMETAB-PWY: glucose and glucose-1-phosphate degradation|g__Massilia.s__Massilia_sp_LC238	1808.0476279048	1288.2578591186
+GLUCOSE1PMETAB-PWY: glucose and glucose-1-phosphate degradation|unclassified	455.7817208129	749.5946640135
+GLUCUROCAT-PWY: superpathway of &beta;-D-glucuronide and D-glucuronate degradation|unclassified	0	28.8336306945
+GLUDEG-I-PWY: GABA shunt|unclassified	334.8823203367	83.9163452797
+GLUTORN-PWY: L-ornithine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	910.2116324478	2246.0567621498
+GLUTORN-PWY: L-ornithine biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	265.3271592090	534.0037282972
+GLUTORN-PWY: L-ornithine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1275.5525426030	0
+GLUTORN-PWY: L-ornithine biosynthesis|g__Massilia.s__Massilia_sp_LC238	2793.1829758307	2338.2137390379
+GLUTORN-PWY: L-ornithine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	25.7968360848	44.5545766794
+GLUTORN-PWY: L-ornithine biosynthesis|unclassified	626.3004664370	766.6396216230
+GLYCOCAT-PWY: glycogen degradation I (bacterial)|unclassified	344.1383822350	490.8036369213
+GLYCOGENSYNTH-PWY: glycogen biosynthesis I (from ADP-D-Glucose)|unclassified	385.1781613249	790.6109497372
+GLYCOLYSIS-E-D: superpathway of glycolysis and Entner-Doudoroff|unclassified	280.9224144472	473.6918703421
+GLYCOLYSIS-TCA-GLYOX-BYPASS: superpathway of glycolysis, pyruvate dehydrogenase, TCA, and glyoxylate bypass|unclassified	338.2603322671	584.5022619799
+GLYCOLYSIS: glycolysis I (from glucose 6-phosphate)|unclassified	448.6842025282	583.4857575451
+GLYOXYLATE-BYPASS: glyoxylate cycle|g__Acidovorax.s__Acidovorax_avenae	800.6058130798	1705.3833289709
+GLYOXYLATE-BYPASS: glyoxylate cycle|g__Caulobacter.s__Caulobacter_sp_774	276.5306354163	520.9767476083
+GLYOXYLATE-BYPASS: glyoxylate cycle|g__Sphingobium.s__Sphingobium_yanoikuyae	32.6061213675	54.7770304174
+GLYOXYLATE-BYPASS: glyoxylate cycle|unclassified	499.1389688121	719.2684485672
+HCAMHPDEG-PWY: 3-phenylpropanoate and 3-(3-hydroxyphenyl)propanoate degradation to 2-oxopent-4-enoate|unclassified	297.0802843259	112.6001868730
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|g__Acidovorax.s__Acidovorax_avenae	575.7782948901	1446.9838558566
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|g__Caulobacter.s__Caulobacter_sp_774	220.9608393422	514.1490152334
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|g__Massilia.s__Massilia_sp_BSC265	1202.3624407808	0
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|g__Massilia.s__Massilia_sp_LC238	2557.8791417168	1919.5698222844
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	42.7924769324
+HEME-BIOSYNTHESIS-II: heme biosynthesis I (aerobic)|unclassified	536.3068192746	961.7594822572
+HISDEG-PWY: L-histidine degradation I|g__Acidovorax.s__Acidovorax_avenae	486.7744792609	1189.1602016288
+HISDEG-PWY: L-histidine degradation I|g__Caulobacter.s__Caulobacter_sp_774	219.3367400262	464.5343143235
+HISDEG-PWY: L-histidine degradation I|g__Massilia.s__Massilia_sp_BSC265	647.6241313734	0
+HISDEG-PWY: L-histidine degradation I|g__Massilia.s__Massilia_sp_LC238	2050.2085121641	1542.4672749424
+HISDEG-PWY: L-histidine degradation I|g__Sphingobium.s__Sphingobium_yanoikuyae	20.9191035888	38.6634061223
+HISDEG-PWY: L-histidine degradation I|unclassified	601.0620380191	576.0061124831
+HISTSYN-PWY: L-histidine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1027.3872233733	2359.8499641325
+HISTSYN-PWY: L-histidine biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	261.1803217618	568.9926703325
+HISTSYN-PWY: L-histidine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1306.9330890862	0
+HISTSYN-PWY: L-histidine biosynthesis|g__Massilia.s__Massilia_sp_LC238	2566.8795059987	2726.1788315554
+HISTSYN-PWY: L-histidine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	0	47.5700025362
+HISTSYN-PWY: L-histidine biosynthesis|unclassified	679.6919328961	770.2771313390
+HOMOSER-METSYN-PWY: L-methionine biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	564.2119603441	0
+HOMOSER-METSYN-PWY: L-methionine biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2568.4131045289	1468.1520068813
+HOMOSER-METSYN-PWY: L-methionine biosynthesis I|unclassified	391.8052023072	444.4886788642
+HSERMETANA-PWY: L-methionine biosynthesis III|g__Caulobacter.s__Caulobacter_sp_774	300.1750876739	630.2686524291
+HSERMETANA-PWY: L-methionine biosynthesis III|g__Massilia.s__Massilia_sp_BSC265	489.2038907058	0
+HSERMETANA-PWY: L-methionine biosynthesis III|g__Massilia.s__Massilia_sp_LC238	2305.2161372126	1286.1142124286
+HSERMETANA-PWY: L-methionine biosynthesis III|unclassified	735.4938403024	932.7994881272
+ILEUDEG-PWY: L-isoleucine degradation I|g__Acidovorax.s__Acidovorax_avenae	842.6066081484	2221.8503443285
+ILEUDEG-PWY: L-isoleucine degradation I|g__Sphingobium.s__Sphingobium_yanoikuyae	28.3095219264	42.2123869086
+ILEUDEG-PWY: L-isoleucine degradation I|unclassified	686.7316253027	1366.6707616937
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|g__Acidovorax.s__Acidovorax_avenae	1513.9516442880	3315.7862948483
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|g__Caulobacter.s__Caulobacter_sp_774	374.1529052921	734.7689725053
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|g__Massilia.s__Massilia_sp_BSC265	2345.6670757441	0
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|g__Massilia.s__Massilia_sp_LC238	4183.5750838201	3795.2829086963
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|g__Sphingobium.s__Sphingobium_yanoikuyae	40.1295330146	77.5479226545
+ILEUSYN-PWY: L-isoleucine biosynthesis I (from threonine)|unclassified	724.2917795264	990.2656424728
+KETOGLUCONMET-PWY: ketogluconate metabolism|unclassified	43.8658688063	0
+LEU-DEG2-PWY: L-leucine degradation I|g__Acidovorax.s__Acidovorax_avenae	753.8784718488	1892.2656430690
+LEU-DEG2-PWY: L-leucine degradation I|unclassified	393.2480535488	616.9469633335
+LIPASYN-PWY: phospholipases|unclassified	0	62.3135677870
+MET-SAM-PWY: superpathway of S-adenosyl-L-methionine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	732.3350504240	0
+MET-SAM-PWY: superpathway of S-adenosyl-L-methionine biosynthesis|g__Massilia.s__Massilia_sp_LC238	2728.2644151540	1748.7851455580
+MET-SAM-PWY: superpathway of S-adenosyl-L-methionine biosynthesis|unclassified	386.9780758212	511.1605062518
+METHYLGALLATE-DEGRADATION-PWY: methylgallate degradation|unclassified	225.7703910770	93.1091793135
+METSYN-PWY: L-homoserine and L-methionine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	759.6197443883	0
+METSYN-PWY: L-homoserine and L-methionine biosynthesis|g__Massilia.s__Massilia_sp_LC238	2739.1558223287	1805.6504872448
+METSYN-PWY: L-homoserine and L-methionine biosynthesis|unclassified	425.1465716428	552.1551794514
+NAD-BIOSYNTHESIS-II: NAD salvage pathway II|unclassified	82.2066343986	0
+NAGLIPASYN-PWY: lipid IVA biosynthesis|g__Massilia.s__Massilia_sp_BSC265	271.2238181448	0
+NAGLIPASYN-PWY: lipid IVA biosynthesis|g__Massilia.s__Massilia_sp_LC238	1965.5361700335	1391.3098835709
+NAGLIPASYN-PWY: lipid IVA biosynthesis|unclassified	660.4731297659	890.2975426247
+NONMEVIPP-PWY: methylerythritol phosphate pathway I|unclassified	179.9372885135	296.9814182112
+NONOXIPENT-PWY: pentose phosphate pathway (non-oxidative branch)|g__Acidovorax.s__Acidovorax_avenae	1248.2547799113	2931.8450106194
+NONOXIPENT-PWY: pentose phosphate pathway (non-oxidative branch)|g__Caulobacter.s__Caulobacter_sp_774	293.1397454136	569.7337003923
+NONOXIPENT-PWY: pentose phosphate pathway (non-oxidative branch)|unclassified	772.3968318251	519.8972982922
+OANTIGEN-PWY: O-antigen building blocks biosynthesis (E. coli)|g__Acidovorax.s__Acidovorax_avenae	477.8278604632	1137.7538938836
+OANTIGEN-PWY: O-antigen building blocks biosynthesis (E. coli)|g__Caulobacter.s__Caulobacter_sp_774	312.3127085219	615.2238988362
+OANTIGEN-PWY: O-antigen building blocks biosynthesis (E. coli)|g__Massilia.s__Massilia_sp_LC238	1300.6233025193	314.3119046866
+OANTIGEN-PWY: O-antigen building blocks biosynthesis (E. coli)|g__Sphingobium.s__Sphingobium_yanoikuyae	23.4384688804	53.3572784765
+OANTIGEN-PWY: O-antigen building blocks biosynthesis (E. coli)|unclassified	968.6783252240	1270.5399564527
+P101-PWY: ectoine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	50.9488367553	76.4825795195
+P101-PWY: ectoine biosynthesis|unclassified	28.4328534304	44.0703332852
+P105-PWY: TCA cycle IV (2-oxoglutarate decarboxylase)|unclassified	573.2148953120	584.2353933038
+P108-PWY: pyruvate fermentation to propanoate I|unclassified	238.2177936058	307.6690862970
+P124-PWY: Bifidobacterium shunt|unclassified	172.3255887543	0
+P161-PWY: acetylene degradation|unclassified	986.9274252024	457.0018308917
+P184-PWY: protocatechuate degradation I (meta-cleavage pathway)|unclassified	251.6267153782	0
+P281-PWY: 3-phenylpropanoate degradation|unclassified	121.3469015762	0
+P4-PWY: superpathway of L-lysine, L-threonine and L-methionine biosynthesis I|unclassified	509.6048331311	658.3380789110
+PANTO-PWY: phosphopantothenate biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	405.7494758456	889.5386877982
+PANTO-PWY: phosphopantothenate biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	218.2121334515	490.7410106057
+PANTO-PWY: phosphopantothenate biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	622.4470388066	0
+PANTO-PWY: phosphopantothenate biosynthesis I|g__Massilia.s__Massilia_sp_LC238	1631.9742914494	1366.8989695882
+PANTO-PWY: phosphopantothenate biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	26.2119269417	26.8222879510
+PANTO-PWY: phosphopantothenate biosynthesis I|unclassified	925.8287687455	1701.0883060580
+PANTOSYN-PWY: pantothenate and coenzyme A biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	0	648.3214587538
+PANTOSYN-PWY: pantothenate and coenzyme A biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	248.3214638985	548.5363206620
+PANTOSYN-PWY: pantothenate and coenzyme A biosynthesis I|unclassified	946.0080807292	1529.2971464501
+PENTOSE-P-PWY: pentose phosphate pathway|unclassified	171.3589552866	175.2792472224
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|g__Acidovorax.s__Acidovorax_avenae	658.3030328415	1619.4054528919
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|g__Caulobacter.s__Caulobacter_sp_774	226.5998999896	508.1433776842
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_BSC265	701.6789935180	0
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_LC238	1999.7376313133	1552.4182692542
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|g__Sphingobium.s__Sphingobium_yanoikuyae	22.0960809490	51.0405516416
+PEPTIDOGLYCANSYN-PWY: peptidoglycan biosynthesis I (meso-diaminopimelate containing)|unclassified	883.4154259752	1264.0506283376
+PHOSLIPSYN-PWY: superpathway of phospholipid biosynthesis I (bacteria)|unclassified	241.5213101090	785.5295240202
+POLYAMINSYN3-PWY: superpathway of polyamine biosynthesis II|unclassified	0	72.1410965363
+POLYAMSYN-PWY: superpathway of polyamine biosynthesis I|unclassified	181.4379920514	175.4560447600
+POLYISOPRENSYN-PWY: polyisoprenoid biosynthesis (E. coli)|unclassified	144.8466849066	192.6741062865
+PPGPPMET-PWY: ppGpp biosynthesis|unclassified	159.5366425941	389.6095531699
+PROTOCATECHUATE-ORTHO-CLEAVAGE-PWY: protocatechuate degradation II (ortho-cleavage pathway)|unclassified	171.2927886659	326.1559583313
+PWY-1042: glycolysis IV (plant cytosol)|unclassified	360.2528110381	455.8413275453
+PWY-1269: CMP-3-deoxy-D-manno-octulosonate biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	576.7807502245	1261.4964813912
+PWY-1269: CMP-3-deoxy-D-manno-octulosonate biosynthesis I|unclassified	1093.3121757575	1567.7666760795
+PWY-1361: benzoyl-CoA degradation I (aerobic)|unclassified	75.2912939292	96.7452722334
+PWY-1501: mandelate degradation I|unclassified	108.9387406835	0
+PWY-1861: formaldehyde assimilation II (RuMP Cycle)|unclassified	82.3464107169	0
+PWY-241: C4 photosynthetic carbon assimilation cycle, NADP-ME type|g__Caulobacter.s__Caulobacter_sp_774	301.0372357934	574.4746935137
+PWY-241: C4 photosynthetic carbon assimilation cycle, NADP-ME type|g__Sphingobium.s__Sphingobium_yanoikuyae	28.0214744866	60.3017977686
+PWY-241: C4 photosynthetic carbon assimilation cycle, NADP-ME type|unclassified	244.8361068094	329.3221153817
+PWY-2723: trehalose degradation V|g__Massilia.s__Massilia_sp_BSC265	414.6165428053	0
+PWY-2723: trehalose degradation V|g__Massilia.s__Massilia_sp_LC238	2295.2629477186	1722.5869876183
+PWY-2723: trehalose degradation V|unclassified	604.0396949769	1064.2064042034
+PWY-2941: L-lysine biosynthesis II|unclassified	449.4638114395	379.0045951461
+PWY-2942: L-lysine biosynthesis III|g__Acidovorax.s__Acidovorax_avenae	733.7280899155	1572.3635340207
+PWY-2942: L-lysine biosynthesis III|g__Caulobacter.s__Caulobacter_sp_774	289.9508755986	616.6854631472
+PWY-2942: L-lysine biosynthesis III|g__Massilia.s__Massilia_sp_BSC265	858.7555470599	0
+PWY-2942: L-lysine biosynthesis III|g__Massilia.s__Massilia_sp_LC238	2668.1466298887	2189.6953150059
+PWY-2942: L-lysine biosynthesis III|g__Sphingobium.s__Sphingobium_yanoikuyae	25.0177732197	60.4881654370
+PWY-2942: L-lysine biosynthesis III|unclassified	438.8900179327	666.9400750687
+PWY-3001: superpathway of L-isoleucine biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	811.4191037108	1999.7040643265
+PWY-3001: superpathway of L-isoleucine biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	303.1897186370	617.4987330095
+PWY-3001: superpathway of L-isoleucine biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	26.2845084486	62.2840693938
+PWY-3001: superpathway of L-isoleucine biosynthesis I|unclassified	660.0991524855	852.0174532727
+PWY-3781: aerobic respiration I (cytochrome c)|g__Acidovorax.s__Acidovorax_avenae	2729.8759632690	5415.3307255541
+PWY-3781: aerobic respiration I (cytochrome c)|g__Caulobacter.s__Caulobacter_sp_774	429.6489784376	758.2183945137
+PWY-3781: aerobic respiration I (cytochrome c)|g__Massilia.s__Massilia_sp_BSC265	1573.8252064203	0
+PWY-3781: aerobic respiration I (cytochrome c)|g__Massilia.s__Massilia_sp_LC238	7028.7479217911	5253.2872927174
+PWY-3781: aerobic respiration I (cytochrome c)|g__Sphingobium.s__Sphingobium_yanoikuyae	56.9603334906	58.6394064273
+PWY-3781: aerobic respiration I (cytochrome c)|unclassified	1007.1107471984	1566.7872275495
+PWY-3841: folate transformations II|g__Acidovorax.s__Acidovorax_avenae	364.6273335673	959.0906456538
+PWY-3841: folate transformations II|g__Caulobacter.s__Caulobacter_sp_774	276.4997355095	552.8744589532
+PWY-3841: folate transformations II|g__Massilia.s__Massilia_sp_LC238	3555.9624653372	2550.0009079647
+PWY-3841: folate transformations II|g__Sphingobium.s__Sphingobium_yanoikuyae	0	35.1369168579
+PWY-3841: folate transformations II|unclassified	490.7534133015	636.5793169042
+PWY-3941: &beta;-alanine biosynthesis II|unclassified	219.7174866281	336.8438722376
+PWY-4221: pantothenate and coenzyme A biosynthesis II (plants)|unclassified	419.1217482868	653.4201266505
+PWY-4242: pantothenate and coenzyme A biosynthesis III|g__Acidovorax.s__Acidovorax_avenae	236.7660333102	596.8873074779
+PWY-4242: pantothenate and coenzyme A biosynthesis III|g__Caulobacter.s__Caulobacter_sp_774	261.4112797694	551.0921136200
+PWY-4242: pantothenate and coenzyme A biosynthesis III|g__Massilia.s__Massilia_sp_BSC265	437.5837160969	0
+PWY-4242: pantothenate and coenzyme A biosynthesis III|g__Massilia.s__Massilia_sp_LC238	2116.6086443944	1553.8791180712
+PWY-4242: pantothenate and coenzyme A biosynthesis III|g__Sphingobium.s__Sphingobium_yanoikuyae	0	35.7818614773
+PWY-4242: pantothenate and coenzyme A biosynthesis III|unclassified	1008.8269717922	1484.0151559018
+PWY-4702: phytate degradation I|unclassified	18.2926829268	48.2587345134
+PWY-4981: L-proline biosynthesis II (from arginine)|unclassified	133.8435127255	0
+PWY-4984: urea cycle|g__Acidovorax.s__Acidovorax_avenae	931.9799642241	2193.2943829436
+PWY-4984: urea cycle|unclassified	144.9060549357	362.8116492442
+PWY-5005: biotin biosynthesis II|unclassified	167.9222919397	203.2502308185
+PWY-5022: 4-aminobutanoate degradation V|unclassified	548.5648801780	570.0880157152
+PWY-5028: L-histidine degradation II|g__Acidovorax.s__Acidovorax_avenae	464.8080775225	1105.9203195558
+PWY-5028: L-histidine degradation II|unclassified	543.8600323487	324.1065346781
+PWY-5097: L-lysine biosynthesis VI|g__Acidovorax.s__Acidovorax_avenae	710.5020288691	1635.7806609713
+PWY-5097: L-lysine biosynthesis VI|g__Caulobacter.s__Caulobacter_sp_774	282.1790107481	615.8026932852
+PWY-5097: L-lysine biosynthesis VI|g__Massilia.s__Massilia_sp_BSC265	761.7659951249	0
+PWY-5097: L-lysine biosynthesis VI|g__Massilia.s__Massilia_sp_LC238	2541.8860669060	1934.6346904787
+PWY-5097: L-lysine biosynthesis VI|g__Sphingobium.s__Sphingobium_yanoikuyae	0	59.0747738555
+PWY-5097: L-lysine biosynthesis VI|unclassified	529.0790795896	725.8061036244
+PWY-5100: pyruvate fermentation to acetate and lactate II|unclassified	116.7447980434	180.9499143086
+PWY-5103: L-isoleucine biosynthesis III|g__Acidovorax.s__Acidovorax_avenae	1321.2103137835	2968.5351653090
+PWY-5103: L-isoleucine biosynthesis III|g__Caulobacter.s__Caulobacter_sp_774	345.3772764008	669.8423218054
+PWY-5103: L-isoleucine biosynthesis III|g__Massilia.s__Massilia_sp_BSC265	1005.9139511973	0
+PWY-5103: L-isoleucine biosynthesis III|g__Massilia.s__Massilia_sp_LC238	3750.4355586276	2985.5412576008
+PWY-5103: L-isoleucine biosynthesis III|g__Sphingobium.s__Sphingobium_yanoikuyae	37.9166756365	65.8239883285
+PWY-5103: L-isoleucine biosynthesis III|unclassified	536.0588501199	737.4410321136
+PWY-5104: L-isoleucine biosynthesis IV|g__Acidovorax.s__Acidovorax_avenae	558.9968948373	1283.8077776537
+PWY-5104: L-isoleucine biosynthesis IV|unclassified	222.6779376029	547.0569431454
+PWY-5121: superpathway of geranylgeranyl diphosphate biosynthesis II (via MEP)|unclassified	147.9120855880	230.8600682402
+PWY-5136: fatty acid &beta;-oxidation II (peroxisome)|g__Acidovorax.s__Acidovorax_avenae	1495.0560462227	3655.0933139569
+PWY-5136: fatty acid &beta;-oxidation II (peroxisome)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	36.0380210678
+PWY-5136: fatty acid &beta;-oxidation II (peroxisome)|unclassified	3007.9700986528	2442.8973823514
+PWY-5138: unsaturated, even numbered fatty acid &beta;-oxidation|g__Acidovorax.s__Acidovorax_avenae	1673.1440609283	4089.7242913232
+PWY-5138: unsaturated, even numbered fatty acid &beta;-oxidation|unclassified	1309.2456192065	1111.6721488899
+PWY-5154: L-arginine biosynthesis III (via N-acetyl-L-citrulline)|g__Acidovorax.s__Acidovorax_avenae	972.2863154655	2193.4663687179
+PWY-5154: L-arginine biosynthesis III (via N-acetyl-L-citrulline)|g__Caulobacter.s__Caulobacter_sp_774	256.3902041457	510.9244744165
+PWY-5154: L-arginine biosynthesis III (via N-acetyl-L-citrulline)|unclassified	162.8753514202	450.5268295215
+PWY-5173: superpathway of acetyl-CoA biosynthesis|g__Acidovorax.s__Acidovorax_avenae	774.6123357355	1960.9191081797
+PWY-5173: superpathway of acetyl-CoA biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1229.9254320430	0
+PWY-5173: superpathway of acetyl-CoA biosynthesis|g__Massilia.s__Massilia_sp_LC238	2971.0038617671	2828.7839488094
+PWY-5173: superpathway of acetyl-CoA biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	23.6757822774	96.2531988531
+PWY-5173: superpathway of acetyl-CoA biosynthesis|unclassified	522.0472420464	786.6802617343
+PWY-5178: toluene degradation IV (aerobic) (via catechol)|unclassified	84.5943240452	0
+PWY-5180: toluene degradation I (aerobic) (via o-cresol)|unclassified	913.1592979062	0
+PWY-5181: toluene degradation III (aerobic) (via p-cresol)|unclassified	167.7365278141	111.9179307581
+PWY-5182: toluene degradation II (aerobic) (via 4-methylcatechol)|unclassified	913.1592979062	0
+PWY-5188: tetrapyrrole biosynthesis I (from glutamate)|g__Acidovorax.s__Acidovorax_avenae	580.6163778206	1256.3927577544
+PWY-5188: tetrapyrrole biosynthesis I (from glutamate)|g__Massilia.s__Massilia_sp_LC238	2097.2386459101	1743.3589716767
+PWY-5188: tetrapyrrole biosynthesis I (from glutamate)|unclassified	633.4623437995	867.9923762610
+PWY-5189: tetrapyrrole biosynthesis II (from glycine)|g__Caulobacter.s__Caulobacter_sp_774	219.8661287023	484.6580431843
+PWY-5189: tetrapyrrole biosynthesis II (from glycine)|g__Massilia.s__Massilia_sp_LC238	1742.3484179312	1181.6675895288
+PWY-5189: tetrapyrrole biosynthesis II (from glycine)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	54.0888895567
+PWY-5189: tetrapyrrole biosynthesis II (from glycine)|unclassified	668.6451252340	790.8898697679
+PWY-5304: superpathway of sulfur oxidation (Acidianus ambivalens)|unclassified	96.8330784440	61.2743535267
+PWY-5345: superpathway of L-methionine biosynthesis (by sulfhydrylation)|unclassified	536.0400370531	752.4301675539
+PWY-5347: superpathway of L-methionine biosynthesis (transsulfuration)|unclassified	468.9423743668	597.0422733915
+PWY-5384: sucrose degradation IV (sucrose phosphorylase)|unclassified	461.8808019192	813.9115800605
+PWY-5415: catechol degradation I (meta-cleavage pathway)|unclassified	64.2921853719	0
+PWY-5417: catechol degradation III (ortho-cleavage pathway)|unclassified	1253.1091782125	603.1319002816
+PWY-5431: aromatic compounds degradation via &beta;-ketoadipate|unclassified	1253.1091782125	603.1319002816
+PWY-5464: superpathway of cytosolic glycolysis (plants), pyruvate dehydrogenase and TCA cycle|unclassified	364.3742394357	0
+PWY-5484: glycolysis II (from fructose 6-phosphate)|unclassified	368.0492017115	488.6893887379
+PWY-5505: L-glutamate and L-glutamine biosynthesis|unclassified	229.9676925665	0
+PWY-5508: adenosylcobalamin biosynthesis from cobyrinate a,c-diamide II|unclassified	0	65.6126099393
+PWY-5509: adenosylcobalamin biosynthesis from cobyrinate a,c-diamide I|unclassified	0	65.0924423327
+PWY-5534: propylene degradation|unclassified	39.4134461342	185.9689607295
+PWY-561: superpathway of glyoxylate cycle and fatty acid degradation|unclassified	242.1409155821	141.7224186345
+PWY-5659: GDP-mannose biosynthesis|g__Massilia.s__Massilia_sp_LC238	1079.7563973851	1081.7585592710
+PWY-5659: GDP-mannose biosynthesis|unclassified	820.8790612102	1377.5408103229
+PWY-5667: CDP-diacylglycerol biosynthesis I|unclassified	202.5013687442	684.5860090104
+PWY-5675: nitrate reduction V (assimilatory)|unclassified	823.2179506852	714.0029260671
+PWY-5676: acetyl-CoA fermentation to butanoate II|unclassified	315.7500135806	364.8177162228
+PWY-5686: UMP biosynthesis|g__Acidovorax.s__Acidovorax_avenae	475.8071567335	1184.1879332886
+PWY-5686: UMP biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	346.9301296465	676.8111296466
+PWY-5686: UMP biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1425.1619120094	0
+PWY-5686: UMP biosynthesis|g__Massilia.s__Massilia_sp_LC238	3416.5816106587	2704.5230744117
+PWY-5686: UMP biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	21.7864728205	50.0120158167
+PWY-5686: UMP biosynthesis|unclassified	766.5636706448	1380.4677152631
+PWY-5690: TCA cycle II (plants and fungi)|unclassified	488.1603676782	444.0214854391
+PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation|g__Acidovorax.s__Acidovorax_avenae	1503.7198324865	3364.9343421087
+PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation|g__Massilia.s__Massilia_sp_BSC265	866.7194359006	0
+PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation|g__Massilia.s__Massilia_sp_LC238	2386.2530056758	2015.7238146242
+PWY-5695: urate biosynthesis/inosine 5'-phosphate degradation|unclassified	1317.4961843223	1933.3459566542
+PWY-5705: allantoin degradation to glyoxylate III|unclassified	0	156.6704690640
+PWY-5723: Rubisco shunt|unclassified	368.8029529236	171.2066597868
+PWY-5747: 2-methylcitrate cycle II|unclassified	297.8694956521	402.0531420488
+PWY-5791: 1,4-dihydroxy-2-naphthoate biosynthesis II (plants)|unclassified	73.9146572814	0
+PWY-5837: 1,4-dihydroxy-2-naphthoate biosynthesis I|unclassified	73.9146572814	0
+PWY-5838: superpathway of menaquinol-8 biosynthesis I|unclassified	115.9417762240	0
+PWY-5840: superpathway of menaquinol-7 biosynthesis|unclassified	85.8000287555	0
+PWY-5845: superpathway of menaquinol-9 biosynthesis|unclassified	85.8000287555	0
+PWY-5850: superpathway of menaquinol-6 biosynthesis I|unclassified	85.8000287555	0
+PWY-5855: ubiquinol-7 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_BSC265	715.0309148340	0
+PWY-5855: ubiquinol-7 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_LC238	2558.1892156346	2099.4890014298
+PWY-5855: ubiquinol-7 biosynthesis (prokaryotic)|unclassified	614.5740668508	1130.1159447830
+PWY-5856: ubiquinol-9 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_BSC265	715.0309148340	0
+PWY-5856: ubiquinol-9 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_LC238	2558.1892156346	2099.4890014298
+PWY-5856: ubiquinol-9 biosynthesis (prokaryotic)|unclassified	614.5740668508	1130.1159447830
+PWY-5857: ubiquinol-10 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_BSC265	715.0309148340	0
+PWY-5857: ubiquinol-10 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_LC238	2558.1892156346	2099.4890014298
+PWY-5857: ubiquinol-10 biosynthesis (prokaryotic)|unclassified	614.5740668508	1130.1159447830
+PWY-5860: superpathway of demethylmenaquinol-6 biosynthesis I|unclassified	57.6252695635	0
+PWY-5861: superpathway of demethylmenaquinol-8 biosynthesis|unclassified	78.0730656791	0
+PWY-5862: superpathway of demethylmenaquinol-9 biosynthesis|unclassified	57.6252695635	0
+PWY-5863: superpathway of phylloquinol biosynthesis|unclassified	82.5750806887	0
+PWY-5896: superpathway of menaquinol-10 biosynthesis|unclassified	85.8000287555	0
+PWY-5897: superpathway of menaquinol-11 biosynthesis|unclassified	109.3011106982	0
+PWY-5898: superpathway of menaquinol-12 biosynthesis|unclassified	109.3011106982	0
+PWY-5899: superpathway of menaquinol-13 biosynthesis|unclassified	109.3011106982	0
+PWY-5913: TCA cycle VI (obligate autotrophs)|unclassified	868.9119893666	1235.7783072122
+PWY-5918: superpathay of heme biosynthesis from glutamate|g__Massilia.s__Massilia_sp_LC238	2171.3122572007	1550.3213435060
+PWY-5918: superpathay of heme biosynthesis from glutamate|unclassified	540.4449295881	849.9786948676
+PWY-5920: superpathway of heme biosynthesis from glycine|unclassified	193.1837317337	503.8380432417
+PWY-5941: glycogen degradation II (eukaryotic)|unclassified	212.9519014455	389.1642902715
+PWY-5973: cis-vaccenate biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1179.1682256376	3126.8581821424
+PWY-5973: cis-vaccenate biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	322.4641064469	664.3865443048
+PWY-5973: cis-vaccenate biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	19.0390656760	76.4108877111
+PWY-5973: cis-vaccenate biosynthesis|unclassified	601.6982084119	846.9484080669
+PWY-5989: stearate biosynthesis II (bacteria and plants)|g__Acidovorax.s__Acidovorax_avenae	1529.6602913838	4124.6602530294
+PWY-5989: stearate biosynthesis II (bacteria and plants)|unclassified	747.9393815037	1103.9093276345
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	628.2595423098	1767.7096441023
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	287.5611054451	582.7463348323
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	967.4443064412	0
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2221.9187368207	2007.0480856136
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	38.5994984139	72.1200541476
+PWY-6121: 5-aminoimidazole ribonucleotide biosynthesis I|unclassified	536.3581473808	873.8033848530
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	690.4193338620	1857.2924758307
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	317.6934753637	659.1308303299
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1109.8846012926	0
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Massilia.s__Massilia_sp_LC238	2434.3742184936	2317.8006159120
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	39.5640811101	90.7355116180
+PWY-6122: 5-aminoimidazole ribonucleotide biosynthesis II|unclassified	462.1108781690	752.6296344530
+PWY-6123: inosine-5'-phosphate biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	942.7653692274	1979.9798657043
+PWY-6123: inosine-5'-phosphate biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	248.1393054205	516.9532951542
+PWY-6123: inosine-5'-phosphate biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1083.0122258610	0
+PWY-6123: inosine-5'-phosphate biosynthesis I|g__Massilia.s__Massilia_sp_LC238	3138.2295643614	2613.6483533727
+PWY-6123: inosine-5'-phosphate biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	47.3800888086
+PWY-6123: inosine-5'-phosphate biosynthesis I|unclassified	429.3104924812	639.3498769356
+PWY-6124: inosine-5'-phosphate biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	935.4829998495	2051.6610299592
+PWY-6124: inosine-5'-phosphate biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	250.7890203204	514.4648663917
+PWY-6124: inosine-5'-phosphate biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1070.4324194425	0
+PWY-6124: inosine-5'-phosphate biosynthesis II|g__Massilia.s__Massilia_sp_LC238	3293.5737475153	2702.5000463361
+PWY-6124: inosine-5'-phosphate biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	0	62.1163363409
+PWY-6124: inosine-5'-phosphate biosynthesis II|unclassified	369.8166338054	486.8729347172
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	1187.5355783901	2557.9038636208
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	259.4408651280	589.7206697737
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1321.1116439406	0
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_LC238	2555.5595313470	2757.7727441828
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	31.0562363994	56.8553652670
+PWY-6125: superpathway of guanosine nucleotides de novo biosynthesis II|unclassified	406.0354442527	772.0136846763
+PWY-6126: superpathway of adenosine nucleotides de novo biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	470.3725276668	1147.0520103671
+PWY-6126: superpathway of adenosine nucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1328.4613541016	0
+PWY-6126: superpathway of adenosine nucleotides de novo biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	32.0376761513	65.9838733271
+PWY-6126: superpathway of adenosine nucleotides de novo biosynthesis II|unclassified	459.2990842399	659.1784085517
+PWY-6147: 6-hydroxymethyl-dihydropterin diphosphate biosynthesis I|unclassified	31.0277572677	79.3034741211
+PWY-6151: S-adenosyl-L-methionine cycle I|unclassified	310.9457559014	496.8600201084
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|g__Acidovorax.s__Acidovorax_avenae	321.2987066210	892.3283770062
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|g__Caulobacter.s__Caulobacter_sp_774	260.8049895154	582.0853694615
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|g__Massilia.s__Massilia_sp_BSC265	458.6284071503	0
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|g__Massilia.s__Massilia_sp_LC238	2238.0950141222	1594.6327389282
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|g__Sphingobium.s__Sphingobium_yanoikuyae	0	44.9194078638
+PWY-6163: chorismate biosynthesis from 3-dehydroquinate|unclassified	809.7339116373	1240.3194203108
+PWY-6168: flavin biosynthesis III (fungi)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	53.9806158667
+PWY-6168: flavin biosynthesis III (fungi)|unclassified	622.0514490006	906.4293833746
+PWY-6182: superpathway of salicylate degradation|unclassified	966.1883995352	308.4321640661
+PWY-6185: 4-methylcatechol degradation (ortho cleavage)|g__Acidovorax.s__Acidovorax_avenae	481.0641841346	991.9537416848
+PWY-6185: 4-methylcatechol degradation (ortho cleavage)|unclassified	886.0493392879	270.3216099817
+PWY-622: starch biosynthesis|unclassified	349.5013360880	611.2640692840
+PWY-6270: isoprene biosynthesis I|unclassified	105.1882632170	183.4364575149
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Acidovorax.s__Acidovorax_avenae	690.4193338620	1857.2924758307
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	317.6934753637	659.1308303299
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1109.8846012926	0
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Massilia.s__Massilia_sp_LC238	2434.3742184936	2317.8006159120
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	39.5640811101	90.7355116180
+PWY-6277: superpathway of 5-aminoimidazole ribonucleotide biosynthesis|unclassified	462.1108781690	752.6296344530
+PWY-6282: palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)|g__Acidovorax.s__Acidovorax_avenae	1464.7178292371	3944.1141617684
+PWY-6282: palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)|g__Caulobacter.s__Caulobacter_sp_774	354.7270941999	783.6231517408
+PWY-6282: palmitoleate biosynthesis I (from (5Z)-dodec-5-enoate)|unclassified	716.8691933803	1054.6996081775
+PWY-6305: putrescine biosynthesis IV|unclassified	128.8499648500	108.4845611790
+PWY-6307: L-tryptophan degradation X (mammalian, via tryptamine)|unclassified	56.9675376024	0
+PWY-6309: L-tryptophan degradation XI (mammalian, via kynurenine)|g__Acidovorax.s__Acidovorax_avenae	657.9253007736	1567.7944626506
+PWY-6313: serotonin degradation|unclassified	75.3711337922	0
+PWY-6317: galactose degradation I (Leloir pathway)|unclassified	674.2852438723	662.9935528101
+PWY-6318: L-phenylalanine degradation IV (mammalian, via side chain)|unclassified	805.5079523524	493.7830190151
+PWY-6338: superpathway of vanillin and vanillate degradation|unclassified	263.8511640916	0
+PWY-6353: purine nucleotides degradation II (aerobic)|unclassified	508.0341515188	652.1848642970
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|g__Acidovorax.s__Acidovorax_avenae	689.5023762606	1703.6057917076
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|g__Caulobacter.s__Caulobacter_sp_774	235.6397615763	526.7617097349
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|g__Massilia.s__Massilia_sp_BSC265	737.8347651056	0
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|g__Massilia.s__Massilia_sp_LC238	2082.7957847518	1612.7007496755
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|g__Sphingobium.s__Sphingobium_yanoikuyae	22.4543845957	53.1186915489
+PWY-6385: peptidoglycan biosynthesis III (mycobacteria)|unclassified	1054.6736086985	1580.3190394825
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|g__Acidovorax.s__Acidovorax_avenae	552.6423487584	1398.6445607198
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|g__Caulobacter.s__Caulobacter_sp_774	228.2873421349	507.9755224874
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|g__Massilia.s__Massilia_sp_BSC265	512.3916569261	0
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|g__Massilia.s__Massilia_sp_LC238	1932.5156146292	1447.3360189311
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|g__Sphingobium.s__Sphingobium_yanoikuyae	19.1693458379	39.8933514398
+PWY-6386: UDP-N-acetylmuramoyl-pentapeptide biosynthesis II (lysine-containing)|unclassified	947.5161901282	1440.8032393255
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|g__Acidovorax.s__Acidovorax_avenae	615.1687528590	1524.4421207945
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|g__Caulobacter.s__Caulobacter_sp_774	225.4823446938	504.5720274288
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_BSC265	663.2528882968	0
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_LC238	1987.3085121017	1484.0297450576
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|g__Sphingobium.s__Sphingobium_yanoikuyae	21.8579207810	50.9064330564
+PWY-6387: UDP-N-acetylmuramoyl-pentapeptide biosynthesis I (meso-diaminopimelate containing)|unclassified	977.2480540985	1492.8845121114
+PWY-6507: 4-deoxy-L-threo-hex-4-enopyranuronate degradation|unclassified	90.3915507225	70.1050899647
+PWY-6519: 8-amino-7-oxononanoate biosynthesis I|unclassified	775.2877524308	1124.5120997490
+PWY-6527: stachyose degradation|unclassified	419.1666577224	207.6859536595
+PWY-6538: caffeine degradation III (bacteria, via demethylation)|unclassified	141.7772870978	0
+PWY-6545: pyrimidine deoxyribonucleotides de novo biosynthesis III|unclassified	446.5330872976	939.6041363362
+PWY-6549: L-glutamine biosynthesis III|unclassified	234.0837009283	0
+PWY-6595: superpathway of guanosine nucleotides degradation (plants)|g__Massilia.s__Massilia_sp_LC238	1405.4874399654	885.9170123277
+PWY-6595: superpathway of guanosine nucleotides degradation (plants)|unclassified	1100.0347420363	1169.8324231282
+PWY-6606: guanosine nucleotides degradation II|g__Acidovorax.s__Acidovorax_avenae	996.7589284399	2788.7893626811
+PWY-6606: guanosine nucleotides degradation II|g__Massilia.s__Massilia_sp_LC238	1484.3869131355	926.1137231072
+PWY-6606: guanosine nucleotides degradation II|unclassified	1172.2336955602	1296.7069928151
+PWY-6608: guanosine nucleotides degradation III|g__Acidovorax.s__Acidovorax_avenae	996.7589284399	2788.7893626811
+PWY-6608: guanosine nucleotides degradation III|g__Massilia.s__Massilia_sp_LC238	2148.2782598860	1264.6034907473
+PWY-6608: guanosine nucleotides degradation III|unclassified	653.1350405462	642.3979218775
+PWY-6609: adenine and adenosine salvage III|unclassified	161.6369985235	221.7146636262
+PWY-6612: superpathway of tetrahydrofolate biosynthesis|unclassified	132.2458783910	335.1395221623
+PWY-6628: superpathway of L-phenylalanine biosynthesis|unclassified	206.4686637354	567.1959386886
+PWY-6641: superpathway of sulfolactate degradation|unclassified	148.4700545197	0
+PWY-6690: cinnamate and 3-hydroxycinnamate degradation to 2-oxopent-4-enoate|unclassified	297.0802843259	112.6001868730
+PWY-6700: queuosine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	785.3998953165	1591.5195893698
+PWY-6700: queuosine biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	281.6524025720	591.8718529175
+PWY-6700: queuosine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	957.0941930534	0
+PWY-6700: queuosine biosynthesis|g__Massilia.s__Massilia_sp_LC238	2665.8586595236	1976.2551331908
+PWY-6700: queuosine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	38.5205300587	69.8942815557
+PWY-6700: queuosine biosynthesis|unclassified	460.2021361153	867.6744647956
+PWY-6703: preQ0 biosynthesis|g__Acidovorax.s__Acidovorax_avenae	868.6082149166	2236.0330432672
+PWY-6703: preQ0 biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	295.7041524659	637.7742864765
+PWY-6703: preQ0 biosynthesis|g__Massilia.s__Massilia_sp_BSC265	201.7546824788	0
+PWY-6703: preQ0 biosynthesis|g__Massilia.s__Massilia_sp_LC238	2700.6227705285	1968.2888737302
+PWY-6703: preQ0 biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	27.7965621204	47.2858400917
+PWY-6703: preQ0 biosynthesis|unclassified	661.3663822889	925.0005784531
+PWY-6708: ubiquinol-8 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_BSC265	715.0309148340	0
+PWY-6708: ubiquinol-8 biosynthesis (prokaryotic)|g__Massilia.s__Massilia_sp_LC238	2558.1892156346	2099.4890014298
+PWY-6708: ubiquinol-8 biosynthesis (prokaryotic)|unclassified	614.5740668508	1130.1159447830
+PWY-6737: starch degradation V|g__Caulobacter.s__Caulobacter_sp_774	225.9284914582	517.1415757043
+PWY-6737: starch degradation V|unclassified	612.6746955332	1134.3284628030
+PWY-6749: CMP-legionaminate biosynthesis I|unclassified	0	83.4546954396
+PWY-6803: phosphatidylcholine acyl editing|g__Acidovorax.s__Acidovorax_avenae	720.4064447468	1818.5558345596
+PWY-6803: phosphatidylcholine acyl editing|g__Massilia.s__Massilia_sp_LC238	3703.8338398536	2325.1316319020
+PWY-6803: phosphatidylcholine acyl editing|unclassified	1251.8579778043	1946.6444424547
+PWY-6823: molybdenum cofactor biosynthesis|unclassified	0	81.2144624575
+PWY-6837: fatty acid beta-oxidation V (unsaturated, odd number, di-isomerase-dependent)|unclassified	487.6923051430	406.4007536296
+PWY-6859: all-trans-farnesol biosynthesis|unclassified	79.1088830953	110.0896905317
+PWY-6897: thiamin salvage II|unclassified	495.7379458654	348.9252577286
+PWY-6936: seleno-amino acid biosynthesis|g__Acidovorax.s__Acidovorax_avenae	0	761.9982176745
+PWY-6936: seleno-amino acid biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1319.3605606487	0
+PWY-6936: seleno-amino acid biosynthesis|g__Massilia.s__Massilia_sp_LC238	2870.3105401619	2610.5790542586
+PWY-6936: seleno-amino acid biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	20.9039400516	23.8665267997
+PWY-6936: seleno-amino acid biosynthesis|unclassified	1003.2531183497	1279.4531502537
+PWY-6969: TCA cycle V (2-oxoglutarate:ferredoxin oxidoreductase)|unclassified	573.2148953120	584.2353933038
+PWY-7094: fatty acid salvage|unclassified	1117.6168023736	924.2072743801
+PWY-7097: vanillin and vanillate degradation I|unclassified	263.8511640916	0
+PWY-7098: vanillin and vanillate degradation II|unclassified	247.9671285841	0
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Acidovorax.s__Acidovorax_avenae	1282.1077784070	2960.5195077977
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Caulobacter.s__Caulobacter_sp_774	374.1529052921	688.9270900666
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Massilia.s__Massilia_sp_BSC265	2345.6670757441	0
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Massilia.s__Massilia_sp_LC238	4183.5750838201	3795.2829086963
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|g__Sphingobium.s__Sphingobium_yanoikuyae	41.8373046927	90.4606774100
+PWY-7111: pyruvate fermentation to isobutanol (engineered)|unclassified	1699.1413980045	1923.6861569057
+PWY-7115: C4 photosynthetic carbon assimilation cycle, NAD-ME type|unclassified	41.4848480210	133.2302730939
+PWY-7117: C4 photosynthetic carbon assimilation cycle, PEPCK type|unclassified	345.7817437001	216.8137100144
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	366.8954412143	895.8820683359
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	293.7028957422	663.8291546464
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1354.2873788073	0
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2714.3672466536	2608.0973803224
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	54.9518976080
+PWY-7184: pyrimidine deoxyribonucleotides de novo biosynthesis I|unclassified	511.2324545272	993.0241342842
+PWY-7187: pyrimidine deoxyribonucleotides de novo biosynthesis II|unclassified	323.5272266727	0
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|g__Acidovorax.s__Acidovorax_avenae	390.7136326260	834.3462912727
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|g__Caulobacter.s__Caulobacter_sp_774	246.4041832027	553.8602248417
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|g__Massilia.s__Massilia_sp_BSC265	1056.6652137504	0
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|g__Massilia.s__Massilia_sp_LC238	1909.5082357562	1979.9153333732
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|g__Sphingobium.s__Sphingobium_yanoikuyae	0	38.3803131771
+PWY-7197: pyrimidine deoxyribonucleotide phosphorylation|unclassified	330.7561950332	746.5838244354
+PWY-7198: pyrimidine deoxyribonucleotides de novo biosynthesis IV|unclassified	470.3745560173	922.3574133920
+PWY-7199: pyrimidine deoxyribonucleosides salvage|g__Massilia.s__Massilia_sp_BSC265	986.8650846456	0
+PWY-7199: pyrimidine deoxyribonucleosides salvage|g__Massilia.s__Massilia_sp_LC238	2577.7755006409	2140.7603705494
+PWY-7199: pyrimidine deoxyribonucleosides salvage|unclassified	394.3987851042	495.4391588619
+PWY-7208: superpathway of pyrimidine nucleobases salvage|g__Acidovorax.s__Acidovorax_avenae	1224.1304916849	2473.7577817385
+PWY-7208: superpathway of pyrimidine nucleobases salvage|g__Caulobacter.s__Caulobacter_sp_774	270.3823251208	631.4465620217
+PWY-7208: superpathway of pyrimidine nucleobases salvage|g__Massilia.s__Massilia_sp_BSC265	573.1489168398	0
+PWY-7208: superpathway of pyrimidine nucleobases salvage|g__Massilia.s__Massilia_sp_LC238	2640.0129189399	2212.5265797846
+PWY-7208: superpathway of pyrimidine nucleobases salvage|unclassified	356.1070430736	607.8577231455
+PWY-7209: superpathway of pyrimidine ribonucleosides degradation|unclassified	150.2759057636	215.7570691992
+PWY-7210: pyrimidine deoxyribonucleotides biosynthesis from CTP|unclassified	503.8920953881	1020.8500469126
+PWY-7211: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis|unclassified	503.3403358607	950.9022936686
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Acidovorax.s__Acidovorax_avenae	565.3974631091	1413.0038954352
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	264.1155798469	521.4917040990
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1214.7800847635	0
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_LC238	2644.7260723180	2380.2565010174
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	34.4813210462	57.8875321366
+PWY-7219: adenosine ribonucleotides de novo biosynthesis|unclassified	686.5344814924	920.2212863203
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	1524.2020171176	2866.2031289944
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	309.2682912491	803.9594130502
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1949.6445399472	0
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_LC238	3151.5077985174	3597.9562330654
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	63.8308939672	150.0321041604
+PWY-7220: adenosine deoxyribonucleotides de novo biosynthesis II|unclassified	346.0681393432	744.9307344270
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1092.2398272435	2399.6545758212
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	261.5322853325	564.0355191614
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_BSC265	1447.7197487747	0
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_LC238	2409.5100511142	2514.1635962906
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	33.0925208036	60.0286671147
+PWY-7221: guanosine ribonucleotides de novo biosynthesis|unclassified	571.1819597304	806.0367784812
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	1524.2020171176	2866.2031289944
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	309.2682912491	803.9594130502
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_BSC265	1949.6445399472	0
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|g__Massilia.s__Massilia_sp_LC238	3151.5077985174	3597.9562330654
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	63.8308939672	150.0321041604
+PWY-7222: guanosine deoxyribonucleotides de novo biosynthesis II|unclassified	346.0681393432	744.9307344270
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	1255.9640389518	2636.6237374960
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	288.2785144760	644.8423767596
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1635.9406268470	0
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2736.7283444744	2892.5362676195
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	40.6442331063	76.4064193542
+PWY-7228: superpathway of guanosine nucleotides de novo biosynthesis I|unclassified	444.9390630589	803.8722211017
+PWY-7229: superpathway of adenosine nucleotides de novo biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	427.6981314222	1063.5239002519
+PWY-7229: superpathway of adenosine nucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1294.4534705024	0
+PWY-7229: superpathway of adenosine nucleotides de novo biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	30.2659238121	61.2348553362
+PWY-7229: superpathway of adenosine nucleotides de novo biosynthesis I|unclassified	522.3872406285	665.4868420271
+PWY-7234: inosine-5'-phosphate biosynthesis III|g__Acidovorax.s__Acidovorax_avenae	644.8297550265	1442.4294950813
+PWY-7234: inosine-5'-phosphate biosynthesis III|g__Caulobacter.s__Caulobacter_sp_774	238.6637090861	500.5550766740
+PWY-7234: inosine-5'-phosphate biosynthesis III|g__Massilia.s__Massilia_sp_BSC265	1083.0122258610	0
+PWY-7234: inosine-5'-phosphate biosynthesis III|g__Massilia.s__Massilia_sp_LC238	2662.0190481630	2065.7083325563
+PWY-7234: inosine-5'-phosphate biosynthesis III|unclassified	429.3104924812	575.4264291122
+PWY-7242: D-fructuronate degradation|unclassified	119.3284201330	86.1652555143
+PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II|g__Acidovorax.s__Acidovorax_avenae	670.9341992271	1607.4471651705
+PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II|g__Caulobacter.s__Caulobacter_sp_774	267.2237932343	579.2802744564
+PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II|g__Sphingobium.s__Sphingobium_yanoikuyae	0	54.6123349089
+PWY-724: superpathway of L-lysine, L-threonine and L-methionine biosynthesis II|unclassified	604.4428646529	804.3008987794
+PWY-7254: TCA cycle VII (acetate-producers)|unclassified	145.9110947278	714.6489048468
+PWY-7268: NAD/NADP-NADH/NADPH cytosolic interconversion (yeast)|g__Acidovorax.s__Acidovorax_avenae	329.4690669092	906.2074250574
+PWY-7268: NAD/NADP-NADH/NADPH cytosolic interconversion (yeast)|g__Massilia.s__Massilia_sp_BSC265	609.3563867931	0
+PWY-7268: NAD/NADP-NADH/NADPH cytosolic interconversion (yeast)|g__Massilia.s__Massilia_sp_LC238	3349.9239899404	2265.5634860191
+PWY-7268: NAD/NADP-NADH/NADPH cytosolic interconversion (yeast)|unclassified	925.3225827647	1355.5274373363
+PWY-7269: NAD/NADP-NADH/NADPH mitochondrial interconversion (yeast)|g__Acidovorax.s__Acidovorax_avenae	242.6804794193	678.2989862765
+PWY-7269: NAD/NADP-NADH/NADPH mitochondrial interconversion (yeast)|unclassified	808.1801132074	1523.8790300602
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|g__Acidovorax.s__Acidovorax_avenae	1277.4195812681	3738.2025087158
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|g__Caulobacter.s__Caulobacter_sp_774	429.6489784376	758.2183945137
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|g__Massilia.s__Massilia_sp_BSC265	1573.8252064203	0
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|g__Massilia.s__Massilia_sp_LC238	7028.7479217911	5253.2872927174
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|g__Sphingobium.s__Sphingobium_yanoikuyae	56.9603334906	58.6394064273
+PWY-7279: aerobic respiration II (cytochrome c) (yeast)|unclassified	1007.1107471984	1566.7872275495
+PWY-7282: 4-amino-2-methyl-5-phosphomethylpyrimidine biosynthesis (yeast)|unclassified	261.3329743912	596.8234734225
+PWY-7288: fatty acid &beta;-oxidation (peroxisome, yeast)|unclassified	58.2373971213	0
+PWY-7312: dTDP-D-&beta;-fucofuranose biosynthesis|unclassified	149.2381448888	218.0925486331
+PWY-7316: dTDP-N-acetylviosamine biosynthesis|unclassified	524.4029080898	709.7122859036
+PWY-7323: superpathway of GDP-mannose-derived O-antigen building blocks biosynthesis|unclassified	367.3105328155	731.1536672932
+PWY-7328: superpathway of UDP-glucose-derived O-antigen building blocks biosynthesis|unclassified	473.0792446384	802.9135286854
+PWY-7357: thiamin formation from pyrithiamine and oxythiamine (yeast)|unclassified	379.5865155060	247.9165173122
+PWY-7383: anaerobic energy metabolism (invertebrates, cytosol)|unclassified	154.2274673494	305.6008659969
+PWY-7388: octanoyl-[acyl-carrier protein] biosynthesis (mitochondria, yeast)|g__Acidovorax.s__Acidovorax_avenae	1204.0485756427	3116.5022392936
+PWY-7388: octanoyl-[acyl-carrier protein] biosynthesis (mitochondria, yeast)|g__Caulobacter.s__Caulobacter_sp_774	291.1593023651	670.4646364173
+PWY-7388: octanoyl-[acyl-carrier protein] biosynthesis (mitochondria, yeast)|g__Massilia.s__Massilia_sp_BSC265	86.8334006528	0
+PWY-7388: octanoyl-[acyl-carrier protein] biosynthesis (mitochondria, yeast)|g__Massilia.s__Massilia_sp_LC238	195.3087786332	230.7311432141
+PWY-7388: octanoyl-[acyl-carrier protein] biosynthesis (mitochondria, yeast)|unclassified	718.5776325258	1017.1523370498
+PWY-7392: taxadiene biosynthesis (engineered)|unclassified	107.6038527087	177.2807482595
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|g__Acidovorax.s__Acidovorax_avenae	1020.4890429330	2257.4011073074
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|g__Caulobacter.s__Caulobacter_sp_774	274.1842766764	579.7497709630
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|g__Massilia.s__Massilia_sp_BSC265	1393.1386335502	0
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|g__Massilia.s__Massilia_sp_LC238	2919.1750612996	2635.6151149008
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|g__Sphingobium.s__Sphingobium_yanoikuyae	34.2974598507	58.3795139452
+PWY-7400: L-arginine biosynthesis IV (archaebacteria)|unclassified	435.0791673872	574.6212927414
+PWY-7431: aromatic biogenic amine degradation (bacteria)|unclassified	54.7879190334	0
+PWY-7539: 6-hydroxymethyl-dihydropterin diphosphate biosynthesis III (Chlamydia)|unclassified	30.9062593491	78.3894704041
+PWY-7560: methylerythritol phosphate pathway II|unclassified	94.6998858414	165.1074437165
+PWY-7616: methanol oxidation to carbon dioxide|unclassified	187.6182840657	210.2748909402
+PWY-7663: gondoate biosynthesis (anaerobic)|g__Acidovorax.s__Acidovorax_avenae	2179.3561679002	5395.4274969100
+PWY-7663: gondoate biosynthesis (anaerobic)|g__Caulobacter.s__Caulobacter_sp_774	394.1475911833	852.5859229289
+PWY-7663: gondoate biosynthesis (anaerobic)|g__Massilia.s__Massilia_sp_BSC265	76.1894634080	0
+PWY-7663: gondoate biosynthesis (anaerobic)|g__Massilia.s__Massilia_sp_LC238	169.6111082568	201.3040431937
+PWY-7663: gondoate biosynthesis (anaerobic)|g__Sphingobium.s__Sphingobium_yanoikuyae	17.1784393297	76.3613072643
+PWY-7663: gondoate biosynthesis (anaerobic)|unclassified	1555.0937075966	1845.3602114323
+PWY-7664: oleate biosynthesis IV (anaerobic)|g__Acidovorax.s__Acidovorax_avenae	1518.4683383678	4049.1594821309
+PWY-7664: oleate biosynthesis IV (anaerobic)|g__Caulobacter.s__Caulobacter_sp_774	377.3121996478	824.4430208552
+PWY-7664: oleate biosynthesis IV (anaerobic)|unclassified	686.5686580004	1014.2293824122
+PWY-821: superpathway of sulfur amino acid biosynthesis (Saccharomyces cerevisiae)|unclassified	382.2009690045	693.1774992620
+PWY-841: superpathway of purine nucleotides de novo biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	628.1060584477	1550.1453042278
+PWY-841: superpathway of purine nucleotides de novo biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1115.2712490438	0
+PWY-841: superpathway of purine nucleotides de novo biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	0	63.8631483732
+PWY-841: superpathway of purine nucleotides de novo biosynthesis I|unclassified	424.0407758874	677.1937121754
+PWY0-1061: superpathway of L-alanine biosynthesis|unclassified	319.1611879290	511.1241885226
+PWY0-1261: anhydromuropeptides recycling|g__Acidovorax.s__Acidovorax_avenae	319.4415745739	839.1622052852
+PWY0-1261: anhydromuropeptides recycling|g__Massilia.s__Massilia_sp_BSC265	615.1912230051	0
+PWY0-1261: anhydromuropeptides recycling|g__Massilia.s__Massilia_sp_LC238	2984.5656614216	2030.8964198146
+PWY0-1261: anhydromuropeptides recycling|unclassified	969.7414468646	1670.7137069157
+PWY0-1277: 3-phenylpropanoate and 3-(3-hydroxyphenyl)propanoate degradation|unclassified	674.0705710157	183.0068460734
+PWY0-1296: purine ribonucleosides degradation|g__Massilia.s__Massilia_sp_BSC265	1522.8454173315	0
+PWY0-1296: purine ribonucleosides degradation|g__Massilia.s__Massilia_sp_LC238	2566.6625719905	2455.4554780041
+PWY0-1296: purine ribonucleosides degradation|unclassified	295.7879597805	386.9539518615
+PWY0-1297: superpathway of purine deoxyribonucleosides degradation|unclassified	216.2217671299	300.2566837941
+PWY0-1298: superpathway of pyrimidine deoxyribonucleosides degradation|unclassified	219.0852427545	299.8371028289
+PWY0-1319: CDP-diacylglycerol biosynthesis II|unclassified	202.5013687442	684.5860090104
+PWY0-1479: tRNA processing|g__Acidovorax.s__Acidovorax_avenae	253.0328160186	630.9996977062
+PWY0-1479: tRNA processing|g__Caulobacter.s__Caulobacter_sp_774	264.5833455018	636.3163197353
+PWY0-1479: tRNA processing|g__Massilia.s__Massilia_sp_BSC265	877.4645137470	0
+PWY0-1479: tRNA processing|g__Massilia.s__Massilia_sp_LC238	2454.5240046128	2137.4115362110
+PWY0-1479: tRNA processing|unclassified	233.0321991928	342.7043124800
+PWY0-1586: peptidoglycan maturation (meso-diaminopimelate containing)|g__Acidovorax.s__Acidovorax_avenae	2874.0820595541	6965.3521839878
+PWY0-1586: peptidoglycan maturation (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_BSC265	2456.8431635229	0
+PWY0-1586: peptidoglycan maturation (meso-diaminopimelate containing)|g__Massilia.s__Massilia_sp_LC238	8681.1095423483	6083.1407877214
+PWY0-1586: peptidoglycan maturation (meso-diaminopimelate containing)|g__Sphingobium.s__Sphingobium_yanoikuyae	17.1361871554	33.0013147952
+PWY0-1586: peptidoglycan maturation (meso-diaminopimelate containing)|unclassified	2583.9828377618	4163.7030828210
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|g__Acidovorax.s__Acidovorax_avenae	478.6420434197	1089.3587996635
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	292.1445167690	639.5541001357
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_BSC265	755.0749133820	0
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|g__Massilia.s__Massilia_sp_LC238	2692.3300825322	2358.3293151803
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	19.8730822445	51.4608047331
+PWY0-162: superpathway of pyrimidine ribonucleotides de novo biosynthesis|unclassified	495.6881809342	912.2084709362
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|g__Acidovorax.s__Acidovorax_avenae	330.4819314307	789.0487822481
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|g__Caulobacter.s__Caulobacter_sp_774	274.9740694813	613.7907320093
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|g__Massilia.s__Massilia_sp_BSC265	1240.7151946711	0
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|g__Massilia.s__Massilia_sp_LC238	2646.2736273971	2419.9488072889
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|g__Sphingobium.s__Sphingobium_yanoikuyae	0	49.4355572895
+PWY0-166: superpathway of pyrimidine deoxyribonucleotides de novo biosynthesis (E. coli)|unclassified	532.9718904456	990.0072146894
+PWY0-42: 2-methylcitrate cycle I|unclassified	182.2370496571	348.9224623010
+PWY0-781: aspartate superpathway|unclassified	377.3405154268	631.5722068581
+PWY0-862: (5Z)-dodec-5-enoate biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1390.4425475755	3726.9756005103
+PWY0-862: (5Z)-dodec-5-enoate biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	399.6605424927	850.7733594279
+PWY0-862: (5Z)-dodec-5-enoate biosynthesis|unclassified	547.6744550753	824.4239306541
+PWY1F-823: leucopelargonidin and leucocyanidin biosynthesis|unclassified	0	35.8459823625
+PWY3DJ-35471: L-ascorbate biosynthesis IV|g__Massilia.s__Massilia_sp_BSC265	523.5648482126	0
+PWY3DJ-35471: L-ascorbate biosynthesis IV|g__Massilia.s__Massilia_sp_LC238	1663.3685326147	1338.8090925150
+PWY3DJ-35471: L-ascorbate biosynthesis IV|unclassified	525.2145691402	703.5183601964
+PWY3O-355: stearate biosynthesis III (fungi)|unclassified	158.6295081682	224.0064844966
+PWY4FS-7: phosphatidylglycerol biosynthesis I (plastidic)|unclassified	259.7215566614	677.8396728017
+PWY4FS-8: phosphatidylglycerol biosynthesis II (non-plastidic)|unclassified	259.7215566614	677.8396728017
+PWY5F9-12: biphenyl degradation|unclassified	46.4807101332	0
+PWY66-389: phytol degradation|g__Acidovorax.s__Acidovorax_avenae	627.7765224724	1564.6460836104
+PWY66-389: phytol degradation|g__Sphingobium.s__Sphingobium_yanoikuyae	18.8013228566	64.0952248168
+PWY66-389: phytol degradation|unclassified	3203.9631076229	2638.6521754356
+PWY66-391: fatty acid &beta;-oxidation VI (peroxisome)|unclassified	114.6420370262	0
+PWY66-398: TCA cycle III (animals)|unclassified	220.1113643349	0
+PWY66-399: gluconeogenesis III|unclassified	227.7580157027	343.6455487367
+PWY66-400: glycolysis VI (metazoan)|unclassified	491.7916145223	617.7363961027
+PWY66-409: superpathway of purine nucleotide salvage|unclassified	292.7156861577	426.1157760797
+PWY66-422: D-galactose degradation V (Leloir pathway)|g__Massilia.s__Massilia_sp_BSC265	513.9552398327	0
+PWY66-422: D-galactose degradation V (Leloir pathway)|g__Massilia.s__Massilia_sp_LC238	2158.5784856557	1363.8172034245
+PWY66-422: D-galactose degradation V (Leloir pathway)|unclassified	869.1428427017	662.9935528101
+PWYG-321: mycolate biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1839.0564090889	4800.3050526261
+PWYG-321: mycolate biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	380.3253099146	850.4649229387
+PWYG-321: mycolate biosynthesis|unclassified	810.1220240864	1226.2335091194
+PYRIDNUCSAL-PWY: NAD salvage pathway I|unclassified	165.4155010643	277.3640264430
+PYRIDNUCSYN-PWY: NAD biosynthesis I (from aspartate)|g__Caulobacter.s__Caulobacter_sp_774	246.4945931426	494.3637807667
+PYRIDNUCSYN-PWY: NAD biosynthesis I (from aspartate)|g__Massilia.s__Massilia_sp_BSC265	666.2697832358	0
+PYRIDNUCSYN-PWY: NAD biosynthesis I (from aspartate)|unclassified	800.2308104855	1180.6762972250
+REDCITCYC: TCA cycle VIII (helicobacter)|unclassified	159.1227598940	678.6340959487
+RIBOSYN2-PWY: flavin biosynthesis I (bacteria and plants)|g__Massilia.s__Massilia_sp_BSC265	547.2811249060	0
+RIBOSYN2-PWY: flavin biosynthesis I (bacteria and plants)|g__Massilia.s__Massilia_sp_LC238	1706.0864758726	1686.7042874832
+RIBOSYN2-PWY: flavin biosynthesis I (bacteria and plants)|g__Sphingobium.s__Sphingobium_yanoikuyae	14.8876289914	62.7520075764
+RIBOSYN2-PWY: flavin biosynthesis I (bacteria and plants)|unclassified	679.1059826744	1010.9433004508
+RUMP-PWY: formaldehyde oxidation I|unclassified	39.6953985467	0
+SALVADEHYPOX-PWY: adenosine nucleotides degradation II|unclassified	546.2280383233	771.5617368252
+SER-GLYSYN-PWY: superpathway of L-serine and glycine biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	996.4938483565	2242.2270249061
+SER-GLYSYN-PWY: superpathway of L-serine and glycine biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	285.3728342770	540.9588370397
+SER-GLYSYN-PWY: superpathway of L-serine and glycine biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	33.8120396949	54.9376448056
+SER-GLYSYN-PWY: superpathway of L-serine and glycine biosynthesis I|unclassified	889.9402275154	1164.5754850833
+SO4ASSIM-PWY: sulfate reduction I (assimilatory)|g__Acidovorax.s__Acidovorax_avenae	459.6662563751	1236.5287446599
+SO4ASSIM-PWY: sulfate reduction I (assimilatory)|g__Caulobacter.s__Caulobacter_sp_774	321.7321904221	549.4213778293
+SO4ASSIM-PWY: sulfate reduction I (assimilatory)|g__Sphingobium.s__Sphingobium_yanoikuyae	25.1092599195	118.7198954290
+SO4ASSIM-PWY: sulfate reduction I (assimilatory)|unclassified	571.3358246663	869.4555899115
+SULFATE-CYS-PWY: superpathway of sulfate assimilation and cysteine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	589.3182233180	1491.8031136263
+SULFATE-CYS-PWY: superpathway of sulfate assimilation and cysteine biosynthesis|unclassified	745.9651150000	1063.5520907704
+TCA-GLYOX-BYPASS: superpathway of glyoxylate bypass and TCA|g__Acidovorax.s__Acidovorax_avenae	1059.7496433295	2397.1294588472
+TCA-GLYOX-BYPASS: superpathway of glyoxylate bypass and TCA|g__Sphingobium.s__Sphingobium_yanoikuyae	28.4430767944	72.7058366395
+TCA-GLYOX-BYPASS: superpathway of glyoxylate bypass and TCA|unclassified	492.9865032381	682.2146062701
+TCA: TCA cycle I (prokaryotic)|g__Acidovorax.s__Acidovorax_avenae	1326.4049253025	3189.2399472143
+TCA: TCA cycle I (prokaryotic)|g__Massilia.s__Massilia_sp_LC238	2523.1521810771	2708.2814366987
+TCA: TCA cycle I (prokaryotic)|g__Sphingobium.s__Sphingobium_yanoikuyae	36.7109480560	100.0752359235
+TCA: TCA cycle I (prokaryotic)|unclassified	536.7129364784	745.9723359098
+THISYNARA-PWY: superpathway of thiamin diphosphate biosynthesis III (eukaryotes)|unclassified	219.8395610009	266.5232214107
+THRESYN-PWY: superpathway of L-threonine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	630.5802219627	1607.3170208321
+THRESYN-PWY: superpathway of L-threonine biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	272.9415977487	567.6788426675
+THRESYN-PWY: superpathway of L-threonine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	21.5330843779	56.7272406433
+THRESYN-PWY: superpathway of L-threonine biosynthesis|unclassified	798.3226209819	854.5650555643
+TRNA-CHARGING-PWY: tRNA charging|unclassified	197.8717877472	0
+TRPSYN-PWY: L-tryptophan biosynthesis|g__Acidovorax.s__Acidovorax_avenae	672.8176488605	2044.7539736950
+TRPSYN-PWY: L-tryptophan biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	228.6470236849	470.2640699758
+TRPSYN-PWY: L-tryptophan biosynthesis|g__Massilia.s__Massilia_sp_BSC265	893.6797808238	0
+TRPSYN-PWY: L-tryptophan biosynthesis|g__Massilia.s__Massilia_sp_LC238	2751.4332323507	1980.3294378334
+TRPSYN-PWY: L-tryptophan biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	0	39.2669642599
+TRPSYN-PWY: L-tryptophan biosynthesis|unclassified	855.2448282841	1153.3090814287
+TYRFUMCAT-PWY: L-tyrosine degradation I|unclassified	609.3216753904	506.7799234273
+UBISYN-PWY: superpathway of ubiquinol-8 biosynthesis (prokaryotic)|unclassified	652.8339558187	1095.0442919397
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|g__Acidovorax.s__Acidovorax_avenae	593.2490606100	1454.0990634054
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|g__Caulobacter.s__Caulobacter_sp_774	255.3053586858	492.3790346310
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|g__Massilia.s__Massilia_sp_BSC265	1302.9568018012	0
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|g__Massilia.s__Massilia_sp_LC238	2371.7254483137	2032.5125128750
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|g__Sphingobium.s__Sphingobium_yanoikuyae	22.9016092402	60.7471052387
+UDPNAGSYN-PWY: UDP-N-acetyl-D-glucosamine biosynthesis I|unclassified	993.4492208222	1730.9693021069
+URSIN-PWY: ureide biosynthesis|unclassified	627.4628077256	809.4206054547
+VALSYN-PWY: L-valine biosynthesis|g__Acidovorax.s__Acidovorax_avenae	1513.9516442880	3315.7862948483
+VALSYN-PWY: L-valine biosynthesis|g__Caulobacter.s__Caulobacter_sp_774	374.1529052921	734.7689725053
+VALSYN-PWY: L-valine biosynthesis|g__Massilia.s__Massilia_sp_BSC265	2345.6670757441	0
+VALSYN-PWY: L-valine biosynthesis|g__Massilia.s__Massilia_sp_LC238	4183.5750838201	3795.2829086963
+VALSYN-PWY: L-valine biosynthesis|g__Sphingobium.s__Sphingobium_yanoikuyae	40.1295330146	77.5479226545
+VALSYN-PWY: L-valine biosynthesis|unclassified	724.2917795264	990.2656424728
