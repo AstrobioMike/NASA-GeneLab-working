@@ -184,7 +184,7 @@ rule run_humann3:
         read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/{ID}_metaphlan_bugs_list.tsv"
     shell:
         """
-        cat {input.R1} {input.R1} > {params.combined_reads}
+        cat {input.R1} {input.R2} > {params.combined_reads}
         humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db {MPA_DIR} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
         rm {params.combined_reads}
         """
