@@ -11,7 +11,7 @@ Michael D. Lee
 ---
 
 # Details for reviewing
-* The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX-Illumina-metagenomics.md' here](GL-DPPD-XXXX-Illumina-metagenomics.md). 
+* The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX-Illumina-metagenomics.md'](GL-DPPD-XXXX-Illumina-metagenomics.md). 
 
 * An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/). 
   * The ['example-output' directory](example-output) in this repo holds the output files for your perusing pleasure, or the whole thing can be downloaded to your computer as a zip file by [clicking here **not present yet**]() (it is ~63MB compressed and ~243MB uncompressed).
