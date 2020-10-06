@@ -68,15 +68,13 @@ Summary of contents:
             - *.fasta                                        - gene nucleotide sequences
             - *.gff                                          - predicted genes in general feature format
 
-        - Annotations_and_Taxonomy/                          - per-sample Kegg Orthology (KO) annotations, taxonomy, and coverages 
+        - Annotations_and_Taxonomy/                          - per-sample Kegg Orthology (KO) annotations, taxonomy, and coverages
             - *-gene-coverage-annotation-tax.tsv             - tables with gene coverage, annotation, and taxonomy info
             - *-contig-coverage-and-tax.tsv                  - tables with contig coverage and taxonomy info
 
         - Mapping_Files/                                     - per-sample bam and coverage files
             - *.bam                                          - bam files
             - *.log                                          - mapping log files
-            - *-gene-coverages.tsv                           - gene-level coverages
-            - *-contig-coverages.tsv                         - contig-level coverages
 
         - Combined_Outputs/                                  - summary outputs with all samples combined
             - GLDS-286-KO-function-coverages.tsv             - table of combined, normalized KO coverages
