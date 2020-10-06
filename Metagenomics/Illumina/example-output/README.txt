@@ -44,8 +44,6 @@ Summary of contents:
         - Mapping_Files/                                     - per-sample bam and coverage files
             - *.bam                                          - bam files
             - *.log                                          - mapping log files
-            - *-gene-coverages.tsv                           - gene-level coverages
-            - *-contig-coverages.tsv                         - contig-level coverages
 
         - Combined_Outputs/                                  - summary outputs with all samples combined
             - GLDS-286-KO-function-coverages.tsv             - table of combined, normalized KO coverages
