@@ -10,6 +10,12 @@ Michael D. Lee
 
 ---
 
+<p align="center">
+<a href="https://github.com/AstrobioMike/AstrobioMike.github.io/blob/master/images/GL-illumiina-metagenomics-overview.pdf"><img src="https://github.com/AstrobioMike/AstrobioMike.github.io/blob/master/images/GL-illumiina-metagenomics-overview.png"></a>
+</p>
+
+--- 
+
 # Details for reviewing
 * The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX-Illumina-metagenomics.md'](GL-DPPD-XXXX-Illumina-metagenomics.md). 
 
