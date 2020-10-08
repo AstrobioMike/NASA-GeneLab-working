@@ -102,11 +102,11 @@ dirs_to_create = [assembly_based_dir, assemblies_dir,
 
   # number of threads to use PER snakemake job started (which is determined by the -j parameter passed to the snakemake call)
     # passed to fastqc, bowtie2, samtools, humann3
-num_threads = 6
+num_threads = 7
 
   # number of cpus to use PER snakemake job started
     # passed to KOFamScan and CAT
-num_cpus = 6
+num_cpus = 8
 
   # max memory allowed passed to megahit assembler
     # either by proportion of available on system, e.g. 0.5

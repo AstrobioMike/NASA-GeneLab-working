@@ -1,39 +1,39 @@
-2020-09-27 20:42:35 - MEGAHIT v1.2.9
-2020-09-27 20:42:35 - Using megahit_core with POPCNT support
-2020-09-27 20:42:35 - Convert reads to binary library
-2020-09-27 20:43:33 - b'INFO  sequence/io/sequence_lib.cpp  :   77 - Lib 0 (/data1/Data_Processing/mlee/metagenomics-glds-sandbox/GLDS-286/fresh/Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz,/data1/Data_Processing/mlee/metagenomics-glds-sandbox/GLDS-286/fresh/Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz): pe, 67719794 reads, 100 max length'
-2020-09-27 20:43:33 - b'INFO  utils/utils.h                 :  152 - Real: 58.1744\tuser: 58.5840\tsys: 6.5000\tmaxrss: 274508'
-2020-09-27 20:43:33 - k-max reset to: 119 
-2020-09-27 20:43:33 - Start assembly. Number of CPU threads 6 
-2020-09-27 20:43:33 - k list: 21,29,39,59,79,99,119 
-2020-09-27 20:43:33 - Memory used: 67583645696
-2020-09-27 20:43:33 - Extract solid (k+1)-mers for k = 21 
-2020-09-27 20:49:41 - Build graph for k = 21 
-2020-09-27 20:50:25 - Assemble contigs from SdBG for k = 21
-2020-09-27 20:56:06 - Local assembly for k = 21
-2020-09-27 20:57:30 - Extract iterative edges from k = 21 to 29 
-2020-09-27 21:00:09 - Build graph for k = 29 
-2020-09-27 21:00:47 - Assemble contigs from SdBG for k = 29
-2020-09-27 21:03:40 - Local assembly for k = 29
-2020-09-27 21:05:43 - Extract iterative edges from k = 29 to 39 
-2020-09-27 21:07:13 - Build graph for k = 39 
-2020-09-27 21:07:36 - Assemble contigs from SdBG for k = 39
-2020-09-27 21:09:41 - Local assembly for k = 39
-2020-09-27 21:12:00 - Extract iterative edges from k = 39 to 59 
-2020-09-27 21:13:12 - Build graph for k = 59 
-2020-09-27 21:13:28 - Assemble contigs from SdBG for k = 59
-2020-09-27 21:14:51 - Local assembly for k = 59
-2020-09-27 21:17:22 - Extract iterative edges from k = 59 to 79 
-2020-09-27 21:18:06 - Build graph for k = 79 
-2020-09-27 21:18:17 - Assemble contigs from SdBG for k = 79
-2020-09-27 21:19:22 - Local assembly for k = 79
-2020-09-27 21:21:43 - Extract iterative edges from k = 79 to 99 
-2020-09-27 21:22:19 - Build graph for k = 99 
-2020-09-27 21:22:26 - Assemble contigs from SdBG for k = 99
-2020-09-27 21:23:17 - Local assembly for k = 99
-2020-09-27 21:25:16 - Extract iterative edges from k = 99 to 119 
-2020-09-27 21:25:21 - Build graph for k = 119 
-2020-09-27 21:25:25 - Assemble contigs from SdBG for k = 119
-2020-09-27 21:26:03 - Merging to output final contigs 
-2020-09-27 21:26:03 - 25715 contigs, total 37491400 bp, min 500 bp, max 60642 bp, avg 1457 bp, N50 2025 bp
-2020-09-27 21:26:03 - ALL DONE. Time elapsed: 2608.247066 seconds 
+2020-10-07 12:26:58 - MEGAHIT v1.2.9
+2020-10-07 12:26:58 - Using megahit_core with POPCNT support
+2020-10-07 12:26:58 - Convert reads to binary library
+2020-10-07 12:27:51 - b'INFO  sequence/io/sequence_lib.cpp  :   77 - Lib 0 (/data1/Data_Processing/mlee/metagenomics-glds-sandbox/GLDS-286/fresh/Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz,/data1/Data_Processing/mlee/metagenomics-glds-sandbox/GLDS-286/fresh/Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz): pe, 67719794 reads, 100 max length'
+2020-10-07 12:27:51 - b'INFO  utils/utils.h                 :  152 - Real: 52.9753\tuser: 52.6120\tsys: 6.5880\tmaxrss: 274456'
+2020-10-07 12:27:51 - k-max reset to: 119 
+2020-10-07 12:27:51 - Start assembly. Number of CPU threads 7 
+2020-10-07 12:27:51 - k list: 21,29,39,59,79,99,119 
+2020-10-07 12:27:51 - Memory used: 67583645696
+2020-10-07 12:27:51 - Extract solid (k+1)-mers for k = 21 
+2020-10-07 12:33:28 - Build graph for k = 21 
+2020-10-07 12:34:15 - Assemble contigs from SdBG for k = 21
+2020-10-07 12:40:43 - Local assembly for k = 21
+2020-10-07 12:42:46 - Extract iterative edges from k = 21 to 29 
+2020-10-07 12:45:26 - Build graph for k = 29 
+2020-10-07 12:46:08 - Assemble contigs from SdBG for k = 29
+2020-10-07 12:48:56 - Local assembly for k = 29
+2020-10-07 12:51:14 - Extract iterative edges from k = 29 to 39 
+2020-10-07 12:52:35 - Build graph for k = 39 
+2020-10-07 12:52:58 - Assemble contigs from SdBG for k = 39
+2020-10-07 12:54:51 - Local assembly for k = 39
+2020-10-07 12:57:24 - Extract iterative edges from k = 39 to 59 
+2020-10-07 12:58:30 - Build graph for k = 59 
+2020-10-07 12:58:46 - Assemble contigs from SdBG for k = 59
+2020-10-07 13:00:01 - Local assembly for k = 59
+2020-10-07 13:02:31 - Extract iterative edges from k = 59 to 79 
+2020-10-07 13:03:06 - Build graph for k = 79 
+2020-10-07 13:03:13 - Assemble contigs from SdBG for k = 79
+2020-10-07 13:04:06 - Local assembly for k = 79
+2020-10-07 13:06:21 - Extract iterative edges from k = 79 to 99 
+2020-10-07 13:06:53 - Build graph for k = 99 
+2020-10-07 13:07:00 - Assemble contigs from SdBG for k = 99
+2020-10-07 13:07:51 - Local assembly for k = 99
+2020-10-07 13:10:08 - Extract iterative edges from k = 99 to 119 
+2020-10-07 13:10:14 - Build graph for k = 119 
+2020-10-07 13:10:20 - Assemble contigs from SdBG for k = 119
+2020-10-07 13:10:59 - Merging to output final contigs 
+2020-10-07 13:10:59 - 25716 contigs, total 37513219 bp, min 500 bp, max 60642 bp, avg 1458 bp, N50 2028 bp
+2020-10-07 13:10:59 - ALL DONE. Time elapsed: 2641.297009 seconds 

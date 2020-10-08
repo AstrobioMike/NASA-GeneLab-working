@@ -1,17 +1,17 @@
-java -ea -Xmx41040m -Xms41040m -cp /data1/mlee/miniconda3/envs/GL-Illumina-metagenomics/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz ref=/data1/mlee/miniconda3/envs/GL-Illumina-metagenomics/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl trimq=10 mlf=0.5 maxns=0
+java -ea -Xmx44695m -Xms44695m -cp /data1/mlee/miniconda3/envs/GL-Illumina-metagenomics/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz ref=/data1/mlee/miniconda3/envs/GL-Illumina-metagenomics/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl trimq=10 mlf=0.5 maxns=0
 Executing jgi.BBDuk [in=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz, in2=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz, out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz, ref=/data1/mlee/miniconda3/envs/GL-Illumina-metagenomics/opt/bbmap-38.86-0/resources/adapters.fa, ktrim=l, k=17, ftm=5, qtrim=rl, trimq=10, mlf=0.5, maxns=0]
 Version 38.86
 
-0.030 seconds.
+0.032 seconds.
 Initial:
-Memory: max=43033m, total=43033m, free=42986m, used=47m
+Memory: max=46875m, total=46875m, free=46826m, used=49m
 
-Added 2258 kmers; time: 	0.054 seconds.
-Memory: max=43033m, total=43033m, free=42924m, used=109m
+Added 2258 kmers; time: 	0.052 seconds.
+Memory: max=46875m, total=46875m, free=46758m, used=117m
 
 Input is being processed as paired
-Started output streams:	0.135 seconds.
-Processing time:   		177.163 seconds.
+Started output streams:	0.120 seconds.
+Processing time:   		163.297 seconds.
 
 Input:                  	68983860 reads 		6967369860 bases.
 QTrimmed:               	9371348 reads (13.58%) 	176267883 bases (2.53%)
@@ -21,6 +21,6 @@ Low quality discards:   	30606 reads (0.04%) 	2746605 bases (0.04%)
 Total Removed:          	1264066 reads (1.83%) 	252704898 bases (3.63%)
 Result:                 	67719794 reads (98.17%) 	6714664962 bases (96.37%)
 
-Time:                         	177.359 seconds.
-Reads Processed:      68983k 	388.95k reads/sec
-Bases Processed:       6967m 	39.28m bases/sec
+Time:                         	163.475 seconds.
+Reads Processed:      68983k 	421.99k reads/sec
+Bases Processed:       6967m 	42.62m bases/sec
