@@ -650,9 +650,4 @@ rule trimmed_multiqc:
 
 rule clean_all:
     shell:
-        "rm -rf {fastqc_out_dir} {filtered_reads_dir} {assembly_based_dir} {read_based_dir} .snakemake/"
-
-
-rule clean_some:
-    shell:
-        "rm -rf {fastqc_out_dir} {genes_dir} {mapping_dir} {combined_output_dir} {assemblies_dir}assembly-summaries.tsv"
+        "rm -rf {dirs_to_create} .snakemake/ snakemake-run.log"
