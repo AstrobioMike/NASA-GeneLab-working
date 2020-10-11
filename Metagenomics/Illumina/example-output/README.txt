@@ -15,7 +15,8 @@ Summary of contents:
         - unique-sample-IDs.txt                              - single-column file of unique sample identifiers
         - Snakefile                                          - Snakemake workflow file
         - snakemake-run.log                                  - Snakemake log file
-        - environment.yml                                    - conda environment file
+        - environment.yml                                    - all-in-one conda environment file
+        - envs/                                              - individual conda envs per rule
 
     - Raw_Data/                                              - initial fastq files
 
