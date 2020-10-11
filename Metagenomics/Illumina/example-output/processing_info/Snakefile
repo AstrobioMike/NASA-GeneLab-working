@@ -15,13 +15,27 @@ import os
 
 """
 Expected to be run in the conda environment described in the environment.yml file, or installed as below, or with the specified programs and versions accessible:
+This display with all together is for convenience if wanted. If not, or if the environment won't build with all of them together like this, it can also be run with each rule having its own conda environments as shown next:
 
 # conda create -y -n GL-Illumina-metagenomics -c conda-forge -c bioconda -c defaults -c biobakery -c astrobiomike \
 #              fastqc=0.11.9 multiqc=1.8 bbmap=38.86 megahit=1.2.9 bit=1.8.11 bowtie2=2.3.5.1 \
 #              samtools=1.9 prodigal=2.6.3 kofamscan=1.3.0 blast=2.9.0 cat=5.1.2 metaphlan=3.0.4 \
-#              humann=3.0.0.alpha.3 snakemake=5.5.4
+#              humann=3.0.0.alpha.3 snakemake=5.19.3
 
 # conda activate GL-Illumina-metagenomics
+
+OR, things can be run with `--use-conda` added to the snakemake call, based on the yaml files in the "envs/" subdirectory, though that still requires setting up the databases for each environment as discussed next,
+and each variable for a specific program would need to be added to that specific conda environment (if running all in the same conda environment, all would be initially set in that same conda environment)
+If doing that, still need to install snakemake in the base conda environment first: 
+# conda install -c conda-forge -c bioconda -c defaults snakemake=5.19.3
+
+  ## Additional notes on conda individual rule conda environments ##
+    # By default snakemake will make the new conda environments every time it runs in a new location, but you can tell it to use the same ones by providing `--conda-prefix <path/to/conda/envs>` in addition to `--use-conda`
+    # If this is the first time setting up, it can be run with the `--conda-create-envs-only` flag to generate the conda environments, then again with `--list-conda-envs` and the `-n` flag (dry run), this will
+      # show where the conda environments are/what their names are, so we can activate them individually in order to set up the following required databases (only needed on initial setup)
+    # example run using individual conda envs: snakemake -j 4 --use-conda --conda-prefix <path/to/conda/envs> -p
+
+### Reference databases that require one-time setup ###
 
 The KOFamScan reference files can be downloaded as follows:
 # curl -LO ftp://ftp.genome.jp/pub/db/kofam/profiles.tar.gz
@@ -30,23 +44,18 @@ The KOFamScan reference files can be downloaded as follows:
 # gunzip ko_list.gz
 
 As written, the directory holding them should be in this "KO_DIR" shell env. variable:
-# KO_DIR=$(pwd)
-    # this would set it if ran in the directory they were just downloaded and unpacked in
-
-This variable can be permanently added to the conda environment like so (modified to be the path to the directory, 
-but this location will work if the conda environment was named the same way as above):
+This variable can be permanently added to the conda environment like so (modified to be the path to the actual directory):
+# mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d/
 # echo 'export KO_DIR=/path/to/kofamscan_db' >> ${CONDA_PREFIX}/etc/conda/activate.d/set_env_vars.sh
-    # then deactivate and reactivate conda environment for it to take effect (same goes for CAT_DIR next)
+    # then deactivate and reactivate conda environment for it to take effect
 
 The CAT reference files can be downloaded as follows:
 # wget tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20200618.tar.gz
 # tar -xvzf CAT_prepare_20200618.tar.gz
 
-As written, the directory holding them should be in this "CAT_DIR" shell env. variable
-# CAT_DIR=$(pwd)/CAT_prepare_20200618
-    # this would set it if ran in the directory they were just downloaded and unpacked in
-
+As written, the directory holding them should be in the "CAT_DIR" shell env. variable
 This variable can be permanentily added to the conda environment like noted above for the KO_DIR variable:
+# mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d/
 # echo 'export CAT_DIR=/path/to/CAT_prepare_20200618' >> ${CONDA_PREFIX}/etc/conda/activate.d/set_env_vars.sh
     # then deactivate and reactivate conda environment for it to take effect
 
@@ -54,11 +63,15 @@ This variable can be permanentily added to the conda environment like noted abov
 # humann3_databases --download chocophlan full <location>
 # humann3_databases --download uniref uniref90_ec_filtered_diamond <location>
 # humann3_databases --download utility_mapping full <location>
-# metaphlan --install
+# metaphlan --install --bowtie2db <location>
 
 The humann3 db locations are automatically tracked by the program, if not putting metaphlan in the default location, 
-it can be added to the conda environment like shown above.
+it can be added to the conda environment same as above:
+# mkdir -p ${CONDA_PREFIX}/etc/conda/activate.d/
+# echo 'export MPA_DIR=/path/to/metaphlan3-db' >> ${CONDA_PREFIX}/etc/conda/activate.d/set_env_vars.sh
+    # then deactivate and reactivate conda environment for it to take effect
 """
+
 
 ########################################
 ######## Setting some variables ########
@@ -95,9 +108,8 @@ mapping_dir = assembly_based_dir + "Mapping_Files/"
 combined_output_dir = assembly_based_dir + "Combined_Outputs/"
 read_based_dir = "../Read-based_Processing/"
 
-dirs_to_create = [assembly_based_dir, assemblies_dir,
-                  genes_dir, annotations_and_tax_dir,
-                  mapping_dir, combined_output_dir,
+dirs_to_create = [fastqc_out_dir, filtered_reads_dir, assembly_based_dir, assemblies_dir,
+                  genes_dir, annotations_and_tax_dir, mapping_dir, combined_output_dir,
                   read_based_dir]
 
   # number of threads to use PER snakemake job started (which is determined by the -j parameter passed to the snakemake call)
@@ -112,15 +124,6 @@ num_cpus = 8
     # either by proportion of available on system, e.g. 0.5
     # or by absolute value in bytes, e.g. 100e9 would be 100 GB
 max_mem = 0.5
-
-  # getting KOFamScan ref directory location (see General Info above)
-KO_DIR = os.environ.get("KO_DIR")
-
-  # getting CAT ref directory location
-CAT_DIR = os.environ.get("CAT_DIR")
-
-  # getting metaphlan ref directory location
-MPA_DIR = os.environ.get("METAPHLAN_DIR")
 
 
 ########################################
@@ -171,6 +174,8 @@ rule run_humann3:
     This rule runs humann3 and metaphlan3 on each individual sample generating the
     read-based functional annotations and taxonomic classifications.
     """
+    conda:
+        "envs/humann3.yaml"
     input:
         R1 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R1_suffix,
         R2 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R2_suffix
@@ -185,7 +190,7 @@ rule run_humann3:
     shell:
         """
         cat {input.R1} {input.R2} > {params.combined_reads}
-        humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db {MPA_DIR} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
+        humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db ${{MPA_DIR}} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
         rm {params.combined_reads}
         """
 
@@ -195,6 +200,8 @@ rule combine_read_based_processing_tables:
     This rule combines the read-based humann3 output functional tables from indiviual samples into single 
     tables across the GLDS dataset.
     """
+    conda:
+        "envs/humann3.yaml"
     input:
         gene_families = expand(read_based_dir + "{ID}-humann3-out-dir/{ID}_genefamilies.tsv", ID = sample_ID_list),
         path_abundances = expand(read_based_dir + "{ID}-humann3-out-dir/{ID}_pathabundance.tsv", ID = sample_ID_list),
@@ -229,6 +236,8 @@ rule split_read_based_processing_tables:
     together initially. humann comes with utility scripts to split these. This rule does that,
     generating non-taxonomically grouped functional info files and taxonomically grouped ones.
     """
+    conda:
+        "envs/humann3.yaml"
     input:
         gene_families = read_based_dir + "gene-families-initial.tsv",
         path_abundances = read_based_dir + "pathway-abundances-initial.tsv",
@@ -263,6 +272,8 @@ rule gen_normalized_read_based_processing_tables:
     This rule generates some normalized tables of the read-based functional outputs from
     humann that are more readily suitable for across sample comparisons.
     """
+    conda:
+        "envs/humann3.yaml"
     input:
         gene_families = read_based_dir + curr_GLDS + "-gene-families.tsv",
         path_abundances = read_based_dir + curr_GLDS + "-pathway-abundances.tsv"
@@ -280,6 +291,8 @@ rule gen_read_based_processing_KO_table:
     """
     This rule summarizes the read-based humann annotations based on Kegg Orthlogy terms.
     """
+    conda:
+        "envs/humann3.yaml"
     input:
         gene_families = read_based_dir + curr_GLDS + "-gene-families.tsv"
     output:
@@ -295,7 +308,8 @@ rule combine_read_based_processing_taxonomy:
     This rule includes final outputs from read-based functional annotation process as inputs even though they aren't used just so 
     we can delete those working directories when done with them here (ensuring the other processes are already done with them).
     """
-
+    conda:
+        "envs/humann3.yaml"
     input:
         in_files = expand(read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/{ID}_metaphlan_bugs_list.tsv", ID = sample_ID_list),
         trigger1 = read_based_dir + curr_GLDS + "-gene-families-cpm.tsv",
@@ -316,6 +330,8 @@ rule combine_read_based_processing_taxonomy:
 
 
 rule make_combined_tables:
+    conda:
+        "envs/bit.yaml"
     input:
         expand(annotations_and_tax_dir + "{ID}-gene-coverage-annotation-and-tax.tsv", ID = sample_ID_list)
     params:
@@ -382,6 +398,8 @@ rule get_cov_and_det:
     This rule pulls out coverage and detection information for each sample, gene-level and contig-level,
     and filters the coverage information based on requiring at least 50% detection.
     """
+    conda:
+        "envs/mapping.yaml"
     input:
         bam = mapping_dir + "{ID}.bam",
         nt = genes_dir + "{ID}-genes.fasta"
@@ -415,6 +433,8 @@ rule run_mapping:
     """
     This rule builds the bowtie2 index and runs the mapping for each sample.
     """
+    conda:
+        "envs/mapping.yaml"
     input:
         assembly = assemblies_dir + "{ID}-assembly.fasta",
         R1 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R1_suffix,
@@ -439,6 +459,8 @@ rule run_tax_classification:
     """
     This rule runs the gene- and contig-level taxonomic classifications for each sample.
     """
+    conda:
+        "envs/cat.yaml"
     input:
         assembly = assemblies_dir + "{ID}-assembly.fasta",
         AA = genes_dir + "{ID}-genes.faa"
@@ -446,17 +468,15 @@ rule run_tax_classification:
         gene_tax_out = annotations_and_tax_dir + "{ID}-gene-tax.tsv",
         contig_tax_out = annotations_and_tax_dir + "{ID}-contig-tax.tsv"
     params:
-        CAT_DB = CAT_DIR + "/2020-06-18_database/",
-        CAT_TAX = CAT_DIR + "/2020-06-18_taxonomy/",
         tmp_out_prefix = annotations_and_tax_dir + "{ID}-tax-out.tmp",
         tmp_genes = annotations_and_tax_dir + "{ID}-gene-tax.tmp",
         tmp_contigs = annotations_and_tax_dir + "{ID}-contig-tax.tmp"
     shell:
         """
-        CAT contigs -d {params.CAT_DB} -t {params.CAT_TAX} -n {num_cpus} -r 3 --top 4 --I_know_what_Im_doing -c {input.assembly} -p {input.AA} -o {params.tmp_out_prefix} > /dev/null 2>&1
+        CAT contigs -d ${{CAT_DIR}}/2020-06-18_database/ -t ${{CAT_DIR}}/2020-06-18_taxonomy/ -n {num_cpus} -r 3 --top 4 --I_know_what_Im_doing -c {input.assembly} -p {input.AA} -o {params.tmp_out_prefix} > /dev/null 2>&1
 
         # adding names to gene classifications
-        CAT add_names -i {params.tmp_out_prefix}.ORF2LCA.txt -o {params.tmp_genes} -t {params.CAT_TAX} --only_official > /dev/null 2>&1
+        CAT add_names -i {params.tmp_out_prefix}.ORF2LCA.txt -o {params.tmp_genes} -t ${{CAT_DIR}}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting gene classifications
         awk -F $'\t' ' BEGIN {{ OFS=FS }} {{ if ( $2 == "lineage" ) {{ print $1,$2,$4,$5,$6,$7,$8,$9,$10 }} \
@@ -466,7 +486,7 @@ rule run_tax_classification:
         sed 's/\*//g' > {output.gene_tax_out}
 
         # adding names to contig classifications
-        CAT add_names -i {params.tmp_out_prefix}.contig2classification.txt -o {params.tmp_contigs} -t {params.CAT_TAX} --only_official > /dev/null 2>&1
+        CAT add_names -i {params.tmp_out_prefix}.contig2classification.txt -o {params.tmp_contigs} -t ${{CAT_DIR}}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting contig classifications
         awk -F $'\t' ' BEGIN {{ OFS=FS }} {{ if ( $2 == "classification" ) {{ print $1,$4,$6,$7,$8,$9,$10,$11,$12 }} \
@@ -483,18 +503,18 @@ rule run_KO_annotation:
     """
     This rule runs the gene-level (KO) functional annotation for each sample.
     """
+    conda:
+        "envs/kofamscan.yaml"
     input:
         genes_dir + "{ID}-genes.faa"
     output:
         annotations_and_tax_dir + "{ID}-annotations.tsv"
     params:
-        KO_profiles = KO_DIR + "/profiles/",
-        KO_list = KO_DIR + "/ko_list",
         tmp_out = annotations_and_tax_dir + "{ID}-KO-tab.tmp",
         tmp_dir = annotations_and_tax_dir + "{ID}-tmp-KO-dir"
     shell:
         """
-        exec_annotation -p {params.KO_profiles} -k {params.KO_list} --cpu {num_cpus} -f detail-tsv -o {params.tmp_out} --tmp-dir {params.tmp_dir} --report-unannotated {input} 
+        exec_annotation -p ${{KO_DIR}}/profiles/ -k ${{KO_DIR}}/ko_list --cpu {num_cpus} -f detail-tsv -o {params.tmp_out} --tmp-dir {params.tmp_dir} --report-unannotated {input} 
 
         bit-filter-KOFamScan-results -i {params.tmp_out} -o {output}
 
@@ -506,6 +526,8 @@ rule call_genes:
     """
     This rule calls genes on each sample's assembly file.
     """
+    conda:
+        "envs/prodigal.yaml"
     input:
         assemblies_dir + "{ID}-assembly.fasta"
     output:
@@ -522,6 +544,8 @@ rule summarize_assemblies:
     """
     This rule summarizes and reports general stats for all individual sample assemblies in one table.
     """
+    conda:
+        "envs/bit.yaml"
     input:
         expand(assemblies_dir + "{ID}-assembly.fasta", ID = sample_ID_list),
     output:
@@ -536,6 +560,8 @@ rule assemble:
     """
     This rule handles running the assembly for each individual sample.
     """
+    conda:
+        "envs/megahit.yaml"
     input:
         R1 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R1_suffix,
         R2 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R2_suffix
@@ -545,6 +571,9 @@ rule assemble:
         assemblies_dir + "{ID}-assembly.log"
     shell:
         """
+        # removing output directory if exists already but rule still needs to be run (because there is no --force option to megahit i dont't think):
+        rm -rf {assemblies_dir}{wildcards.ID}-megahit-out/
+
         megahit -1 {input.R1} -2 {input.R1} -m {max_mem} -t {num_threads} --min-contig-len 500 -o {assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
         bit-rename-fasta-headers -i {assemblies_dir}{wildcards.ID}-megahit-out/final.contigs.fa -w c_{wildcards.ID} -o {output}
 
@@ -556,6 +585,8 @@ rule raw_fastqc:
     """
     This rule runs fastqc on all raw input fastq files.
     """
+    conda:
+        "envs/qc.yaml"
     input:
         raw_reads_dir + filename_prefix + "{ID}" + filename_R1_suffix,
         raw_reads_dir + filename_prefix + "{ID}" + filename_R2_suffix        
@@ -572,6 +603,8 @@ rule raw_multiqc:
     """
     This rule collates all raw fastqc outputs.
     """
+    conda:
+        "envs/qc.yaml"
     input:
         expand(raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R1_suffix, ID = sample_ID_list),
         expand(raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R2_suffix, ID = sample_ID_list)
@@ -594,6 +627,8 @@ rule bbduk:
     """
     This rule runs quality filtering/trimming on raw input fastq files for each individual sample.
     """
+    conda:
+        "envs/qc.yaml"
     input:
         in1 = raw_reads_dir + filename_prefix + "{ID}" + filename_R1_suffix,
         in2 = raw_reads_dir + filename_prefix + "{ID}" + filename_R2_suffix
@@ -614,6 +649,8 @@ rule trimmed_fastqc:
     """
     This rule runs fastqc on all trimmed/filtered input fastq files.
     """
+    conda:
+        "envs/qc.yaml"
     input:
         filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R1_suffix,
         filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R2_suffix
@@ -630,6 +667,8 @@ rule trimmed_multiqc:
     """
     This rule collates all trimmed/filtered fastqc outputs.
     """
+    conda:
+        "envs/qc.yaml"
     input:
         expand(filtered_reads_dir + filename_prefix + "{ID}" + trimmed_fastqc_R1_suffix, ID = sample_ID_list),
         expand(filtered_reads_dir + filename_prefix + "{ID}" + trimmed_fastqc_R2_suffix, ID = sample_ID_list)

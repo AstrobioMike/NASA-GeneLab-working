@@ -28,30 +28,7 @@ Job counts:
 	1	trimmed_multiqc
 	34
 
-[Wed Oct  7 12:22:37 2020]
-rule bbduk:
-    input: ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz
-    output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
-    log: ../Filtered_Sequence_Data/bbduk-5492_S3.log
-    jobid: 31
-    wildcards: ID=5492_S3
-
-
-        bbduk.sh in=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz                 ref=${CONDA_PREFIX}/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl                 trimq=10 mlf=0.5 maxns=0 > ../Filtered_Sequence_Data/bbduk-5492_S3.log 2>&1
-        
-
-[Wed Oct  7 12:22:37 2020]
-rule raw_fastqc:
-    input: ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz
-    output: ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved_fastqc.zip
-    jobid: 21
-    wildcards: ID=5501_S5
-
-
-        fastqc ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz -t 7 -q
-        
-
-[Wed Oct  7 12:22:37 2020]
+[Sun Oct 11 01:53:44 2020]
 rule bbduk:
     input: ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz
     output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
@@ -63,7 +40,18 @@ rule bbduk:
         bbduk.sh in=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz                 ref=${CONDA_PREFIX}/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl                 trimq=10 mlf=0.5 maxns=0 > ../Filtered_Sequence_Data/bbduk-5501_S5.log 2>&1
         
 
-[Wed Oct  7 12:22:37 2020]
+[Sun Oct 11 01:53:44 2020]
+rule raw_fastqc:
+    input: ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz
+    output: ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved_fastqc.zip
+    jobid: 21
+    wildcards: ID=5501_S5
+
+
+        fastqc ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved.fastq.gz ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved.fastq.gz -t 7 -q
+        
+
+[Sun Oct 11 01:53:44 2020]
 rule raw_fastqc:
     input: ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz
     output: ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved_fastqc.zip
@@ -73,75 +61,27 @@ rule raw_fastqc:
 
         fastqc ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz -t 7 -q
         
-[Wed Oct  7 12:25:16 2020]
+
+[Sun Oct 11 01:53:44 2020]
+rule bbduk:
+    input: ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz, ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz
+    output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
+    log: ../Filtered_Sequence_Data/bbduk-5492_S3.log
+    jobid: 31
+    wildcards: ID=5492_S3
+
+
+        bbduk.sh in=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved.fastq.gz in2=../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved.fastq.gz out1=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz out2=../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz                 ref=${CONDA_PREFIX}/opt/bbmap-38.86-0/resources/adapters.fa ktrim=l k=17 ftm=5 qtrim=rl                 trimq=10 mlf=0.5 maxns=0 > ../Filtered_Sequence_Data/bbduk-5492_S3.log 2>&1
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+[Sun Oct 11 01:56:33 2020]
 Finished job 32.
 1 of 34 steps (3%) done
 
-[Wed Oct  7 12:25:16 2020]
-rule run_humann3:
-    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
-    output: ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_genefamilies.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathabundance.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathcoverage.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_humann_temp/5501_S5_metaphlan_bugs_list.tsv
-    jobid: 26
-    wildcards: ID=5501_S5
-
-
-        cat ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz > ../Read-based_Processing/5501_S5-reads.tmp.fq.gz
-        humann --input ../Read-based_Processing/5501_S5-reads.tmp.fq.gz --output ../Read-based_Processing/5501_S5-humann3-out-dir --threads 7 --output-basename 5501_S5 --metaphlan-options "--bowtie2db /data1/Data_Processing/mlee/metaphlan3-db --unknown_estimation --add_viruses --sample_id 5501_S5" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
-        rm ../Read-based_Processing/5501_S5-reads.tmp.fq.gz
-        
-[Wed Oct  7 12:25:22 2020]
-Finished job 31.
-2 of 34 steps (6%) done
-
-[Wed Oct  7 12:25:22 2020]
-rule run_humann3:
-    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
-    output: ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_genefamilies.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathabundance.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathcoverage.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_humann_temp/5492_S3_metaphlan_bugs_list.tsv
-    jobid: 25
-    wildcards: ID=5492_S3
-
-
-        cat ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz > ../Read-based_Processing/5492_S3-reads.tmp.fq.gz
-        humann --input ../Read-based_Processing/5492_S3-reads.tmp.fq.gz --output ../Read-based_Processing/5492_S3-humann3-out-dir --threads 7 --output-basename 5492_S3 --metaphlan-options "--bowtie2db /data1/Data_Processing/mlee/metaphlan3-db --unknown_estimation --add_viruses --sample_id 5492_S3" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
-        rm ../Read-based_Processing/5492_S3-reads.tmp.fq.gz
-        
-[Wed Oct  7 12:26:57 2020]
-Finished job 21.
-3 of 34 steps (9%) done
-
-[Wed Oct  7 12:26:57 2020]
-rule trimmed_fastqc:
-    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
-    output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed_fastqc.zip
-    jobid: 22
-    wildcards: ID=5492_S3
-
-
-        fastqc ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz -t 7 -q
-        
-[Wed Oct  7 12:26:58 2020]
-Finished job 20.
-4 of 34 steps (12%) done
-
-[Wed Oct  7 12:26:58 2020]
-rule assemble:
-    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
-    output: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
-    log: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.log
-    jobid: 18
-    wildcards: ID=5492_S3
-
-
-        megahit -1 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz -2 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz -m 0.5 -t 7 --min-contig-len 500 -o ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out > ../Assembly-based_Processing/Assemblies/5492_S3-assembly.log 2>&1
-        bit-rename-fasta-headers -i ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out/final.contigs.fa -w c_5492_S3 -o ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
-
-        rm -rf ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out/
-        
-[Wed Oct  7 12:30:50 2020]
-Finished job 22.
-5 of 34 steps (15%) done
-
-[Wed Oct  7 12:30:50 2020]
+[Sun Oct 11 01:56:33 2020]
 rule trimmed_fastqc:
     input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
     output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed_fastqc.zip
@@ -151,11 +91,66 @@ rule trimmed_fastqc:
 
         fastqc ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz -t 7 -q
         
-[Wed Oct  7 12:35:12 2020]
-Finished job 23.
-6 of 34 steps (18%) done
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+[Sun Oct 11 01:56:36 2020]
+Finished job 31.
+2 of 34 steps (6%) done
 
-[Wed Oct  7 12:35:12 2020]
+[Sun Oct 11 01:56:36 2020]
+rule assemble:
+    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
+    output: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
+    log: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.log
+    jobid: 18
+    wildcards: ID=5492_S3
+
+
+        # removing output directory if exists already but rule still needs to be run (because there is no --force option to megahit i dont't think):
+        rm -rf ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out/
+
+        megahit -1 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz -2 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz -m 0.5 -t 7 --min-contig-len 500 -o ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out > ../Assembly-based_Processing/Assemblies/5492_S3-assembly.log 2>&1
+        bit-rename-fasta-headers -i ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out/final.contigs.fa -w c_5492_S3 -o ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
+
+        rm -rf ../Assembly-based_Processing/Assemblies/5492_S3-megahit-out/
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/1758c991
+[Sun Oct 11 01:57:35 2020]
+Finished job 21.
+3 of 34 steps (9%) done
+
+[Sun Oct 11 01:57:35 2020]
+rule run_humann3:
+    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
+    output: ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_genefamilies.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathabundance.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathcoverage.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_humann_temp/5492_S3_metaphlan_bugs_list.tsv
+    jobid: 25
+    wildcards: ID=5492_S3
+
+
+        cat ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz > ../Read-based_Processing/5492_S3-reads.tmp.fq.gz
+        humann --input ../Read-based_Processing/5492_S3-reads.tmp.fq.gz --output ../Read-based_Processing/5492_S3-humann3-out-dir --threads 7 --output-basename 5492_S3 --metaphlan-options "--bowtie2db ${MPA_DIR} --unknown_estimation --add_viruses --sample_id 5492_S3" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
+        rm ../Read-based_Processing/5492_S3-reads.tmp.fq.gz
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 01:57:41 2020]
+Finished job 20.
+4 of 34 steps (12%) done
+
+[Sun Oct 11 01:57:41 2020]
+rule trimmed_fastqc:
+    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
+    output: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed_fastqc.zip
+    jobid: 22
+    wildcards: ID=5492_S3
+
+
+        fastqc ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz -t 7 -q
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+[Sun Oct 11 02:00:01 2020]
+Finished job 23.
+5 of 34 steps (15%) done
+
+[Sun Oct 11 02:00:01 2020]
 rule assemble:
     input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
     output: ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
@@ -164,16 +159,37 @@ rule assemble:
     wildcards: ID=5501_S5
 
 
+        # removing output directory if exists already but rule still needs to be run (because there is no --force option to megahit i dont't think):
+        rm -rf ../Assembly-based_Processing/Assemblies/5501_S5-megahit-out/
+
         megahit -1 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz -2 ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz -m 0.5 -t 7 --min-contig-len 500 -o ../Assembly-based_Processing/Assemblies/5501_S5-megahit-out > ../Assembly-based_Processing/Assemblies/5501_S5-assembly.log 2>&1
         bit-rename-fasta-headers -i ../Assembly-based_Processing/Assemblies/5501_S5-megahit-out/final.contigs.fa -w c_5501_S5 -o ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
 
         rm -rf ../Assembly-based_Processing/Assemblies/5501_S5-megahit-out/
         
-[Wed Oct  7 13:11:01 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/1758c991
+[Sun Oct 11 02:01:27 2020]
+Finished job 22.
+6 of 34 steps (18%) done
+
+[Sun Oct 11 02:01:27 2020]
+rule run_humann3:
+    input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
+    output: ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_genefamilies.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathabundance.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathcoverage.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_humann_temp/5501_S5_metaphlan_bugs_list.tsv
+    jobid: 26
+    wildcards: ID=5501_S5
+
+
+        cat ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz > ../Read-based_Processing/5501_S5-reads.tmp.fq.gz
+        humann --input ../Read-based_Processing/5501_S5-reads.tmp.fq.gz --output ../Read-based_Processing/5501_S5-humann3-out-dir --threads 7 --output-basename 5501_S5 --metaphlan-options "--bowtie2db ${MPA_DIR} --unknown_estimation --add_viruses --sample_id 5501_S5" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
+        rm ../Read-based_Processing/5501_S5-reads.tmp.fq.gz
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 02:37:17 2020]
 Finished job 18.
 7 of 34 steps (21%) done
 
-[Wed Oct  7 13:11:01 2020]
+[Sun Oct 11 02:37:17 2020]
 rule run_mapping:
     input: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed.fastq.gz
     output: ../Assembly-based_Processing/Mapping_Files/5492_S3.bam
@@ -188,11 +204,12 @@ rule run_mapping:
 
         rm ../Assembly-based_Processing/Mapping_Files/5492_S3-index*
         
-[Wed Oct  7 13:17:00 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/121f5c17
+[Sun Oct 11 02:38:06 2020]
 Finished job 19.
 8 of 34 steps (24%) done
 
-[Wed Oct  7 13:17:00 2020]
+[Sun Oct 11 02:38:06 2020]
 rule run_mapping:
     input: ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed.fastq.gz, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed.fastq.gz
     output: ../Assembly-based_Processing/Mapping_Files/5501_S5.bam
@@ -207,11 +224,12 @@ rule run_mapping:
 
         rm ../Assembly-based_Processing/Mapping_Files/5501_S5-index*
         
-[Wed Oct  7 13:34:45 2020]
-Finished job 27.
+Activating conda environment: /data1/mlee/miniconda3/envs/121f5c17
+[Sun Oct 11 03:06:02 2020]
+Finished job 29.
 9 of 34 steps (26%) done
 
-[Wed Oct  7 13:34:45 2020]
+[Sun Oct 11 03:06:02 2020]
 rule summarize_assemblies:
     input: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta, ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
     output: ../Assembly-based_Processing/Assemblies/assembly-summaries.tsv
@@ -220,11 +238,12 @@ rule summarize_assemblies:
 
         bit-summarize-assembly -o ../Assembly-based_Processing/Assemblies/assembly-summaries.tsv ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
         
-[Wed Oct  7 13:34:48 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/48fcee9e
+[Sun Oct 11 03:06:07 2020]
 Finished job 6.
 10 of 34 steps (29%) done
 
-[Wed Oct  7 13:34:48 2020]
+[Sun Oct 11 03:06:07 2020]
 rule call_genes:
     input: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
     output: ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa, ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.fasta, ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.gff
@@ -234,11 +253,12 @@ rule call_genes:
 
         prodigal -q -c -p meta -a ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa -d ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.fasta -f gff -o ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.gff -i ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta
         
-[Wed Oct  7 13:37:19 2020]
-Finished job 29.
+Activating conda environment: /data1/mlee/miniconda3/envs/7e137c90
+[Sun Oct 11 03:06:38 2020]
+Finished job 27.
 11 of 34 steps (32%) done
 
-[Wed Oct  7 13:37:19 2020]
+[Sun Oct 11 03:06:38 2020]
 rule call_genes:
     input: ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
     output: ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa, ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.fasta, ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.gff
@@ -248,11 +268,12 @@ rule call_genes:
 
         prodigal -q -c -p meta -a ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa -d ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.fasta -f gff -o ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.gff -i ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta
         
-[Wed Oct  7 13:37:24 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/7e137c90
+[Sun Oct 11 03:08:36 2020]
 Finished job 28.
 12 of 34 steps (35%) done
 
-[Wed Oct  7 13:37:24 2020]
+[Sun Oct 11 03:08:36 2020]
 rule get_cov_and_det:
     input: ../Assembly-based_Processing/Mapping_Files/5492_S3.bam, ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.fasta
     output: ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv, ../Assembly-based_Processing/Mapping_Files/5492_S3-contig-coverages.tsv
@@ -276,11 +297,12 @@ rule get_cov_and_det:
           # removing intermediate files
         rm ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-cov-and-det.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-contig-cov-and-det.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-cov.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-contig-cov.tmp
         
-[Wed Oct  7 13:39:36 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/121f5c17
+[Sun Oct 11 03:08:42 2020]
 Finished job 30.
 13 of 34 steps (38%) done
 
-[Wed Oct  7 13:39:36 2020]
+[Sun Oct 11 03:08:42 2020]
 rule get_cov_and_det:
     input: ../Assembly-based_Processing/Mapping_Files/5501_S5.bam, ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.fasta
     output: ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv, ../Assembly-based_Processing/Mapping_Files/5501_S5-contig-coverages.tsv
@@ -304,11 +326,12 @@ rule get_cov_and_det:
           # removing intermediate files
         rm ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-cov-and-det.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-contig-cov-and-det.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-cov.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-contig-cov.tmp
         
-[Wed Oct  7 13:40:51 2020]
-Finished job 12.
+Activating conda environment: /data1/mlee/miniconda3/envs/121f5c17
+[Sun Oct 11 03:12:09 2020]
+Finished job 14.
 14 of 34 steps (41%) done
 
-[Wed Oct  7 13:40:51 2020]
+[Sun Oct 11 03:12:09 2020]
 rule run_tax_classification:
     input: ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta, ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tsv
@@ -316,27 +339,28 @@ rule run_tax_classification:
     wildcards: ID=5492_S3
 
 
-        CAT contigs -d /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_database/ -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ -n 8 -r 3 --top 4 --I_know_what_Im_doing -c ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta -p ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp > /dev/null 2>&1
+        CAT contigs -d ${CAT_DIR}/2020-06-18_database/ -t ${CAT_DIR}/2020-06-18_taxonomy/ -n 8 -r 3 --top 4 --I_know_what_Im_doing -c ../Assembly-based_Processing/Assemblies/5492_S3-assembly.fasta -p ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp > /dev/null 2>&1
 
         # adding names to gene classifications
-        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp.ORF2LCA.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tmp -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
+        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp.ORF2LCA.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tmp -t ${CAT_DIR}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting gene classifications
         awk -F $'	' ' BEGIN { OFS=FS } { if ( $2 == "lineage" ) { print $1,$2,$4,$5,$6,$7,$8,$9,$10 }         else if ( $2 == "ORF has no hit to database" || $2 ~ /^no taxid found/ ) { print $1,"NA","NA","NA","NA","NA","NA","NA","NA" }         else { n=split($2,lineage,";"); print $1,lineage[n],$4,$5,$6,$7,$8,$9,$10 } } ' ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tmp |         sed 's/not classified/NA/g' | sed 's/superkingdom/domain/' | sed 's/^# ORF/gene_ID/' | sed 's/lineage/taxid/' |         sed 's/\*//g' > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv
 
         # adding names to contig classifications
-        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp.contig2classification.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tmp -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
+        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tax-out.tmp.contig2classification.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tmp -t ${CAT_DIR}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting contig classifications
         awk -F $'	' ' BEGIN { OFS=FS } { if ( $2 == "classification" ) { print $1,$4,$6,$7,$8,$9,$10,$11,$12 }         else if ( $2 == "unclassified" ) { print $1,"NA","NA","NA","NA","NA","NA","NA","NA" }         else { n=split($4,lineage,";"); print $1,lineage[n],$6,$7,$8,$9,$10,$11,$12 } } ' ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tmp |         sed 's/not classified/NA/g' | sed 's/superkingdom/domain/' | sed 's/: [0-9\.]*//g' | sed 's/^# contig/contig_ID/' |         sed 's/lineage/taxid/' | sed 's/\*//g' > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tsv
 
         rm -rf ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3*tmp*
         
-[Wed Oct  7 13:43:02 2020]
-Finished job 14.
+Activating conda environment: /data1/mlee/miniconda3/envs/c09e6a98
+[Sun Oct 11 03:12:12 2020]
+Finished job 12.
 15 of 34 steps (44%) done
 
-[Wed Oct  7 13:43:02 2020]
+[Sun Oct 11 03:12:12 2020]
 rule run_tax_classification:
     input: ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta, ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tsv
@@ -344,27 +368,28 @@ rule run_tax_classification:
     wildcards: ID=5501_S5
 
 
-        CAT contigs -d /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_database/ -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ -n 8 -r 3 --top 4 --I_know_what_Im_doing -c ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta -p ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp > /dev/null 2>&1
+        CAT contigs -d ${CAT_DIR}/2020-06-18_database/ -t ${CAT_DIR}/2020-06-18_taxonomy/ -n 8 -r 3 --top 4 --I_know_what_Im_doing -c ../Assembly-based_Processing/Assemblies/5501_S5-assembly.fasta -p ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp > /dev/null 2>&1
 
         # adding names to gene classifications
-        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp.ORF2LCA.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tmp -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
+        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp.ORF2LCA.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tmp -t ${CAT_DIR}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting gene classifications
         awk -F $'	' ' BEGIN { OFS=FS } { if ( $2 == "lineage" ) { print $1,$2,$4,$5,$6,$7,$8,$9,$10 }         else if ( $2 == "ORF has no hit to database" || $2 ~ /^no taxid found/ ) { print $1,"NA","NA","NA","NA","NA","NA","NA","NA" }         else { n=split($2,lineage,";"); print $1,lineage[n],$4,$5,$6,$7,$8,$9,$10 } } ' ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tmp |         sed 's/not classified/NA/g' | sed 's/superkingdom/domain/' | sed 's/^# ORF/gene_ID/' | sed 's/lineage/taxid/' |         sed 's/\*//g' > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv
 
         # adding names to contig classifications
-        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp.contig2classification.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tmp -t /data1/Data_Processing/mlee/CAT_prepare_20200618/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
+        CAT add_names -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tax-out.tmp.contig2classification.txt -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tmp -t ${CAT_DIR}/2020-06-18_taxonomy/ --only_official > /dev/null 2>&1
 
         # formatting contig classifications
         awk -F $'	' ' BEGIN { OFS=FS } { if ( $2 == "classification" ) { print $1,$4,$6,$7,$8,$9,$10,$11,$12 }         else if ( $2 == "unclassified" ) { print $1,"NA","NA","NA","NA","NA","NA","NA","NA" }         else { n=split($4,lineage,";"); print $1,lineage[n],$6,$7,$8,$9,$10,$11,$12 } } ' ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tmp |         sed 's/not classified/NA/g' | sed 's/superkingdom/domain/' | sed 's/: [0-9\.]*//g' | sed 's/^# contig/contig_ID/' |         sed 's/lineage/taxid/' | sed 's/\*//g' > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tsv
 
         rm -rf ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5*tmp*
         
-[Wed Oct  7 15:30:04 2020]
-Finished job 13.
+Activating conda environment: /data1/mlee/miniconda3/envs/c09e6a98
+[Sun Oct 11 04:56:28 2020]
+Finished job 15.
 16 of 34 steps (47%) done
 
-[Wed Oct  7 15:30:04 2020]
+[Sun Oct 11 04:56:28 2020]
 rule run_KO_annotation:
     input: ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv
@@ -372,17 +397,17 @@ rule run_KO_annotation:
     wildcards: ID=5492_S3
 
 
-        exec_annotation -p /data1/Data_Processing/mlee/kofamscan_db/profiles/ -k /data1/Data_Processing/mlee/kofamscan_db/ko_list --cpu 8 -f detail-tsv -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-KO-tab.tmp --tmp-dir ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tmp-KO-dir --report-unannotated ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa 
+        exec_annotation -p ${KO_DIR}/profiles/ -k ${KO_DIR}/ko_list --cpu 8 -f detail-tsv -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-KO-tab.tmp --tmp-dir ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tmp-KO-dir --report-unannotated ../Assembly-based_Processing/Predicted_Genes/5492_S3-genes.faa 
 
         bit-filter-KOFamScan-results -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-KO-tab.tmp -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv
 
         rm -rf ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-KO-tab.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-tmp-KO-dir 
         
-[Wed Oct  7 15:30:18 2020]
-Finished job 15.
+[Sun Oct 11 04:56:29 2020]
+Finished job 13.
 17 of 34 steps (50%) done
 
-[Wed Oct  7 15:30:18 2020]
+[Sun Oct 11 04:56:29 2020]
 rule run_KO_annotation:
     input: ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv
@@ -390,17 +415,38 @@ rule run_KO_annotation:
     wildcards: ID=5501_S5
 
 
-        exec_annotation -p /data1/Data_Processing/mlee/kofamscan_db/profiles/ -k /data1/Data_Processing/mlee/kofamscan_db/ko_list --cpu 8 -f detail-tsv -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-KO-tab.tmp --tmp-dir ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tmp-KO-dir --report-unannotated ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa 
+        exec_annotation -p ${KO_DIR}/profiles/ -k ${KO_DIR}/ko_list --cpu 8 -f detail-tsv -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-KO-tab.tmp --tmp-dir ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tmp-KO-dir --report-unannotated ../Assembly-based_Processing/Predicted_Genes/5501_S5-genes.faa 
 
         bit-filter-KOFamScan-results -i ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-KO-tab.tmp -o ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv
 
         rm -rf ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-KO-tab.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-tmp-KO-dir 
         
-[Wed Oct  7 15:43:12 2020]
-Finished job 26.
+Activating conda environment: /data1/mlee/miniconda3/envs/7bc48144
+Activating conda environment: /data1/mlee/miniconda3/envs/7bc48144
+[Sun Oct 11 05:21:59 2020]
+Finished job 17.
 18 of 34 steps (53%) done
 
-[Wed Oct  7 15:43:12 2020]
+[Sun Oct 11 05:21:59 2020]
+rule combine_gene_annots_tax_and_coverage:
+    input: ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv
+    output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
+    jobid: 5
+    wildcards: ID=5501_S5
+
+
+        paste <( tail -n +2 ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv | sort -V -k 1 ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv | sort -V -k 1 | cut -f 2- ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv | sort -V -k 1 | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp
+        paste <( head -n 1 ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv | cut -f 2- ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp
+
+        cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
+
+        rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv
+        
+[Sun Oct 11 05:21:59 2020]
+Finished job 5.
+19 of 34 steps (56%) done
+
+[Sun Oct 11 05:21:59 2020]
 rule combine_contig_tax_and_coverage:
     input: ../Assembly-based_Processing/Mapping_Files/5492_S3-contig-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tsv
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-coverage-and-tax.tsv
@@ -413,11 +459,11 @@ rule combine_contig_tax_and_coverage:
         cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-coverage-and-tax.tsv
         rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-header.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-contig-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-tax.tsv
         
-[Wed Oct  7 15:43:12 2020]
+[Sun Oct 11 05:21:59 2020]
 Finished job 2.
-19 of 34 steps (56%) done
+20 of 34 steps (59%) done
 
-[Wed Oct  7 15:43:12 2020]
+[Sun Oct 11 05:21:59 2020]
 rule combine_contig_tax_and_coverage:
     input: ../Assembly-based_Processing/Mapping_Files/5501_S5-contig-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tsv
     output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-coverage-and-tax.tsv
@@ -430,11 +476,11 @@ rule combine_contig_tax_and_coverage:
         cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-coverage-and-tax.tsv
         rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-header.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-contig-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-tax.tsv
         
-[Wed Oct  7 15:43:12 2020]
+[Sun Oct 11 05:21:59 2020]
 Finished job 3.
-20 of 34 steps (59%) done
+21 of 34 steps (62%) done
 
-[Wed Oct  7 15:43:12 2020]
+[Sun Oct 11 05:22:00 2020]
 rule raw_multiqc:
     input: ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved_fastqc.zip, ../Raw_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved_fastqc.zip
     output: ../FastQC_Outputs/raw_multiqc_report.html.zip, ../FastQC_Outputs/raw_multiqc_data.zip
@@ -449,11 +495,12 @@ rule raw_multiqc:
           # removing the individual fastqc files
         rm -rf ../Raw_Data/*fastqc* ../FastQC_Outputs/raw_tmp_qc/
         
-[Wed Oct  7 15:43:28 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+[Sun Oct 11 05:22:11 2020]
 Finished job 7.
-21 of 34 steps (62%) done
+22 of 34 steps (65%) done
 
-[Wed Oct  7 15:43:28 2020]
+[Sun Oct 11 05:22:11 2020]
 rule trimmed_multiqc:
     input: ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R1_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R1_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5492_S3_L003_R2_001_HRremoved-trimmed_fastqc.zip, ../Filtered_Sequence_Data/GLDS-286_metagenomics_5501_S5_L003_R2_001_HRremoved-trimmed_fastqc.zip
     output: ../FastQC_Outputs/trimmed_multiqc_report.html.zip, ../FastQC_Outputs/trimmed_multiqc_data.zip
@@ -468,14 +515,57 @@ rule trimmed_multiqc:
           # removing the individual fastqc files and temp locations
         rm -rf ../Filtered_Sequence_Data/*fastqc* ../FastQC_Outputs/trimmed_tmp_qc/
         
-[Wed Oct  7 15:43:32 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/15da5b0b
+[Sun Oct 11 05:22:16 2020]
 Finished job 8.
-22 of 34 steps (65%) done
-[Wed Oct  7 15:48:09 2020]
-Finished job 25.
 23 of 34 steps (68%) done
+[Sun Oct 11 05:24:31 2020]
+Finished job 16.
+24 of 34 steps (71%) done
 
-[Wed Oct  7 15:48:09 2020]
+[Sun Oct 11 05:24:31 2020]
+rule combine_gene_annots_tax_and_coverage:
+    input: ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv
+    output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv
+    jobid: 4
+    wildcards: ID=5492_S3
+
+
+        paste <( tail -n +2 ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv | sort -V -k 1 ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv | sort -V -k 1 | cut -f 2- ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv | sort -V -k 1 | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp
+        paste <( head -n 1 ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv | cut -f 2- ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp
+
+        cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv
+
+        rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv
+        
+[Sun Oct 11 05:24:32 2020]
+Finished job 4.
+25 of 34 steps (74%) done
+
+[Sun Oct 11 05:24:32 2020]
+rule make_combined_tables:
+    input: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
+    output: ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv, ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv
+    jobid: 1
+
+
+        bit-GL-combine-KO-and-tax-tables ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv -o ../Assembly-based_Processing/Combined_Outputs/GLDS-286
+          # shortening column names to unique part of sample names
+        sed -i.tmp 's/-gene-coverage-annotation-and-tax//g' ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv && rm ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv.tmp
+        sed -i.tmp 's/-gene-coverage-annotation-and-tax//g' ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv && rm ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv.tmp
+        
+Activating conda environment: /data1/mlee/miniconda3/envs/48fcee9e
+[Sun Oct 11 05:24:51 2020]
+Finished job 1.
+26 of 34 steps (76%) done
+[Sun Oct 11 05:30:45 2020]
+Finished job 25.
+27 of 34 steps (79%) done
+[Sun Oct 11 05:31:35 2020]
+Finished job 26.
+28 of 34 steps (82%) done
+
+[Sun Oct 11 05:31:35 2020]
 rule combine_read_based_processing_tables:
     input: ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_genefamilies.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_genefamilies.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathabundance.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathabundance.tsv, ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_pathcoverage.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_pathcoverage.tsv
     output: ../Read-based_Processing/gene-families-initial.tsv, ../Read-based_Processing/pathway-abundances-initial.tsv, ../Read-based_Processing/pathway-coverages-initial.tsv
@@ -494,11 +584,12 @@ rule combine_read_based_processing_tables:
 
         rm -rf ../Read-based_Processing/gene-family-results/ ../Read-based_Processing/path-abundance-results/ ../Read-based_Processing/path-coverage-results/
         
-[Wed Oct  7 15:48:10 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 05:31:38 2020]
 Finished job 33.
-24 of 34 steps (71%) done
+29 of 34 steps (85%) done
 
-[Wed Oct  7 15:48:10 2020]
+[Sun Oct 11 05:31:38 2020]
 rule split_read_based_processing_tables:
     input: ../Read-based_Processing/gene-families-initial.tsv, ../Read-based_Processing/pathway-abundances-initial.tsv, ../Read-based_Processing/pathway-coverages-initial.tsv
     output: ../Read-based_Processing/GLDS-286-gene-families.tsv, ../Read-based_Processing/GLDS-286-gene-families-grouped-by-taxa.tsv, ../Read-based_Processing/GLDS-286-pathway-abundances.tsv, ../Read-based_Processing/GLDS-286-pathway-abundances-grouped-by-taxa.tsv, ../Read-based_Processing/GLDS-286-pathway-coverages.tsv, ../Read-based_Processing/GLDS-286-pathway-coverages-grouped-by-taxa.tsv
@@ -519,11 +610,22 @@ rule split_read_based_processing_tables:
 
         rm ../Read-based_Processing/gene-families-initial.tsv ../Read-based_Processing/pathway-abundances-initial.tsv ../Read-based_Processing/pathway-coverages-initial.tsv
         
-[Wed Oct  7 15:48:11 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 05:31:39 2020]
 Finished job 24.
-25 of 34 steps (74%) done
+30 of 34 steps (88%) done
 
-[Wed Oct  7 15:48:11 2020]
+[Sun Oct 11 05:31:39 2020]
+rule gen_read_based_processing_KO_table:
+    input: ../Read-based_Processing/GLDS-286-gene-families.tsv
+    output: ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv
+    jobid: 10
+
+
+        humann_regroup_table -i ../Read-based_Processing/GLDS-286-gene-families.tsv -g uniref90_ko 2> /dev/null | humann_rename_table -n kegg-orthology 2> /dev/null | humann_renorm_table -o ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv --update-snames > /dev/null 2>&1
+        
+
+[Sun Oct 11 05:31:39 2020]
 rule gen_normalized_read_based_processing_tables:
     input: ../Read-based_Processing/GLDS-286-gene-families.tsv, ../Read-based_Processing/GLDS-286-pathway-abundances.tsv
     output: ../Read-based_Processing/GLDS-286-gene-families-cpm.tsv, ../Read-based_Processing/GLDS-286-pathway-abundances-cpm.tsv
@@ -533,24 +635,16 @@ rule gen_normalized_read_based_processing_tables:
         humann_renorm_table -i ../Read-based_Processing/GLDS-286-gene-families.tsv -o ../Read-based_Processing/GLDS-286-gene-families-cpm.tsv --update-snames > /dev/null 2>&1
         humann_renorm_table -i ../Read-based_Processing/GLDS-286-pathway-abundances.tsv -o ../Read-based_Processing/GLDS-286-pathway-abundances-cpm.tsv --update-snames > /dev/null 2>&1
         
-
-[Wed Oct  7 15:48:11 2020]
-rule gen_read_based_processing_KO_table:
-    input: ../Read-based_Processing/GLDS-286-gene-families.tsv
-    output: ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv
-    jobid: 10
-
-
-        humann_regroup_table -i ../Read-based_Processing/GLDS-286-gene-families.tsv -g uniref90_ko 2> /dev/null | humann_rename_table -n kegg-orthology 2> /dev/null | humann_renorm_table -o ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv --update-snames > /dev/null 2>&1
-        
-[Wed Oct  7 15:48:11 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 05:31:40 2020]
 Finished job 9.
-26 of 34 steps (76%) done
-[Wed Oct  7 15:48:13 2020]
+31 of 34 steps (91%) done
+[Sun Oct 11 05:31:42 2020]
 Finished job 10.
-27 of 34 steps (79%) done
+32 of 34 steps (94%) done
 
-[Wed Oct  7 15:48:13 2020]
+[Sun Oct 11 05:31:42 2020]
 rule combine_read_based_processing_taxonomy:
     input: ../Read-based_Processing/5492_S3-humann3-out-dir/5492_S3_humann_temp/5492_S3_metaphlan_bugs_list.tsv, ../Read-based_Processing/5501_S5-humann3-out-dir/5501_S5_humann_temp/5501_S5_metaphlan_bugs_list.tsv, ../Read-based_Processing/GLDS-286-gene-families-cpm.tsv, ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv
     output: ../Read-based_Processing/GLDS-286-metaphlan-taxonomy.tsv
@@ -566,71 +660,12 @@ rule combine_read_based_processing_taxonomy:
         # removing humann3 working directories
         rm -rf ../Read-based_Processing/*-humann3-out-dir/
         
-[Wed Oct  7 15:48:22 2020]
+Activating conda environment: /data1/mlee/miniconda3/envs/58a9ae48
+[Sun Oct 11 05:31:53 2020]
 Finished job 11.
-28 of 34 steps (82%) done
-[Wed Oct  7 15:51:47 2020]
-Finished job 17.
-29 of 34 steps (85%) done
-
-[Wed Oct  7 15:51:47 2020]
-rule combine_gene_annots_tax_and_coverage:
-    input: ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv
-    output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
-    jobid: 5
-    wildcards: ID=5501_S5
-
-
-        paste <( tail -n +2 ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv | sort -V -k 1 ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv | sort -V -k 1 | cut -f 2- ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv | sort -V -k 1 | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp
-        paste <( head -n 1 ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv | cut -f 2- ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp
-
-        cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
-
-        rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-header.tmp ../Assembly-based_Processing/Mapping_Files/5501_S5-gene-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-annotations.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-tax.tsv
-        
-[Wed Oct  7 15:51:47 2020]
-Finished job 5.
-30 of 34 steps (88%) done
-[Wed Oct  7 15:54:00 2020]
-Finished job 16.
-31 of 34 steps (91%) done
-
-[Wed Oct  7 15:54:00 2020]
-rule combine_gene_annots_tax_and_coverage:
-    input: ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv
-    output: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv
-    jobid: 4
-    wildcards: ID=5492_S3
-
-
-        paste <( tail -n +2 ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv | sort -V -k 1 ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv | sort -V -k 1 | cut -f 2- ) <( tail -n +2 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv | sort -V -k 1 | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp
-        paste <( head -n 1 ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv | cut -f 2- ) <( head -n 1 ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv | cut -f 2- ) > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp
-
-        cat ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp > ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv
-
-        rm ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene.tmp ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-header.tmp ../Assembly-based_Processing/Mapping_Files/5492_S3-gene-coverages.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-annotations.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-tax.tsv
-        
-[Wed Oct  7 15:54:00 2020]
-Finished job 4.
-32 of 34 steps (94%) done
-
-[Wed Oct  7 15:54:00 2020]
-rule make_combined_tables:
-    input: ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv
-    output: ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv, ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv
-    jobid: 1
-
-
-        bit-GL-combine-KO-and-tax-tables ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv -o ../Assembly-based_Processing/Combined_Outputs/GLDS-286
-          # shortening column names to unique part of sample names
-        sed -i.tmp 's/-gene-coverage-annotation-and-tax//g' ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv && rm ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv.tmp
-        sed -i.tmp 's/-gene-coverage-annotation-and-tax//g' ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv && rm ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv.tmp
-        
-[Wed Oct  7 15:54:19 2020]
-Finished job 1.
 33 of 34 steps (97%) done
 
-[Wed Oct  7 15:54:19 2020]
+[Sun Oct 11 05:31:53 2020]
 rule all:
     input: ../Assembly-based_Processing/Combined_Outputs/GLDS-286-KO-function-coverages.tsv, ../Assembly-based_Processing/Combined_Outputs/GLDS-286-taxonomy-coverages.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-contig-coverage-and-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-contig-coverage-and-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5492_S3-gene-coverage-annotation-and-tax.tsv, ../Assembly-based_Processing/Annotations_and_Taxonomy/5501_S5-gene-coverage-annotation-and-tax.tsv, ../Assembly-based_Processing/Assemblies/assembly-summaries.tsv, ../FastQC_Outputs/raw_multiqc_report.html.zip, ../FastQC_Outputs/raw_multiqc_data.zip, ../FastQC_Outputs/trimmed_multiqc_report.html.zip, ../FastQC_Outputs/trimmed_multiqc_data.zip, ../Read-based_Processing/GLDS-286-gene-families-cpm.tsv, ../Read-based_Processing/GLDS-286-gene-families-KO-cpm.tsv, ../Read-based_Processing/GLDS-286-metaphlan-taxonomy.tsv
     jobid: 0
