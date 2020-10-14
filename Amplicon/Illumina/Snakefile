@@ -1,11 +1,11 @@
-############################################################################################
-## Example Snakefile for GeneLab's Illumina amplicon workflow                             ##
-## Two samples taken from: https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-280/  ##
-##                                                                                        ##
-## This file as written expects to be executed within the "processing_info/" directory    ##
-## with the raw starting fastq files present in the "../Raw_Data/" directory              ##
-## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                                        ##
-############################################################################################
+###############################################################################################
+## Example Snakefile for GeneLab's Illumina amplicon workflow                                ##
+## Snakefile from processing: https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-XXX/  ##
+##                                                                                           ##
+## This file as written expects to be executed within the "processing_info/" directory       ##
+## with the raw starting fastq files present in the "../Raw_Data/" directory                 ##
+## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                                           ##
+###############################################################################################
 
 import os
 
