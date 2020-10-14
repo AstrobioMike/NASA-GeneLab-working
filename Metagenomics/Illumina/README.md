@@ -53,6 +53,7 @@ Summary of contents:
         - Snakefile                                          - Snakemake workflow file
         - snakemake-run.log                                  - Snakemake log file
         - environment.yml                                    - conda environment file
+        - envs/                                              - individual conda envs per rule
 
     - Raw_Data/                                              - initial fastq files
 
