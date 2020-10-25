@@ -1,11 +1,11 @@
-###############################################################################################
-## Example Snakefile for GeneLab's Illumina amplicon workflow                                ##
-## Snakefile from processing: https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-XXX/  ##
-##                                                                                           ##
-## This file as written expects to be executed within the "processing_info/" directory       ##
-## with the raw starting fastq files present in the "../Raw_Data/" directory                 ##
-## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                                           ##
-###############################################################################################
+############################################################################################
+## Snakefile for GeneLab's Illumina amplicon workflow                                     ##
+## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-249/ (used as example)        ##
+##                                                                                        ##
+## This file as written expects to be executed within the "processing_info/" directory    ##
+## with the raw starting fastq files present in the "../Raw_Data/" directory              ##
+## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                                        ##
+############################################################################################
 
 import os
 
@@ -17,16 +17,10 @@ import os
 Expected to be run in the following conda environment (or with specified programs versions accessible):
 
 # conda create -y -n GL-amplicon -c conda-forge -c bioconda -c defaults fastqc=0.11.8 \
-#              multiqc=1.7 cutadapt=2.3 snakemake=5.5.4
+#              multiqc=1.7 cutadapt=2.3 r-base=3.6.3 bioconductor-dada2=1.12.1 \
+#              bioconductor-decipher=2.12.0 bioconductor-biomformat=1.12.0 snakemake=5.5.4
 
 # conda activate GL-amplicon
-
-In R, uses:
-dada2 v1.12.1
-DECIPHER v2.12.0
-biomformat v1.12.0
-
-Cutadapt command should be adjusted accordingly (primers, orientation) in the cutadapt rule below.
 """
 
 ########################################
@@ -34,22 +28,31 @@ Cutadapt command should be adjusted accordingly (primers, orientation) in the cu
 ########################################
 
   # current GLDS number
-curr_GLDS = "GLDS-280"
+curr_GLDS = "GLDS-249"
+
+  ## info for cutadapt ##
+  # Cutadapt command as written currently expects "standard" orientation (as much as that's possible with primers and amplicon data),
+  # command run currently is as such: cutadapt -g {F_primer} -G {R_primer} -o {output.R1} -p {output.R2} --discard-untrimmed -m {min_cutadapt_len} {input.R1} {input.R2}
+  # but different datasets may need to have the command adjusted accordingly below in the cutadapt rule if needed (see https://cutadapt.readthedocs.io/en/stable/guide.html for help)
+
+  # primers
+F_primer = "GTGYCAGCMGCCGCGGTAA"
+R_primer = "GGACTACNVGGGTWTCTAAT"
+min_cutadapt_len = "125"
 
   # values to be passed to dada2's filterAndTrim() function:
-left_trunc = "250"
-right_trunc = "200"
-left_maxEE = "1"
-right_maxEE = "1"
+left_trunc = "0"
+right_trunc = "0"
+left_maxEE = "2"
+right_maxEE = "2"
 
   # single column file holding unique portion of sample names
 sample_IDs_file = "unique-sample-IDs.txt"
 
   # useful prefixes and suffixes for filename structure
   # filename prefix (what comes before the unique portion of the name that is provided in the "unique-sample-IDs.txt" file)
-filename_prefix = ""
+filename_prefix = "Mmus_C57-6T_FCS_"
   # filename suffixes (what comes after the unique portion of the names, for R1 and R2 files)
-  # might need to adjust some of these in the full-R-processing.R file too as currently written
 filename_R1_suffix = "_R1_raw.fastq.gz"
 filename_R2_suffix = "_R2_raw.fastq.gz"
 primer_trimmed_filename_R1_suffix = "-R1-trimmed.fastq.gz"
@@ -134,7 +137,7 @@ rule cutadapt:
         trimmed_reads_dir + "{ID}-cutadapt.log"
     shell:
         """
-        cutadapt -g CCTACGGGNGGCWGCAG -G GACTACHVGGGTATCTAATCC -o {output.R1} -p {output.R2} --discard-untrimmed -m 250 {input.R1} {input.R2} > {log} 2>&1
+        cutadapt -g {F_primer} -G {R_primer} -o {output.R1} -p {output.R2} --discard-untrimmed -m {min_cutadapt_len} {input.R1} {input.R2} > {log} 2>&1
         paste <( printf "{wildcards.ID}" ) <( grep "read pairs processed" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) <( grep "Pairs written" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) > {output.trim_counts}
         """
 
@@ -180,9 +183,11 @@ rule run_R:
         final_outputs_dir + "read-count-tracking.tsv",
         final_outputs_dir + "counts.tsv",
         final_outputs_dir + "taxonomy-and-counts.tsv"
+    log:
+        "R-processing.log"
     shell:
         """
-        Rscript full-R-processing.R {left_trunc} {right_trunc} {left_maxEE} {right_maxEE}
+        Rscript full-R-processing.R {left_trunc} {right_trunc} {left_maxEE} {right_maxEE} "{primer_trimmed_filename_R1_suffix}" "{primer_trimmed_filename_R2_suffix}" "{filtered_filename_R1_suffix}" "{filtered_filename_R2_suffix}" "{filename_prefix}" > {log} 2>&1
         """
 
 
