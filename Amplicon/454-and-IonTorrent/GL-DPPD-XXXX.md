@@ -236,7 +236,8 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 
 ### Dereplicate individual samples
 ```
-vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both --output sample-1_derep.fasta --sizeout --relabel "sample=sample-1;seq_" 
+vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both \
+        --output sample-1_derep.fasta --sizeout --relabel "sample=sample-1;seq_" 
 ```
 
 **Parameter Definitions:**
@@ -268,7 +269,8 @@ rm *_derep.fasta
 
 #### Dereplicating combined sequences
 ```bash
-vsearch --derep_fulllength all-samples-seqs.fasta --strand both --output all-samples_derep.fasta --sizein --sizeout
+vsearch --derep_fulllength all-samples-seqs.fasta --strand both \
+        --output all-samples_derep.fasta --sizein --sizeout
 ```
 
 **Parameter Definitions:**
@@ -292,7 +294,8 @@ vsearch --derep_fulllength all-samples-seqs.fasta --strand both --output all-sam
 
 #### Clustering to get representative sequences
 ```bash
-vsearch --cluster_size all-samples_derep.fasta --id 0.97 --strand both --sizein --sizeout --relabel "OTU_" --centroids rep-seqs.fasta
+vsearch --cluster_size all-samples_derep.fasta --id 0.97 --strand both \
+        --sizein --sizeout --relabel "OTU_" --centroids rep-seqs.fasta
 ```
 
 **Parameter Definitions:**
@@ -363,7 +366,8 @@ vsearch --uchime_denovo rep-seqs-no-singletons.fasta --sizein --nonchimeras OTUs
 
 ### Map reads to OTUs
 ```bash
-vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein --id 0.97 --otutabout - | sed 's/^#OTU ID/OTU_ID/' > counts.tsv
+vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
+        --id 0.97 --otutabout - | sed 's/^#OTU ID/OTU_ID/' > counts.tsv
 ```
 
 **Parameter Definitions:**
@@ -403,7 +407,8 @@ dna <- readDNAStringSet("OTUs.fasta")
 
 Downloading the reference R taxonomy object:
 ```R
-download.file( url=“http://www2.decipher.codes/Classification/TrainingSets/SILVA_SSU_r138_2019.RData”, destfile=“SILVA_SSU_r138_2019.RData”)
+download.file(url=“http://www2.decipher.codes/Classification/TrainingSets/SILVA_SSU_r138_2019.RData”,
+              destfile=“SILVA_SSU_r138_2019.RData”)
 ```
 
 **Parameter Definitions:**  
