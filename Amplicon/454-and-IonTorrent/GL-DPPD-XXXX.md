@@ -17,26 +17,25 @@ Michael D. Lee (GeneLab Analysis Team)
 
 # Table of contents  
 
-- [**Software used**](#software-used)
-- [**General processing overview with example code**](#general-processing-overview-with-example-code)
-  - [**1. Raw Data QC**](#1-raw-data-qc)
+- [Software used](#software-used)
+- [Reference databases used](#reference-databases-used)
+- [General processing overview with example code](#general-processing-overview-with-example-code)
+  - [1. Raw Data QC](#1-raw-data-qc)
     - [Compile Raw Data QC](#compile-raw-data-qc)
-  - [**2. Trim Primers**](#2-trim-primers)
-  - [**3. Quality filtering**](#3-quality-filtering)
-  - [**4. Filtered Data QC**](#4-filtered-data-qc)
+  - [2. Trim Primers](#2-trim-primers)
+  - [3. Quality filtering](#3-quality-filtering)
+  - [4. Filtered Data QC](#4-filtered-data-qc)
     - [Compile Filtered Data QC](#compile-filtered-data-qc)
-  - [**5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables**](#5-calculate-error-model-apply-dada2-algorithm-assign-taxonomy-and-create-output-tables)
-    - [Learning the error rates](#learning-the-error-rates)
-    - [Inferring sequences](#inferring-sequences)
-    - [Merging forward and reverse reads](#merging-forward-and-reverse-reads)
-    - [Generating sequence table with counts per sample](#generating-sequence-table-with-counts-per-sample)
-    - [Removing putative chimeras](#removing-putative-chimeras)
+  - [5. Generating OTUs and counts per sample](#5-generating-otus-and-counts-per-sample)
+    - [Dereplicate individual samples](#dereplicate-individual-samples)
+    - [Generate OTUs](#generate-otus)
+  - [6. Generating taxonomy and additional outputs](#6-generating-taxonomy-and-additional-outputs)
     - [Assigning taxonomy](#assigning-taxonomy)
-    - [Generating and writing out standard outputs](#generating-and-writing-out-standard-outputs)
+    - [Generating and writing outputs](#generating-and-writing-outputs)
 
 ---
 
-# Software used  
+# Software used
 
 |Program|Version*|Relevant Links|
 |:------|:-----:|-------------:|
@@ -60,13 +59,13 @@ Michael D. Lee (GeneLab Analysis Team)
 
 ---
 
-# General processing overview with example code  
+# General processing overview with example code
 
 > Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ---
 
-## 1. Raw Data QC  
+## 1. Raw Data QC
 
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
@@ -89,7 +88,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 
 <br>  
 
-### Compile Raw Data QC  
+### Compile Raw Data QC
 
 ```
 multiqc -o raw_multiqc_output raw_fastqc_output
@@ -113,7 +112,7 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 ---
 
-## 2. Trim Primers  
+## 2. Trim Primers
 
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
