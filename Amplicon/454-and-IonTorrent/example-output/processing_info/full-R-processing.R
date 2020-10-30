@@ -9,17 +9,18 @@
 # this is called by the corresponding Snakefile
 
   # loading libraries
-library(DECIPHER); packageVersion("DECIPHER") # 2.12.0
-library(biomformat); packageVersion("biomformat") # 1.12.0
+cat("\n\n  Loading libraries...\n\n")
+library(DECIPHER)
+library(biomformat)
 
-
-#write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep = "\t", quote=F, row.names=F)
 
     ### assigning taxonomy ###
   # reading OTUs into a DNAStringSet object
 dna <- readDNAStringSet("../Final_Outputs/OTUs.fasta")
 
+
   # downloading reference R taxonomy object
+cat("\n\n  Downloading reference database...\n\n")
 download.file("http://www2.decipher.codes/Classification/TrainingSets/SILVA_SSU_r138_2019.RData", "SILVA_SSU_r138_2019.RData")
   # loading reference taxonomy object
 load("SILVA_SSU_r138_2019.RData")
@@ -27,7 +28,11 @@ load("SILVA_SSU_r138_2019.RData")
 file.remove("SILVA_SSU_r138_2019.RData")
 
 # assignig taxonomy
+cat("\n\n  Assigning taxonomy...\n\n")
+
 tax_info <- IdTaxa(dna, trainingSet, strand="both", processors=NULL)
+
+cat("\n\n  Making and writing out tables...\n\n")
 
   # making and writing out a taxonomy table:
     # creating vector of desired ranks
@@ -71,3 +76,6 @@ count_summary_tab <- merge(t1, mapped_tab)
 count_summary_tab$final_perc_reads_retained <- round(count_summary_tab$mapped_to_OTUs / count_summary_tab$raw_reads * 100, 2)
 
 write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+
+cat("\n\n  Session info:\n\n")
+sessionInfo()

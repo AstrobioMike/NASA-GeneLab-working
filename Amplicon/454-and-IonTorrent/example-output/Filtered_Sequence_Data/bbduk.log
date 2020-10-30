@@ -1,14 +1,14 @@
-java -ea -Xmx27105m -Xms27105m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016338_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016338_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+java -ea -Xmx30956m -Xms30956m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016338_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016338_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016338_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016338_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.065 seconds.
+0.049 seconds.
 Initial:
-Memory: max=28428m, total=28428m, free=28398m, used=30m
+Memory: max=32463m, total=32463m, free=32435m, used=28m
 
 Input is being processed as unpaired
-Started output streams:	0.203 seconds.
-Processing time:   		0.667 seconds.
+Started output streams:	0.078 seconds.
+Processing time:   		0.474 seconds.
 
 Input:                  	5405 reads 		1754112 bases.
 QTrimmed:               	71 reads (1.31%) 	1614 bases (0.09%)
@@ -16,20 +16,20 @@ Low quality discards:   	501 reads (9.27%) 	150242 bases (8.57%)
 Total Removed:          	502 reads (9.29%) 	151856 bases (8.66%)
 Result:                 	4903 reads (90.71%) 	1602256 bases (91.34%)
 
-Time:                         	0.873 seconds.
-Reads Processed:        5405 	6.19k reads/sec
-Bases Processed:       1754k 	2.01m bases/sec
-java -ea -Xmx28135m -Xms28135m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016339_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016339_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.555 seconds.
+Reads Processed:        5405 	9.74k reads/sec
+Bases Processed:       1754k 	3.16m bases/sec
+java -ea -Xmx31479m -Xms31479m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016339_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016339_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016339_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016339_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.073 seconds.
+0.065 seconds.
 Initial:
-Memory: max=29502m, total=29502m, free=29475m, used=27m
+Memory: max=33009m, total=33009m, free=32980m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.099 seconds.
-Processing time:   		0.270 seconds.
+Started output streams:	0.116 seconds.
+Processing time:   		0.585 seconds.
 
 Input:                  	4735 reads 		1575389 bases.
 QTrimmed:               	95 reads (2.01%) 	1595 bases (0.10%)
@@ -37,20 +37,20 @@ Low quality discards:   	506 reads (10.69%) 	156399 bases (9.93%)
 Total Removed:          	508 reads (10.73%) 	157994 bases (10.03%)
 Result:                 	4227 reads (89.27%) 	1417395 bases (89.97%)
 
-Time:                         	0.371 seconds.
-Reads Processed:        4735 	12.75k reads/sec
-Bases Processed:       1575k 	4.24m bases/sec
-java -ea -Xmx28687m -Xms28687m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016340_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016340_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.704 seconds.
+Reads Processed:        4735 	6.72k reads/sec
+Bases Processed:       1575k 	2.24m bases/sec
+java -ea -Xmx31704m -Xms31704m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016340_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016340_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016340_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016340_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.047 seconds.
+0.058 seconds.
 Initial:
-Memory: max=30081m, total=30081m, free=30054m, used=27m
+Memory: max=33244m, total=33244m, free=33215m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.074 seconds.
-Processing time:   		0.511 seconds.
+Started output streams:	0.137 seconds.
+Processing time:   		0.276 seconds.
 
 Input:                  	4214 reads 		1402669 bases.
 QTrimmed:               	73 reads (1.73%) 	1499 bases (0.11%)
@@ -58,20 +58,20 @@ Low quality discards:   	421 reads (9.99%) 	135625 bases (9.67%)
 Total Removed:          	421 reads (9.99%) 	137124 bases (9.78%)
 Result:                 	3793 reads (90.01%) 	1265545 bases (90.22%)
 
-Time:                         	0.588 seconds.
-Reads Processed:        4214 	7.17k reads/sec
-Bases Processed:       1402k 	2.39m bases/sec
-java -ea -Xmx26027m -Xms26027m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016341_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016341_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.418 seconds.
+Reads Processed:        4214 	10.08k reads/sec
+Bases Processed:       1402k 	3.36m bases/sec
+java -ea -Xmx17675m -Xms17675m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016341_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016341_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016341_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016341_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.024 seconds.
+0.032 seconds.
 Initial:
-Memory: max=27296m, total=27296m, free=27270m, used=26m
+Memory: max=18538m, total=18538m, free=18513m, used=25m
 
 Input is being processed as unpaired
-Started output streams:	0.092 seconds.
-Processing time:   		0.508 seconds.
+Started output streams:	0.056 seconds.
+Processing time:   		0.346 seconds.
 
 Input:                  	5670 reads 		1868633 bases.
 QTrimmed:               	65 reads (1.15%) 	1179 bases (0.06%)
@@ -79,20 +79,20 @@ Low quality discards:   	578 reads (10.19%) 	174642 bases (9.35%)
 Total Removed:          	578 reads (10.19%) 	175821 bases (9.41%)
 Result:                 	5092 reads (89.81%) 	1692812 bases (90.59%)
 
-Time:                         	0.603 seconds.
-Reads Processed:        5670 	9.40k reads/sec
-Bases Processed:       1868k 	3.10m bases/sec
-java -ea -Xmx25730m -Xms25730m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016342_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016342_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.405 seconds.
+Reads Processed:        5670 	13.99k reads/sec
+Bases Processed:       1868k 	4.61m bases/sec
+java -ea -Xmx31160m -Xms31160m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016342_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016342_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016342_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016342_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.089 seconds.
+0.065 seconds.
 Initial:
-Memory: max=26986m, total=26986m, free=26955m, used=31m
+Memory: max=32673m, total=32673m, free=32640m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.182 seconds.
-Processing time:   		0.630 seconds.
+Started output streams:	0.141 seconds.
+Processing time:   		0.631 seconds.
 
 Input:                  	7750 reads 		2584466 bases.
 QTrimmed:               	156 reads (2.01%) 	2659 bases (0.10%)
@@ -100,20 +100,20 @@ Low quality discards:   	822 reads (10.61%) 	260482 bases (10.08%)
 Total Removed:          	823 reads (10.62%) 	263141 bases (10.18%)
 Result:                 	6927 reads (89.38%) 	2321325 bases (89.82%)
 
-Time:                         	0.814 seconds.
-Reads Processed:        7750 	9.52k reads/sec
-Bases Processed:       2584k 	3.17m bases/sec
-java -ea -Xmx30040m -Xms30040m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016343_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016343_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.774 seconds.
+Reads Processed:        7750 	10.01k reads/sec
+Bases Processed:       2584k 	3.34m bases/sec
+java -ea -Xmx31695m -Xms31695m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016343_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016343_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016343_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016343_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.034 seconds.
+0.033 seconds.
 Initial:
-Memory: max=31499m, total=31499m, free=31466m, used=33m
+Memory: max=33235m, total=33235m, free=33202m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.100 seconds.
-Processing time:   		0.299 seconds.
+Started output streams:	0.070 seconds.
+Processing time:   		0.297 seconds.
 
 Input:                  	4829 reads 		1602711 bases.
 QTrimmed:               	101 reads (2.09%) 	2076 bases (0.13%)
@@ -121,20 +121,20 @@ Low quality discards:   	486 reads (10.06%) 	152841 bases (9.54%)
 Total Removed:          	488 reads (10.11%) 	154917 bases (9.67%)
 Result:                 	4341 reads (89.89%) 	1447794 bases (90.33%)
 
-Time:                         	0.402 seconds.
-Reads Processed:        4829 	12.01k reads/sec
-Bases Processed:       1602k 	3.99m bases/sec
-java -ea -Xmx26348m -Xms26348m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016344_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016344_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.370 seconds.
+Reads Processed:        4829 	13.05k reads/sec
+Bases Processed:       1602k 	4.33m bases/sec
+java -ea -Xmx29208m -Xms29208m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016344_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016344_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016344_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016344_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.057 seconds.
+0.075 seconds.
 Initial:
-Memory: max=27632m, total=27632m, free=27601m, used=31m
+Memory: max=30626m, total=30626m, free=30593m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.180 seconds.
-Processing time:   		0.622 seconds.
+Started output streams:	0.173 seconds.
+Processing time:   		0.902 seconds.
 
 Input:                  	7246 reads 		2410366 bases.
 QTrimmed:               	172 reads (2.37%) 	2134 bases (0.09%)
@@ -142,20 +142,20 @@ Low quality discards:   	737 reads (10.17%) 	239101 bases (9.92%)
 Total Removed:          	737 reads (10.17%) 	241235 bases (10.01%)
 Result:                 	6509 reads (89.83%) 	2169131 bases (89.99%)
 
-Time:                         	0.805 seconds.
-Reads Processed:        7246 	9.00k reads/sec
-Bases Processed:       2410k 	2.99m bases/sec
-java -ea -Xmx16145m -Xms16145m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016345_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016345_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	1.077 seconds.
+Reads Processed:        7246 	6.73k reads/sec
+Bases Processed:       2410k 	2.24m bases/sec
+java -ea -Xmx18081m -Xms18081m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016345_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016345_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016345_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016345_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.058 seconds.
+0.060 seconds.
 Initial:
-Memory: max=16932m, total=16932m, free=16912m, used=20m
+Memory: max=18966m, total=18966m, free=18933m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.074 seconds.
-Processing time:   		0.406 seconds.
+Started output streams:	0.081 seconds.
+Processing time:   		0.316 seconds.
 
 Input:                  	4202 reads 		1395071 bases.
 QTrimmed:               	84 reads (2.00%) 	1613 bases (0.12%)
@@ -163,20 +163,20 @@ Low quality discards:   	445 reads (10.59%) 	141773 bases (10.16%)
 Total Removed:          	447 reads (10.64%) 	143386 bases (10.28%)
 Result:                 	3755 reads (89.36%) 	1251685 bases (89.72%)
 
-Time:                         	0.488 seconds.
-Reads Processed:        4202 	8.60k reads/sec
-Bases Processed:       1395k 	2.86m bases/sec
-java -ea -Xmx25489m -Xms25489m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016346_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016346_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.400 seconds.
+Reads Processed:        4202 	10.51k reads/sec
+Bases Processed:       1395k 	3.49m bases/sec
+java -ea -Xmx17835m -Xms17835m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016346_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016346_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016346_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016346_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.073 seconds.
+0.076 seconds.
 Initial:
-Memory: max=26734m, total=26734m, free=26708m, used=26m
+Memory: max=18706m, total=18706m, free=18676m, used=30m
 
 Input is being processed as unpaired
-Started output streams:	0.183 seconds.
-Processing time:   		0.778 seconds.
+Started output streams:	0.176 seconds.
+Processing time:   		0.835 seconds.
 
 Input:                  	8652 reads 		2901359 bases.
 QTrimmed:               	230 reads (2.66%) 	4271 bases (0.15%)
@@ -184,20 +184,20 @@ Low quality discards:   	923 reads (10.67%) 	302041 bases (10.41%)
 Total Removed:          	923 reads (10.67%) 	306312 bases (10.56%)
 Result:                 	7729 reads (89.33%) 	2595047 bases (89.44%)
 
-Time:                         	0.964 seconds.
-Reads Processed:        8652 	8.97k reads/sec
-Bases Processed:       2901k 	3.01m bases/sec
-java -ea -Xmx28892m -Xms28892m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016347_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016347_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	1.014 seconds.
+Reads Processed:        8652 	8.53k reads/sec
+Bases Processed:       2901k 	2.86m bases/sec
+java -ea -Xmx31448m -Xms31448m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016347_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016347_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016347_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016347_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.029 seconds.
+0.081 seconds.
 Initial:
-Memory: max=30299m, total=30299m, free=30268m, used=31m
+Memory: max=32975m, total=32975m, free=32942m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.038 seconds.
-Processing time:   		0.215 seconds.
+Started output streams:	0.248 seconds.
+Processing time:   		0.628 seconds.
 
 Input:                  	4241 reads 		1426105 bases.
 QTrimmed:               	86 reads (2.03%) 	812 bases (0.06%)
@@ -205,20 +205,20 @@ Low quality discards:   	460 reads (10.85%) 	143638 bases (10.07%)
 Total Removed:          	460 reads (10.85%) 	144450 bases (10.13%)
 Result:                 	3781 reads (89.15%) 	1281655 bases (89.87%)
 
-Time:                         	0.255 seconds.
-Reads Processed:        4241 	16.62k reads/sec
-Bases Processed:       1426k 	5.59m bases/sec
-java -ea -Xmx26110m -Xms26110m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016348_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016348_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.878 seconds.
+Reads Processed:        4241 	4.83k reads/sec
+Bases Processed:       1426k 	1.62m bases/sec
+java -ea -Xmx30746m -Xms30746m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016348_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016348_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016348_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016348_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.069 seconds.
+0.058 seconds.
 Initial:
-Memory: max=27380m, total=27380m, free=27354m, used=26m
+Memory: max=32245m, total=32245m, free=32216m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.106 seconds.
-Processing time:   		0.394 seconds.
+Started output streams:	0.237 seconds.
+Processing time:   		0.544 seconds.
 
 Input:                  	5900 reads 		1957668 bases.
 QTrimmed:               	110 reads (1.86%) 	2112 bases (0.11%)
@@ -226,20 +226,20 @@ Low quality discards:   	666 reads (11.29%) 	205494 bases (10.50%)
 Total Removed:          	667 reads (11.31%) 	207606 bases (10.60%)
 Result:                 	5233 reads (88.69%) 	1750062 bases (89.40%)
 
-Time:                         	0.503 seconds.
-Reads Processed:        5900 	11.73k reads/sec
-Bases Processed:       1957k 	3.89m bases/sec
-java -ea -Xmx26844m -Xms26844m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016349_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016349_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.784 seconds.
+Reads Processed:        5900 	7.53k reads/sec
+Bases Processed:       1957k 	2.50m bases/sec
+java -ea -Xmx17295m -Xms17295m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016349_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016349_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016349_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016349_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.055 seconds.
+0.047 seconds.
 Initial:
-Memory: max=28152m, total=28152m, free=28121m, used=31m
+Memory: max=18136m, total=18136m, free=18101m, used=35m
 
 Input is being processed as unpaired
-Started output streams:	0.208 seconds.
-Processing time:   		0.457 seconds.
+Started output streams:	0.065 seconds.
+Processing time:   		0.222 seconds.
 
 Input:                  	5471 reads 		1821200 bases.
 QTrimmed:               	72 reads (1.32%) 	1545 bases (0.08%)
@@ -247,20 +247,20 @@ Low quality discards:   	561 reads (10.25%) 	175365 bases (9.63%)
 Total Removed:          	564 reads (10.31%) 	176910 bases (9.71%)
 Result:                 	4907 reads (89.69%) 	1644290 bases (90.29%)
 
-Time:                         	0.667 seconds.
-Reads Processed:        5471 	8.20k reads/sec
-Bases Processed:       1821k 	2.73m bases/sec
-java -ea -Xmx15429m -Xms15429m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016350_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016350_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.290 seconds.
+Reads Processed:        5471 	18.88k reads/sec
+Bases Processed:       1821k 	6.28m bases/sec
+java -ea -Xmx32052m -Xms32052m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016350_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016350_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016350_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016350_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.074 seconds.
+0.044 seconds.
 Initial:
-Memory: max=16181m, total=16181m, free=16159m, used=22m
+Memory: max=33613m, total=33613m, free=33579m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.155 seconds.
-Processing time:   		0.714 seconds.
+Started output streams:	0.057 seconds.
+Processing time:   		0.328 seconds.
 
 Input:                  	9623 reads 		3223613 bases.
 QTrimmed:               	1305 reads (13.56%) 	6030 bases (0.19%)
@@ -268,20 +268,20 @@ Low quality discards:   	1062 reads (11.04%) 	343894 bases (10.67%)
 Total Removed:          	1064 reads (11.06%) 	349924 bases (10.86%)
 Result:                 	8559 reads (88.94%) 	2873689 bases (89.14%)
 
-Time:                         	0.871 seconds.
-Reads Processed:        9623 	11.04k reads/sec
-Bases Processed:       3223k 	3.70m bases/sec
-java -ea -Xmx25497m -Xms25497m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016351_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016351_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.387 seconds.
+Reads Processed:        9623 	24.85k reads/sec
+Bases Processed:       3223k 	8.33m bases/sec
+java -ea -Xmx2193m -Xms2193m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016351_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016351_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016351_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016351_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.076 seconds.
+0.075 seconds.
 Initial:
-Memory: max=26742m, total=26742m, free=26717m, used=25m
+Memory: max=2300m, total=2300m, free=2282m, used=18m
 
 Input is being processed as unpaired
-Started output streams:	0.166 seconds.
-Processing time:   		0.549 seconds.
+Started output streams:	0.233 seconds.
+Processing time:   		0.790 seconds.
 
 Input:                  	7796 reads 		2600305 bases.
 QTrimmed:               	168 reads (2.15%) 	2349 bases (0.09%)
@@ -289,20 +289,20 @@ Low quality discards:   	923 reads (11.84%) 	295716 bases (11.37%)
 Total Removed:          	924 reads (11.85%) 	298065 bases (11.46%)
 Result:                 	6872 reads (88.15%) 	2302240 bases (88.54%)
 
-Time:                         	0.719 seconds.
-Reads Processed:        7796 	10.84k reads/sec
-Bases Processed:       2600k 	3.62m bases/sec
-java -ea -Xmx27387m -Xms27387m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016352_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016352_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	1.031 seconds.
+Reads Processed:        7796 	7.56k reads/sec
+Bases Processed:       2600k 	2.52m bases/sec
+java -ea -Xmx18548m -Xms18548m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016352_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016352_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016352_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016352_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.072 seconds.
+0.021 seconds.
 Initial:
-Memory: max=28722m, total=28722m, free=28687m, used=35m
+Memory: max=19453m, total=19453m, free=19422m, used=31m
 
 Input is being processed as unpaired
-Started output streams:	0.164 seconds.
-Processing time:   		0.668 seconds.
+Started output streams:	0.089 seconds.
+Processing time:   		0.422 seconds.
 
 Input:                  	9587 reads 		3170620 bases.
 QTrimmed:               	169 reads (1.76%) 	2535 bases (0.08%)
@@ -310,20 +310,20 @@ Low quality discards:   	940 reads (9.80%) 	302229 bases (9.53%)
 Total Removed:          	942 reads (9.83%) 	304764 bases (9.61%)
 Result:                 	8645 reads (90.17%) 	2865856 bases (90.39%)
 
-Time:                         	0.834 seconds.
-Reads Processed:        9587 	11.49k reads/sec
-Bases Processed:       3170k 	3.80m bases/sec
-java -ea -Xmx13942m -Xms13942m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016353_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016353_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.513 seconds.
+Reads Processed:        9587 	18.67k reads/sec
+Bases Processed:       3170k 	6.18m bases/sec
+java -ea -Xmx33061m -Xms33061m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016353_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016353_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016353_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016353_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.079 seconds.
+0.031 seconds.
 Initial:
-Memory: max=14621m, total=14621m, free=14589m, used=32m
+Memory: max=34678m, total=34678m, free=34635m, used=43m
 
 Input is being processed as unpaired
-Started output streams:	0.213 seconds.
-Processing time:   		0.620 seconds.
+Started output streams:	0.097 seconds.
+Processing time:   		0.481 seconds.
 
 Input:                  	6087 reads 		2036097 bases.
 QTrimmed:               	91 reads (1.49%) 	1789 bases (0.09%)
@@ -331,20 +331,20 @@ Low quality discards:   	664 reads (10.91%) 	216901 bases (10.65%)
 Total Removed:          	665 reads (10.92%) 	218690 bases (10.74%)
 Result:                 	5422 reads (89.08%) 	1817407 bases (89.26%)
 
-Time:                         	0.836 seconds.
-Reads Processed:        6087 	7.28k reads/sec
-Bases Processed:       2036k 	2.44m bases/sec
-java -ea -Xmx26848m -Xms26848m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016354_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016354_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.581 seconds.
+Reads Processed:        6087 	10.48k reads/sec
+Bases Processed:       2036k 	3.51m bases/sec
+java -ea -Xmx31214m -Xms31214m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016354_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016354_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016354_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016354_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.066 seconds.
+0.035 seconds.
 Initial:
-Memory: max=28152m, total=28152m, free=28118m, used=34m
+Memory: max=32732m, total=32732m, free=32699m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.181 seconds.
-Processing time:   		0.601 seconds.
+Started output streams:	0.098 seconds.
+Processing time:   		0.636 seconds.
 
 Input:                  	5085 reads 		1733356 bases.
 QTrimmed:               	130 reads (2.56%) 	1623 bases (0.09%)
@@ -352,20 +352,20 @@ Low quality discards:   	539 reads (10.60%) 	177775 bases (10.26%)
 Total Removed:          	540 reads (10.62%) 	179398 bases (10.35%)
 Result:                 	4545 reads (89.38%) 	1553958 bases (89.65%)
 
-Time:                         	0.785 seconds.
-Reads Processed:        5085 	6.48k reads/sec
-Bases Processed:       1733k 	2.21m bases/sec
-java -ea -Xmx25478m -Xms25478m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016355_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016355_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.737 seconds.
+Reads Processed:        5085 	6.90k reads/sec
+Bases Processed:       1733k 	2.35m bases/sec
+java -ea -Xmx17829m -Xms17829m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016355_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016355_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016355_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016355_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.067 seconds.
+0.089 seconds.
 Initial:
-Memory: max=26717m, total=26717m, free=26683m, used=34m
+Memory: max=18698m, total=18698m, free=18672m, used=26m
 
 Input is being processed as unpaired
-Started output streams:	0.178 seconds.
-Processing time:   		0.741 seconds.
+Started output streams:	0.195 seconds.
+Processing time:   		0.528 seconds.
 
 Input:                  	7204 reads 		2411704 bases.
 QTrimmed:               	179 reads (2.48%) 	2871 bases (0.12%)
@@ -373,20 +373,20 @@ Low quality discards:   	780 reads (10.83%) 	250000 bases (10.37%)
 Total Removed:          	781 reads (10.84%) 	252871 bases (10.49%)
 Result:                 	6423 reads (89.16%) 	2158833 bases (89.51%)
 
-Time:                         	0.922 seconds.
-Reads Processed:        7204 	7.81k reads/sec
-Bases Processed:       2411k 	2.62m bases/sec
-java -ea -Xmx24972m -Xms24972m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016356_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016356_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.726 seconds.
+Reads Processed:        7204 	9.93k reads/sec
+Bases Processed:       2411k 	3.32m bases/sec
+java -ea -Xmx30982m -Xms30982m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016356_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016356_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016356_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016356_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.055 seconds.
+0.028 seconds.
 Initial:
-Memory: max=26189m, total=26189m, free=26150m, used=39m
+Memory: max=32489m, total=32489m, free=32455m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.189 seconds.
-Processing time:   		0.648 seconds.
+Started output streams:	0.086 seconds.
+Processing time:   		0.277 seconds.
 
 Input:                  	6034 reads 		2013486 bases.
 QTrimmed:               	95 reads (1.57%) 	1426 bases (0.07%)
@@ -394,20 +394,20 @@ Low quality discards:   	648 reads (10.74%) 	207001 bases (10.28%)
 Total Removed:          	648 reads (10.74%) 	208427 bases (10.35%)
 Result:                 	5386 reads (89.26%) 	1805059 bases (89.65%)
 
-Time:                         	0.841 seconds.
-Reads Processed:        6034 	7.18k reads/sec
-Bases Processed:       2013k 	2.40m bases/sec
-java -ea -Xmx27143m -Xms27143m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016357_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016357_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.365 seconds.
+Reads Processed:        6034 	16.51k reads/sec
+Bases Processed:       2013k 	5.51m bases/sec
+java -ea -Xmx32054m -Xms32054m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016357_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016357_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016357_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016357_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.057 seconds.
+0.033 seconds.
 Initial:
-Memory: max=28462m, total=28462m, free=28436m, used=26m
+Memory: max=33613m, total=33613m, free=33579m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.183 seconds.
-Processing time:   		1.057 seconds.
+Started output streams:	0.074 seconds.
+Processing time:   		0.418 seconds.
 
 Input:                  	9252 reads 		3105578 bases.
 QTrimmed:               	164 reads (1.77%) 	2778 bases (0.09%)
@@ -415,20 +415,20 @@ Low quality discards:   	1082 reads (11.69%) 	353300 bases (11.38%)
 Total Removed:          	1086 reads (11.74%) 	356078 bases (11.47%)
 Result:                 	8166 reads (88.26%) 	2749500 bases (88.53%)
 
-Time:                         	1.243 seconds.
-Reads Processed:        9252 	7.44k reads/sec
-Bases Processed:       3105k 	2.50m bases/sec
-java -ea -Xmx27105m -Xms27105m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016358_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016358_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.495 seconds.
+Reads Processed:        9252 	18.71k reads/sec
+Bases Processed:       3105k 	6.28m bases/sec
+java -ea -Xmx30956m -Xms30956m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016358_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016358_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016358_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016358_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.020 seconds.
+0.024 seconds.
 Initial:
-Memory: max=28428m, total=28428m, free=28398m, used=30m
+Memory: max=32463m, total=32463m, free=32422m, used=41m
 
 Input is being processed as unpaired
-Started output streams:	0.182 seconds.
-Processing time:   		0.770 seconds.
+Started output streams:	0.054 seconds.
+Processing time:   		0.282 seconds.
 
 Input:                  	5570 reads 		1860577 bases.
 QTrimmed:               	138 reads (2.48%) 	2459 bases (0.13%)
@@ -436,20 +436,20 @@ Low quality discards:   	673 reads (12.08%) 	211389 bases (11.36%)
 Total Removed:          	674 reads (12.10%) 	213848 bases (11.49%)
 Result:                 	4896 reads (87.90%) 	1646729 bases (88.51%)
 
-Time:                         	0.956 seconds.
-Reads Processed:        5570 	5.83k reads/sec
-Bases Processed:       1860k 	1.95m bases/sec
-java -ea -Xmx26101m -Xms26101m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016359_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016359_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.342 seconds.
+Reads Processed:        5570 	16.29k reads/sec
+Bases Processed:       1860k 	5.44m bases/sec
+java -ea -Xmx30950m -Xms30950m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016359_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016359_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016359_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016359_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.041 seconds.
+0.057 seconds.
 Initial:
-Memory: max=27372m, total=27372m, free=27337m, used=35m
+Memory: max=32455m, total=32455m, free=32418m, used=37m
 
 Input is being processed as unpaired
-Started output streams:	0.080 seconds.
-Processing time:   		0.267 seconds.
+Started output streams:	0.092 seconds.
+Processing time:   		0.489 seconds.
 
 Input:                  	5743 reads 		1915586 bases.
 QTrimmed:               	101 reads (1.76%) 	1431 bases (0.07%)
@@ -457,20 +457,20 @@ Low quality discards:   	566 reads (9.86%) 	182318 bases (9.52%)
 Total Removed:          	568 reads (9.89%) 	183749 bases (9.59%)
 Result:                 	5175 reads (90.11%) 	1731837 bases (90.41%)
 
-Time:                         	0.358 seconds.
-Reads Processed:        5743 	16.05k reads/sec
-Bases Processed:       1915k 	5.35m bases/sec
-java -ea -Xmx24721m -Xms24721m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016360_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016360_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.583 seconds.
+Reads Processed:        5743 	9.85k reads/sec
+Bases Processed:       1915k 	3.29m bases/sec
+java -ea -Xmx31616m -Xms31616m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016360_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016360_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016360_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016360_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.065 seconds.
+0.085 seconds.
 Initial:
-Memory: max=25929m, total=25929m, free=25896m, used=33m
+Memory: max=33151m, total=33151m, free=33114m, used=37m
 
 Input is being processed as unpaired
-Started output streams:	0.149 seconds.
-Processing time:   		0.377 seconds.
+Started output streams:	0.126 seconds.
+Processing time:   		0.486 seconds.
 
 Input:                  	6298 reads 		2105072 bases.
 QTrimmed:               	134 reads (2.13%) 	2031 bases (0.10%)
@@ -478,20 +478,20 @@ Low quality discards:   	673 reads (10.69%) 	215691 bases (10.25%)
 Total Removed:          	675 reads (10.72%) 	217722 bases (10.34%)
 Result:                 	5623 reads (89.28%) 	1887350 bases (89.66%)
 
-Time:                         	0.532 seconds.
-Reads Processed:        6298 	11.83k reads/sec
-Bases Processed:       2105k 	3.95m bases/sec
-java -ea -Xmx15095m -Xms15095m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016361_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016361_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.615 seconds.
+Reads Processed:        6298 	10.24k reads/sec
+Bases Processed:       2105k 	3.42m bases/sec
+java -ea -Xmx16950m -Xms16950m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016361_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016361_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016361_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016361_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.089 seconds.
+0.083 seconds.
 Initial:
-Memory: max=15829m, total=15829m, free=15806m, used=23m
+Memory: max=17775m, total=17775m, free=17745m, used=30m
 
 Input is being processed as unpaired
-Started output streams:	0.171 seconds.
-Processing time:   		0.720 seconds.
+Started output streams:	0.231 seconds.
+Processing time:   		0.661 seconds.
 
 Input:                  	7593 reads 		2514602 bases.
 QTrimmed:               	158 reads (2.08%) 	2349 bases (0.09%)
@@ -499,20 +499,20 @@ Low quality discards:   	797 reads (10.50%) 	251499 bases (10.00%)
 Total Removed:          	798 reads (10.51%) 	253848 bases (10.09%)
 Result:                 	6795 reads (89.49%) 	2260754 bases (89.91%)
 
-Time:                         	0.894 seconds.
+Time:                         	0.895 seconds.
 Reads Processed:        7593 	8.49k reads/sec
 Bases Processed:       2514k 	2.81m bases/sec
-java -ea -Xmx24702m -Xms24702m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016362_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016362_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+java -ea -Xmx29438m -Xms29438m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016362_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016362_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016362_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016362_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.068 seconds.
+0.067 seconds.
 Initial:
-Memory: max=25904m, total=25904m, free=25879m, used=25m
+Memory: max=30870m, total=30870m, free=30835m, used=35m
 
 Input is being processed as unpaired
-Started output streams:	0.179 seconds.
-Processing time:   		0.607 seconds.
+Started output streams:	0.199 seconds.
+Processing time:   		0.721 seconds.
 
 Input:                  	5076 reads 		1722321 bases.
 QTrimmed:               	146 reads (2.88%) 	2572 bases (0.15%)
@@ -520,20 +520,20 @@ Low quality discards:   	687 reads (13.53%) 	222595 bases (12.92%)
 Total Removed:          	688 reads (13.55%) 	225167 bases (13.07%)
 Result:                 	4388 reads (86.45%) 	1497154 bases (86.93%)
 
-Time:                         	0.791 seconds.
-Reads Processed:        5076 	6.41k reads/sec
-Bases Processed:       1722k 	2.18m bases/sec
-java -ea -Xmx25508m -Xms25508m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016363_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016363_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.940 seconds.
+Reads Processed:        5076 	5.40k reads/sec
+Bases Processed:       1722k 	1.83m bases/sec
+java -ea -Xmx29456m -Xms29456m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016363_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016363_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016363_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016363_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.067 seconds.
+0.073 seconds.
 Initial:
-Memory: max=26751m, total=26751m, free=26717m, used=34m
+Memory: max=30886m, total=30886m, free=30847m, used=39m
 
 Input is being processed as unpaired
-Started output streams:	0.190 seconds.
-Processing time:   		0.773 seconds.
+Started output streams:	0.273 seconds.
+Processing time:   		0.674 seconds.
 
 Input:                  	7285 reads 		2445530 bases.
 QTrimmed:               	122 reads (1.67%) 	1518 bases (0.06%)
@@ -541,20 +541,20 @@ Low quality discards:   	835 reads (11.46%) 	270677 bases (11.07%)
 Total Removed:          	837 reads (11.49%) 	272195 bases (11.13%)
 Result:                 	6448 reads (88.51%) 	2173335 bases (88.87%)
 
-Time:                         	0.966 seconds.
-Reads Processed:        7285 	7.54k reads/sec
-Bases Processed:       2445k 	2.53m bases/sec
-java -ea -Xmx25210m -Xms25210m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016364_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016364_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.957 seconds.
+Reads Processed:        7285 	7.61k reads/sec
+Bases Processed:       2445k 	2.56m bases/sec
+java -ea -Xmx16567m -Xms16567m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016364_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016364_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016364_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016364_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.073 seconds.
+0.060 seconds.
 Initial:
-Memory: max=26440m, total=26440m, free=26415m, used=25m
+Memory: max=17372m, total=17372m, free=17339m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.190 seconds.
-Processing time:   		0.457 seconds.
+Started output streams:	0.150 seconds.
+Processing time:   		0.532 seconds.
 
 Input:                  	6496 reads 		2179423 bases.
 QTrimmed:               	113 reads (1.74%) 	1949 bases (0.09%)
@@ -562,20 +562,20 @@ Low quality discards:   	648 reads (9.98%) 	203262 bases (9.33%)
 Total Removed:          	649 reads (9.99%) 	205211 bases (9.42%)
 Result:                 	5847 reads (90.01%) 	1974212 bases (90.58%)
 
-Time:                         	0.649 seconds.
-Reads Processed:        6496 	10.01k reads/sec
-Bases Processed:       2179k 	3.36m bases/sec
-java -ea -Xmx25057m -Xms25057m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016365_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016365_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.685 seconds.
+Reads Processed:        6496 	9.48k reads/sec
+Bases Processed:       2179k 	3.18m bases/sec
+java -ea -Xmx16561m -Xms16561m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016365_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016365_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016365_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016365_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.034 seconds.
+0.077 seconds.
 Initial:
-Memory: max=26281m, total=26281m, free=26242m, used=39m
+Memory: max=17372m, total=17372m, free=17337m, used=35m
 
 Input is being processed as unpaired
-Started output streams:	0.130 seconds.
-Processing time:   		0.704 seconds.
+Started output streams:	0.161 seconds.
+Processing time:   		0.739 seconds.
 
 Input:                  	7143 reads 		2415126 bases.
 QTrimmed:               	105 reads (1.47%) 	1205 bases (0.05%)
@@ -583,20 +583,20 @@ Low quality discards:   	760 reads (10.64%) 	248873 bases (10.30%)
 Total Removed:          	760 reads (10.64%) 	250078 bases (10.35%)
 Result:                 	6383 reads (89.36%) 	2165048 bases (89.65%)
 
-Time:                         	0.837 seconds.
-Reads Processed:        7143 	8.53k reads/sec
-Bases Processed:       2415k 	2.89m bases/sec
-java -ea -Xmx26752m -Xms26752m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016366_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016366_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.903 seconds.
+Reads Processed:        7143 	7.91k reads/sec
+Bases Processed:       2415k 	2.67m bases/sec
+java -ea -Xmx23789m -Xms23789m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016366_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016366_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016366_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016366_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.092 seconds.
+0.016 seconds.
 Initial:
-Memory: max=28051m, total=28051m, free=28020m, used=31m
+Memory: max=24947m, total=24947m, free=24918m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.239 seconds.
-Processing time:   		0.639 seconds.
+Started output streams:	0.141 seconds.
+Processing time:   		0.314 seconds.
 
 Input:                  	3182 reads 		1075181 bases.
 QTrimmed:               	111 reads (3.49%) 	2390 bases (0.22%)
@@ -604,20 +604,20 @@ Low quality discards:   	405 reads (12.73%) 	130901 bases (12.17%)
 Total Removed:          	405 reads (12.73%) 	133291 bases (12.40%)
 Result:                 	2777 reads (87.27%) 	941890 bases (87.60%)
 
-Time:                         	0.889 seconds.
-Reads Processed:        3182 	3.58k reads/sec
-Bases Processed:       1075k 	1.21m bases/sec
-java -ea -Xmx26842m -Xms26842m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016367_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016367_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.458 seconds.
+Reads Processed:        3182 	6.94k reads/sec
+Bases Processed:       1075k 	2.35m bases/sec
+java -ea -Xmx30720m -Xms30720m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016367_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016367_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016367_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016367_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.073 seconds.
+0.050 seconds.
 Initial:
-Memory: max=28152m, total=28152m, free=28116m, used=36m
+Memory: max=32212m, total=32212m, free=32179m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.190 seconds.
-Processing time:   		0.500 seconds.
+Started output streams:	0.147 seconds.
+Processing time:   		0.354 seconds.
 
 Input:                  	5467 reads 		1842568 bases.
 QTrimmed:               	85 reads (1.55%) 	1302 bases (0.07%)
@@ -625,20 +625,20 @@ Low quality discards:   	619 reads (11.32%) 	199290 bases (10.82%)
 Total Removed:          	621 reads (11.36%) 	200592 bases (10.89%)
 Result:                 	4846 reads (88.64%) 	1641976 bases (89.11%)
 
-Time:                         	0.693 seconds.
-Reads Processed:        5467 	7.89k reads/sec
-Bases Processed:       1842k 	2.66m bases/sec
-java -ea -Xmx15512m -Xms15512m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016368_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016368_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.506 seconds.
+Reads Processed:        5467 	10.80k reads/sec
+Bases Processed:       1842k 	3.64m bases/sec
+java -ea -Xmx32052m -Xms32052m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016368_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016368_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016368_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016368_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.076 seconds.
+0.038 seconds.
 Initial:
-Memory: max=16265m, total=16265m, free=16243m, used=22m
+Memory: max=33613m, total=33613m, free=33579m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.208 seconds.
-Processing time:   		0.640 seconds.
+Started output streams:	0.067 seconds.
+Processing time:   		0.364 seconds.
 
 Input:                  	9365 reads 		3109093 bases.
 QTrimmed:               	425 reads (4.54%) 	3752 bases (0.12%)
@@ -646,20 +646,20 @@ Low quality discards:   	1104 reads (11.79%) 	336906 bases (10.84%)
 Total Removed:          	1108 reads (11.83%) 	340658 bases (10.96%)
 Result:                 	8257 reads (88.17%) 	2768435 bases (89.04%)
 
-Time:                         	0.850 seconds.
-Reads Processed:        9365 	11.01k reads/sec
-Bases Processed:       3109k 	3.66m bases/sec
-java -ea -Xmx28447m -Xms28447m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016369_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016369_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.436 seconds.
+Reads Processed:        9365 	21.50k reads/sec
+Bases Processed:       3109k 	7.14m bases/sec
+java -ea -Xmx31705m -Xms31705m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016369_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016369_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016369_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016369_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.043 seconds.
+0.042 seconds.
 Initial:
-Memory: max=29829m, total=29829m, free=29798m, used=31m
+Memory: max=33252m, total=33252m, free=33215m, used=37m
 
 Input is being processed as unpaired
-Started output streams:	0.224 seconds.
-Processing time:   		0.549 seconds.
+Started output streams:	0.107 seconds.
+Processing time:   		0.351 seconds.
 
 Input:                  	4281 reads 		1433806 bases.
 QTrimmed:               	77 reads (1.80%) 	1081 bases (0.08%)
@@ -667,20 +667,20 @@ Low quality discards:   	448 reads (10.46%) 	143510 bases (10.01%)
 Total Removed:          	450 reads (10.51%) 	144591 bases (10.08%)
 Result:                 	3831 reads (89.49%) 	1289215 bases (89.92%)
 
-Time:                         	0.775 seconds.
-Reads Processed:        4281 	5.52k reads/sec
-Bases Processed:       1433k 	1.85m bases/sec
-java -ea -Xmx28938m -Xms28938m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016370_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016370_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.461 seconds.
+Reads Processed:        4281 	9.28k reads/sec
+Bases Processed:       1433k 	3.11m bases/sec
+java -ea -Xmx31701m -Xms31701m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016370_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016370_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016370_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016370_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.040 seconds.
+0.044 seconds.
 Initial:
-Memory: max=30349m, total=30349m, free=30316m, used=33m
+Memory: max=33244m, total=33244m, free=33210m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.098 seconds.
-Processing time:   		0.325 seconds.
+Started output streams:	0.185 seconds.
+Processing time:   		0.504 seconds.
 
 Input:                  	3537 reads 		1196553 bases.
 QTrimmed:               	57 reads (1.61%) 	1117 bases (0.09%)
@@ -688,20 +688,20 @@ Low quality discards:   	417 reads (11.79%) 	127262 bases (10.64%)
 Total Removed:          	417 reads (11.79%) 	128379 bases (10.73%)
 Result:                 	3120 reads (88.21%) 	1068174 bases (89.27%)
 
-Time:                         	0.426 seconds.
-Reads Processed:        3537 	8.30k reads/sec
-Bases Processed:       1196k 	2.81m bases/sec
-java -ea -Xmx25491m -Xms25491m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016371_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016371_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.692 seconds.
+Reads Processed:        3537 	5.11k reads/sec
+Bases Processed:       1196k 	1.73m bases/sec
+java -ea -Xmx31660m -Xms31660m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016371_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016371_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016371_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016371_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.040 seconds.
+0.073 seconds.
 Initial:
-Memory: max=26734m, total=26734m, free=26700m, used=34m
+Memory: max=33202m, total=33202m, free=33173m, used=29m
 
 Input is being processed as unpaired
 Started output streams:	0.167 seconds.
-Processing time:   		0.365 seconds.
+Processing time:   		0.615 seconds.
 
 Input:                  	7240 reads 		2451177 bases.
 QTrimmed:               	366 reads (5.06%) 	5025 bases (0.21%)
@@ -709,20 +709,20 @@ Low quality discards:   	940 reads (12.98%) 	297851 bases (12.15%)
 Total Removed:          	941 reads (13.00%) 	302876 bases (12.36%)
 Result:                 	6299 reads (87.00%) 	2148301 bases (87.64%)
 
-Time:                         	0.535 seconds.
-Reads Processed:        7240 	13.53k reads/sec
-Bases Processed:       2451k 	4.58m bases/sec
-java -ea -Xmx28100m -Xms28100m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016372_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016372_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.785 seconds.
+Reads Processed:        7240 	9.22k reads/sec
+Bases Processed:       2451k 	3.12m bases/sec
+java -ea -Xmx30731m -Xms30731m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016372_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016372_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016372_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016372_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.044 seconds.
+0.024 seconds.
 Initial:
-Memory: max=29469m, total=29469m, free=29442m, used=27m
+Memory: max=32229m, total=32229m, free=32200m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.054 seconds.
-Processing time:   		0.310 seconds.
+Started output streams:	0.070 seconds.
+Processing time:   		0.354 seconds.
 
 Input:                  	4491 reads 		1537671 bases.
 QTrimmed:               	79 reads (1.76%) 	1324 bases (0.09%)
@@ -730,20 +730,20 @@ Low quality discards:   	441 reads (9.82%) 	140930 bases (9.17%)
 Total Removed:          	441 reads (9.82%) 	142254 bases (9.25%)
 Result:                 	4050 reads (90.18%) 	1395417 bases (90.75%)
 
-Time:                         	0.367 seconds.
-Reads Processed:        4491 	12.22k reads/sec
-Bases Processed:       1537k 	4.18m bases/sec
-java -ea -Xmx24718m -Xms24718m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016373_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016373_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.431 seconds.
+Reads Processed:        4491 	10.41k reads/sec
+Bases Processed:       1537k 	3.56m bases/sec
+java -ea -Xmx17127m -Xms17127m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016373_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016373_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016373_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016373_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.037 seconds.
+0.026 seconds.
 Initial:
-Memory: max=25920m, total=25920m, free=25881m, used=39m
+Memory: max=17960m, total=17960m, free=17921m, used=39m
 
 Input is being processed as unpaired
-Started output streams:	0.091 seconds.
-Processing time:   		0.289 seconds.
+Started output streams:	0.086 seconds.
+Processing time:   		0.212 seconds.
 
 Input:                  	4980 reads 		1677929 bases.
 QTrimmed:               	205 reads (4.12%) 	2184 bases (0.13%)
@@ -751,20 +751,20 @@ Low quality discards:   	571 reads (11.47%) 	183836 bases (10.96%)
 Total Removed:          	571 reads (11.47%) 	186020 bases (11.09%)
 Result:                 	4409 reads (88.53%) 	1491909 bases (88.91%)
 
-Time:                         	0.384 seconds.
-Reads Processed:        4980 	12.97k reads/sec
-Bases Processed:       1677k 	4.37m bases/sec
-java -ea -Xmx24721m -Xms24721m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016374_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016374_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.302 seconds.
+Reads Processed:        4980 	16.50k reads/sec
+Bases Processed:       1677k 	5.56m bases/sec
+java -ea -Xmx29210m -Xms29210m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016374_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016374_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016374_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016374_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.063 seconds.
+0.055 seconds.
 Initial:
-Memory: max=25929m, total=25929m, free=25904m, used=25m
+Memory: max=30635m, total=30635m, free=30601m, used=34m
 
 Input is being processed as unpaired
-Started output streams:	0.071 seconds.
-Processing time:   		0.436 seconds.
+Started output streams:	0.166 seconds.
+Processing time:   		0.799 seconds.
 
 Input:                  	5705 reads 		1960869 bases.
 QTrimmed:               	297 reads (5.21%) 	2165 bases (0.11%)
@@ -772,20 +772,20 @@ Low quality discards:   	588 reads (10.31%) 	196180 bases (10.00%)
 Total Removed:          	590 reads (10.34%) 	198345 bases (10.12%)
 Result:                 	5115 reads (89.66%) 	1762524 bases (89.88%)
 
-Time:                         	0.510 seconds.
-Reads Processed:        5705 	11.18k reads/sec
-Bases Processed:       1960k 	3.84m bases/sec
-java -ea -Xmx28062m -Xms28062m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016375_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016375_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	1.004 seconds.
+Reads Processed:        5705 	5.68k reads/sec
+Bases Processed:       1960k 	1.95m bases/sec
+java -ea -Xmx10286m -Xms10286m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016375_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016375_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016375_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016375_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.046 seconds.
+0.038 seconds.
 Initial:
-Memory: max=29427m, total=29427m, free=29392m, used=35m
+Memory: max=10787m, total=10787m, free=10761m, used=26m
 
 Input is being processed as unpaired
-Started output streams:	0.172 seconds.
-Processing time:   		0.324 seconds.
+Started output streams:	0.123 seconds.
+Processing time:   		0.116 seconds.
 
 Input:                  	94 reads 		32073 bases.
 QTrimmed:               	1 reads (1.06%) 	7 bases (0.02%)
@@ -793,20 +793,20 @@ Low quality discards:   	8 reads (8.51%) 	2829 bases (8.82%)
 Total Removed:          	8 reads (8.51%) 	2836 bases (8.84%)
 Result:                 	86 reads (91.49%) 	29237 bases (91.16%)
 
-Time:                         	0.499 seconds.
-Reads Processed:          94 	0.19k reads/sec
-Bases Processed:       32073 	0.06m bases/sec
-java -ea -Xmx25490m -Xms25490m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016376_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016376_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.242 seconds.
+Reads Processed:          94 	0.39k reads/sec
+Bases Processed:       32073 	0.13m bases/sec
+java -ea -Xmx17533m -Xms17533m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016376_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016376_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016376_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016376_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.087 seconds.
+0.061 seconds.
 Initial:
-Memory: max=26734m, total=26734m, free=26702m, used=32m
+Memory: max=18387m, total=18387m, free=18354m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.218 seconds.
-Processing time:   		0.791 seconds.
+Started output streams:	0.154 seconds.
+Processing time:   		0.541 seconds.
 
 Input:                  	6334 reads 		2158263 bases.
 QTrimmed:               	314 reads (4.96%) 	4722 bases (0.22%)
@@ -814,20 +814,20 @@ Low quality discards:   	866 reads (13.67%) 	282857 bases (13.11%)
 Total Removed:          	867 reads (13.69%) 	287579 bases (13.32%)
 Result:                 	5467 reads (86.31%) 	1870684 bases (86.68%)
 
-Time:                         	1.012 seconds.
-Reads Processed:        6334 	6.26k reads/sec
-Bases Processed:       2158k 	2.13m bases/sec
-java -ea -Xmx24713m -Xms24713m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016377_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016377_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.698 seconds.
+Reads Processed:        6334 	9.07k reads/sec
+Bases Processed:       2158k 	3.09m bases/sec
+java -ea -Xmx22021m -Xms22021m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016377_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016377_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016377_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016377_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.073 seconds.
+0.058 seconds.
 Initial:
-Memory: max=25920m, total=25920m, free=25887m, used=33m
+Memory: max=23093m, total=23093m, free=23060m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.160 seconds.
-Processing time:   		0.688 seconds.
+Started output streams:	0.183 seconds.
+Processing time:   		0.394 seconds.
 
 Input:                  	5709 reads 		1960423 bases.
 QTrimmed:               	210 reads (3.68%) 	4307 bases (0.22%)
@@ -835,20 +835,20 @@ Low quality discards:   	696 reads (12.19%) 	230505 bases (11.76%)
 Total Removed:          	699 reads (12.24%) 	234812 bases (11.98%)
 Result:                 	5010 reads (87.76%) 	1725611 bases (88.02%)
 
-Time:                         	0.851 seconds.
-Reads Processed:        5709 	6.71k reads/sec
-Bases Processed:       1960k 	2.30m bases/sec
-java -ea -Xmx15931m -Xms15931m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016378_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016378_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.581 seconds.
+Reads Processed:        5709 	9.83k reads/sec
+Bases Processed:       1960k 	3.38m bases/sec
+java -ea -Xmx17840m -Xms17840m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016378_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016378_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016378_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016378_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.100 seconds.
+0.066 seconds.
 Initial:
-Memory: max=16705m, total=16705m, free=16683m, used=22m
+Memory: max=18706m, total=18706m, free=18676m, used=30m
 
 Input is being processed as unpaired
-Started output streams:	0.190 seconds.
-Processing time:   		0.529 seconds.
+Started output streams:	0.170 seconds.
+Processing time:   		0.460 seconds.
 
 Input:                  	2184 reads 		744607 bases.
 QTrimmed:               	42 reads (1.92%) 	657 bases (0.09%)
@@ -856,20 +856,20 @@ Low quality discards:   	261 reads (11.95%) 	87145 bases (11.70%)
 Total Removed:          	261 reads (11.95%) 	87802 bases (11.79%)
 Result:                 	1923 reads (88.05%) 	656805 bases (88.21%)
 
-Time:                         	0.722 seconds.
-Reads Processed:        2184 	3.02k reads/sec
-Bases Processed:        744k 	1.03m bases/sec
-java -ea -Xmx28310m -Xms28310m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016379_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016379_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.639 seconds.
+Reads Processed:        2184 	3.42k reads/sec
+Bases Processed:        744k 	1.17m bases/sec
+java -ea -Xmx31671m -Xms31671m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016379_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016379_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016379_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016379_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.065 seconds.
+0.052 seconds.
 Initial:
-Memory: max=29687m, total=29687m, free=29660m, used=27m
+Memory: max=33210m, total=33210m, free=33177m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.182 seconds.
-Processing time:   		0.556 seconds.
+Started output streams:	0.235 seconds.
+Processing time:   		0.401 seconds.
 
 Input:                  	2566 reads 		877130 bases.
 QTrimmed:               	93 reads (3.62%) 	1339 bases (0.15%)
@@ -877,20 +877,20 @@ Low quality discards:   	322 reads (12.55%) 	103383 bases (11.79%)
 Total Removed:          	322 reads (12.55%) 	104722 bases (11.94%)
 Result:                 	2244 reads (87.45%) 	772408 bases (88.06%)
 
-Time:                         	0.741 seconds.
-Reads Processed:        2566 	3.46k reads/sec
-Bases Processed:        877k 	1.18m bases/sec
-java -ea -Xmx26857m -Xms26857m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016380_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016380_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.639 seconds.
+Reads Processed:        2566 	4.02k reads/sec
+Bases Processed:        877k 	1.37m bases/sec
+java -ea -Xmx17447m -Xms17447m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016380_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016380_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016380_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016380_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.065 seconds.
+0.069 seconds.
 Initial:
-Memory: max=28168m, total=28168m, free=28135m, used=33m
+Memory: max=18295m, total=18295m, free=18259m, used=36m
 
 Input is being processed as unpaired
-Started output streams:	0.100 seconds.
-Processing time:   		0.317 seconds.
+Started output streams:	0.206 seconds.
+Processing time:   		0.702 seconds.
 
 Input:                  	4822 reads 		1633327 bases.
 QTrimmed:               	118 reads (2.45%) 	2602 bases (0.16%)
@@ -898,20 +898,20 @@ Low quality discards:   	684 reads (14.18%) 	228782 bases (14.01%)
 Total Removed:          	685 reads (14.21%) 	231384 bases (14.17%)
 Result:                 	4137 reads (85.79%) 	1401943 bases (85.83%)
 
-Time:                         	0.420 seconds.
-Reads Processed:        4822 	11.48k reads/sec
-Bases Processed:       1633k 	3.89m bases/sec
-java -ea -Xmx26797m -Xms26797m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016381_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016381_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.914 seconds.
+Reads Processed:        4822 	5.28k reads/sec
+Bases Processed:       1633k 	1.79m bases/sec
+java -ea -Xmx31461m -Xms31461m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016381_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016381_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016381_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016381_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.029 seconds.
+0.074 seconds.
 Initial:
-Memory: max=28101m, total=28101m, free=28071m, used=30m
+Memory: max=32992m, total=32992m, free=32955m, used=37m
 
 Input is being processed as unpaired
-Started output streams:	0.079 seconds.
-Processing time:   		0.357 seconds.
+Started output streams:	0.159 seconds.
+Processing time:   		0.503 seconds.
 
 Input:                  	2914 reads 		989684 bases.
 QTrimmed:               	82 reads (2.81%) 	1718 bases (0.17%)
@@ -919,20 +919,20 @@ Low quality discards:   	407 reads (13.97%) 	135862 bases (13.73%)
 Total Removed:          	407 reads (13.97%) 	137580 bases (13.90%)
 Result:                 	2507 reads (86.03%) 	852104 bases (86.10%)
 
-Time:                         	0.438 seconds.
-Reads Processed:        2914 	6.65k reads/sec
-Bases Processed:        989k 	2.26m bases/sec
-java -ea -Xmx27800m -Xms27800m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016382_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016382_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.665 seconds.
+Reads Processed:        2914 	4.38k reads/sec
+Bases Processed:        989k 	1.49m bases/sec
+java -ea -Xmx32855m -Xms32855m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016382_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016382_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016382_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016382_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.060 seconds.
+0.070 seconds.
 Initial:
-Memory: max=29150m, total=29150m, free=29115m, used=35m
+Memory: max=34460m, total=34460m, free=34408m, used=52m
 
 Input is being processed as unpaired
-Started output streams:	0.228 seconds.
-Processing time:   		0.619 seconds.
+Started output streams:	0.196 seconds.
+Processing time:   		0.409 seconds.
 
 Input:                  	4210 reads 		1430740 bases.
 QTrimmed:               	56 reads (1.33%) 	906 bases (0.06%)
@@ -940,20 +940,20 @@ Low quality discards:   	545 reads (12.95%) 	180033 bases (12.58%)
 Total Removed:          	545 reads (12.95%) 	180939 bases (12.65%)
 Result:                 	3665 reads (87.05%) 	1249801 bases (87.35%)
 
-Time:                         	0.851 seconds.
-Reads Processed:        4210 	4.95k reads/sec
-Bases Processed:       1430k 	1.68m bases/sec
-java -ea -Xmx28903m -Xms28903m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016383_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016383_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.607 seconds.
+Reads Processed:        4210 	6.93k reads/sec
+Bases Processed:       1430k 	2.36m bases/sec
+java -ea -Xmx31718m -Xms31718m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016383_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016383_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016383_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016383_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.030 seconds.
+0.057 seconds.
 Initial:
-Memory: max=30308m, total=30308m, free=30274m, used=34m
+Memory: max=33260m, total=33260m, free=33223m, used=37m
 
 Input is being processed as unpaired
-Started output streams:	0.058 seconds.
-Processing time:   		0.315 seconds.
+Started output streams:	0.193 seconds.
+Processing time:   		0.689 seconds.
 
 Input:                  	4116 reads 		1413475 bases.
 QTrimmed:               	57 reads (1.38%) 	1036 bases (0.07%)
@@ -961,20 +961,20 @@ Low quality discards:   	401 reads (9.74%) 	132636 bases (9.38%)
 Total Removed:          	401 reads (9.74%) 	133672 bases (9.46%)
 Result:                 	3715 reads (90.26%) 	1279803 bases (90.54%)
 
-Time:                         	0.376 seconds.
-Reads Processed:        4116 	10.96k reads/sec
-Bases Processed:       1413k 	3.76m bases/sec
-java -ea -Xmx28061m -Xms28061m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016384_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016384_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.884 seconds.
+Reads Processed:        4116 	4.65k reads/sec
+Bases Processed:       1413k 	1.60m bases/sec
+java -ea -Xmx17941m -Xms17941m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016384_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016384_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016384_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016384_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.042 seconds.
+0.080 seconds.
 Initial:
-Memory: max=29427m, total=29427m, free=29392m, used=35m
+Memory: max=18815m, total=18815m, free=18785m, used=30m
 
 Input is being processed as unpaired
-Started output streams:	0.074 seconds.
-Processing time:   		0.045 seconds.
+Started output streams:	0.241 seconds.
+Processing time:   		0.408 seconds.
 
 Input:                  	65 reads 		5102 bases.
 QTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
@@ -982,20 +982,20 @@ Low quality discards:   	47 reads (72.31%) 	1906 bases (37.36%)
 Total Removed:          	47 reads (72.31%) 	1906 bases (37.36%)
 Result:                 	18 reads (27.69%) 	3196 bases (62.64%)
 
-Time:                         	0.123 seconds.
-Reads Processed:          65 	0.53k reads/sec
-Bases Processed:        5102 	0.04m bases/sec
-java -ea -Xmx24949m -Xms24949m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016385_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016385_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.656 seconds.
+Reads Processed:          65 	0.10k reads/sec
+Bases Processed:        5102 	0.01m bases/sec
+java -ea -Xmx29466m -Xms29466m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016385_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016385_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016385_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016385_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.084 seconds.
+0.050 seconds.
 Initial:
-Memory: max=26164m, total=26164m, free=26132m, used=32m
+Memory: max=30903m, total=30903m, free=30870m, used=33m
 
 Input is being processed as unpaired
-Started output streams:	0.192 seconds.
-Processing time:   		0.514 seconds.
+Started output streams:	0.217 seconds.
+Processing time:   		0.584 seconds.
 
 Input:                  	9666 reads 		1277993 bases.
 QTrimmed:               	163 reads (1.69%) 	3637 bases (0.28%)
@@ -1003,20 +1003,20 @@ Low quality discards:   	4607 reads (47.66%) 	387701 bases (30.34%)
 Total Removed:          	4671 reads (48.32%) 	391338 bases (30.62%)
 Result:                 	4995 reads (51.68%) 	886655 bases (69.38%)
 
-Time:                         	0.709 seconds.
-Reads Processed:        9666 	13.64k reads/sec
-Bases Processed:       1277k 	1.80m bases/sec
-java -ea -Xmx28077m -Xms28077m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016386_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016386_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.804 seconds.
+Reads Processed:        9666 	12.02k reads/sec
+Bases Processed:       1277k 	1.59m bases/sec
+java -ea -Xmx31463m -Xms31463m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016386_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016386_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016386_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016386_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.036 seconds.
+0.049 seconds.
 Initial:
-Memory: max=29444m, total=29444m, free=29413m, used=31m
+Memory: max=32992m, total=32992m, free=32963m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.178 seconds.
-Processing time:   		0.145 seconds.
+Started output streams:	0.198 seconds.
+Processing time:   		0.664 seconds.
 
 Input:                  	336 reads 		18735 bases.
 QTrimmed:               	5 reads (1.49%) 	109 bases (0.58%)
@@ -1024,20 +1024,20 @@ Low quality discards:   	256 reads (76.19%) 	11282 bases (60.22%)
 Total Removed:          	258 reads (76.79%) 	11391 bases (60.80%)
 Result:                 	78 reads (23.21%) 	7344 bases (39.20%)
 
-Time:                         	0.326 seconds.
-Reads Processed:         336 	1.03k reads/sec
-Bases Processed:       18735 	0.06m bases/sec
-java -ea -Xmx28867m -Xms28867m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016387_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016387_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
+Time:                         	0.865 seconds.
+Reads Processed:         336 	0.39k reads/sec
+Bases Processed:       18735 	0.02m bases/sec
+java -ea -Xmx31674m -Xms31674m -cp /data1/mlee/miniconda3/envs/GL-non-illumina-amplicon/opt/bbmap-38.86-0/current/ jgi.BBDuk in=../Trimmed_Sequence_Data/SRR2016387_trimmed.fastq.gz out1=../Filtered_Sequence_Data/SRR2016387_filtered.fastq.gz qtrim=r trimq=10 mlf=0.5 minavgquality=20 minlength=50
 Executing jgi.BBDuk [in=../Trimmed_Sequence_Data/SRR2016387_trimmed.fastq.gz, out1=../Filtered_Sequence_Data/SRR2016387_filtered.fastq.gz, qtrim=r, trimq=10, mlf=0.5, minavgquality=20, minlength=50]
 Version 38.86
 
-0.038 seconds.
+0.064 seconds.
 Initial:
-Memory: max=30274m, total=30274m, free=30243m, used=31m
+Memory: max=33218m, total=33218m, free=33189m, used=29m
 
 Input is being processed as unpaired
-Started output streams:	0.051 seconds.
-Processing time:   		0.031 seconds.
+Started output streams:	0.145 seconds.
+Processing time:   		0.273 seconds.
 
 Input:                  	35 reads 		3644 bases.
 QTrimmed:               	0 reads (0.00%) 	0 bases (0.00%)
@@ -1045,6 +1045,6 @@ Low quality discards:   	22 reads (62.86%) 	1514 bases (41.55%)
 Total Removed:          	22 reads (62.86%) 	1514 bases (41.55%)
 Result:                 	13 reads (37.14%) 	2130 bases (58.45%)
 
-Time:                         	0.085 seconds.
-Reads Processed:          35 	0.41k reads/sec
-Bases Processed:        3644 	0.04m bases/sec
+Time:                         	0.421 seconds.
+Reads Processed:          35 	0.08k reads/sec
+Bases Processed:        3644 	0.01m bases/sec

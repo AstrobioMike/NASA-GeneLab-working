@@ -1,7 +1,7 @@
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016338_trimmed.fastq.gz ../Raw_Data/SRR2016338_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.62 s (114 us/read; 0.52 M reads/minute).
+Finished in 0.89 s (165 us/read; 0.36 M reads/minute).
 
 === Summary ===
 
@@ -36,7 +36,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016339_trimmed.fastq.gz ../Raw_Data/SRR2016339_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.72 s (152 us/read; 0.39 M reads/minute).
+Finished in 0.61 s (128 us/read; 0.47 M reads/minute).
 
 === Summary ===
 
@@ -57,7 +57,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016340_trimmed.fastq.gz ../Raw_Data/SRR2016340_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.71 s (168 us/read; 0.36 M reads/minute).
+Finished in 0.60 s (143 us/read; 0.42 M reads/minute).
 
 === Summary ===
 
@@ -92,7 +92,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016341_trimmed.fastq.gz ../Raw_Data/SRR2016341_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.59 s (105 us/read; 0.57 M reads/minute).
+Finished in 0.63 s (111 us/read; 0.54 M reads/minute).
 
 === Summary ===
 
@@ -127,7 +127,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016342_trimmed.fastq.gz ../Raw_Data/SRR2016342_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.88 s (113 us/read; 0.53 M reads/minute).
+Finished in 1.12 s (144 us/read; 0.42 M reads/minute).
 
 === Summary ===
 
@@ -162,7 +162,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016343_trimmed.fastq.gz ../Raw_Data/SRR2016343_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.54 s (111 us/read; 0.54 M reads/minute).
+Finished in 0.73 s (152 us/read; 0.40 M reads/minute).
 
 === Summary ===
 
@@ -183,7 +183,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016344_trimmed.fastq.gz ../Raw_Data/SRR2016344_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.75 s (103 us/read; 0.58 M reads/minute).
+Finished in 1.30 s (179 us/read; 0.33 M reads/minute).
 
 === Summary ===
 
@@ -204,7 +204,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016345_trimmed.fastq.gz ../Raw_Data/SRR2016345_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.81 s (192 us/read; 0.31 M reads/minute).
+Finished in 0.58 s (138 us/read; 0.44 M reads/minute).
 
 === Summary ===
 
@@ -239,7 +239,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016346_trimmed.fastq.gz ../Raw_Data/SRR2016346_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 1.25 s (145 us/read; 0.41 M reads/minute).
+Finished in 1.27 s (147 us/read; 0.41 M reads/minute).
 
 === Summary ===
 
@@ -275,7 +275,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016347_trimmed.fastq.gz ../Raw_Data/SRR2016347_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.56 s (132 us/read; 0.45 M reads/minute).
+Finished in 0.49 s (116 us/read; 0.52 M reads/minute).
 
 === Summary ===
 
@@ -310,7 +310,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016348_trimmed.fastq.gz ../Raw_Data/SRR2016348_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.81 s (137 us/read; 0.44 M reads/minute).
+Finished in 0.57 s (97 us/read; 0.62 M reads/minute).
 
 === Summary ===
 
@@ -353,7 +353,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016349_trimmed.fastq.gz ../Raw_Data/SRR2016349_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.74 s (136 us/read; 0.44 M reads/minute).
+Finished in 0.59 s (108 us/read; 0.55 M reads/minute).
 
 === Summary ===
 
@@ -374,7 +374,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016350_trimmed.fastq.gz ../Raw_Data/SRR2016350_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.97 s (101 us/read; 0.60 M reads/minute).
+Finished in 0.90 s (94 us/read; 0.64 M reads/minute).
 
 === Summary ===
 
@@ -409,7 +409,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016351_trimmed.fastq.gz ../Raw_Data/SRR2016351_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.74 s (95 us/read; 0.63 M reads/minute).
+Finished in 0.98 s (126 us/read; 0.48 M reads/minute).
 
 === Summary ===
 
@@ -444,7 +444,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016352_trimmed.fastq.gz ../Raw_Data/SRR2016352_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.90 s (94 us/read; 0.64 M reads/minute).
+Finished in 1.01 s (105 us/read; 0.57 M reads/minute).
 
 === Summary ===
 
@@ -487,7 +487,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016353_trimmed.fastq.gz ../Raw_Data/SRR2016353_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.71 s (117 us/read; 0.51 M reads/minute).
+Finished in 0.66 s (108 us/read; 0.56 M reads/minute).
 
 === Summary ===
 
@@ -523,7 +523,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016354_trimmed.fastq.gz ../Raw_Data/SRR2016354_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.73 s (144 us/read; 0.42 M reads/minute).
+Finished in 0.78 s (153 us/read; 0.39 M reads/minute).
 
 === Summary ===
 
@@ -544,7 +544,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016355_trimmed.fastq.gz ../Raw_Data/SRR2016355_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.77 s (107 us/read; 0.56 M reads/minute).
+Finished in 1.11 s (154 us/read; 0.39 M reads/minute).
 
 === Summary ===
 
@@ -596,7 +596,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016356_trimmed.fastq.gz ../Raw_Data/SRR2016356_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.72 s (120 us/read; 0.50 M reads/minute).
+Finished in 0.64 s (106 us/read; 0.57 M reads/minute).
 
 === Summary ===
 
@@ -632,7 +632,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016357_trimmed.fastq.gz ../Raw_Data/SRR2016357_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 1.03 s (111 us/read; 0.54 M reads/minute).
+Finished in 0.87 s (94 us/read; 0.64 M reads/minute).
 
 === Summary ===
 
@@ -667,7 +667,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016358_trimmed.fastq.gz ../Raw_Data/SRR2016358_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.61 s (109 us/read; 0.55 M reads/minute).
+Finished in 0.75 s (134 us/read; 0.45 M reads/minute).
 
 === Summary ===
 
@@ -688,7 +688,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016359_trimmed.fastq.gz ../Raw_Data/SRR2016359_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.71 s (124 us/read; 0.48 M reads/minute).
+Finished in 0.81 s (142 us/read; 0.42 M reads/minute).
 
 === Summary ===
 
@@ -723,7 +723,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016360_trimmed.fastq.gz ../Raw_Data/SRR2016360_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.70 s (111 us/read; 0.54 M reads/minute).
+Finished in 0.80 s (127 us/read; 0.47 M reads/minute).
 
 === Summary ===
 
@@ -744,7 +744,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016361_trimmed.fastq.gz ../Raw_Data/SRR2016361_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.93 s (122 us/read; 0.49 M reads/minute).
+Finished in 1.01 s (133 us/read; 0.45 M reads/minute).
 
 === Summary ===
 
@@ -779,7 +779,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016362_trimmed.fastq.gz ../Raw_Data/SRR2016362_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.84 s (165 us/read; 0.36 M reads/minute).
+Finished in 0.85 s (168 us/read; 0.36 M reads/minute).
 
 === Summary ===
 
@@ -800,7 +800,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016363_trimmed.fastq.gz ../Raw_Data/SRR2016363_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.81 s (111 us/read; 0.54 M reads/minute).
+Finished in 1.15 s (158 us/read; 0.38 M reads/minute).
 
 === Summary ===
 
@@ -821,7 +821,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016364_trimmed.fastq.gz ../Raw_Data/SRR2016364_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.92 s (142 us/read; 0.42 M reads/minute).
+Finished in 0.69 s (106 us/read; 0.57 M reads/minute).
 
 === Summary ===
 
@@ -842,7 +842,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016365_trimmed.fastq.gz ../Raw_Data/SRR2016365_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 1.19 s (166 us/read; 0.36 M reads/minute).
+Finished in 1.19 s (167 us/read; 0.36 M reads/minute).
 
 === Summary ===
 
@@ -877,7 +877,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016366_trimmed.fastq.gz ../Raw_Data/SRR2016366_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.60 s (189 us/read; 0.32 M reads/minute).
+Finished in 0.41 s (128 us/read; 0.47 M reads/minute).
 
 === Summary ===
 
@@ -898,7 +898,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016367_trimmed.fastq.gz ../Raw_Data/SRR2016367_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.61 s (111 us/read; 0.54 M reads/minute).
+Finished in 0.59 s (108 us/read; 0.56 M reads/minute).
 
 === Summary ===
 
@@ -933,7 +933,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016368_trimmed.fastq.gz ../Raw_Data/SRR2016368_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 1.14 s (122 us/read; 0.49 M reads/minute).
+Finished in 0.86 s (92 us/read; 0.65 M reads/minute).
 
 === Summary ===
 
@@ -968,7 +968,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016369_trimmed.fastq.gz ../Raw_Data/SRR2016369_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.48 s (113 us/read; 0.53 M reads/minute).
+Finished in 0.55 s (129 us/read; 0.46 M reads/minute).
 
 === Summary ===
 
@@ -1003,7 +1003,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016370_trimmed.fastq.gz ../Raw_Data/SRR2016370_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.44 s (125 us/read; 0.48 M reads/minute).
+Finished in 0.70 s (197 us/read; 0.30 M reads/minute).
 
 === Summary ===
 
@@ -1038,7 +1038,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016371_trimmed.fastq.gz ../Raw_Data/SRR2016371_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.94 s (130 us/read; 0.46 M reads/minute).
+Finished in 0.95 s (131 us/read; 0.46 M reads/minute).
 
 === Summary ===
 
@@ -1073,7 +1073,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016372_trimmed.fastq.gz ../Raw_Data/SRR2016372_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.59 s (131 us/read; 0.46 M reads/minute).
+Finished in 0.57 s (127 us/read; 0.47 M reads/minute).
 
 === Summary ===
 
@@ -1116,7 +1116,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016373_trimmed.fastq.gz ../Raw_Data/SRR2016373_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.84 s (168 us/read; 0.36 M reads/minute).
+Finished in 0.64 s (129 us/read; 0.46 M reads/minute).
 
 === Summary ===
 
@@ -1159,7 +1159,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016374_trimmed.fastq.gz ../Raw_Data/SRR2016374_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.93 s (163 us/read; 0.37 M reads/minute).
+Finished in 0.79 s (138 us/read; 0.43 M reads/minute).
 
 === Summary ===
 
@@ -1194,7 +1194,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016375_trimmed.fastq.gz ../Raw_Data/SRR2016375_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.07 s (735 us/read; 0.08 M reads/minute).
+Finished in 0.06 s (614 us/read; 0.10 M reads/minute).
 
 === Summary ===
 
@@ -1215,7 +1215,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016376_trimmed.fastq.gz ../Raw_Data/SRR2016376_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 1.11 s (176 us/read; 0.34 M reads/minute).
+Finished in 0.92 s (145 us/read; 0.41 M reads/minute).
 
 === Summary ===
 
@@ -1236,7 +1236,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016377_trimmed.fastq.gz ../Raw_Data/SRR2016377_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.66 s (116 us/read; 0.52 M reads/minute).
+Finished in 0.84 s (147 us/read; 0.41 M reads/minute).
 
 === Summary ===
 
@@ -1271,7 +1271,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016378_trimmed.fastq.gz ../Raw_Data/SRR2016378_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.33 s (153 us/read; 0.39 M reads/minute).
+Finished in 0.40 s (182 us/read; 0.33 M reads/minute).
 
 === Summary ===
 
@@ -1292,7 +1292,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016379_trimmed.fastq.gz ../Raw_Data/SRR2016379_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.44 s (172 us/read; 0.35 M reads/minute).
+Finished in 0.42 s (163 us/read; 0.37 M reads/minute).
 
 === Summary ===
 
@@ -1313,7 +1313,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016380_trimmed.fastq.gz ../Raw_Data/SRR2016380_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.55 s (113 us/read; 0.53 M reads/minute).
+Finished in 0.62 s (128 us/read; 0.47 M reads/minute).
 
 === Summary ===
 
@@ -1348,7 +1348,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016381_trimmed.fastq.gz ../Raw_Data/SRR2016381_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.50 s (171 us/read; 0.35 M reads/minute).
+Finished in 0.35 s (120 us/read; 0.50 M reads/minute).
 
 === Summary ===
 
@@ -1383,7 +1383,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016382_trimmed.fastq.gz ../Raw_Data/SRR2016382_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.50 s (119 us/read; 0.50 M reads/minute).
+Finished in 0.46 s (109 us/read; 0.55 M reads/minute).
 
 === Summary ===
 
@@ -1404,7 +1404,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016383_trimmed.fastq.gz ../Raw_Data/SRR2016383_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.42 s (103 us/read; 0.58 M reads/minute).
+Finished in 0.57 s (139 us/read; 0.43 M reads/minute).
 
 === Summary ===
 
@@ -1425,7 +1425,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016384_trimmed.fastq.gz ../Raw_Data/SRR2016384_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.02 s (359 us/read; 0.17 M reads/minute).
+Finished in 0.05 s (707 us/read; 0.08 M reads/minute).
 
 === Summary ===
 
@@ -1446,7 +1446,7 @@ Sequence: GCTGCCTCCCGTAGGAGT; Type: regular 3'; Length: 18; Trimmed: 0 times
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016385_trimmed.fastq.gz ../Raw_Data/SRR2016385_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.71 s (74 us/read; 0.82 M reads/minute).
+Finished in 0.95 s (99 us/read; 0.61 M reads/minute).
 
 === Summary ===
 
@@ -1489,7 +1489,7 @@ WARNING:
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016386_trimmed.fastq.gz ../Raw_Data/SRR2016386_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.06 s (172 us/read; 0.35 M reads/minute).
+Finished in 0.06 s (187 us/read; 0.32 M reads/minute).
 
 === Summary ===
 
@@ -1525,7 +1525,7 @@ length	count	expect	max.err	error counts
 This is cutadapt 2.10 with Python 3.8.6
 Command line parameters: -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT -o ../Trimmed_Sequence_Data/SRR2016387_trimmed.fastq.gz ../Raw_Data/SRR2016387_raw.fastq.gz
 Processing reads on 1 core in single-end mode ...
-Finished in 0.02 s (689 us/read; 0.09 M reads/minute).
+Finished in 0.07 s (2040 us/read; 0.03 M reads/minute).
 
 === Summary ===
 
