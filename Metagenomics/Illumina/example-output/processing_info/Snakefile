@@ -181,17 +181,20 @@ rule run_humann3:
         R2 = filtered_reads_dir + filename_prefix + "{ID}" + trimmed_filename_R2_suffix
     params:
         combined_reads = read_based_dir + "{ID}-reads.tmp.fq.gz",
-        output_dir = read_based_dir + "{ID}-humann3-out-dir"
+        output_dir = read_based_dir + "{ID}-humann3-out-dir",
+        tmp_metaphlan = read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/{ID}_metaphlan_bugs_list.tsv",
+        tmp_dir = read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/"
     output:
         read_based_dir + "{ID}-humann3-out-dir/{ID}_genefamilies.tsv",
         read_based_dir + "{ID}-humann3-out-dir/{ID}_pathabundance.tsv",
         read_based_dir + "{ID}-humann3-out-dir/{ID}_pathcoverage.tsv",
-        read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/{ID}_metaphlan_bugs_list.tsv"
+        read_based_dir + "{ID}-humann3-out-dir/{ID}_metaphlan_bugs_list.tsv"
     shell:
         """
         cat {input.R1} {input.R2} > {params.combined_reads}
         humann --input {params.combined_reads} --output {params.output_dir} --threads {num_threads} --output-basename {wildcards.ID} --metaphlan-options "--bowtie2db ${{MPA_DIR}} --unknown_estimation --add_viruses --sample_id {wildcards.ID}" --bowtie-options "--sensitive --mm" > /dev/null 2>&1
-        rm {params.combined_reads}
+        mv {params.tmp_metaphlan} {output[3]}
+        rm -rf {params.combined_reads} {params.tmp_dir}
         """
 
 
@@ -305,13 +308,13 @@ rule gen_read_based_processing_KO_table:
 
 rule combine_read_based_processing_taxonomy:
     """
-    This rule includes final outputs from read-based functional annotation process as inputs even though they aren't used just so 
+    This rule includes final outputs from read-based functional annotation process as inputs even though they aren't used just so
     we can delete those working directories when done with them here (ensuring the other processes are already done with them).
     """
     conda:
         "envs/humann3.yaml"
     input:
-        in_files = expand(read_based_dir + "{ID}-humann3-out-dir/{ID}_humann_temp/{ID}_metaphlan_bugs_list.tsv", ID = sample_ID_list),
+        in_files = expand(read_based_dir + "{ID}-humann3-out-dir/{ID}_metaphlan_bugs_list.tsv", ID = sample_ID_list),
         trigger1 = read_based_dir + curr_GLDS + "-gene-families-cpm.tsv",
         trigger2 = read_based_dir + curr_GLDS + "-gene-families-KO-cpm.tsv"
     output:
@@ -323,9 +326,6 @@ rule combine_read_based_processing_taxonomy:
         # removing redundant text from headers (using the -i flag to keep it portable with darwin shell)
         sed -i.tmp 's/_metaphlan_bugs_list//g' {output}
         rm {output}.tmp
-
-        # removing humann3 working directories
-        rm -rf {read_based_dir}*-humann3-out-dir/
         """
 
 
