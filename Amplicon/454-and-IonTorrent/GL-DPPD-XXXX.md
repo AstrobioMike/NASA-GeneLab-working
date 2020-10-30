@@ -387,6 +387,8 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein --id 0.9
 
 <br>
 
+---
+
 ## 6. Generating taxonomy and additional outputs
 
 > The following is performed within `R`.
@@ -486,3 +488,6 @@ count_summary_tab <- merge(t1, mapped_tab)
 
 write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep="\t", quote=FALSE, row.names=FALSE)
 ```
+
+---
+---
