@@ -68,5 +68,6 @@ mapped_tab <- data.frame(sample=names(mapped_sums), mapped_to_OTUs=mapped_sums, 
 
 t1 <- merge(cutadapt_tab, bbduk_tab)
 count_summary_tab <- merge(t1, mapped_tab)
+count_summary_tab$final_perc_reads_retained <- round(count_summary_tab$mapped_to_OTUs / count_summary_tab$raw_reads * 100, 2)
 
 write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep="\t", quote=FALSE, row.names=FALSE)
