@@ -66,6 +66,7 @@ Michael D. Lee (GeneLab Analysis Team)
 ---
 
 ## 1. Raw Data QC
+**Uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)**
 
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
@@ -87,6 +88,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 
 
 ### Compile Raw Data QC
+**Uses [MultiQC](https://multiqc.info/)**
 
 ```
 multiqc -o raw_multiqc_output raw_fastqc_output
@@ -109,6 +111,7 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 ---
 
 ## 2. Trim Primers
+**Uses [cutadapt](https://cutadapt.readthedocs.io/en/stable/)**
 
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
@@ -144,7 +147,7 @@ cutadapt -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT \
 ---
 
 ## 3. Quality filtering
-
+**Uses [bbduk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)**
 
 ```
 bbduk.sh in=sample-1_trimmed.fastq.gz out=sample-1_filtered.fastq.gz \
@@ -178,6 +181,8 @@ bbduk.sh in=sample-1_trimmed.fastq.gz out=sample-1_filtered.fastq.gz \
 ---
 
 ## 4. Filtered Data QC
+**Uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)**
+
 ```
 fastqc -o filtered_fastqc_output *filtered.fastq.gz
 ```
@@ -198,6 +203,8 @@ fastqc -o filtered_fastqc_output *filtered.fastq.gz
 
 
 ### Compile Filtered Data QC
+**Uses [MultiQC](https://multiqc.info/)**
+
 ```
 multiqc -o filtered_multiqc_output  filtered_fastqc_output
 ```
@@ -220,6 +227,7 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 ---
 
 ## 5. Generating OTUs and counts per sample
+**Uses [vsearch](https://github.com/torognes/vsearch)**
 
 ### Dereplicate individual samples
 ```
@@ -379,8 +387,9 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 
 ## 6. Generating taxonomy and additional outputs
 
-> The following is performed within `R`.
+> The following is performed within [R](https://www.r-project.org/).  
 
+**Uses [DECIPHER](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html) and [biom-format](https://github.com/joey711/biomformat)**
 
 ### Assigning taxonomy
 
