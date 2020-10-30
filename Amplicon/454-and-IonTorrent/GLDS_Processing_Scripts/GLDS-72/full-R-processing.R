@@ -70,3 +70,5 @@ t1 <- merge(cutadapt_tab, bbduk_tab)
 count_summary_tab <- merge(t1, mapped_tab)
 
 write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+
+sessionInfo()
