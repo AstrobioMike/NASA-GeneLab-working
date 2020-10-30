@@ -86,8 +86,6 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * fastqc.zip (FastQC output data)
 
 
-<br>  
-
 ### Compile Raw Data QC
 
 ```
@@ -107,8 +105,6 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
-
-<br>  
 
 ---
 
@@ -144,8 +140,6 @@ cutadapt -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT \
 **Output files:**
 
 * fastq, compressed or uncompressed (trimmed reads)
-
-<br>
 
 ---
 
@@ -184,8 +178,6 @@ bbduk.sh in=sample-1_trimmed.fastq.gz out=sample-1_filtered.fastq.gz \
 
 * fastq, compressed or uncompressed (filtered reads)
 
-<br>
-
 ---
 
 ## 4. Filtered Data QC
@@ -207,7 +199,6 @@ fastqc -o filtered_fastqc_output *filtered.fastq.gz
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
 
-<br>
 
 ### Compile Filtered Data QC
 ```
@@ -228,7 +219,6 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
 
-<br>
 
 ---
 
@@ -257,7 +247,6 @@ vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both \
 
 * sample-1_derep.fasta
 
-<br>
 
 ### Generate OTUs
 
@@ -362,7 +351,6 @@ vsearch --uchime_denovo rep-seqs-no-singletons.fasta --sizein --nonchimeras OTUs
 
 * OTUs.fasta
 
-<br>
 
 ### Map reads to OTUs
 ```bash
@@ -389,7 +377,6 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 
 * counts.tsv
 
-<br>
 
 ---
 
@@ -419,7 +406,6 @@ download.file(url=“http://www2.decipher.codes/Classification/TrainingSets/SILV
 
 *	`destfile=` – specifying the path/name of the file after downloading
 
-<br>
 
 Loading taxonomy object:
 ```R
@@ -445,7 +431,6 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 
 *	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
-<br>
 
 ### Generating and writing outputs
 Creating table of taxonomy and setting any that are unclassified as "NA", and writing out:
