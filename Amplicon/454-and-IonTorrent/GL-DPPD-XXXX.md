@@ -145,9 +145,6 @@ cutadapt -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT \
 
 ## 3. Quality filtering
 
-The following is an example from a [GLDS-72](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-72/) sample that used 454 sequencing with the following 16S primers:  
-* forward: 5’-AGAGTTTGATCCTGGCTCAG-3’
-* reverse: 5’- GCTGCCTCCCGTAGGAGT-3’
 
 ```
 bbduk.sh in=sample-1_trimmed.fastq.gz out=sample-1_filtered.fastq.gz \
