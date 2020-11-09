@@ -71,7 +71,7 @@ Michael D. Lee
 ### 1. Raw Data QC
 
 ```
-fastqc -o raw_fastqc_output *.fastq.gz
+fastqc -o raw_fastqc_output *raw.fastq.gz
 ```
 
 **Parameter Definitions:**
@@ -81,7 +81,7 @@ fastqc -o raw_fastqc_output *.fastq.gz
 
 **Input data:**
 
-* *.fastq.gz
+* *raw.fastq.gz (raw reads)
 
 **Output data:**
 
@@ -104,7 +104,7 @@ multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 
 **Input data:**
 
-* *fastqc.zip (FastQC output data)
+* raw_fastqc_output/*fastqc.zip (FastQC output data)
 
 **Output data:**
 
@@ -118,16 +118,16 @@ multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 ### 2. Quality filtering/trimming
 
 ```      
-bbduk.sh in=sample-1-R1.fastq.gz in2=sample-1-R2.fastq.gz out1=sample-1-R1-trimmed.fastq.gz \
+bbduk.sh in=sample-1-R1-raw.fastq.gz in2=sample-1-R2-raw.fastq.gz out1=sample-1-R1-trimmed.fastq.gz \
          out2=sample-1-R2-trimmed.fastq.gz ref=ref-adapters.fa ktrim=l k=17 ftm=5 qtrim=rl \
          trimq=10 mlf=0.5 maxns=0 > bbduk.log 2>&1
 ```
 
 **Parameter Definitions:**
 
-*	`in` and `in2` – specifies the forward and reverse input reads, respectively
+*	`in` and `in2` – specifies the forward and reverse input reads, respectively (no `in2` if working with single-end data)
 
-*	`out1` and `out2` – specifies the forward and reverse output reads, respectively
+*	`out1` and `out2` – specifies the forward and reverse output reads, respectively (no `out2` if working with single-end data)
 
 *	`ref` – specifies a fasta file holding potential adapter sequences (comes with bbduk installation)
 
@@ -135,7 +135,7 @@ bbduk.sh in=sample-1-R1.fastq.gz in2=sample-1-R2.fastq.gz out1=sample-1-R1-trimm
 
 *	`k` – sets minimum length of kmer match to identify adapter sequences (provided by the “ref” file above)
 
-*	`ftm` – sets a multiple of expected length the sequence should be (handles poor additional bases that are sometimes present, see “Force-Trim Modulo” section on this page)
+*	`ftm` – sets a multiple of expected length the sequence should be (handles poor additional bases that are sometimes present, see “Force-Trim Modulo” section on [this page](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/))
 
 *	`qtrim` – sets quality-score-based trimming to be applied to left and right sides
 
@@ -149,11 +149,11 @@ bbduk.sh in=sample-1-R1.fastq.gz in2=sample-1-R2.fastq.gz out1=sample-1-R1-trimm
 
 **Input data:**
 
-* *.fastq.gz (raw reads)
+* *raw.fastq.gz (raw reads)
 
 **Output data:**
 
-* *-trimmed.fastq.gz (filtered reads)
+* *-trimmed.fastq.gz (filtered/trimmed reads)
 * bbduk.log (log file of standard output and error from bbduk run)
 
 <br>
@@ -172,7 +172,7 @@ fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 
 **Input data:**
 
-* *trimmed.fastq.gz (trimmed/filtered reads)
+* *trimmed.fastq.gz (filtered/trimmed reads)
 
 **Output data:**
 
@@ -180,7 +180,7 @@ fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 * *fastqc.zip (FastQC output data)
 
 
-#### Compile Filtered Data QC
+#### Compile Filtered/Trimmed Data QC
 ```
 multiqc -o trimmed_multiqc_output -n trimmed_multiqc -z trimmed_fastqc_output/
 ```
@@ -194,7 +194,7 @@ multiqc -o trimmed_multiqc_output -n trimmed_multiqc -z trimmed_fastqc_output/
 
 **Input data:**
 
-* *fastqc.zip (FastQC output data)
+* trimmed_fastqc_output/*fastqc.zip (FastQC output data)
 
 **Output data:**
 
@@ -214,7 +214,7 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 **Parameter Definitions:**  
 
-*	`-1 and -2` – specifies the input forward and reverse reads
+*	`-1 and -2` – specifies the input forward and reverse reads (if single-end data, then neither `-1` nor `-2` are used, instead single-end reads are passed to `-r`)
 
 *	`-o` – specifies output directory
 
@@ -227,7 +227,7 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 **Input data:**
 
-* *fastq.gz (trimmed/filtered reads)
+* *fastq.gz (filtered/trimmed reads)
 
 **Output data:**
 
@@ -505,7 +505,7 @@ bowtie2 --threads 15 -x sample-1-assembly-bt-index -1 sample-1-R1-trimmed.fastq.
 
 *	`-x` – specifies the prefix of the reference index files to map to
 
-*	`-1 and -2` – specifies the forward and reverse reads to map
+*	`-1 and -2` – specifies the forward and reverse reads to map (if single-end data, neither `-1` nor `-2` are provided, and the single-end reads are passed to `-r`
 
 * `2> sample-1-mapping.log` – capture the printed summary results in a log file
 
@@ -698,7 +698,7 @@ metaphlan --install
 
 #### Running humann3 (which also runs metaphlan3)
 ```bash
-  # forward and reverse reads need to be provided combined if paired-end
+  # forward and reverse reads need to be provided combined if paired-end (if not paired-end, single-end reads are provided to the --input argument next)
 cat sample-1-R1-trimmed.fastq.gz sample-1-R2-trimmed.fastq.gz > sample-1-combined.fastq.gz
 
 humann --input sample-1-combined.fastq.gz --output sample-1-humann3-out-dir --threads 15 \
@@ -820,7 +820,7 @@ merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.
 
 **Input data:**
 
-* *fastq.gz (trimmed/filtered reads, forward and reverse reads concatenated if paired-end)
+* *fastq.gz (filtered/trimmed reads, forward and reverse reads concatenated if paired-end)
 
 **Output data:**
 
