@@ -89,7 +89,7 @@ fastqc -o raw_fastqc_output *raw.fastq.gz
 * *fastqc.zip (FastQC output data)
 
 
-#### Compile Raw Data QC
+#### 1a. Compile Raw Data QC
 
 ```
 multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
@@ -180,7 +180,7 @@ fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 * *fastqc.zip (FastQC output data)
 
 
-#### Compile Filtered/Trimmed Data QC
+#### 3a. Compile Filtered/Trimmed Data QC
 ```
 multiqc -o trimmed_multiqc_output -n trimmed_multiqc -z trimmed_fastqc_output/
 ```
@@ -231,7 +231,7 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 **Output data:**
 
-* *.fasta (assembly file)
+* sample-1-assembly/final.contigs.fa (assembly file)
 * sample-1-assembly.log (log file)
 
 <br>
@@ -240,9 +240,9 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 ### 5. Renaming contigs and summarizing assemblies
 
-**Renaming contig headers:**
+#### 5a. Renaming contig headers
 ```
-bit-rename-fasta-headers -i sample-1-assembly-orig.fasta -w c_sample-1 -o sample-1-assembly.fasta
+bit-rename-fasta-headers -i sample-1-assembly/final.contigs.fa -w c_sample-1 -o sample-1-assembly.fasta
 ```
 
 **Parameter Definitions:**  
@@ -253,9 +253,17 @@ bit-rename-fasta-headers -i sample-1-assembly-orig.fasta -w c_sample-1 -o sample
 
 *	`-o` – output fasta file
 
-*	`--remove-temp-output` – delete the temp files after finishing
 
-**Summarizing assemblies:**
+**Input data:**
+
+* sample-1-assembly/final.contigs.fa (assembly file)
+
+**Output files:**
+
+* sample-1-assembly.fasta (contig-renamed assembly file)
+
+
+#### 5b. Summarizing assemblies
 
 ```
 bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
@@ -270,11 +278,10 @@ bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
 
 **Input data:**
 
-* *.fasta (assembly files)
+* *-assembly.fasta (contig-renamed assembly files)
 
 **Output files:**
 
-* *.fasta (contig-renamed assembly files)
 * assembly-summaries.tsv (table of assembly summary statistics)
 
 <br>
@@ -294,7 +301,7 @@ prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
 
 *	`-f` – specifies the output format gene-calls file
 
-*	`-p` – specifies which mode run the gene-caller in 
+*	`-p` – specifies which mode to run the gene-caller in 
 
 *	`-c` – no incomplete genes reported 
 
@@ -320,10 +327,10 @@ prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
 
 ### 7. Functional annotation
 > **Notes**  
-> The annotation process overwrites the same temporary directory by default. So if running multiple at a time, it is necessary to specify a specific temporary directory with the `--tmp-dir` argument as shown below.
+> The annotation process overwrites the same temporary directory by default. So if running multiple processses at a time, it is necessary to specify a specific temporary directory with the `--tmp-dir` argument as shown below.
 
 
-Downloading reference database of HMM models (only needs to be done once):
+#### 7a. Downloading reference database of HMM models (only needs to be done once)
 
 ```
 curl -LO ftp://ftp.genome.jp/pub/db/kofam/profiles.tar.gz
@@ -332,7 +339,7 @@ tar -xzvf profiles.tar.gz
 gunzip ko_list.gz 
 ```
 
-Running KEGG annotation:
+#### 7b. Running KEGG annotation
 ```
 exec_annotation -p profiles/ -k ko_list --cpu 15 -f detail-tsv -o sample-1-KO-tab.tmp \
                 --tmp-dir sample-1-tmp-KO --report-unannotated sample-1-genes.faa 
@@ -341,7 +348,7 @@ exec_annotation -p profiles/ -k ko_list --cpu 15 -f detail-tsv -o sample-1-KO-ta
 **Parameter Definitions:**
 *	`-p` – specifies the directory holding the downloaded reference HMMs
 
-*	`-k` – specifies the downloaded reference KO terms 
+*	`-k` – specifies the downloaded reference KO  (Kegg Orthology) terms 
 
 *	`--cpu` – specifies the number of searches to run in parallel
 
@@ -349,14 +356,25 @@ exec_annotation -p profiles/ -k ko_list --cpu 15 -f detail-tsv -o sample-1-KO-ta
 
 *	`-o` – specifies the output file name
 
-*	`--tmp-dir` – specifies the temporary directory to write to (needed if running more than one concurrently, see Notes above)
+*	`--tmp-dir` – specifies the temporary directory to write to (needed if running more than one process concurrently, see Notes above)
 
 *	`--report-unannotated` – specifies to generate an output for each entry
 
-*	the input file is specified as a positional argument
+*	`sample-1-genes.faa` – the input file is specified as a positional argument
 
 
-Filtering output to retain only those passing the KO-specific score and top hits:
+**Input data:**
+
+* sample-1-genes.faa (amino-acid fasta file)
+* profiles/ (reference directory holding the KO HMMs)
+* ko_list (reference list of KOs to scan for)
+
+**Output data:**
+
+* sample-1-KO-tab.tmp (table of KO annotations assigned to gene IDs)
+
+
+#### 7c. Filtering output to retain only those passing the KO-specific score and top hits
 ```
 bit-filter-KOFamScan-results -i sample-1-KO-tab.tmp -o sample-1-annotations.tsv
 
@@ -373,7 +391,7 @@ rm -rf sample-1-tmp-KO/ sample-1-KO-annots.tmp
 
 **Input data:**
 
-* sample-1-genes.faa (amino-acid fasta file)
+* sample-1-KO-tab.tmp (table of KO annotations assigned to gene IDs)
 
 **Output data:**
 
@@ -385,13 +403,13 @@ rm -rf sample-1-tmp-KO/ sample-1-KO-annots.tmp
 
 ### 8. Taxonomic classification
 
-Pulling and un-packing pre-built reference db (only needs to be done once):
+#### 8a. Pulling and un-packing pre-built reference db (only needs to be done once)
 ```
 wget tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20200618.tar.gz
 tar -xvzf CAT_prepare_20200618.tar.gz
 ```
 
-Running taxonomic classification:
+#### 8b. Running taxonomic classification
 ```
 CAT contigs -c sample-1-assembly.fasta -d CAT_prepare_20200618/2020-06-18_database/ \
             -t CAT_prepare_20200618/2020-06-18_taxonomy/ -p sample-1-genes.faa \
@@ -419,13 +437,43 @@ CAT contigs -c sample-1-assembly.fasta -d CAT_prepare_20200618/2020-06-18_databa
 *	`--I_know_what_Im_doing` – allows us to alter the `--top` parameter
 
 
-Adding taxonomy info from taxids to genes:
+**Input data:**
+
+* sample-1-assembly.fasta (assembly file)
+* sample-1-genes.faa (gene-calls amino-acid fasta file)
+
+**Output data:**
+
+* sample-1-tax-out.tmp.ORF2LCA.txt (gene-calls taxonomy file)
+* sample-1-tax-out.tmp.contig2classification.txt (contig taxonomy file)
+
+#### 8c. Adding taxonomy info from taxids to genes
 ```
 CAT add_names -i sample-1-tax-out.tmp.ORF2LCA.txt -o sample-1-gene-tax-out.tmp \
               -t CAT_prepare_20200618/2020-06-18_taxonomy/ --only_official
 ```
 
-Adding taxonomy info from taxids to contigs:
+**Parameter Definitions:**  
+
+*	`-i` – specifies the input taxonomy file
+
+*	`-o` – specifies the output file 
+
+*	`-t` – specifies the CAT reference taxonomy database
+
+*	`--only_official` – specifies to add only standard taxonomic ranks
+
+**Input data:**
+
+* sample-1-tax-out.tmp.ORF2LCA.txt (gene-calls taxonomy file)
+
+**Output data:**
+
+* sample-1-gene-tax-out.tmp (gene-calls taxonomy file with lineage info added)
+
+
+
+#### 8d. Adding taxonomy info from taxids to contigs
 ```
 CAT add_names -i sample-1-tax-out.tmp.contig2classification.txt -o sample-1-contig-tax-out.tmp \
               -t CAT-ref/2020-06-18_taxonomy/ --only_official
@@ -442,8 +490,16 @@ CAT add_names -i sample-1-tax-out.tmp.contig2classification.txt -o sample-1-cont
 *	`--only_official` – specifies to add only standard taxonomic ranks
 
 
+**Input data:**
 
-Formatting gene-level output with awk and sed:
+* sample-1-tax-out.tmp.contig2classification.txt (contig taxonomy file)
+
+**Output data:**
+
+* sample-1-contig-tax-out.tmp (contig taxonomy file with lineage info added)
+
+
+#### 8e. Formatting gene-level output with awk and sed
 ```
 awk -F $'\t' ' BEGIN { OFS=FS } { if ( $2 == "lineage" ) { print $1,$2,$4,$5,$6,$7,$8,$9,$10 } \
     else if ( $2 == "ORF has no hit to database" || $2 ~ /^no taxid found/ ) \
@@ -453,7 +509,7 @@ awk -F $'\t' ' BEGIN { OFS=FS } { if ( $2 == "lineage" ) { print $1,$2,$4,$5,$6,
     sed 's/lineage/taxid/' | sed 's/\*//g' > sample-1-gene-tax-out.tsv
 ```
 
-Formatting contig-level output with awk and sed:
+#### 8f. Formatting contig-level output with awk and sed
 ```
 awk -F $'\t' ' BEGIN { OFS=FS } { if ( $2 == "classification" ) { print $1,$4,$6,$7,$8,$9,$10,$11,$12 } \
     else if ( $2 == "unclassified" ) { print $1,"NA","NA","NA","NA","NA","NA","NA","NA" } \
@@ -467,13 +523,14 @@ rm sample-1*.tmp*
 
 **Input data:**
 
-* sample-1-assembly.fasta (assembly fasta file)
-* sample-1-genes.faa (gene-calls amino acid fasta file)
+* sample-1-gene-tax-out.tmp (gene-calls taxonomy file with lineage info added)
+* sample-1-contig-tax-out.tmp (contig taxonomy file with lineage info added)
+
 
 **Output data:**
 
-* sample-1-gene-tax-out.tsv (gene-level taxonomic classifications)
-* sample-1-contig-tax-out.tsv (contig-level taxonomic classifications)
+* sample-1-gene-tax-out.tmp (gene-calls taxonomy file with lineage info added reformatted)
+* sample-1-contig-tax-out.tmp (contig taxonomy file with lineage info added reformatted)
 
 <br>
 
@@ -481,19 +538,19 @@ rm sample-1*.tmp*
 
 ### 9. Read-mapping
 
-Building reference index:
+#### 9a. Building reference index
 ```
 bowtie2-build sample-1-assembly.fasta sample-1-assembly-bt-index
 ```
 
 **Parameter Definitions:**  
 
-*	first positional argument specifies the input assembly
+*	`sample-1-assembly.fasta` - first positional argument specifies the input assembly
 
-*	second positional argument specifies the prefix of the output index files
+*	`sample-1-assembly-bt-index` - second positional argument specifies the prefix of the output index files
 
 
-Performing mapping, conversion to bam, and sorting:
+#### 9b. Performing mapping, conversion to bam, and sorting
 ```
 bowtie2 --threads 15 -x sample-1-assembly-bt-index -1 sample-1-R1-trimmed.fastq.gz \
         -2 sample-1-R2-trimmed.fastq.gz 2> sample-1-mapping.log | samtools view -b | samtools sort -@ 15 > sample-1.bam
@@ -503,19 +560,19 @@ bowtie2 --threads 15 -x sample-1-assembly-bt-index -1 sample-1-R1-trimmed.fastq.
 
 *	`--threads` – specifies the number of threads to run in parallel
 
-*	`-x` – specifies the prefix of the reference index files to map to
+*	`-x` – specifies the prefix of the reference index files to map to (generated in the previous `bowtie2-build` step
 
-*	`-1 and -2` – specifies the forward and reverse reads to map (if single-end data, neither `-1` nor `-2` are provided, and the single-end reads are passed to `-r`
+*	`-1 and -2` – specifies the forward and reverse reads to map (if single-end data, neither `-1` nor `-2` are provided, and the single-end reads are passed to `-r`)
 
 * `2> sample-1-mapping.log` – capture the printed summary results in a log file
 
 *	`samtools view -b` – convert the output directly to bam format (compressed)
 
-*	`samtools sort -@` – sort the bam file using the specified number of threads threads
+*	`samtools sort -@` – sort the bam file using the specified number of threads
 
 *	`>` – redirect the output to a file
 
-Indexing:
+#### 9c. Indexing
 ```
 samtools index -@ 15 sample-1.bam 
 ```
@@ -523,7 +580,7 @@ samtools index -@ 15 sample-1.bam
 **Parameter Definitions:**  
 *	`-@` – set number of threads to use 
 
-*	input bam file is provided as a positional argument
+*	`sample-1.bam` - input bam file is provided as a positional argument as generated from the above mapping step
 
 **Input data:**
 
@@ -542,10 +599,12 @@ samtools index -@ 15 sample-1.bam
 
 ### 10. Getting coverage information and filtering based on detection
 > **Notes**  
-> “Detection” is a metric of what proportion of a reference sequence recruited reads (see [here](http://merenlab.org/2017/05/08/anvio-views/#detection)). 
-Filtering coverage levels based on detection is one way of helping to mitigate non-specific read-recruitment.  
+> “Detection” is a metric of what proportion of a reference sequence recruited reads (see [here](http://merenlab.org/2017/05/08/anvio-views/#detection)). Filtering based on detection is one way of helping to mitigate non-specific read-recruitment.
+
+#### 10a. Filtering coverage levels based on detection
 
 ```
+  # pileup.sh comes from the bbduk.sh package
 pileup.sh -in sample-1.bam fastaorf=sample-1-genes.fasta outorf=sample-1-gene-cov-and-det.tmp \
           out=sample-1-contig-cov-and-det.tmp
 ```
@@ -554,12 +613,14 @@ pileup.sh -in sample-1.bam fastaorf=sample-1-genes.fasta outorf=sample-1-gene-co
 
 *	`-in` – the input bam file
 
-*	`fastaorf=` – input genes nucleotide fasta
+*	`fastaorf=` – input gene-calls nucleotide fasta file
 
-*	`outorf=` – the output tsv file
+*	`outorf=` – the output gene-coverage tsv file
+
+*	`out=` – the output contig-coverage tsv file
 
 
-Filtering gene coverage based on requiring 50% detection and parsing down to just gene ID and coverage:
+#### 10b. Filtering gene coverage based on requiring 50% detection and parsing down to just gene ID and coverage
 ```
 grep -v "#" sample-1-gene-cov-and-det.tmp | awk -F $'\t' ' BEGIN { OFS=FS } { if ( $10 <= 0.5 ) $4 = 0 } \
      { print $1,$4 } ' > sample-1-gene-cov.tmp
@@ -612,9 +673,9 @@ rm sample-1*tmp sample-1-gene-coverages.tsv sample-1-annotations.tsv sample-1-ge
 
 **Input data:**
 
-* sample-1-gene-coverages.tsv (table with gene-level coverages)
-* sample-1-annotations.tsv (table of KO annotations assigned to gene IDs)
-* sample-1-gene-tax-out.tsv (gene-level taxonomic classifications)
+* sample-1-gene-coverages.tsv (table with gene-level coverages from step 10)
+* sample-1-annotations.tsv (table of KO annotations assigned to gene IDs from step 7)
+* sample-1-gene-tax-out.tsv (gene-level taxonomic classifications from step 8)
 
 
 **Output data:**
@@ -644,8 +705,8 @@ rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
 
 **Input data:**
 
-* sample-1-contig-coverages.tsv (table with contig-level coverages)
-* sample-1-contig-tax-out.tsv (contig-level taxonomic classifications)
+* sample-1-contig-coverages.tsv (table with contig-level coverages from step 10)
+* sample-1-contig-tax-out.tsv (contig-level taxonomic classifications from step 8)
 
 
 **Output data:**
@@ -674,7 +735,7 @@ bit-GL-combine-KO-and-tax-tables *-gene-coverage-annotation-and-tax.tsv -o GLDS-
 
 **Input data:**
 
-* *-gene-coverage-annotation-and-tax.tsv (tables with combined gene coverage, annotation, and taxonomy info)
+* *-gene-coverage-annotation-and-tax.tsv (tables with combined gene coverage, annotation, and taxonomy info generated for individual samples from step 12)
 
 **Output data:**
 
@@ -696,7 +757,7 @@ humann_databases --download utility_mapping full
 metaphlan --install
 ```
 
-#### Running humann3 (which also runs metaphlan3)
+#### 14a. Running humann3 (which also runs metaphlan3)
 ```bash
   # forward and reverse reads need to be provided combined if paired-end (if not paired-end, single-end reads are provided to the --input argument next)
 cat sample-1-R1-trimmed.fastq.gz sample-1-R2-trimmed.fastq.gz > sample-1-combined.fastq.gz
@@ -714,18 +775,20 @@ humann --input sample-1-combined.fastq.gz --output sample-1-humann3-out-dir --th
 
 *	`--threads` – specifies the number of threads to use
 
-*	`-output-basename` – specifies prefix of the output files
+*	`--output-basename` – specifies prefix of the output files
 
 *	`--metaphlan-options` – options to be passed to metaphlan
 	* `--unknown_estimation` – include unclassified in estimated relative abundances
 	* `--add_viruses` – include viruses in the reference database
 	* `--sample_id` – specifies the sample identifier we want in the table (rather than full filename)
 
-#### Merging multiple sample functional profiles into one table
+
+#### 14b. Merging multiple sample functional profiles into one table
 ```bash
   # they need to be in their own directories
 mkdir genefamily-results/ pathabundance-results/ pathcoverage-results/
 
+  # copying results from previous running humann3 step (14a) to get them all together in their own directories
 cp *-humann3-out-dir/*genefamilies.tsv genefamily-results/
 cp *-humann3-out-dir/*abundance.tsv pathabundance-results/
 cp *-humann3-out-dir/*coverage.tsv pathcoverage-results/
@@ -742,7 +805,7 @@ humann_join_tables -i pathcoverage-results/ -o path-coverages.tsv
 *	`-o` – the name of the output combined table
 
 
-#### Splitting results tables
+#### 14c. Splitting results tables
 The read-based functional annotation tables have taxonomic info and non-taxonomic info mixed together initially. `humann` comes with a helper script to split these. Here we are using that to generate both non-taxonomically grouped functional info files and taxonomically grouped ones.
 
 ```bash
@@ -766,7 +829,7 @@ mv path-coverages_unstratified.tsv path-coverages.tsv
 *	`-o` – output directory (here specifying current directory)
 
 
-#### Normalizing gene families and pathway abundance tables
+#### 14d. Normalizing gene families and pathway abundance tables
 This generates some normalized tables of the read-based functional outputs from humann that are more readily suitable for across sample comparisons.
 
 ```bash
@@ -783,7 +846,7 @@ humann_renorm_table -i path-abundances.tsv -o path-abundances-cpm.tsv --update-s
 *	`--update-snames` – change suffix of column names in tables to "-CPM"
 
 
-#### Generating a normalized gene-family table that is grouped by Kegg Orthologs (KOs)
+#### 14e. Generating a normalized gene-family table that is grouped by Kegg Orthologs (KOs)
 ```bash
 humann_regroup_table -i gene-families.tsv -g uniref90_ko | humann_rename_table -n kegg-orthology | \
                      humann_renorm_table -o gene-families-KO-cpm.tsv --update-snames
@@ -805,22 +868,22 @@ humann_regroup_table -i gene-families.tsv -g uniref90_ko | humann_rename_table -
 
 *  `--update-snames` – change suffix of column names in tables to "-CPM"
 
-#### Combining taxonomy tables
+#### 14f. Combining taxonomy tables
 
 ```bash
-merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.tsv > GLDS-286-metaphlan-taxonomy.tsv
+merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.tsv > metaphlan-taxonomy.tsv
 ```
 
 **Parameter Definitions:**  
 
-*	input metaphlan tables (produced during humann run) are provided as position arguments
+*	input metaphlan tables are provided as position arguments (produced during humann3 run above, step 14a)
 
 *  `>` – output is redirected from stdout to a file
 
 
 **Input data:**
 
-* *fastq.gz (filtered/trimmed reads, forward and reverse reads concatenated if paired-end)
+* *fastq.gz (filtered/trimmed reads from step 2, forward and reverse reads concatenated if paired-end)
 
 **Output data:**
 
