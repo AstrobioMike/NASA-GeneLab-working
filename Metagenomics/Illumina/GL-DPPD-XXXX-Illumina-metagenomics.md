@@ -17,13 +17,13 @@ Michael D. Lee
 
 # Table of contents
 
-- [Software used](#software-used)
-- [General processing overview with example code](#general-processing-overview-with-example-code)
-  - [Pre-processing](#pre-processing)
+- [**Software used**](#software-used)
+- [**General processing overview with example code**](#general-processing-overview-with-example-code)
+  - [**Pre-processing**](#pre-processing)
     - [1. Raw Data QC](#1-raw-data-qc)
     - [2. Quality filtering/trimming](#2-quality-filteringtrimming)
     - [3. Filtered/Trimmed Data QC](#3-filteredtrimmed-data-qc)
-  - [Assembly-based processing](#assembly-based-processing)
+  - [**Assembly-based processing**](#assembly-based-processing)
     - [4. Sample assembly](#4-sample-assembly)
     - [5. Renaming contigs and summarizing assemblies](#5-renaming-contigs-and-summarizing-assemblies)
     - [6. Gene prediction](#6-gene-prediction)
@@ -34,7 +34,7 @@ Michael D. Lee
     - [11. Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample](#11-combining-gene-level-coverage-taxonomy-and-functional-annotations-into-one-table-for-each-sample)
     - [12. Combining contig-level coverage and taxonomy into one table for each sample](#12-combining-contig-level-coverage-and-taxonomy-into-one-table-for-each-sample)
     - [13. Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples](#13-generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
-  - [Read-based processing](#read-based-processing)
+  - [**Read-based processing**](#read-based-processing)
     - [14. Taxonomic and functional profiling](#14-taxonomic-and-functional-profiling)
 
 ---
