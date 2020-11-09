@@ -11,7 +11,7 @@ Michael D. Lee
 ---
 
 <p align="center">
-<a href="https://github.com/AstrobioMike/AstrobioMike.github.io/blob/master/images/GL-illumiina-metagenomics-overview.pdf"><img src="https://github.com/AstrobioMike/AstrobioMike.github.io/blob/master/images/GL-illumiina-metagenomics-overview.png"></a>
+<a href="https://github.com/AstrobioMike/mock-temp/blob/master/Metagenomics/images/GL-Illumina-metagenomics-overview.pdf"><img src="https://github.com/AstrobioMike/mock-temp/blob/master/Metagenomics/images/GL-Illumina-metagenomics-overview.png"></a>
 </p>
 
 --- 
