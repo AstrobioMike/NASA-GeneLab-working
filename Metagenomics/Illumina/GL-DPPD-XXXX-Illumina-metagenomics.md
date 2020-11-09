@@ -85,8 +85,8 @@ fastqc -o raw_fastqc_output *.fastq.gz
 
 **Output data:**
 
-* fastqc.html (FastQC output html summary)
-* fastqc.zip (FastQC output data)
+* *fastqc.html (FastQC output html summary)
+* *fastqc.zip (FastQC output data)
 
 
 #### Compile Raw Data QC
@@ -104,12 +104,12 @@ multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 
 **Input data:**
 
-* fastqc.zip (FastQC output data)
+* *fastqc.zip (FastQC output data)
 
 **Output data:**
 
-* multiqc_report.html (multiqc output html summary)
-* multiqc_data (directory containing multiqc output data)
+* raw_multiqc_output/raw_multiqc_report.html (multiqc output html summary)
+* raw_multiqc_output/raw_multiqc_data.zip (zipped directory containing multiqc output data)
 
 <br>  
 
@@ -172,32 +172,34 @@ fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 
 **Input data:**
 
-* fastq, compressed or uncompressed (trimmed/filtered reads)
+* *trimmed.fastq.gz (trimmed/filtered reads)
 
 **Output data:**
 
-* fastqc.html (FastQC output html summary)
-* fastqc.zip (FastQC output data)
+* *fastqc.html (FastQC output html summary)
+* *fastqc.zip (FastQC output data)
 
 
 #### Compile Filtered Data QC
 ```
-multiqc -o trimmed_multiqc_output  trimmed_fastqc_output
+multiqc -o trimmed_multiqc_output -n trimmed_multiqc -z trimmed_fastqc_output/
 ```
 
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results
-*	`trimmed_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
+*	`-n` – the filename prefix of results
+*	`-z` – specifies to zip the output data directory
+*	`trimmed_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
 
 **Input data:**
 
-* fastqc.zip (FastQC output data)
+* *fastqc.zip (FastQC output data)
 
 **Output data:**
 
-* multiqc_report.html (multiqc output html summary)
-* multiqc_data (directory containing multiqc output data)
+* trimmed_multiqc_output/trimmed_multiqc_report.html (multiqc output html summary)
+* trimmed_multiqc_output/trimmed_multiqc_data.zip (zipped directory containing multiqc output data)
 
 <br>
 
@@ -225,12 +227,12 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 **Input data:**
 
-* fastq, compressed or uncompressed (filtered reads)
+* *fastq.gz (trimmed/filtered reads)
 
 **Output data:**
 
-* fasta, assembly file
-* txt, log file
+* *.fasta (assembly file)
+* sample-1-assembly.log (log file)
 
 <br>
 
@@ -268,12 +270,12 @@ bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
 
 **Input data:**
 
-* fasta, assembly files
+* *.fasta (assembly files)
 
 **Output files:**
 
-* fasta, contig-renamed assembly file
-* tsv, table of assembly summary statistics
+* *.fasta (contig-renamed assembly files)
+* assembly-summaries.tsv (table of assembly summary statistics)
 
 <br>
 
@@ -304,13 +306,13 @@ prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
 
 **Input data:**
 
-* fasta, assembly file
+* sample-1-assembly.fasta (assembly file)
 
 **Output data:**
 
-* fasta, sample-1-genes.faa, amino-acid fasta file
-* fasta, sample-1-genes.fasta, nucleotide fasta file
-* gff, sample-1-genes.gff, gene-calls in general feature format
+* sample-1-genes.faa (gene-calls amino-acid fasta file)
+* sample-1-genes.fasta (gene-calls nucleotide fasta file)
+* sample-1-genes.gff (gene-calls in general feature format)
 
 <br>
 
@@ -371,11 +373,11 @@ rm -rf sample-1-tmp-KO/ sample-1-KO-annots.tmp
 
 **Input data:**
 
-* fasta, gene-calls amino acid fasta file
+* sample-1-genes.faa (amino-acid fasta file)
 
 **Output data:**
 
-* tsv, table of KO annotations assigned to gene IDs
+* sample-1-annotations.tsv (table of KO annotations assigned to gene IDs)
 
 <br>
 
@@ -465,13 +467,13 @@ rm sample-1*.tmp*
 
 **Input data:**
 
-* fasta, assembly fasta file
-* fasta, gene-calls amino acid fasta file
+* sample-1-assembly.fasta (assembly fasta file)
+* sample-1-genes.faa (gene-calls amino acid fasta file)
 
 **Output data:**
 
-* tsv, gene-level taxonomic classifications
-* tsv, contig-level taxonomic classifications
+* sample-1-gene-tax-out.tsv (gene-level taxonomic classifications)
+* sample-1-contig-tax-out.tsv (contig-level taxonomic classifications)
 
 <br>
 
@@ -525,14 +527,14 @@ samtools index -@ 15 sample-1.bam
 
 **Input data:**
 
-* fasta, assembly file
-* fastq, trimmed read files
+* sample-1-assembly.fasta (assembly file)
+* *.fastq.gz (filtered/trimmed reads)
 
 **Output data:**
 
-* bam, mapping file
-* bai, bam index file
-* log, read-mapping log file
+* sample-1.bam (mapping file)
+* sample-1.bam.bai (bam index file)
+* sample-1-mapping.log (read-mapping log file)
 
 <br>
 
@@ -579,13 +581,13 @@ rm sample-1-*.tmp
 
 **Input data:**
 
-* bam, bam file
-* fasta, gene-calls nucleotide file
+* sample-1.bam (mapping file)
+* sample-1-genes.fasta (gene-calls nucleotide fasta file)
 
 **Output data:**
 
-* tsv, table with gene-level coverages
-* tsv, table with contig-level coverages
+* sample-1-gene-coverages.tsv (table with gene-level coverages)
+* sample-1-contig-coverages.tsv (table with contig-level coverages)
 
 <br>
 
@@ -610,12 +612,14 @@ rm sample-1*tmp sample-1-gene-coverages.tsv sample-1-annotations.tsv sample-1-ge
 
 **Input data:**
 
-* tsv, gene coverage, annotation, and taxonomy files
+* sample-1-gene-coverages.tsv (table with gene-level coverages)
+* sample-1-annotations.tsv (table of KO annotations assigned to gene IDs)
+* sample-1-gene-tax-out.tsv (gene-level taxonomic classifications)
 
 
 **Output data:**
 
-* tsv, table with combined gene coverage, annotation, and taxonomy info
+* sample-1-gene-coverage-annotation-and-tax.tsv (table with combined gene coverage, annotation, and taxonomy info)
 
 <br>
 
@@ -632,7 +636,7 @@ paste <( tail -n +2 sample-1-contig-coverages.tsv | sort -V -k 1 ) \
 paste <( head -n 1 sample-1-contig-coverages.tsv ) <( head -n 1 sample-1-contig-tax-out.tsv | cut -f 2- ) \
       > 5492-contig-header.tmp
       
-cat sample-1-contig-header.tmp sample-1-contig.tmp > sample-1-contig-coverage-annotation-and-tax.tsv
+cat sample-1-contig-header.tmp sample-1-contig.tmp > sample-1-contig-coverage-and-tax.tsv
 
   # removing intermediate files
 rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
@@ -640,11 +644,13 @@ rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
 
 **Input data:**
 
-* tsv, contig coverage and taxonomy files
+* sample-1-contig-coverages.tsv (table with contig-level coverages)
+* sample-1-contig-tax-out.tsv (contig-level taxonomic classifications)
+
 
 **Output data:**
 
-* tsv, table with combined contig coverage and taxonomy info
+* sample-1-contig-coverage-and-tax.tsv (table with combined contig coverage and taxonomy info)
 
 <br>
 
@@ -668,12 +674,12 @@ bit-GL-combine-KO-and-tax-tables *-gene-coverage-annotation-and-tax.tsv -o GLDS-
 
 **Input data:**
 
-* tsv, tables with gene-level coverage, functional annotations, and taxonomic classifications to combine
+* *-gene-coverage-annotation-and-tax.tsv (tables with combined gene coverage, annotation, and taxonomy info)
 
 **Output data:**
 
-* tsv, table with all samples combined based on KO annotations (normalized to coverage per million genes covered)
-* tsv, table with all samples combined based on gene-level taxonomic classifications (normalized to coverage per million genes covered)
+* GLDS-286-KO-function-coverages.tsv (table with all samples combined based on KO annotations; normalized to coverage per million genes covered)
+* GLDS-286-taxonomy-coverages.tsv (table with all samples combined based on gene-level taxonomic classifications; normalized to coverage per million genes covered)
 
 <br>
 
@@ -814,7 +820,7 @@ merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.
 
 **Input data:**
 
-* fastq, compressed or uncompressed (filtered reads, forward and reverse reads concatenated if paired-end)
+* *fastq.gz (trimmed/filtered reads, forward and reverse reads concatenated if paired-end)
 
 **Output data:**
 
