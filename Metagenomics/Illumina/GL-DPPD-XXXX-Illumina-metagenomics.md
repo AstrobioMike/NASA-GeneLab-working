@@ -20,42 +20,42 @@ Michael D. Lee
 - [Software used](#software-used)
 - [General processing overview with example code](#general-processing-overview-with-example-code)
   - [Pre-processing](#pre-processing)
-    - [Raw Data QC](#raw-data-qc)
-    - [Quality filtering/trimming](#quality-filteringtrimming)
-    - [Filtered/Trimmed Data QC](#filteredtrimmed-data-qc)
+    - [1. Raw Data QC](#1-raw-data-qc)
+    - [2. Quality filtering/trimming](#2-quality-filteringtrimming)
+    - [3. Filtered/Trimmed Data QC](#3-filteredtrimmed-data-qc)
   - [Assembly-based processing](#assembly-based-processing)
-    - [Sample assembly](#sample-assembly)
-    - [Renaming contigs and summarizing assemblies](#renaming-contigs-and-summarizing-assemblies)
-    - [Gene prediction](#gene-prediction)
-    - [Functional annotation](#functional-annotation)
-    - [Taxonomic classification](#taxonomic-classification)
-    - [Read-mapping](#read-mapping)
-    - [Getting coverage information and filtering based on detection](#getting-coverage-information-and-filtering-based-on-detection)
-    - [Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample](#combining-gene-level-coverage-taxonomy-and-functional-annotations-into-one-table-for-each-sample)
-    - [Combining contig-level coverage and taxonomy into one table for each sample](#combining-contig-level-coverage-and-taxonomy-into-one-table-for-each-sample)
-    - [Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples](#generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
+    - [4. Sample assembly](#4-sample-assembly)
+    - [5. Renaming contigs and summarizing assemblies](#5-renaming-contigs-and-summarizing-assemblies)
+    - [6. Gene prediction](#6-gene-prediction)
+    - [7. Functional annotation](#7-functional-annotation)
+    - [8. Taxonomic classification](#8-taxonomic-classification)
+    - [9. Read-mapping](#9-read-mapping)
+    - [10. Getting coverage information and filtering based on detection](#10-getting-coverage-information-and-filtering-based-on-detection)
+    - [11. Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample](#11-combining-gene-level-coverage-taxonomy-and-functional-annotations-into-one-table-for-each-sample)
+    - [12. Combining contig-level coverage and taxonomy into one table for each sample](#12-combining-contig-level-coverage-and-taxonomy-into-one-table-for-each-sample)
+    - [13. Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples](#13-generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
   - [Read-based processing](#read-based-processing)
-    - [Taxonomic and functional profiling](#taxonomic-and-functional-profiling)
+    - [14. Taxonomic and functional profiling](#14-taxonomic-and-functional-profiling)
 
 ---
 
 # Software used
 
-|Program|Version*|
-|:------|:-----:|
-|[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|`fastqc -v`|
-|[MultiQC](https://multiqc.info/)|`multiqc -v`|
-|[bbduk](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)|`bbduk.sh --version`|
-|[megahit](https://github.com/voutcn/megahit#megahit)|`megahit -v`|
-|[bit](https://github.com/AstrobioMike/bioinf_tools#bioinformatics-tools-bit)|`bit-version`|
-|[bowtie2](https://github.com/BenLangmead/bowtie2#overview)|`bowtie2 --version`|
-|[samtools](https://github.com/samtools/samtools#samtools)|`samtools --version`|
-|[prodigal](https://github.com/hyattpd/Prodigal#prodigal)|`prodigal -v`|
-|[KOFamScan](https://github.com/takaram/kofam_scan#kofamscan)|`exec_annotation -v`|
-|[CAT](https://github.com/dutilh/CAT#cat-and-bat)|`CAT -v`|
-|[HUMAnN3](https://huttenhower.sph.harvard.edu/humann3/)|`humann --version`|
-|[MetaPhlAn3](https://github.com/biobakery/MetaPhlAn/tree/3.0)|`metaphlan --version`|
-|[Snakemake](https://snakemake.readthedocs.io/en/stable/)|`snakemake -v`|
+|Program|Version*|Relevant Links|
+|:------|:-----:|------:|
+|FastQC|`fastqc -v`|[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|
+|MultiQC|`multiqc -v`|[https://multiqc.info/](https://multiqc.info/)|
+|bbduk|`bbduk.sh --version`|[https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/](https://jgi.doe.gov/data-and-tools/bbtools/bb-tools-user-guide/bbduk-guide/)|
+|megahit|`megahit -v`|[https://github.com/voutcn/megahit#megahit](https://github.com/voutcn/megahit#megahit)|
+|bit|`bit-version`|[https://github.com/AstrobioMike/bioinf_tools#bioinformatics-tools-bit](https://github.com/AstrobioMike/bioinf_tools#bioinformatics-tools-bit)|
+|bowtie2|`bowtie2 --version`|[https://github.com/BenLangmead/bowtie2#overview](https://github.com/BenLangmead/bowtie2#overview)|
+|samtools|`samtools --version`|[https://github.com/samtools/samtools#samtools](https://github.com/samtools/samtools#samtools)|
+|prodigal|`prodigal -v`|[https://github.com/hyattpd/Prodigal#prodigal](https://github.com/hyattpd/Prodigal#prodigal)|
+|KOFamScan|`exec_annotation -v`|[https://github.com/takaram/kofam_scan#kofamscan](https://github.com/takaram/kofam_scan#kofamscan)|
+|CAT|`CAT -v`|[https://github.com/dutilh/CAT#cat-and-bat](https://github.com/dutilh/CAT#cat-and-bat)|
+|HUMAnN3|`humann --version`|[https://huttenhower.sph.harvard.edu/humann3/](https://huttenhower.sph.harvard.edu/humann3/)|
+|MetaPhlAn3|`metaphlan --version`|[https://github.com/biobakery/MetaPhlAn/tree/3.0](https://github.com/biobakery/MetaPhlAn/tree/3.0)|
+|Snakemake|`snakemake -v`|[https://snakemake.readthedocs.io/en/stable/](https://snakemake.readthedocs.io/en/stable/)|
 
 >**\*** Exact versions are available along with the processing code for each specific dataset (this is depicted here like this due to how the system may need to be updated regularly).
 
@@ -68,7 +68,7 @@ Michael D. Lee
 ---
 
 ## Pre-processing
-### Raw Data QC
+### 1. Raw Data QC
 
 ```
 fastqc -o raw_fastqc_output *.fastq.gz
@@ -79,11 +79,11 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `-o` – the output directory to store results
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
-**Input files and/or types:**
+**Input data:**
 
-* fastq, compressed or uncompressed
+* *.fastq.gz
 
-**Output files and/or types:**
+**Output data:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -92,19 +92,21 @@ fastqc -o raw_fastqc_output *.fastq.gz
 #### Compile Raw Data QC
 
 ```
-multiqc -o raw_multiqc_output raw_fastqc_output
+multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 ```
 
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results
+*	`-n` – the filename prefix of results
+*	`-z` – specifies to zip the output data directory
 *	`raw_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input files and/or types:**
+**Input data:**
 
 * fastqc.zip (FastQC output data)
 
-**Output files and/or types:**
+**Output data:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -113,7 +115,7 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 ---
 
-### Quality filtering/trimming
+### 2. Quality filtering/trimming
 
 ```      
 bbduk.sh in=sample-1-R1.fastq.gz in2=sample-1-R2.fastq.gz out1=sample-1-R1-trimmed.fastq.gz \
@@ -145,21 +147,20 @@ bbduk.sh in=sample-1-R1.fastq.gz in2=sample-1-R2.fastq.gz out1=sample-1-R1-trimm
 
 *	`> bbduk.log 2>&1` – redirects the stderr and stdout to a log file for saving
 
-**Input files and/or types:**
+**Input data:**
 
-* fastq, compressed or uncompressed (original reads)
+* *.fastq.gz (raw reads)
 
-**Output files and/or types:**
+**Output data:**
 
-* fastq, compressed or uncompressed (filtered reads)
-* tsv (per sample read counts before and after filtering)
-* txt (log file of standard output and error from bbduk run)
+* *-trimmed.fastq.gz (filtered reads)
+* bbduk.log (log file of standard output and error from bbduk run)
 
 <br>
 
 ---
 
-### Filtered/Trimmed Data QC
+### 3. Filtered/Trimmed Data QC
 ```
 fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 ```
@@ -169,11 +170,11 @@ fastqc -o trimmed_fastqc_output/ *trimmed.fastq.gz
 *	`-o` – the output directory to store results  
 *	`*trimmed.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them  
 
-**Input files and/or types:**
+**Input data:**
 
 * fastq, compressed or uncompressed (trimmed/filtered reads)
 
-**Output files and/or types:**
+**Output data:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -189,11 +190,11 @@ multiqc -o trimmed_multiqc_output  trimmed_fastqc_output
 *	`-o` – the output directory to store results
 *	`trimmed_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input files and/or types:**
+**Input data:**
 
 * fastqc.zip (FastQC output data)
 
-**Output files and/or types:**
+**Output data:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -203,7 +204,7 @@ multiqc -o trimmed_multiqc_output  trimmed_fastqc_output
 ---
 
 ## Assembly-based processing
-### Sample assembly
+### 4. Sample assembly
 ```
 megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
         -o sample-1-assembly -t 10 --min-contig-length 500 > sample-1-assembly.log 2>&1
@@ -222,11 +223,11 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 *	`> sample-1-assembly.log 2>&1` – sends stdout/stderr to log file
 
 
-**Input files and/or types:**
+**Input data:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output files and/or types:**
+**Output data:**
 
 * fasta, assembly file
 * txt, log file
@@ -235,7 +236,7 @@ megahit -1 sample-1-R1-trimmed.fastq.gz -2 sample-1-R2-trimmed.fastq.gz \
 
 ---
 
-### Renaming contigs and summarizing assemblies
+### 5. Renaming contigs and summarizing assemblies
 
 **Renaming contig headers:**
 ```
@@ -265,7 +266,7 @@ bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
 *	– multiple input assemblies can be provided as positional arguments
 
 
-**Input files and/or types:**
+**Input data:**
 
 * fasta, assembly files
 
@@ -278,7 +279,7 @@ bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
 
 ---
 
-### Gene prediction
+### 6. Gene prediction
 ```
 prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
          -o sample-1-gene-calls.gff -i sample-1-assembly.fasta
@@ -301,11 +302,11 @@ prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
 
 *	`-i` – specifies the input assembly
 
-**Input files and/or types:**
+**Input data:**
 
 * fasta, assembly file
 
-**Output files and/or types:**
+**Output data:**
 
 * fasta, sample-1-genes.faa, amino-acid fasta file
 * fasta, sample-1-genes.fasta, nucleotide fasta file
@@ -315,7 +316,7 @@ prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
 
 ---
 
-### Functional annotation
+### 7. Functional annotation
 > **Notes**  
 > The annotation process overwrites the same temporary directory by default. So if running multiple at a time, it is necessary to specify a specific temporary directory with the `--tmp-dir` argument as shown below.
 
@@ -368,11 +369,11 @@ rm -rf sample-1-tmp-KO/ sample-1-KO-annots.tmp
 *	`-o` – specifies the output table
 
 
-**Input files and/or types:**
+**Input data:**
 
 * fasta, gene-calls amino acid fasta file
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, table of KO annotations assigned to gene IDs
 
@@ -380,7 +381,7 @@ rm -rf sample-1-tmp-KO/ sample-1-KO-annots.tmp
 
 ---
 
-### Taxonomic classification
+### 8. Taxonomic classification
 
 Pulling and un-packing pre-built reference db (only needs to be done once):
 ```
@@ -462,12 +463,12 @@ awk -F $'\t' ' BEGIN { OFS=FS } { if ( $2 == "classification" ) { print $1,$4,$6
 rm sample-1*.tmp*
 ```
 
-**Input files and/or types:**
+**Input data:**
 
 * fasta, assembly fasta file
 * fasta, gene-calls amino acid fasta file
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, gene-level taxonomic classifications
 * tsv, contig-level taxonomic classifications
@@ -476,7 +477,7 @@ rm sample-1*.tmp*
 
 ---
 
-### Read-mapping
+### 9. Read-mapping
 
 Building reference index:
 ```
@@ -522,12 +523,12 @@ samtools index -@ 15 sample-1.bam
 
 *	input bam file is provided as a positional argument
 
-**Input files and/or types:**
+**Input data:**
 
 * fasta, assembly file
 * fastq, trimmed read files
 
-**Output files and/or types:**
+**Output data:**
 
 * bam, mapping file
 * bai, bam index file
@@ -537,7 +538,7 @@ samtools index -@ 15 sample-1.bam
 
 ---
 
-### Getting coverage information and filtering based on detection
+### 10. Getting coverage information and filtering based on detection
 > **Notes**  
 > “Detection” is a metric of what proportion of a reference sequence recruited reads (see [here](http://merenlab.org/2017/05/08/anvio-views/#detection)). 
 Filtering coverage levels based on detection is one way of helping to mitigate non-specific read-recruitment.  
@@ -576,12 +577,12 @@ cat <( printf "contig_ID\tcoverage\n" ) sample-1-contig-cov.tmp > sample-1-conti
 rm sample-1-*.tmp
 ```
 
-**Input files and/or types:**
+**Input data:**
 
 * bam, bam file
 * fasta, gene-calls nucleotide file
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, table with gene-level coverages
 * tsv, table with contig-level coverages
@@ -590,7 +591,7 @@ rm sample-1-*.tmp
 
 ---
 
-### Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample
+### 11. Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample
 > **Notes**  
 > Just uses `paste`, `sed`, and `awk`, all are standard in any Unix-like environment.  
 
@@ -607,12 +608,12 @@ cat sample-1-header.tmp sample-1-gene-tab.tmp > sample-1-gene-coverage-annotatio
 rm sample-1*tmp sample-1-gene-coverages.tsv sample-1-annotations.tsv sample-1-gene-tax-out.tsv
 ```
 
-**Input files and/or types:**
+**Input data:**
 
 * tsv, gene coverage, annotation, and taxonomy files
 
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, table with combined gene coverage, annotation, and taxonomy info
 
@@ -620,7 +621,7 @@ rm sample-1*tmp sample-1-gene-coverages.tsv sample-1-annotations.tsv sample-1-ge
 
 ---
 
-### Combining contig-level coverage and taxonomy into one table for each sample
+### 12. Combining contig-level coverage and taxonomy into one table for each sample
 > **Notes**  
 > Just uses `paste`, `sed`, and `awk`, all are standard in any Unix-like environment.  
 
@@ -637,11 +638,11 @@ cat sample-1-contig-header.tmp sample-1-contig.tmp > sample-1-contig-coverage-an
 rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
 ```
 
-**Input files and/or types:**
+**Input data:**
 
 * tsv, contig coverage and taxonomy files
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, table with combined contig coverage and taxonomy info
 
@@ -649,7 +650,7 @@ rm sample-1*tmp sample-1-contig-coverages.tsv sample-1-contig-tax-out.tsv
 
 ---
 
-### Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples
+### 13. Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples
 > **Notes**  
 > * To combine across samples to generate these summary tables, we need the same "units". This is done for annotations based on the assigned KO terms, and all non-annotated functions are included together as "Not annotated". It is done for taxonomic classifications based on taxids (full lineages included in the table), and any not classified are included together as "Not classified". 
 > * The values we are working with are coverage per gene (so they are number of bps recruited to the gene normalized by the length of the gene). These have been normalized by making the total coverage of a sample 1,000,000 and setting each individual gene-level coverage its proportion of that 1,000,000 total. So basically percent, but out of 1,000,000 instead of 100 to make the numbers more friendly. 
@@ -665,11 +666,11 @@ bit-GL-combine-KO-and-tax-tables *-gene-coverage-annotation-and-tax.tsv -o GLDS-
 -	`-o` – specifies the output prefix (e.g. as above, will generate “GLDS-286-KO-function-coverages.tsv” and “GLDS-286-taxonomy-coverages.tsv”
 
 
-**Input files and/or types:**
+**Input data:**
 
 * tsv, tables with gene-level coverage, functional annotations, and taxonomic classifications to combine
 
-**Output files and/or types:**
+**Output data:**
 
 * tsv, table with all samples combined based on KO annotations (normalized to coverage per million genes covered)
 * tsv, table with all samples combined based on gene-level taxonomic classifications (normalized to coverage per million genes covered)
@@ -679,7 +680,7 @@ bit-GL-combine-KO-and-tax-tables *-gene-coverage-annotation-and-tax.tsv -o GLDS-
 ---
 
 ## Read-based processing
-### Taxonomic and functional profiling
+### 14. Taxonomic and functional profiling
 The following uses the `humann3` and `metaphlan3` reference databases downloaded on 26-Sept-2020 as follows:
 
 ```bash
@@ -811,11 +812,11 @@ merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.
 *  `>` – output is redirected from stdout to a file
 
 
-**Read-based processing input files:**
+**Input data:**
 
 * fastq, compressed or uncompressed (filtered reads, forward and reverse reads concatenated if paired-end)
 
-**Read-based processing output files:**
+**Output data:**
 
 * gene-families.tsv (gene-family abundances) 
 * gene-families-grouped-by-taxa.tsv (gene-family abundances grouped by taxa)
