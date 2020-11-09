@@ -1,14 +1,15 @@
-name: GL-Illumina-amplicon
+name: GL-454-Ion-Torrent-amplicon
 channels:
     - conda-forge
     - bioconda
     - defaults
 dependencies:
-    - fastqc=0.11.8
-    - multiqc=1.7
-    - cutadapt=2.3
+    - fastqc=0.11.9
+    - multiqc=1.9
+    - cutadapt=2.10
+    - bbmap=38.86
     - r-base=3.6.3
-    - bioconductor-dada2=1.12.1
     - bioconductor-decipher=2.12.0
     - bioconductor-biomformat=1.12.0
+    - vsearch=2.15.1
     - snakemake=5.5.4
