@@ -21,17 +21,18 @@ Michael D. Lee (GeneLab Analysis Team)
 - [Reference databases used](#reference-databases-used)
 - [General processing overview with example code](#general-processing-overview-with-example-code)
   - [1. Raw Data QC](#1-raw-data-qc)
-    - [Compile Raw Data QC](#compile-raw-data-qc)
+    - [1a. Compile Raw Data QC](#1a-compile-raw-data-qc)
   - [2. Trim Primers](#2-trim-primers)
   - [3. Quality filtering](#3-quality-filtering)
   - [4. Filtered Data QC](#4-filtered-data-qc)
-    - [Compile Filtered Data QC](#compile-filtered-data-qc)
+    - [4a. Compile Filtered Data QC](#4a-compile-filtered-data-qc)
   - [5. Generating OTUs and counts per sample](#5-generating-otus-and-counts-per-sample)
-    - [Dereplicate individual samples](#dereplicate-individual-samples)
-    - [Generate OTUs](#generate-otus)
+    - [5a. Dereplicate individual samples](#5a-dereplicate-individual-samples)
+    - [5b. Generate OTUs](#5b-generate-otus)
+    - [5c. Map reads to OTUs](#5c-map-reads-to-otus)
   - [6. Generating taxonomy and additional outputs](#6-generating-taxonomy-and-additional-outputs)
-    - [Assigning taxonomy](#assigning-taxonomy)
-    - [Generating and writing outputs](#generating-and-writing-outputs)
+    - [6a. Assigning taxonomy](#6a-assigning-taxonomy)
+    - [6b. Generating and writing outputs](#6b-generating-and-writing-outputs)
 
 ---
 
@@ -69,44 +70,46 @@ Michael D. Lee (GeneLab Analysis Team)
 **Uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)**
 
 ```
-fastqc -o raw_fastqc_output *.fastq.gz
+fastqc -o raw_fastqc_output *raw.fastq.gz
 ```
 
 **Parameter Definitions:**
 
 * `-o` – the output directory to store results
-* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
+* `*raw.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
-**Input files:**
+**Input data:**
 
 * fastq, compressed or uncompressed
 
-**Output files:**
+**Output data:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
 
 
-### Compile Raw Data QC
+### 1a. Compile Raw Data QC
 **Uses [MultiQC](https://multiqc.info/)**
 
 ```
-multiqc -o raw_multiqc_output raw_fastqc_output
+multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 ```
 
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results
+* `-n` – the filename prefix of results
+* `-z` – specifies to zip the output data directory
 *	`raw_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input file types:**
+**Input data:**
 
-* fastqc.zip (FastQC output data)
+* raw_fastqc_output/*fastqc.zip (FastQC output data)
 
-**Output file types:**
+**Output data:**
 
-* multiqc_report.html (multiqc output html summary)
-* multiqc_data (directory containing multiqc output data)
+* raw_multiqc_output/raw_multiqc_report.html (multiqc output html summary)
+* raw_multiqc_output/raw_multiqc_data.zip (zipped directory containing multiqc output data)
 
 ---
 
@@ -136,13 +139,13 @@ cutadapt -g AGAGTTTGATCCTGGCTCAG -a GCTGCCTCCCGTAGGAGT \
 *	`sample-1_raw.fastq.gz` – positional argument specifying the input reads
 
 
-**Input files:**
+**Input data:**
 
-* fastq, compressed or uncompressed (original reads)
+* sample-1_raw.fastq.gz (raw reads)
 
-**Output files:**
+**Output data:**
 
-* fastq, compressed or uncompressed (trimmed reads)
+* sample-1_trimmed.fastq.gz (primer-trimmed reads)
 
 ---
 
@@ -170,13 +173,13 @@ bbduk.sh in=sample-1_trimmed.fastq.gz out=sample-1_filtered.fastq.gz \
 
 *	`minlength=` – allowed minimum length (backup to `mlf` setting if starting read is shorter than 100 bps)
 
-**Input file types:**
+**Input data:**
 
-* fastq, compressed or uncompressed (primer-trimmed reads)
+* sample-1_trimmed.fastq.gz (primer-trimmed reads)
 
-**Output file types:**
+**Output data:**
 
-* fastq, compressed or uncompressed (filtered reads)
+* sample-1_filtered.fastq.gz (filtered reads)
 
 ---
 
@@ -192,36 +195,38 @@ fastqc -o filtered_fastqc_output *filtered.fastq.gz
 *	`-o` – the output directory to store results  
 *	`*filtered.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them  
 
-**Input files:**
+**Input data:**
 
-* fastq, compressed or uncompressed (filtered reads)
+* *filtered.fastq.gz (filtered reads)
 
-**Output files:**
+**Output data:**
 
-* fastqc.html (FastQC output html summary)
-* fastqc.zip (FastQC output data)
+* *fastqc.html (FastQC output html summary)
+* *fastqc.zip (FastQC output data)
 
 
-### Compile Filtered Data QC
+### 4a. Compile Filtered Data QC
 **Uses [MultiQC](https://multiqc.info/)**
 
 ```
-multiqc -o filtered_multiqc_output  filtered_fastqc_output
+multiqc -o filtered_multiqc_output -n filtered_multiqc -z filtered_fastqc_output
 ```
 
 **Parameter Definitions:**
 
 *	`-o` – the output directory to store results
+* `-n` – the filename prefix of results
+* `-z` – specifies to zip the output data directory
 *	`filtered_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input files:**
+**Input data:**
 
-* fastqc.zip (FastQC output data)
+* filtered_fastqc_output/*fastqc.zip (FastQC output data)
 
-**Output files:**
+**Output data:**
 
-* multiqc_report.html (multiqc output html summary)
-* multiqc_data (directory containing multiqc output data)
+* filtered_multiqc_output/filtered_multiqc_report.html (multiqc output html summary)
+* filtered_multiqc_output/filtered_multiqc_data.zip (zipped directory containing multiqc output data)
 
 
 ---
@@ -229,7 +234,7 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 ## 5. Generating OTUs and counts per sample
 **Uses [vsearch](https://github.com/torognes/vsearch)**
 
-### Dereplicate individual samples
+### 5a. Dereplicate individual samples
 ```
 vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both \
         --output sample-1_derep.fasta --sizeout --relabel "sample=sample-1;seq_" 
@@ -244,16 +249,16 @@ vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both \
 *  `--sizeout` - incorporates abundance information in the sequence header
 *  `--relabel` - relabel the headers of the sequences starting with this prefix
 
-**Input files:**
+**Input data:**
 
 * sample-1_filtered.fastq.gz
 
-**Output files:**
+**Output data:**
 
 * sample-1_derep.fasta
 
 
-### Generate OTUs
+### 5b. Generate OTUs
 
 #### Combining all individual sample dereplicated sequences for further processing
 ```bash
@@ -277,11 +282,11 @@ vsearch --derep_fulllength all-samples-seqs.fasta --strand both \
 *  `--sizeout` - incorporates abundance information in the sequence header
 
 
-**Input files:**
+**Input data:**
 
 * all-samples-seqs.fasta
 
-**Output files:**
+**Output data:**
 
 * all-samples_derep.fasta
 
@@ -304,11 +309,11 @@ vsearch --cluster_size all-samples_derep.fasta --id 0.97 --strand both \
 *  `--centroids` - designate the name of the output fasta file holding representative sequences
 
 
-**Input files:**
+**Input data:**
 
 * all-samples_derep.fasta
 
-**Output files:**
+**Output data:**
 
 * rep-seqs.fasta
 
@@ -326,11 +331,11 @@ vsearch --sortbysize rep-seqs.fasta --minsize 2 --output rep-seqs-no-singletons.
 *  `--output` - designate the name of the output fasta file holding filtered representative sequences
 
 
-**Input files:**
+**Input data:**
 
 * rep-seqs.fasta
 
-**Output files:**
+**Output data:**
 
 * rep-seqs-no-singletons.fasta
 
@@ -348,16 +353,16 @@ vsearch --uchime_denovo rep-seqs-no-singletons.fasta --sizein --nonchimeras OTUs
 *  `--nonchimeras` - designate the name of the output fasta file holding filtered representative sequences
 *  `--relabel` - relabel the headers of the sequences starting with this prefix
 
-**Input files:**
+**Input data:**
 
 * rep-seqs-no-singletons.fasta
 
-**Output files:**
+**Output data:**
 
 * OTUs.fasta
 
 
-### Map reads to OTUs
+### 5c. Map reads to OTUs
 ```bash
 vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
         --id 0.97 --otutabout - | sed 's/^#OTU ID/OTU_ID/' > counts.tsv
@@ -373,12 +378,12 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 *  `| sed ... > counts.tsv` - renaming the first column header and writing to `counts.tsv`
 
 
-**Input files:**
+**Input data:**
 
 * all-samples-seqs.fasta
 * OTUs.fasta
 
-**Output files:**
+**Output data:**
 
 * counts.tsv
 
@@ -391,7 +396,7 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 
 **Uses [DECIPHER](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html) and [biom-format](https://github.com/joey711/biomformat)**
 
-### Assigning taxonomy
+### 6a. Assigning taxonomy
 
 Reading in OTU sequences:
 ```R
@@ -438,7 +443,7 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 *	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
 
-### Generating and writing outputs
+### 6b. Generating and writing outputs
 Creating table of taxonomy and setting any that are unclassified as "NA", and writing out:
 
 ```R
@@ -466,25 +471,23 @@ otu_tab <- read.table("counts.tsv", sep="\t", header=TRUE, check.names=FALSE)
 
     # generating and writing out biom file format
 biom_object <- make_biom(data=otu_tab, observation_metadata=tax_tab)
-write_biom(biom_object, "../Final_Outputs/taxonomy-and-counts.biom")
+write_biom(biom_object, "taxonomy-and-counts.biom")
 
     # making a tsv of combined tax and counts
 tax_and_count_tab <- merge(tax_tab, otu_tab)
-write.table(tax_and_count_tab, "../Final_Outputs/taxonomy-and-counts.tsv", sep="\t", quote=FALSE, row.names=FALSE)
-
-    # making and writing out final count summary table
-cutadapt_tab <- read.table("../Trimmed_Sequence_Data/trimmed-read-counts.tsv", sep="\t", header=TRUE)
-bbduk_tab <- read.table("../Filtered_Sequence_Data/filtered-read-counts.tsv", sep="\t", header=TRUE)[,c(1,3)]
-otu_tab <- read.table("../Final_Outputs/counts.tsv", sep="\t", header=TRUE, check.names=FALSE, row.names=1)
-mapped_sums <- colSums(otu_tab)
-mapped_tab <- data.frame(sample=names(mapped_sums), mapped_to_OTUs=mapped_sums, row.names=NULL)
-
-t1 <- merge(cutadapt_tab, bbduk_tab)
-count_summary_tab <- merge(t1, mapped_tab)
-count_summary_tab$final_perc_reads_retained <- round(count_summary_tab$mapped_to_OTUs / count_summary_tab$raw_reads * 100, 2)
-
-write.table(count_summary_tab, "../Final_Outputs/read-count-tracking.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+write.table(tax_and_count_tab, "taxonomy-and-counts.tsv", sep="\t", quote=FALSE, row.names=FALSE)
 ```
+
+**Input data:**
+
+* OTUs.fasta
+* counts.tsv
+
+**Output data:**
+
+* taxonomy-and-counts.biom
+* taxonomy-and-counts.tsv
+
 
 ---
 ---
