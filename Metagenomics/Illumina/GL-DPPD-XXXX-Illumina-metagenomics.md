@@ -77,7 +77,7 @@ fastqc -o raw_fastqc_output *raw.fastq.gz
 **Parameter Definitions:**
 
 * `-o` – the output directory to store results
-* `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
+* `*raw.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
 **Input data:**
 
