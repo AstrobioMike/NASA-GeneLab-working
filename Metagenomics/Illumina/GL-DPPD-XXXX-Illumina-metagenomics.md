@@ -291,7 +291,7 @@ bit-summarize-assembly -o assembly-summaries.tsv *assembly.fasta
 ### 6. Gene prediction
 ```
 prodigal -a sample-1-genes.faa -d sample-1-genes.fasta -f gff -p meta -c -q \
-         -o sample-1-gene-calls.gff -i sample-1-assembly.fasta
+         -o sample-1-genes.gff -i sample-1-assembly.fasta
 ```
 **Parameter Definitions:**
 
