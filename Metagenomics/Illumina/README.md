@@ -19,10 +19,11 @@ Michael D. Lee
 # Details for reviewing
 * The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX-Illumina-metagenomics.md'](GL-DPPD-XXXX-Illumina-metagenomics.md). Any thoughts/feedback on that would be appreciated 🙂
 
-* An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/). 
+# Example outputs
+* An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/) to provide samples of what the outputs look like if that's helpful. 
   * The ['example-output' directory](example-output) in this repo holds the reasonably sized output files, but the larger ones aren't on here due to github limitations (like the read files, fasta files of assemblies, and gene-calls).
 
-  * The processing is implemented as a Snakemake workflow. The primary snakefile is [here](example-output/processing_info/Snakefile).
+  * The processing is implemented as a Snakemake workflow, the snakefile is [here](example-output/processing_info/Snakefile).
 
   * The `README.txt` in the ['example-output' directory](example-output) describes the output contents and can be found [here](example-output/README.txt), and is also pasted below.
   
