@@ -5,3 +5,4 @@ channels:
     - biobakery
 dependencies:
     - humann=3.0.0.alpha.3
+    - diamond=0.9
