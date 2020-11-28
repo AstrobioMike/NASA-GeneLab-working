@@ -20,9 +20,6 @@ Expected to be run in the following conda environment (or with specified program
 #              multiqc=1.9 cutadapt=2.10 bbmap=38.86 r-base=3.6.3 bioconductor-decipher=2.12.0 \
 #              bioconductor-biomformat=1.12.0 vsearch=2.15.1 snakemake=5.5.4
 
-Or created with the corresponding environment.yml file:
-# conda env create -f environment.yml
-
 # conda activate GL-454-Ion-Torrent-amplicon
 """
 
