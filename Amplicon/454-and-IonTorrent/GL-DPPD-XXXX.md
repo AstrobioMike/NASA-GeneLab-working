@@ -251,11 +251,11 @@ vsearch --derep_fulllength sample-1_filtered.fastq.gz --strand both \
 
 **Input data:**
 
-* sample-1_filtered.fastq.gz
+* sample-1_filtered.fastq.gz (filtered reads)
 
 **Output data:**
 
-* sample-1_derep.fasta
+* sample-1_derep.fasta (dereplicated reads)
 
 
 ### 5b. Generate OTUs
@@ -284,11 +284,11 @@ vsearch --derep_fulllength all-samples-seqs.fasta --strand both \
 
 **Input data:**
 
-* all-samples-seqs.fasta
+* all-samples-seqs.fasta (combined, individual-sample-dereplicated reads)
 
 **Output data:**
 
-* all-samples_derep.fasta
+* all-samples_derep.fasta (combined dereplicated reads)
 
 
 #### Clustering to get representative sequences
@@ -311,11 +311,11 @@ vsearch --cluster_size all-samples_derep.fasta --id 0.97 --strand both \
 
 **Input data:**
 
-* all-samples_derep.fasta
+* all-samples_derep.fasta (combined dereplicated reads)
 
 **Output data:**
 
-* rep-seqs.fasta
+* rep-seqs.fasta (representative sequences)
 
 
 #### Removing singletons
@@ -333,11 +333,11 @@ vsearch --sortbysize rep-seqs.fasta --minsize 2 --output rep-seqs-no-singletons.
 
 **Input data:**
 
-* rep-seqs.fasta
+* rep-seqs.fasta (representative sequences)
 
 **Output data:**
 
-* rep-seqs-no-singletons.fasta
+* rep-seqs-no-singletons.fasta (representative sequences, with singletons removed)
 
 #### Chimera check and removal
 
@@ -355,11 +355,11 @@ vsearch --uchime_denovo rep-seqs-no-singletons.fasta --sizein --nonchimeras OTUs
 
 **Input data:**
 
-* rep-seqs-no-singletons.fasta
+* rep-seqs-no-singletons.fasta (representative sequences, with singletons removed)
 
 **Output data:**
 
-* OTUs.fasta
+* OTUs.fasta (representative sequences, with singletons and chimeras removed)
 
 
 ### 5c. Map reads to OTUs
@@ -371,7 +371,7 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 **Parameter Definitions:**
 
 *	`--usearch_global ` – the vsearch command
-*	`all-samples-seqs.fasta` – input file, provided as a positional argument (note this is our combined individual-dereplicated samples' fasta of reads) 
+*	`all-samples-seqs.fasta` – input file, provided as a positional argument (note this is our combined individual-dereplicated samples' fasta of reads generated in step 5b) 
 *  `--db` - specifies the reference OTUs to map to
 *  `--id` - specifies the minimum percent identity to enable mapping a read to an OTU
 *  `--otutabout` - designates the output of the count table (here going to stout in order to be modified in the subsequent `sed` command
@@ -380,12 +380,12 @@ vsearch --usearch_global all-samples-seqs.fasta -db OTUs.fasta --sizein \
 
 **Input data:**
 
-* all-samples-seqs.fasta
-* OTUs.fasta
+* all-samples-seqs.fasta (combined, individual-sample-dereplicated reads)
+* OTUs.fasta (representative sequences, with singletons and chimeras removed)
 
 **Output data:**
 
-* counts.tsv
+* counts.tsv (count table of representative sequences per sample)
 
 
 ---
@@ -480,14 +480,13 @@ write.table(tax_and_count_tab, "taxonomy-and-counts.tsv", sep="\t", quote=FALSE,
 
 **Input data:**
 
-* OTUs.fasta
-* counts.tsv
+* OTUs.fasta (representative sequences, with singletons and chimeras removed)
+* counts.tsv (count table of representative sequences per sample)
 
 **Output data:**
 
-* taxonomy-and-counts.biom
-* taxonomy-and-counts.tsv
-
+* taxonomy-and-counts.tsv (table with taxonomy of representative sequences and counts per sample)
+* taxonomy-and-counts.biom (biom formatted file with taxonomy of representative sequences and counts per sample)
 
 ---
 ---
