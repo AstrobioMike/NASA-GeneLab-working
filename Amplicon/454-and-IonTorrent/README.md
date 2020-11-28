@@ -2,7 +2,7 @@
 
 > **The document [`GL-DPPD-XXXX.md`](GL-DPPD-XXXX.md) holds an overview and example code of how GeneLab processes 454 and IonTorrent amplicon datasets. Exact processing code for specific datasets that have been released is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
-**Date:** October 30, 2020  
+**Date:** November 28, 2020  
 **Revision:** -  
 **Document Number:** GL-DPPD-XXXX  
 
