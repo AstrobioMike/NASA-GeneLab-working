@@ -16,12 +16,12 @@ import os
 """
 Expected to be run in the following conda environment (or with specified programs versions accessible):
 
-# conda create -y -n GL-non-illumina-amplicon -c conda-forge -c bioconda -c defaults fastqc=0.11.9 \
+# conda create -y -n GL-454-Ion-Torrent-amplicon -c conda-forge -c bioconda -c defaults fastqc=0.11.9 \
 #              multiqc=1.9 cutadapt=2.10 bbmap=38.86 r-base=3.6.3 bioconductor-decipher=2.12.0 \
 #              bioconductor-biomformat=1.12.0 vsearch=2.15.1 snakemake=5.5.4
 
 
-# conda activate GL-non-illumina-amplicon
+# conda GL-454-Ion-Torrent-amplicon
 """
 
 ########################################
