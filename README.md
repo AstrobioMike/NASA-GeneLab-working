@@ -6,4 +6,5 @@ This repository holds [GeneLab](https://genelab-data.ndc.nasa.gov/genelab/projec
   * [454 and Ion-Torrent](Amplicon/454-and-IonTorrent)  
 
 [Metagenomics](Metagenomics)  
+  * [Removing human reads](Metagenomics/Remove_human_reads_from_raw_data)  
   * [Illumina](Metagenomics/Illumina)  
