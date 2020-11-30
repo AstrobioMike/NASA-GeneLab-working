@@ -23,7 +23,7 @@ input_fastq_dir="/path/to/input-fastq-files"
 # directory for output files
 outdir="/path/to/output-directory"
 
-# R1 and R2 suffixes following unique portions of sample names
+# R1 and R2 suffixes following unique portions of sample names (as written, this script finds all "samples" based on them existing in the 'input_fastq_dir' with the following provided 'R1_suffix')
 R1_suffix="-R1.fastq.gz"
 R2_suffix="-R2.fastq.gz"
 
