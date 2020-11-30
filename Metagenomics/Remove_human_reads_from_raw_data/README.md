@@ -2,7 +2,9 @@
 
 It is NASA's policy that any human reads are to be removed from metagenomics datasets prior to being hosted in [GeneLab's data repository](https://genelab-data.ndc.nasa.gov/genelab/projects). As such, all metagenomics datasets are screened against a human reference-genome [kraken2](https://github.com/DerrickWood/kraken2/wiki) database. 
 
-The script we use to do this is included above, and the database we use was built with kraken2 v2.1.1 as detailed below. 
+The script we use to do this is included [above](human-read-removal.sh), and the database we use was built with kraken2 v2.1.1 as detailed below. 
+
+---
 
 ## Kraken2 human database build
 
@@ -31,6 +33,8 @@ kraken2-build --build --db kraken2-human-db/ --threads 30
 ```bash
 kraken2-build --clean --db kraken2-human-db/
 ```
+
+---
 
 ## Download database as built on 29-Nov-2020
 The reference database 3GB compressed and ~4.3GB uncompressed. It can be downloaded and unpacked with the following:
