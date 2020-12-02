@@ -12,8 +12,10 @@ Michael D. Lee (GeneLab Science Team)
 **Approved by:**  
 
 # Details for reviewing
-* The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX.md'](GL-DPPD-XXXX.md).
 
+* The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX.md'](GL-DPPD-XXXX.md). Any thoughts/feedback/discussion on that would be greatly appreciated 🙂
+
+# Example outputs
 * [GLDS-72](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-72/) was done as an example. 
   * The ['example-output' directory](example-output) in this repo holds everything except the read files due to size. 
   * The processing is implemented as a Snakemake workflow. The primary snakefile is [here](example-output/processing_info/Snakefile).
