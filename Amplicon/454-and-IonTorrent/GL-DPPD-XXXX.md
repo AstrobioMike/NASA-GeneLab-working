@@ -49,7 +49,7 @@ Michael D. Lee (GeneLab Analysis Team)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
->**\*** Exact versions are available along with the [processing code](glds_processing_scripts) for each specific dataset.
+>**\*** Exact versions are available along with the [processing code](GLDS_Processing_Scripts) for each specific dataset.
 
 # Reference databases used
 
