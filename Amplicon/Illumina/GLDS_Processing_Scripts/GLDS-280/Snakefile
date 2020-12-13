@@ -16,15 +16,14 @@ import os
 """
 Expected to be run in the following conda environment (or with specified programs versions accessible):
 
-# conda create -y -n GL-amplicon -c conda-forge -c bioconda -c defaults fastqc=0.11.8 \
-#              multiqc=1.7 cutadapt=2.3 snakemake=5.5.4
+# conda create -y -n GL-Illumina-amplicon -c conda-forge -c bioconda -c defaults fastqc=0.11.8 \
+#              multiqc=1.7 cutadapt=2.3 r-base=3.6.3 bioconductor-dada2=1.12.1 
+#              bioconductor-decipher=2.12.0 bioconductor-biomformat=1.12.0 snakemake=5.5.4
 
-# conda activate GL-amplicon
+Or can be created with the corresponding GLDS's environment.yml file like so:
+# conda env create -f environment.yml
 
-In R, uses:
-dada2 v1.12.1
-DECIPHER v2.12.0
-biomformat v1.12.0
+# conda activate GL-Illumina-amplicon
 
 Cutadapt command should be adjusted accordingly (primers, orientation) in the cutadapt rule below.
 """

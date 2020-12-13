@@ -16,4 +16,4 @@ Homer Fogle (GeneLab Data Processing Representative)
 Jonathan Galazka (GeneLab Project Scientist)  
 Anushree Sonic (Genelab Configuration Manager)  
 
-* The processing is currently implemented as a Snakemake workflow. An example snakefile is [here](Snakefile).
+* The processing is currently implemented as a Snakemake workflow. A template Snakefile is [here](template-Snakefile).
