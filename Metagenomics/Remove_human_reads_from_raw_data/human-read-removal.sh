@@ -1,5 +1,6 @@
 #!/bin/bash
 
+########## GENERAL INFO ##########
 # Example of GL filtering of human reads on a paired-end dataset
 # Put together by Homer Fogle and Michael D. Lee (Mike.Lee@nasa.gov)
 
@@ -13,7 +14,10 @@
 # curl -L -o sample-A-R1.fq.gz https://ndownloader.figshare.com/files/25627406
 # curl -L -o sample-A-R2.fq.gz https://ndownloader.figshare.com/files/25627406
 
-### need to set the 5 following variables ###
+# As written, this will grab all files in the 'input_fastq_dir' that end with the suffixes specified in the below variables.
+#############################################
+
+########## VARIABLES TO ADJUST ##########
 
 # directory holding the kraken2 human database
 kraken2_db_dir="/path/to/kraken2-human-db"
