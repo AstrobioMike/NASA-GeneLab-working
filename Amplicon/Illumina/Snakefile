@@ -173,7 +173,7 @@ rule zip_biom:
 rule run_R:
     input:
         expand(trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R1_suffix, ID = sample_ID_list),
-        expand(trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R1_suffix, ID = sample_ID_list)
+        expand(trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R2_suffix, ID = sample_ID_list)
     output:
         expand(filtered_reads_dir + filename_prefix + "{ID}" + filtered_filename_R1_suffix, ID = sample_ID_list),
         expand(filtered_reads_dir + filename_prefix + "{ID}" + filtered_filename_R2_suffix, ID = sample_ID_list),
