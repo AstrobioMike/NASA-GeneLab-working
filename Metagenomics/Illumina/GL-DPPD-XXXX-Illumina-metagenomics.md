@@ -761,7 +761,7 @@ metabat2  --inFile sample-1-assembly.fasta --outFile sample-1 --abdFile sample-1
 
 **Parameter Definitions:**  
 
-*	`--outputDepth` – specifies the output depth file
+*  `--outputDepth` – specifies the output depth file
 *  `--percentIdentity` – minimum end-to-end percent identity of a mapped read to be included
 *  `--minContigLength` – minimum contig length to include
 *  `--minContigDepth` – minimum contig depth to include
@@ -780,7 +780,7 @@ metabat2  --inFile sample-1-assembly.fasta --outFile sample-1 --abdFile sample-1
 
 **Output data:**
 
-* sample-1-bin* (fasta files of recovered bins)
+* sample-1-bin\*.fa (fasta files of recovered bins)
 
 #### 14b. Bin quality assessment
 Utilizes the default `checkm` database available [here](https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz), `checkm_data_2015_01_16.tar.gz`.
