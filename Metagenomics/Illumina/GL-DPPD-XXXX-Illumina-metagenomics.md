@@ -36,7 +36,7 @@ Michael D. Lee
     - [13. Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples](#13-generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
     - [14. **M**etagenome-**A**ssembled **G**enome (MAG) recovery](#14-metagenome-assembled-genome-MAG-recovery)
   - [**Read-based processing**](#read-based-processing)
-    - [14. Taxonomic and functional profiling](#14-taxonomic-and-functional-profiling)
+    - [15. Taxonomic and functional profiling](#15-taxonomic-and-functional-profiling)
 
 ---
 
