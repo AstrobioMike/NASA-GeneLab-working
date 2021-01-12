@@ -780,6 +780,7 @@ metabat2  --inFile sample-1-assembly.fasta --outFile sample-1 --abdFile sample-1
 
 **Output data:**
 
+* sample-1-depth.tsv (tab-delimited summary of coverages)
 * sample-1-bin\*.fa (fasta files of recovered bins)
 
 #### 14b. Bin quality assessment
