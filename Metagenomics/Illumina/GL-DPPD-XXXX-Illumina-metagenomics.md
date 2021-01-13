@@ -533,8 +533,8 @@ rm sample-1*.tmp*
 
 **Output data:**
 
-* sample-1-gene-tax-out.tmp (gene-calls taxonomy file with lineage info added reformatted)
-* sample-1-contig-tax-out.tmp (contig taxonomy file with lineage info added reformatted)
+* sample-1-gene-tax-out.tsv (gene-calls taxonomy file with lineage info added reformatted)
+* sample-1-contig-tax-out.tsv (contig taxonomy file with lineage info added reformatted)
 
 <br>
 
@@ -699,7 +699,7 @@ paste <( tail -n +2 sample-1-contig-coverages.tsv | sort -V -k 1 ) \
       <( tail -n +2 sample-1-contig-tax-out.tsv | sort -V -k 1 | cut -f 2- ) > sample-1-contig.tmp
 
 paste <( head -n 1 sample-1-contig-coverages.tsv ) <( head -n 1 sample-1-contig-tax-out.tsv | cut -f 2- ) \
-      > 5492-contig-header.tmp
+      > sample-1-contig-header.tmp
       
 cat sample-1-contig-header.tmp sample-1-contig.tmp > sample-1-contig-coverage-and-tax.tsv
 
@@ -857,7 +857,7 @@ gtdbtk classify_wf --genome_dir MAGs/ -x fa --out_dir gtdbtk-output-dir
 
 **Output data:**
 
-* "gtdbtk-output-dir/gtdbtk.\*.summary.tsv" (files with assigned taxonomy and info)
+* gtdbtk-output-dir/gtdbtk.\*.summary.tsv (files with assigned taxonomy and info)
 
 <br>
 
