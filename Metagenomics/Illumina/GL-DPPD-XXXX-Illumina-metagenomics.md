@@ -664,10 +664,10 @@ rm sample-1-*.tmp
 
 ```
 paste <( tail -n +2 sample-1-gene-coverages.tsv | sort -V -k 1 ) <( tail -n +2 sample-1-annotations.tsv | sort -V -k 1 | cut -f 2- ) \
-      <( tail -n +2 sample-1-tax-out.tsv | sort -V -k 1 | cut -f 2- ) > sample-1-gene-tab.tmp
+      <( tail -n +2 sample-1-gene-tax-out.tsv | sort -V -k 1 | cut -f 2- ) > sample-1-gene-tab.tmp
 
 paste <( head -n 1 sample-1-gene-coverages.tsv ) <( head -n 1 sample-1-annotations.tsv | cut -f 2- ) \
-      <( head -n 1 sample-1-tax-out.tsv | cut -f 2- ) > sample-1-header.tmp
+      <( head -n 1 sample-1-gene-tax-out.tsv | cut -f 2- ) > sample-1-header.tmp
 
 cat sample-1-header.tmp sample-1-gene-tab.tmp > sample-1-gene-coverage-annotation-and-tax.tsv
 
