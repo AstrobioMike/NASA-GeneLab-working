@@ -1,12 +1,11 @@
 ##################################################################################
-## R processing script for 16S data of GLDS-249                                 ##
-## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-249/                ##
+## R processing script for 16S data of GLDS-XXX                                 ##
+## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-XXX/                ##
 ##                                                                              ##
 ## This code as written expects to be run within the Processing_Info/ directory ##
 ## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
 ##################################################################################
 
-# this dataset already had primers trimmed upon submission to GeneLab, so this starts with the "raw" reads rather than primer_trimmed ones
 # as called from the associated Snakefile, this expects to be run as: Rscript full-R-processing.R <left_trunc> <right_trunc> <left_maxEE> <right_maxEE> <TRUE/FALSE - GL trimmed primers or not> <unique-sample-IDs-file> <starting_reads_dir_for_R> <filtered_reads_dir> <input_file_R1_suffix> <input_file_R2_suffix> <filtered_filename_R1_suffix> <filtered_filename_R2_suffix> <final_outputs_directory> <filename_prefix>
     # where <left_trim> and <right_trim> are the values to be passed to the truncLen parameter of dada2's filterAndTrim()
     # and <left_maxEE> and <right_maxEE> are the values to be passed to the maxEE parameter of dada2's filterAndTrim()
@@ -50,7 +49,6 @@ if ( ! GL_trimmed_primers %in% c("TRUE", "FALSE") ) {
     GL_trimmed_primers <- as.logical(GL_trimmed_primers)
 }
 
-
 # general procedure comes largely from these sources:
     # https://benjjneb.github.io/dada2/tutorial.html
     # https://astrobiomike.github.io/amplicon/dada2_workflow_ex
@@ -64,7 +62,7 @@ library(biomformat); packageVersion("biomformat") # 1.12.0
     # reading in unique sample names into variable
 sample.names <- scan(sample_IDs_file, what="character")
 
-    # setting variables holding the paths to the forward and reverse input reads
+    # setting variables holding the paths to the forward and reverse primer-trimmed reads (or "raw" if primers were trimmed prior to submission to GeneLab)
 forward_reads <- paste0(input_reads_dir, filename_prefix, sample.names, input_file_R1_suffix)
 reverse_reads <- paste0(input_reads_dir, filename_prefix, sample.names, input_file_R2_suffix)
 

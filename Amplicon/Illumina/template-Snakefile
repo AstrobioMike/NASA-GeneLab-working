@@ -1,6 +1,6 @@
 ############################################################################################
-## Snakefile template for GeneLab's Illumina amplicon workflow                            ##
-## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-249/ (example)                ##
+## Snakefile for GeneLab's Illumina amplicon workflow                                     ##
+## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-XXX/                          ##
 ##                                                                                        ##
 ## This file as written expects to be executed within the "processing_info/" directory    ##
 ## with the raw starting fastq files present in the "../Raw_Data/" directory              ##
@@ -26,34 +26,42 @@ Or can be created with the corresponding GLDS's environment.yml file like so:
 # conda activate GL-Illumina-amplicon
 """
 
-
 ########################################
 ######## Setting some variables ########
 ########################################
 
-  # single column file holding unique portion of sample names
+    # single column file holding unique portion of sample names
 sample_IDs_file = "unique-sample-IDs.txt"
 
-    # text (not python boolean) of whether we trimmed primers on this datast or not
-    # only leave the correct one un-commented
+    # text (not python boolean) of whether we are trimmimg primers on this dataset or not
 GL_trimmed_primers_T_F = "TRUE"
-# GL_trimmed_primers_T_F = "FALSE"
 
-F_primer = "GTGYCAGCMGCCGCGGTAA"
-R_primer = "GGACTACNVGGGTWTCTAAT"
+    # minimum length for cutadapt
+min_cutadapt_len = "150"
+
+    # primers if we are trimming them
+F_primer = "GTGCCAGCMGCCGCGGTAA"
+R_primer = "GGACTACHVGGGTWTCTAA"
+
+    # should cutadapt treat these as linked primers? (https://cutadapt.readthedocs.io/en/stable/recipes.html#trimming-amplicon-primers-from-both-ends-of-paired-end-reads)
+primers_linked = "TRUE"
+
+    # if so, need to provide linked primers (can reverse complement, and retain ambiguous bases, at this site: http://arep.med.harvard.edu/labgc/adnan/projects/Utilities/revcomp.html)
+F_linked_primer = "GTGCCAGCMGCCGCGGTAA...TTAGAWACCCBDGTAGTCC"
+R_linked_primer = "GGACTACHVGGGTWTCTAA...TTACCGCGGCKGCTGGCAC"
 
 
-  # values to be passed to dada2's filterAndTrim() function:
+    # values to be passed to dada2's filterAndTrim() function:
 left_trunc = "0"
 right_trunc = "0"
 left_maxEE = "1"
 right_maxEE = "1"
 
 
-  # useful prefixes and suffixes for filename structure
-  # filename prefix (what comes before the unique portion of the name that is provided in the "unique-sample-IDs.txt" file)
+    # useful prefixes and suffixes for filename structure
+    # filename prefix (what comes before the unique portion of the name that is provided in the "unique-sample-IDs.txt" file)
 filename_prefix = ""
-  # filename suffixes (what comes after the unique portion of the names, for R1 and R2 files)
+    # filename suffixes (what comes after the unique portion of the names, for R1 and R2 files)
 input_filename_R1_suffix = "_R1_raw.fastq.gz"
 input_filename_R2_suffix = "_R2_raw.fastq.gz"
 primer_trimmed_filename_R1_suffix = "-R1-trimmed.fastq.gz"
@@ -65,7 +73,7 @@ raw_fastqc_R2_suffix = "_R2_raw_fastqc.zip"
 filtered_fastqc_R1_suffix = "-R1-filtered_fastqc.zip"
 filtered_fastqc_R2_suffix = "-R2-filtered_fastqc.zip"
 
-  # directories (all relative to processing directory)
+    # directories (all relative to processing directory)
 raw_reads_dir = "../Raw_Data/"
 fastqc_out_dir = "../FastQC_Outputs/"
 trimmed_reads_dir = "../Trimmed_Sequence_Data/"
@@ -78,7 +86,7 @@ else:
     needed_dirs = [fastqc_out_dir, filtered_reads_dir, final_outputs_dir]
 
 
-  # number of threads to use PER snakemake job started (that's determined by the -j parameter passed to the snakemake call)
+    # number of threads to use PER snakemake job started (that's determined by the -j parameter passed to the snakemake call)
     # passed to fastqc (since only fastqc here, 2 is fine as only 2 files are passed to each call; functions in R are currently on autodetect)
 num_threads = 2
 
@@ -94,15 +102,16 @@ sample_ID_list = [line.strip() for line in open(sample_IDs_file)]
 ########################################
 
 for dir in needed_dirs:
-	try:
-		os.mkdir(dir)
-	except:
-		pass
+    try:
+        os.mkdir(dir)
+    except:
+        pass
 
 
 ########################################
 ############# Rules start ##############
 ########################################
+
 
 if GL_trimmed_primers_T_F == "TRUE":
 
@@ -153,22 +162,43 @@ else:
             """
 
 
-rule cutadapt:
-    input:
-        R1 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R1_suffix,
-        R2 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R2_suffix
-    output:
-        R1 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R1_suffix,
-        R2 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R2_suffix,
-        log = trimmed_reads_dir + "{ID}-cutadapt.log",
-        trim_counts = trimmed_reads_dir + "{ID}-trimmed-counts.tsv"
-    log:
-        trimmed_reads_dir + "{ID}-cutadapt.log"
-    shell:
-        """
-        cutadapt -g {F_primer} -G {R_primer} -o {output.R1} -p {output.R2} --discard-untrimmed -m {min_cutadapt_len} {input.R1} {input.R2} > {log} 2>&1
-        paste <( printf "{wildcards.ID}" ) <( grep "read pairs processed" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) <( grep "Pairs written" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) > {output.trim_counts}
-        """
+if primers_linked == "TRUE":
+
+    rule cutadapt:
+        input:
+            R1 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R1_suffix,
+            R2 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R2_suffix
+        output:
+            R1 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R1_suffix,
+            R2 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R2_suffix,
+            log = trimmed_reads_dir + "{ID}-cutadapt.log",
+            trim_counts = trimmed_reads_dir + "{ID}-trimmed-counts.tsv"
+        log:
+            trimmed_reads_dir + "{ID}-cutadapt.log"
+        shell:
+            """
+            cutadapt -a {F_linked_primer} -A {R_linked_primer} -o {output.R1} -p {output.R2} --discard-untrimmed -m {min_cutadapt_len} {input.R1} {input.R2} > {log} 2>&1
+            paste <( printf "{wildcards.ID}" ) <( grep "read pairs processed" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) <( grep "Pairs written" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) > {output.trim_counts}
+            """
+
+else:
+
+    rule cutadapt:
+        input:
+            R1 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R1_suffix,
+            R2 = raw_reads_dir + filename_prefix + "{ID}" + input_filename_R2_suffix
+        output:
+            R1 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R1_suffix,
+            R2 = trimmed_reads_dir + filename_prefix + "{ID}" + primer_trimmed_filename_R2_suffix,
+            log = trimmed_reads_dir + "{ID}-cutadapt.log",
+            trim_counts = trimmed_reads_dir + "{ID}-trimmed-counts.tsv"
+        log:
+            trimmed_reads_dir + "{ID}-cutadapt.log"
+        shell:
+            """
+            cutadapt -g {F_primer} -G {R_primer} -o {output.R1} -p {output.R2} --discard-untrimmed -m {min_cutadapt_len} {input.R1} {input.R2} > {log} 2>&1
+            paste <( printf "{wildcards.ID}" ) <( grep "read pairs processed" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) <( grep "Pairs written" {output.log} | tr -s " " "\t" | cut -f 5 | tr -d "," ) > {output.trim_counts}
+            """
 
 
 rule combine_cutadapt_logs_and_summarize:
@@ -253,8 +283,8 @@ rule raw_fastqc:
         raw_reads_dir + filename_prefix + "{ID}" + raw_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+        fastqc {input} -t {num_threads} -q
+        """
 
 
 rule raw_multiqc:
@@ -268,7 +298,7 @@ rule raw_multiqc:
         """
         multiqc -z -q -o {fastqc_out_dir} -n raw_multiqc {raw_reads_dir} > /dev/null 2>&1
         zip -q {fastqc_out_dir}raw_multiqc.html.zip {fastqc_out_dir}raw_multiqc.html && rm {fastqc_out_dir}raw_multiqc.html
-          # removing the individual fastqc files
+            # removing the individual fastqc files
         rm -rf {raw_reads_dir}*fastqc*
         """
 
@@ -282,8 +312,8 @@ rule filtered_fastqc:
         filtered_reads_dir + filename_prefix + "{ID}" + filtered_fastqc_R2_suffix
     shell:
         """
-		fastqc {input} -t {num_threads} -q
-		"""
+        fastqc {input} -t {num_threads} -q
+        """
 
 
 rule filtered_multiqc:
@@ -297,7 +327,7 @@ rule filtered_multiqc:
         """
         multiqc -z -q -o {fastqc_out_dir} -n filtered_multiqc  {filtered_reads_dir} > /dev/null 2>&1
         zip -q {fastqc_out_dir}filtered_multiqc.html.zip {fastqc_out_dir}filtered_multiqc.html && rm {fastqc_out_dir}filtered_multiqc.html
-          # removing the individual fastqc files and temp locations
+            # removing the individual fastqc files and temp locations
         rm -rf {filtered_reads_dir}*fastqc*
         """
 
