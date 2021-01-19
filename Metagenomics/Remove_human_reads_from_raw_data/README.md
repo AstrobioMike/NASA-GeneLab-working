@@ -4,7 +4,7 @@ It is NASA's policy that any human reads are to be removed from metagenomics dat
 
 The Snakemake workflow we use to do this is included above, system-specific variables should be set in the "config.yaml" file. The database we use was built with kraken2 v2.1.1 as detailed below, and by default will be downloaded to run with the above workflow (it's ~4.3 GB uncompressed). 
 
-See the "config.yaml" file for more details on usage. An quick example can be run as-is with the files included in this repository.
+See the "config.yaml" file for more details on usage. An quick example can be run with the files included in this repository.
 
 ---
 
