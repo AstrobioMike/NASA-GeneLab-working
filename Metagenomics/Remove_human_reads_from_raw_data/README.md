@@ -39,7 +39,7 @@ kraken2-build --clean --db kraken2-human-db/
 ---
 
 ## Download database as built on 29-Nov-2020
-The reference database 3GB compressed and ~4.3GB uncompressed. It can be downloaded and unpacked with the following:
+The reference database 3GB compressed and ~4.3GB uncompressed. If using the accompanying Snakemake workflow, it will by default download this reference database. It can also be downloaded and unpacked by itself with the following:
 
 ```bash
 curl -L -o kraken2-human-db.tar.gz https://ndownloader.figshare.com/files/25627058
