@@ -7,7 +7,6 @@
 #############################################################
 
 ## single-column file with unique sample identifiers:
-
 sample_info_file:
     "example-unique-sample-IDs.txt"
 
