@@ -2,11 +2,23 @@
 
 It is NASA's policy that any human reads are to be removed from metagenomics datasets prior to being hosted in [GeneLab's data repository](https://genelab-data.ndc.nasa.gov/genelab/projects). As such, all metagenomics datasets are screened against a human reference-genome [kraken2](https://github.com/DerrickWood/kraken2/wiki) database. 
 
+---
+
+# Table of contents
+
+- [**Software used**](#software-used)
+- [**1. Build kraken2 database**](#1-build-kraken2-database)
+- [**2. Filter out human-classified reads**](#2-filter-out-human-classified-reads)
+
+---
+
 # Software used
 
 |Program|Version*|Relevant Links|
 |:------|:-----:|------:|
 |kraken2|`kraken2 -v`|[https://github.com/DerrickWood/kraken2/wiki](https://github.com/DerrickWood/kraken2/wiki)|
+
+---
 
 ## 1. Build kraken2 database
 
@@ -39,7 +51,7 @@ kraken2-build --clean --db kraken2-human-db/
 
 ## 2. Filter out human-classified reads
 
-**Example if paired-end reads**
+### Example if paired-end reads
 
 ```bash
 kraken2 --db kraken2-human-db --gzip-compressed --threads 4 --use-names --paired \
@@ -75,7 +87,7 @@ mv sample-1_R_2.fastq sample-1-R2-human-reads-removed.fastq && gzip sample-1-R2-
 * sample-1-R1-human-reads-removed.fastq.gz (human-read removed, gzipped forward-reads fastq file)
 * sample-1-R2-human-reads-removed.fastq.gz (human-read removed, gzipped reverse-reads fastq file)
 
-**Example if single-end reads**
+### Example if single-end reads
 
 ```bash
 kraken2 --db kraken2-human-db --gzip-compressed --threads 4 --use-names \
