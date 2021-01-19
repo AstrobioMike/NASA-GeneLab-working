@@ -287,7 +287,7 @@ rule metabat_binning:
             metabat2  --inFile {input.assembly} --outFile {params.prefix}/bin --abdFile {output.depth_file} -t {params.num_threads} > {log} 2>&1
         else
             printf "\n\nThere was no coverage info generated in {output.depth_file}, so no binning with metabat was performed.\n\n" > {log}
-            mkdir {params.prefix}
+            mkdir -p {params.prefix}
         fi
         """
 
