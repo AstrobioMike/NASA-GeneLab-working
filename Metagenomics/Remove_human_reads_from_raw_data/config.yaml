@@ -75,3 +75,5 @@ KRAKEN2_TRIGGER_FILE:
         # the conda environments we've made already.
   #   -j 8 sets the number of jobs to run concurrently (number of threads set above will be multiplied by how jobs are set here)
   #   -p prints out the commands that are being run
+
+# Snakemake can be installed with conda, e.g.: conda install -c conda-forge -c bioconda -c defaults snakemake
