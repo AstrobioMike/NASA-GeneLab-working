@@ -2,9 +2,9 @@
 
 It is NASA's policy that any human reads are to be removed from metagenomics datasets prior to being hosted in [GeneLab's data repository](https://genelab-data.ndc.nasa.gov/genelab/projects). As such, all metagenomics datasets are screened against a human reference-genome [kraken2](https://github.com/DerrickWood/kraken2/wiki) database. 
 
-The Snakemake workflow we use to do this is included above, system-specific variables should be set in the "config.yaml" file. The database we use was built with kraken2 v2.1.1 as detailed below, and by default will be downloaded to run with the above workflow (it's ~4.3 GB uncompressed). 
+The Snakemake workflow we use to do this is included above, run-specific variables should be set in the [`config.yaml`](config.yaml) file. See the [`config.yaml`](config.yaml) file for more details on usage. A quick example can be run with the files included in this repository.
 
-See the "config.yaml" file for more details on usage. An quick example can be run with the files included in this repository.
+The database we use was built with kraken2 v2.1.1 as detailed below, and by default will be downloaded to run with the above workflow (it's ~4.3 GB uncompressed). 
 
 ---
 
