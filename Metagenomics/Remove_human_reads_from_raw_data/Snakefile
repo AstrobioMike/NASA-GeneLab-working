@@ -1,0 +1,140 @@
+############################################################################################
+## Snakefile for GeneLab removal of human reads from metagenomic datasets                 ##
+## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                                        ##
+############################################################################################
+
+import os
+
+configfile: "config.yaml"
+
+########################################
+############# General Info #############
+########################################
+
+"""
+See the corresponding 'config.yaml' file for general use information.
+Variables that may need to be adjusted should be changed there, not here.
+"""
+
+###################################
+##### Example Snakemake Call ######
+###################################
+"""
+snakemake --use-conda --conda-prefix ${CONDA_PREFIX}/envs -j 8 -p
+
+    --use-conda tells it to create the specified conda environments for each rule
+    --conda-prefix let's us point to where we want the environments created/used from
+        # Without this setting, it will re-create them in the current snakemake directory each
+        # time we run the workflow in a new location/on a new dataset. With this set, it will re-use
+        # the conda environments we've made already.
+    -j 8 sets the number of jobs to run concurrently, will be multiplied by how many threads are specified in the config.yaml file
+    -p prints out the commands that are being run
+"""
+
+
+########################################
+#### Reading samples file into list ####
+########################################
+
+sample_IDs_file = config["sample_info_file"]
+sample_ID_list = [line.strip() for line in open(sample_IDs_file)]
+
+###########################################
+### Creating output directory if needed ###
+###########################################
+
+try:
+    os.mkdir(output_reads_dir)
+except:
+    pass
+
+
+########################################
+############# Rules start ##############
+########################################
+
+
+rule all:
+    input:
+        expand(config["output_reads_dir"] + "{ID}{suffix}", ID = sample_ID_list, suffix = [config["R1_out_suffix"], config["R2_out_suffix"]]),
+        config["output_reads_dir"] + "Human-read-removal-summary.tsv"
+
+
+rule run_kraken2:
+    conda:
+        "envs/kraken2.yaml"
+    input:
+        R1 = config["input_reads_dir"] + "{ID}" + config["R1_suffix"],
+        R2 = config["input_reads_dir"] + "{ID}" + config["R2_suffix"],
+        kraken2_db_trigger = config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
+    output:
+        main = config["output_reads_dir"] + "{ID}-kraken2-output.txt",
+        report = config["output_reads_dir"] + "{ID}-kraken2-report.tsv",
+        R1 = config["output_reads_dir"] + "{ID}" + config["R1_out_suffix"],
+        R2 = config["output_reads_dir"] + "{ID}" + config["R2_out_suffix"],
+        summary = config["output_reads_dir"] + "{ID}-removal-info.tmp"
+    params:
+        reads_out_arg = config["output_reads_dir"] + "{ID}_R#.fastq",
+        R1_tmp_out = config["output_reads_dir"] + "{ID}_R_1.fastq",
+        R2_tmp_out = config["output_reads_dir"] + "{ID}_R_2.fastq",
+        R1_tmp_out_compressed = config["output_reads_dir"] + "{ID}_R_1.fastq.gz",
+        R2_tmp_out_compressed = config["output_reads_dir"] + "{ID}_R_2.fastq.gz",
+        kraken2_db_dir = config["kraken2_db_dir"],
+        num_threads = config["num_threads"]
+    log:
+        config["output_reads_dir"] + "{ID}-kraken2-run.log"
+    shell:
+        """
+        kraken2 --db {params.kraken2_db_dir} --gzip-compressed --threads {params.num_threads} --use-names --paired --output {output.main} --report {output.report} --unclassified-out {params.reads_out_arg} {input.R1} {input.R2} > {log} 2>&1
+
+        # compressing outputs
+        gzip {params.R1_tmp_out}
+        gzip {params.R2_tmp_out}
+
+        # renaming files
+        mv {params.R1_tmp_out_compressed} {output.R1}
+        mv {params.R2_tmp_out_compressed} {output.R2}
+
+        # making summary info
+        total_fragments=$(wc -l {output.main} | cut -f 1 -d " ")
+        fragments_retained=$(grep -w -m 1 "unclassified" {output.report} | cut -f 2)
+        perc_removed=$(printf "%.2f\n" $(echo "scale=4; 100 - ${{fragments_retained}} / ${{total_fragments}} * 100" | bc -l))
+
+        printf "{wildcards.ID}\t${{total_fragments}}\t${{fragments_retained}}\t${{perc_removed}}\n" > {output.summary}
+        """
+
+
+rule combine_summary_info:
+    input:
+        expand(config["output_reads_dir"] + "{ID}-removal-info.tmp", ID = sample_ID_list)
+    output:
+        config["output_reads_dir"] + "Human-read-removal-summary.tsv"
+    shell:
+        """
+        cat <( printf "sample\tTotal_fragments_before\tTotal_fragments_after\tPercent_human_reads_removed\n" ) {input} > {output}
+        rm {input}
+        """
+
+
+rule setup_kraken2_db:
+    output:
+        kraken2_db_trigger = config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
+    params:
+        kraken2_db_dir = config["kraken2_db_dir"]
+    shell:
+        """
+        starting_dir=$(pwd)
+
+        mkdir -p {params.kraken2_db_dir}
+        cd {params.kraken2_db_dir}
+        cd ../
+        rm -rf kraken2-human-db
+
+        curl -L -o kraken2-human-db.tar.gz https://ndownloader.figshare.com/files/25627058
+        tar -xzvf kraken2-human-db.tar.gz
+        rm kraken2-human-db.tar.gz
+        
+        cd ${{starting_dir}}
+
+        touch {output}
+        """

@@ -1,0 +1,84 @@
+############################################################
+##################### VARIABLES TO SET #####################
+############################################################
+
+#############################################################
+##### These first 6 need to match what is on our system #####
+#############################################################
+
+## single-column file with unique sample identifiers:
+
+sample_info_file:
+    "example-unique-sample-IDs.txt"
+
+## input read suffixes (region following the unique part of the sample names)
+R1_suffix:
+    "-R1.fq.gz"
+R2_suffix:
+    "-R2.fq.gz"
+
+## directory holding input reads
+input_reads_dir:
+    "example-reads/"
+
+## output directory to hold human-removed reads
+output_reads_dir:
+    "human-removed-reads/"
+
+## location of kraken2 human reference database (will download and put here if not already present, see General Info section below)
+kraken2_db_dir:
+    "/data1/Data_Processing/mlee/kraken2/kraken2-human-db"
+
+######################################################################
+##### The rest only need to be altered if we want to change them #####
+######################################################################
+
+## wanted output R1 and R2 suffixes after human-read removal
+R1_out_suffix:
+    "-human-removed-R1.fastq.gz"
+R2_out_suffix:
+    "-human-removed-R2.fastq.gz"
+
+## Number of threads to pass to kraken2 call (will be multiplied by number of jobs running, set with the -j parameter in the snakemake call)
+num_threads:
+    10
+
+## trigger filename for checking on/setting up kraken2 reference db
+KRAKEN2_TRIGGER_FILE:
+    "KRAKEN2_DB_SETUP"
+
+
+############################################################
+###################### GENERAL INFO ########################
+############################################################
+
+
+# Currently written to work with paired-end data only, and reads are expected to be gzipped
+
+# Initial database construction done with kraken2 v2.1.1 on 29-Nov-2020
+  # - details of building can be found on the corresponding README.md on this repo, or on this page: https://hackmd.io/@astrobiomike/GL-kraken2-human-db-setup
+  # - that database can be downloaded and decompressed with the following:
+
+# curl -L -o kraken2-human-db.tar.gz https://ndownloader.figshare.com/files/25627058
+# tar -xzvf kraken2-human-db.tar.gz
+
+  # - By default, that database build will be downloaded and utilized with this workflow
+
+
+# Tiny example reads with 1 human read, 1 phiX read, and 1 E. coli read can be downloaded as follows for testing:
+# curl -L -o sample-A-R1.fq.gz https://ndownloader.figshare.com/files/25627406
+# curl -L -o sample-A-R2.fq.gz https://ndownloader.figshare.com/files/25627406
+
+###################################
+##### Example Snakemake Call ######
+###################################
+
+# snakemake --use-conda --conda-prefix ${CONDA_PREFIX}/envs -j 8 -p
+
+  #   --use-conda tells it to create the specified conda environments for each rule
+  #   --conda-prefix let's us point to where we want the environments created/used from
+        # Without this setting, it will re-create them in the current snakemake directory each
+        # time we run the workflow in a new location/on a new dataset. With this set, it will re-use
+        # the conda environments we've made already.
+  #   -j 8 sets the number of jobs to run concurrently, will be multiplied by how many threads are specified in the config.yaml file
+  #   -p prints out the commands that are being run
