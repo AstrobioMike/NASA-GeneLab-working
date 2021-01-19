@@ -29,6 +29,8 @@ snakemake --use-conda --conda-prefix ${CONDA_PREFIX}/envs -j 8 -p
         # the conda environments we've made already.
     -j 8 sets the number of jobs to run concurrently (number of threads set in the 'config.yaml' file will be multiplied by how many jobs are set with this)
     -p prints out the commands that are being run
+    
+Snakemake can be installed with conda, e.g.: conda install -c conda-forge -c bioconda -c defaults snakemake
 """
 
 
