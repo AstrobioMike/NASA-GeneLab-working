@@ -57,10 +57,10 @@ rule all:
         config["MAGs_dir"] + "MAGs-overview.tsv",
         config["assemblies_dir"] + "assembly-summaries.tsv",
         config["fastqc_out_dir"] + "raw_multiqc_data.zip",
-        config["fastqc_out_dir"] + "filtered_multiqc_data.zip"
-#        config["read_based_dir"] + "Gene-families-cpm.tsv",
-#        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
-#        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
+        config["fastqc_out_dir"] + "filtered_multiqc_data.zip",
+        config["read_based_dir"] + "Gene-families-cpm.tsv",
+        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
+        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
 
     shell:
         """
@@ -287,7 +287,7 @@ rule metabat_binning:
             metabat2  --inFile {input.assembly} --outFile {params.prefix}/bin --abdFile {output.depth_file} -t {params.num_threads} > {log} 2>&1
         else
             printf "\n\nThere was no coverage info generated in {output.depth_file}, so no binning with metabat was performed.\n\n" > {log}
-            mkdir {param.prefix}
+            mkdir {params.prefix}
         fi
         """
 
