@@ -38,22 +38,30 @@ raw_reads_dir:
 ## number of threads to use PER snakemake job (which is set with the -j parameter passed to snakemake call)
     # passed to megahit, bowtie2, samtools, metabat2, checkm-pplacer (many may be running concurrently)
 num_threads:
-    10
+    20
 
 ## number of CPUs to use PER snakemake job
     # passed to KOFamScan, CAT, checkm (many may be running concurrently)
 num_cpus:
-    10
+    20
 
-## number of CPUs to use for gtdb-tk (only 1 will run at a time, but the pplacer step can be memory intensive with many cpus)
+## number of CPUs to use for gtdb-tk (only 1 gtdb-tk job will be run, so not multiplied, but the pplacer step can be more memory intensive with more cpus i think)
 gtdb_tk_num_cpus:
-    5
+    20
 
 ## maximum memory allowed passed to megahit assembler
     # can be set either by proportion of available on system, e.g. 0.5
     # or by absolute value in bytes, e.g. 100e9 would be 100 GB
 max_mem:
     0.5
+
+## MAG filtering cutoffs based on checkm quality assessments (in percent); see https://github.com/Ecogenomics/CheckM/wiki/Reported-Statistics
+minimum_estimated_completion:
+    90
+maximum_estimated_redundancy:
+    10
+maximum_estimated_strain_heterogeneity:
+    0
 
 ## quality trimmed/filtered suffixes
 trimmed_R1_suffix:
@@ -111,7 +119,7 @@ logs_dir:
     # the root should be the full path or relative path, the ~/ home shortcut is not expanded
     # by snakemake's evaluation of files, so don't use that
 REF_DB_ROOT_DIR:
-    "/data1/Data_Processing/mlee/ref-dbs/"
+    "/home/mdlee4/ref-dbs/"
 
 ## specific database locations
 KOFAMSCAN_DIR:
@@ -130,10 +138,6 @@ CAT_DB:
     "/2020-11-23_CAT_database"
 CAT_TAX:
     "/2020-11-23_taxonomy"
-CHECKM_DIR:
-    "checkm-db"
-CHECKM_TRIGGER_FILE:
-    "CHECKM_DB_SETUP"
 GTDB_DATA_PATH:
     "GTDB-tk-ref-db"
 GTDB_TRIGGER_FILE:

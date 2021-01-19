@@ -4,7 +4,7 @@
 ############################################################################################
 
 import os
-import pandas as pd
+# import pandas as pd # here for when I re-implement co-assembly avenue
 
 configfile: "config.yaml"
 
@@ -46,7 +46,6 @@ for dir in expand(config["bins_dir"] + "{ID}", ID = sample_ID_list):
     except:
         pass
 
-
 ########################################
 ############# Rules start ##############
 ########################################
@@ -57,10 +56,10 @@ rule all:
         config["MAGs_dir"] + "MAGs-overview.tsv",
         config["assemblies_dir"] + "assembly-summaries.tsv",
         config["fastqc_out_dir"] + "raw_multiqc_data.zip",
-        config["fastqc_out_dir"] + "filtered_multiqc_data.zip",
-        config["read_based_dir"] + "Gene-families-cpm.tsv",
-        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
-        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
+        config["fastqc_out_dir"] + "filtered_multiqc_data.zip"
+#        config["read_based_dir"] + "Gene-families-cpm.tsv",
+#        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
+#        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
 
     shell:
         """
@@ -106,8 +105,9 @@ rule generate_MAGs_overview_table:
                 grep -w -m 1 "^${{MAG}}" {input.checkm_results} | cut -f 12,13 >> {params.checkm_tmp}
 
                 # note: below won't work with darwin (mac) sed due to tab character
-                grep -w "^${{MAG}}" {params.gtdb_results} | cut -f 2 | sed 's/^.__//' | sed 's/;.__/\\t/g' | awk -F $'\\t' ' BEGIN {{ OFS=FS }} {{ for (i=1; i<=NF; i++) if ( $i ~/^ *$/) $i = "NA" }}; 1 ' >> {params.gtdb_tmp}
-
+        #        grep -w "^${{MAG}}" {params.gtdb_results} | cut -f 2 | sed 's/^.__//' | sed 's/;.__/\\t/g' | awk -F $'\\t' ' BEGIN {{ OFS=FS }} {{ for (i=1; i<=NF; i++) if ( $i ~/^ *$/) $i = "NA" }}; 1 ' >> {params.gtdb_tmp}
+                grep -w "^${{MAG}}" {params.gtdb_results} | cut -f 2 | sed 's/^.__//' | sed $'s/;.__/\t/g' | awk -F $'\\t' ' BEGIN {{ OFS=FS }} {{ for (i=1; i<=NF; i++) if ( $i ~/^ *$/) $i = "NA" }}; 1 ' >> {params.gtdb_tmp}
+        #        grep -w "^${{MAG}}" {params.gtdb_results} | cut -f 2 | sed 's/^.__//' | sed $'s/;.__/\\t/g' | awk -F $'\\t' ' BEGIN {{ OFS=FS }} {{ for (i=1; i<=NF; i++) if ( $i ~/^ *$/) $i = "NA" }}; 1 ' >> {params.gtdb_tmp}
             done
 
             # adding headers
@@ -145,7 +145,7 @@ rule summarize_MAG_assemblies:
         # only running if any MAGs were recovered
         if [ $(find {params.MAGs_dir} -name "*.fa" | wc -l) -gt 0 ]; then
 
-            bit-summarize-assembly {params.MAGs_dir}*/*.fa -o {params.intermediate_file} -t
+            bit-summarize-assembly {params.MAGs_dir}*.fa -o {params.intermediate_file} -t
 
             # slimming down the output
             cut -f 1,2,3,5,6,8,11,18,19,20 {params.intermediate_file} > {output}
@@ -168,25 +168,31 @@ rule run_gtdbtk_on_MAGs:
         trigger = expand(config["MAGs_dir"] + "{ID}-MAGs-checkm-out.tsv", ID = sample_ID_list),
         gtdbtk_db_trigger = config["REF_DB_ROOT_DIR"] + config["GTDB_DATA_PATH"] + "/" + config["GTDB_TRIGGER_FILE"]
     params:
-        temp_all_MAGs_dir = config["MAGs_dir"] + "all-for-gtdb/",
         MAGs_dir = config["MAGs_dir"],
-        gtdb_tk_num_cpus = config["gtdb_tk_num_cpus"]
+        gtdb_tk_num_cpus = config["gtdb_tk_num_cpus"],
+        gtdbtk_db_dir = config["REF_DB_ROOT_DIR"] + config["GTDB_DATA_PATH"]
     output:
         directory(config["MAGs_dir"] + "gtdbtk-out")
     log:
         config["logs_dir"] + "gtdbtk-run.log"
     shell:
         """
+        # making sure database variable is set properly (can be off if using previous db location with new gtdb-tk conda env)
+        # this runs if the exit status of seeking the help menu isn't 0 (e.g. gtdb-tk tells us something is wrong with where it's looking for the ref db)
+        if ! gtdbtk -h > /dev/null; then
+            # adding wanted location to this conda env PATH (gtdb-tk looks in the GTDBTK_DATA_PATH variable),
+            # so will be set when the conda environment is started from now on
+            mkdir -p ${{CONDA_PREFIX}}/etc/conda/activate.d/
+            echo 'export GTDBTK_DATA_PATH={params.gtdbtk_db_dir}' >> ${{CONDA_PREFIX}}/etc/conda/activate.d/set_env_vars.sh
+
+            # but still needs to be set for this particular session that is downloading and setting up the db
+            GTDBTK_DATA_PATH={params.gtdbtk_db_dir}
+        fi
+
         # only running if any MAGs were recovered
         if [ $(find {params.MAGs_dir} -name "*.fa" | wc -l) -gt 0 ]; then
 
-            mkdir -p {params.temp_all_MAGs_dir}
-
-            cp {params.MAGs_dir}*/*.fa {params.temp_all_MAGs_dir}
-
-            gtdbtk classify_wf --genome_dir {params.temp_all_MAGs_dir} -x fa --out_dir {output} --cpus {params.gtdb_tk_num_cpus} > {log} 2>&1
-
-            rm -rf {params.temp_all_MAGs_dir}
+            gtdbtk classify_wf --genome_dir {params.MAGs_dir} -x fa --out_dir {output} --cpus {params.gtdb_tk_num_cpus} > {log} 2>&1
 
         else
 
@@ -199,7 +205,10 @@ rule run_gtdbtk_on_MAGs:
 
 
 rule filtering_checkm_results_and_copying_MAGs:
-    """ filters checkm results, currently very conservatively (>90% est. completion; <10% est. redundancy; 0 strain heterogeniety) """
+    """ 
+    Filters checkm results based on est. completion, redundancy, and strain heterogeneity set in 'config.yaml'
+    Defaults are conservatively 90, 10, and 0
+    """
 
     input:
         config["bins_dir"] + "{ID}-bins-checkm-out.tsv"
@@ -207,19 +216,20 @@ rule filtering_checkm_results_and_copying_MAGs:
         config["MAGs_dir"] + "{ID}-MAGs-checkm-out.tsv"
     params:
         bins_dir = config["bins_dir"],
-        MAGs_dir = config["MAGs_dir"]
+        MAGs_dir = config["MAGs_dir"],
+        min_est_comp = config["minimum_estimated_completion"],
+        max_est_redund = config["maximum_estimated_redundancy"],
+        max_est_strain_het = config["maximum_estimated_strain_heterogeneity"]
     shell:
-        """
-        mkdir -p {params.MAGs_dir}{wildcards.ID}/
-
-        cat <( printf "Bin Id\tMarker lineage\t# genomes\t# markers\t# marker sets\t0\t1\t2\t3\t4\t5+\tCompleteness\tContamination\tStrain heterogeneity\n" ) <( awk -F $'\\t' ' $12 >= 90 && $13 <= 10 && $14 == 0 ' {input} ) > {wildcards.ID}-MAG-info.tmp
+        """        
+        cat <( printf "Bin Id\tMarker lineage\t# genomes\t# markers\t# marker sets\t0\t1\t2\t3\t4\t5+\tCompleteness\tContamination\tStrain heterogeneity\n" ) <( awk -F $'\\t' ' $12 >= {params.min_est_comp} && $13 <= {params.max_est_redund} && $14 == {params.max_est_strain_het} ' {input} ) > {wildcards.ID}-MAG-info.tmp
 
         sed 's/bin./{wildcards.ID}-MAG-/' {wildcards.ID}-MAG-info.tmp > {output}
 
         for MAG in $(cut -f 1 {wildcards.ID}-MAG-info.tmp | tail -n +2)
         do
-            new_ID=$(echo $MAG | sed 's/bin./MAG-/')
-            cp {params.bins_dir}{wildcards.ID}/${{MAG}}.fa {params.MAGs_dir}{wildcards.ID}/{wildcards.ID}-${{new_ID}}.fa
+            new_ID=$(echo $MAG | sed 's/bin./{wildcards.ID}-MAG-/')
+            cp {params.bins_dir}{wildcards.ID}/${{MAG}}.fa {params.MAGs_dir}${{new_ID}}.fa
         done
 
         rm {wildcards.ID}-MAG-info.tmp
@@ -233,14 +243,12 @@ rule run_checkm_on_bins:
         "envs/checkm.yaml"
     input:
         curr_bins_dir = config["bins_dir"] + "{ID}/",
-        trigger = config["mapping_dir"] + "{ID}-metabat-assembly-depth.tsv",
-        checkm_db_trigger = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"] + "/" + config["CHECKM_TRIGGER_FILE"]
+        trigger = config["mapping_dir"] + "{ID}-metabat-assembly-depth.tsv"
     params:
         tmp_output_dir = config["bins_dir"] + "{ID}/checkm-out-tmp/",
         tmp_working_dir = config["bins_dir"] + "{ID}/checkm-working-tmp/",
         num_threads = config["num_threads"],
-        num_cpus = config["num_cpus"],
-        checkm_db_dir = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"]
+        num_cpus = config["num_cpus"]
     output:
         config["bins_dir"] + "{ID}-bins-checkm-out.tsv"
     log:
@@ -250,11 +258,14 @@ rule run_checkm_on_bins:
         # only running if there were bins recovered
         if [ $(find {input.curr_bins_dir} -name "*.fa" | wc -l) -gt 0 ]; then
 
+            mkdir -p {params.tmp_working_dir}
+
             checkm lineage_wf -f {output} --tab_table -t {params.num_cpus} --pplacer_threads {params.num_threads} -x fa {input.curr_bins_dir} {params.tmp_output_dir} --tmpdir {params.tmp_working_dir} > {log} 2>&1
-            rm -rf {params.tmp_output_dir}
+            rm -rf {params.tmp_output_dir} {params.tmp_working_dir}
 
         else
 
+            mkdir -p {input.curr_bins_dir}
             printf "There were no bins generated for sample {wildcards.ID}, so checkm was not run on them.\n" > {output}
 
         fi
@@ -405,15 +416,15 @@ rule combine_read_based_processing_tables:
         gene_fam_dir = config["read_based_dir"] + "gene-family-results/",
         path_abund_dir = config["read_based_dir"] + "path-abundance-results/",
         path_cov_dir = config["read_based_dir"] + "path-coverage-results/",
-        dirs_to_remove = expand(config["read_based_dir"] + "{ID}-humann3-out-dir/", ID = sample_ID_list)
+        dirs_to_remove = " ".join(expand(config["read_based_dir"] + "{ID}-humann3-out-dir/", ID = sample_ID_list))
     output:
         gene_families = config["read_based_dir"] + "gene-families-initial.tsv",
         path_abundances = config["read_based_dir"] + "pathway-abundances-initial.tsv",
         path_coverages = config["read_based_dir"] + "pathway-coverages-initial.tsv"
     shell:
         """
-          # they all need to be in the same directory to be merged
-        mkdir -p {params}
+        # they all need to be in the same directory to be merged
+        mkdir -p {params.gene_fam_dir} {params.path_abund_dir} {params.path_cov_dir}
         cp {input.gene_families} {params.gene_fam_dir}
         cp {input.path_abundances} {params.path_abund_dir}
         cp {input.path_coverages} {params.path_cov_dir}
@@ -422,7 +433,7 @@ rule combine_read_based_processing_tables:
         humann_join_tables -i {params.path_abund_dir} -o {output.path_abundances} > /dev/null 2>&1
         humann_join_tables -i {params.path_cov_dir} -o {output.path_coverages} > /dev/null 2>&1
 
-        rm -rf {params} {input}
+        rm -rf {params}
         """
 
 
@@ -902,35 +913,6 @@ rule setup_KoFamScan_db:
         gunzip {params.compressed_ko_list}
 
         touch {output.kofamscan_db_trigger}
-        """
-
-
-rule setup_checkm_db:
-    """
-    This rule checks for the checkm db (minimally currently) and downloads if needed and sets location for program.
-    """
-
-    conda:
-        "envs/checkm.yaml"
-    output:
-        checkm_db_trigger = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"] + "/" + config["CHECKM_TRIGGER_FILE"]
-    params:
-        checkm_db_dir = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"]
-    log:
-        config["logs_dir"] + "setup-checkm-db.log"
-    shell:
-        """
-        mkdir -p {params.checkm_db_dir}
-        cd {params.checkm_db_dir}
-
-        curl -LO https://data.ace.uq.edu.au/public/CheckM_databases/checkm_data_2015_01_16.tar.gz > {log} 2>&1
-        tar -xzvf checkm_data_2015_01_16.tar.gz > {log} 2>&1
-
-        checkm data setRoot $PWD > {log} 2>&1
-
-        cd - > /dev/null 2>&1
-
-        touch {output.checkm_db_trigger}
         """
 
 
