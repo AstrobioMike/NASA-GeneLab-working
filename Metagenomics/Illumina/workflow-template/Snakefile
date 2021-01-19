@@ -57,10 +57,10 @@ rule all:
         config["MAGs_dir"] + "MAGs-overview.tsv",
         config["assemblies_dir"] + "assembly-summaries.tsv",
         config["fastqc_out_dir"] + "raw_multiqc_data.zip",
-        config["fastqc_out_dir"] + "filtered_multiqc_data.zip",
-        config["read_based_dir"] + "Gene-families-cpm.tsv",
-        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
-        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
+        config["fastqc_out_dir"] + "filtered_multiqc_data.zip"
+#        config["read_based_dir"] + "Gene-families-cpm.tsv",
+#        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
+#        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
 
     shell:
         """
@@ -236,7 +236,8 @@ rule run_checkm_on_bins:
         trigger = config["mapping_dir"] + "{ID}-metabat-assembly-depth.tsv",
         checkm_db_trigger = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"] + "/" + config["CHECKM_TRIGGER_FILE"]
     params:
-        tmp_dir = config["bins_dir"] + "{ID}/checkm-out-tmp/",
+        tmp_output_dir = config["bins_dir"] + "{ID}/checkm-out-tmp/",
+        tmp_working_dir = config["bins_dir"] + "{ID}/checkm-working-tmp/",
         num_threads = config["num_threads"],
         num_cpus = config["num_cpus"],
         checkm_db_dir = config["REF_DB_ROOT_DIR"] + config["CHECKM_DIR"]
@@ -248,8 +249,10 @@ rule run_checkm_on_bins:
         """
         # only running if there were bins recovered
         if [ $(find {input.curr_bins_dir} -name "*.fa" | wc -l) -gt 0 ]; then
-            checkm lineage_wf -f {output} --tab_table -t {params.num_cpus} --pplacer_threads {params.num_threads} -x fa {input.curr_bins_dir} {params.tmp_dir} > {log} 2>&1
-            rm -rf {params.tmp_dir}
+
+            checkm lineage_wf -f {output} --tab_table -t {params.num_cpus} --pplacer_threads {params.num_threads} -x fa {input.curr_bins_dir} {params.tmp_output_dir} --tmpdir {params.tmp_working_dir} > {log} 2>&1
+            rm -rf {params.tmp_output_dir}
+
         else
 
             printf "There were no bins generated for sample {wildcards.ID}, so checkm was not run on them.\n" > {output}
@@ -284,6 +287,7 @@ rule metabat_binning:
             metabat2  --inFile {input.assembly} --outFile {params.prefix}/bin --abdFile {output.depth_file} -t {params.num_threads} > {log} 2>&1
         else
             printf "\n\nThere was no coverage info generated in {output.depth_file}, so no binning with metabat was performed.\n\n" > {log}
+            mkdir {param.prefix}
         fi
         """
 
@@ -418,7 +422,7 @@ rule combine_read_based_processing_tables:
         humann_join_tables -i {params.path_abund_dir} -o {output.path_abundances} > /dev/null 2>&1
         humann_join_tables -i {params.path_cov_dir} -o {output.path_coverages} > /dev/null 2>&1
 
-        rm -rf {params}
+        rm -rf {params} {input}
         """
 
 
