@@ -247,7 +247,8 @@ rule filtering_checkm_results_and_copying_MAGs:
 rule generate_bins_overview_table:
     input:
         assembly_summaries = config["bins_dir"] + "bin-assembly-summaries.tsv",
-        checkm_results = config["bins_dir"] + "bins-checkm-out.tsv"
+        checkm_results = config["bins_dir"] + "bins-checkm-out.tsv",
+        timing_trigger = config["MAGs_dir"] + "MAGs-checkm-out.tsv"
     params:
         checkm_tmp = config["bins_dir"] + "checkm-estimates.tmp",
         checkm_w_header_tmp = config["bins_dir"] + "checkm-estimates-with-headers.tmp",
