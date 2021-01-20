@@ -112,7 +112,7 @@ logs_dir:
 # need to add these files to their respective directories. They should be empty, the
 # workflow just checks the file is there, to know it doesn't need to setup the DB.
 #
-# All together, after installed and unpacked, these will take up about 280 GB. But will 
+# All together, after installed and unpacked, these will take up about 210 GB. But may 
 # require up to 500 GB during installation and initial un-packing. 
 
 ## root directory of databases (or where they will be downloaded if they don't exist yet)
@@ -127,17 +127,17 @@ KOFAMSCAN_DIR:
 KOFAMSCAN_TRIGGER_FILE:
     "KO_DB_SETUP"
 CAT_DIR:
-    "CAT_prepare_20201123"
+    "CAT_prepare_20210107"
 CAT_DL_FILE:
-    "CAT_prepare_20201123.tar.gz"
+    "CAT_prepare_20210107.tar.gz"
 CAT_DL_LINK:
-    "https://tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20201123.tar.gz"
+    "tbb.bio.uu.nl/bastiaan/CAT_prepare/CAT_prepare_20210107.tar.gz"
 CAT_TRIGGER_FILE:
     "CAT_DB_SETUP"
 CAT_DB:
-    "/2020-11-23_CAT_database"
+    "/2021-01-07_CAT_database"
 CAT_TAX:
-    "/2020-11-23_taxonomy"
+    "/2021-01-07_taxonomy"
 GTDB_DATA_PATH:
     "GTDB-tk-ref-db"
 GTDB_TRIGGER_FILE:
