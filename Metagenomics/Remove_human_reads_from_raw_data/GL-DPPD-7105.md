@@ -5,14 +5,21 @@
 ---
 
 **Date:**  
-**Revision:**  
-**Document Number:** GL-DPPD-7107  
+**Revision:**  A
+**Document Number:** GL-DPPD-7105  
+
+# Updates from previous version
+* 
+
+---
 
 # Table of contents
 
 - [**Software used**](#software-used)
 - [**1. Build kraken2 database**](#1-build-kraken2-database)
 - [**2. Filter out human-classified reads**](#2-filter-out-human-classified-reads)
+  - [Example if paired-end reads](example-if-paired-end-reads)
+  - [Example if single-end reads](example-if-single-end-reads)
 
 ---
 
@@ -21,6 +28,8 @@
 |Program|Version*|Relevant Links|
 |:------|:-----:|------:|
 |kraken2|`kraken2 -v`|[https://github.com/DerrickWood/kraken2/wiki](https://github.com/DerrickWood/kraken2/wiki)|
+
+> \* Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
 
@@ -76,7 +85,7 @@ mv sample-1_R_2.fastq sample-1-R2-human-reads-removed.fastq && gzip sample-1-R2-
 * `--paired` - specifies input reads are paired-end
 * `--output` - specifies the name of the kraken2 read-based output file (one line per read)
 * `--report` - specifies the name of the kraken2 report output file (one line per taxa, with number of reads assigned to it)
-* `--unclassified-out` - name of output files of reads that do were not classified (the `#` symbol gets replaced with "_1" and "_2" in the output file names)
+* `--unclassified-out` - name of output files of reads that were not classified (the `#` symbol gets replaced with "_1" and "_2" in the output file names)
 * last two positional arguments are the input read files
 
 **Input data:**
@@ -110,7 +119,7 @@ gzip sample-1-human-reads-removed.fastq
 * `--use-names` - specifies adding taxa names in addition to taxids
 * `--output` - specifies the name of the kraken2 read-based output file (one line per read)
 * `--report` - specifies the name of the kraken2 report output file (one line per taxa, with number of reads assigned to it)
-* `--unclassified-out` - name of output files of reads that do were not classified (the `#` symbol gets replaced with "_1" and "_2" in the output file names)
+* `--unclassified-out` - name of output files of reads that were not classified 
 * last positional argument is the input read file
 
 **Input data:**
