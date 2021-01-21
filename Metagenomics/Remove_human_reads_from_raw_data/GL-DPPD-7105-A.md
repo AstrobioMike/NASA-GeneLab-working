@@ -4,12 +4,23 @@
 
 ---
 
-**Date:**  
+**Date:**  January, 13, 2021
 **Revision:** A  
 **Document Number:** GL-DPPD-7105-A  
 
-# Updates from previous version
-* 
+**Submitted by:**  
+Michael D. Lee (GeneLab Science Team)
+
+**Approved by:**  
+Sylvain Costes (GeneLab Project Manager)  
+Samrawit Gebre (GeneLab Deputy Project Manager and Interim GeneLab Configuration Manager)  
+Amanda Saravia-Butler (GeneLab Data Processing Team)  
+Jonathan Galazka (GeneLab Project Scientist)  
+
+# Updates from previous revision
+* In Step 1, added the `--no-masking` flag to the `--download-library` command to err on the side of being more conservative in that it will now filter out reads that match to anywhere in the human reference genome (including low-complexity regions). 
+* Also in Step 1, used the default `--minimizer-spaces` setting (7), which has higher sensitivity and virtually identical accuracy than the 6 that was set in prior version (e.g. see Fig. 1E [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1891-0)).
+* In Step 3, changed `total_fragments=$(wc -l sample-1-kraken2-output.txt | cut -f 1 -d " ")` to `total_fragments=$(wc -l sample-1-kraken2-output.txt | sed 's/^ *//' | cut -f 1 -d " ")` for better portability across Unix-like systems.
 
 ---
 
@@ -20,6 +31,7 @@
 - [**2. Filter out human-classified reads**](#2-filter-out-human-classified-reads)
   - [Example if paired-end reads](example-if-paired-end-reads)
   - [Example if single-end reads](example-if-single-end-reads)
+- [**3. Generate a kraken2 summary report**](#3-generate-a-kraken2-summary-report)
 
 ---
 
@@ -131,5 +143,30 @@ gzip sample-1-human-reads-removed.fastq
 * sample-1-kraken2-output.txt (kraken2 read-based output file (one line per read))
 * sample-1-kraken2-report.tsv (kraken2 report output file (one line per taxa, with number of reads assigned to it))
 * sample-1-human-reads-removed.fastq.gz (human-read removed, gzipped reads fastq file)
+
+---
+
+## 3. Generate kraken2 summary report
+Utilizes a Unix-like command-line.
+
+```bash
+total_fragments=$(wc -l sample-1-kraken2-output.txt | sed 's/^ *//' | cut -f 1 -d " ")
+
+fragments_retained=$(grep -w -m 1 "unclassified" sample-1-kraken2-report.tsv | cut -f 2)
+
+perc_removed=$(printf "%.2f\n" $(echo "scale=4; 100 - ${fragments_retained} / ${total_fragments} * 100" | bc -l))
+
+cat <( printf "Sample_ID\tTotal_fragments_before\tTotal_fragments_after\tPercent_human_reads_removed\n" ) \
+    <( printf "Sample-1\t${total_fragments}\t${fragments_retained}\t${perc_removed}\n" ) > Human-read-removal-summary.tsv
+```
+
+**Input data:**
+
+* sample-1-kraken2-output.txt (kraken2 read-based output file (one line per read))
+* sample-1-kraken2-report.tsv (kraken2 report output file (one line per taxa, with number of reads assigned to it))
+
+**Output data:**
+
+* Human-read-removal-summary.tsv (a tab-separated file with 4 columns: "Sample_ID", "Total_fragments_before", "Total_fragments_after", "Percent_human_reads_removed")
 
 ---
