@@ -1,6 +1,6 @@
 ##################################################################################
-## R processing script for 16S data of GLDS-XXX                                 ##
-## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-XXX/                ##
+## R processing script for 16S data of GLDS-279                                 ##
+## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-279/                ##
 ##                                                                              ##
 ## This code as written expects to be run within the Processing_Info/ directory ##
 ## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
@@ -132,12 +132,12 @@ if ( GL_trimmed_primers ) {
 } else {
 
     count_summary_tab <- data.frame(filtered_count_summary_tab,
-                                    dada2_denoised_F=sapply(forward_seqs, getN),
-                                    dada2_denoised_R=sapply(reverse_seqs, getN),
-                                    dada2_merged=rowSums(seqtab),
-                                    dada2_chimera_removed=rowSums(seqtab.nochim),
-                                    final_perc_reads_retained=round(rowSums(seqtab.nochim)/filtered_count_summary_tab$starting_reads * 100, 1),
-                                    row.names=NULL)
+                                dada2_denoised_F=sapply(forward_seqs, getN),
+                                dada2_denoised_R=sapply(reverse_seqs, getN),
+                                dada2_merged=rowSums(seqtab),
+                                dada2_chimera_removed=rowSums(seqtab.nochim),
+                                final_perc_reads_retained=round(rowSums(seqtab.nochim)/filtered_count_summary_tab$starting_reads * 100, 1),
+                                row.names=NULL)
 
 }
 
