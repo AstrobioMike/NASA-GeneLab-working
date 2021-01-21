@@ -15,7 +15,7 @@ conda install -c conda-forge -c bioconda -c defaults snakemake
 
 All files required for utilizing the workflow are in the [workflow-template](workflow-template) directory. Copying the address of that directory and pasting it into [GitZip here](http://kinolien.github.io/gitzip/) will conveniently allow us to download just that directory. We can then modify the variables in the [config.yaml](workflow-template/config.yaml) file as needed, like pointing to the directory where our starting reads are located, and then run the workflow. 
 
-A quick example (though involves downloading the ~4GB reference database) can be run with the files included in the [workflow-template](workflow-template) directory after specifying a location for the reference database in the [config.yaml](workflow-template/config.yaml) files.
+A quick example (though involves downloading the ~4GB reference database) can be run with the files included in the [workflow-template](workflow-template) directory after specifying a location for the reference database in the [config.yaml](workflow-template/config.yaml) file.
 
 **Example command to run workflow**
 ```bash
