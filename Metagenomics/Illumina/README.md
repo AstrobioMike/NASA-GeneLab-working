@@ -1,12 +1,10 @@
 
-# GeneLab bioinformatics processing protocol for Illumina metagenomics data – in review
+# GeneLab bioinformatics processing protocol for Illumina metagenomics data
 
-**Date:** September 26, 2020  
-**Revision:** -  
-**Document Number:** GL-DPPD-XXXX  
+> **The document [`GL-DPPD-7102.md`](GL-DPPD-7102.md) holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets. Exact processing code for specific datasets that have been released is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
-**Submitted by:**  
-Michael D. Lee
+**Developed and maintained by:**  
+Michael D. Lee (Mike.Lee@nasa.gov)
 
 ---
 
@@ -16,88 +14,27 @@ Michael D. Lee
 
 --- 
 
-# Details for reviewing
-* The primary GeneLab protocol document for review, holding main steps/programs and example code, is ['GL-DPPD-XXXX-Illumina-metagenomics.md'](GL-DPPD-XXXX-Illumina-metagenomics.md). Any thoughts/feedback/discussion on that would be greatly appreciated 🙂
+# General Info
+The processing is implemented as a [Snakemake](https://snakemake.readthedocs.io/en/stable/) workflow and utilizes [conda](https://docs.conda.io/en/latest/) environments. If helpful, an introduction to conda with installation help and links to other resources can be found [here at Happy Belly Bioinformatics](https://astrobiomike.github.io/unix/conda-intro).
 
-# Example outputs
-* An example was done with 2 samples from [GLDS-286](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/) to provide samples of what the outputs look like if that's helpful. 
-  * The ['example-output' directory](example-output) in this repo holds the reasonably sized output files, but the larger ones aren't on here due to github limitations (like the read files, fasta files of assemblies, and gene-calls).
+Once we have conda, we can install snakemake like so:
 
-  * The processing is implemented as a Snakemake workflow, the snakefile is [here](example-output/processing_info/Snakefile).
+```bash
+conda install -c conda-forge -c bioconda -c defaults snakemake
+```
 
-  * The `README.txt` in the ['example-output' directory](example-output) describes the output contents and can be found [here](example-output/README.txt), and is also pasted below.
-  
-<br>
-Thanks! 🙂
+To use the workflow, a template is provided in the [workflow-template](workflow-template) directory. Copying the address of that directory and pasting it into [GitZip here](http://kinolien.github.io/gitzip/) will conveniently allow us to download just that directory. We can then modify the variables in the [config.yaml](workflow-template/config.yaml) file as needed, like pointing to the directory where our starting reads are located, and run the workflow. 
 
+**Example command to run workflow**
+```bash
+snakemake --use-conda --conda-prefix ${CONDA_PREFIX}/envs -j 2 -p
+```
+
+* `--use-conda` – this specifies to use the conda environments included in the workflow
+* `--conda-prefix` – this allows us to point to where the needed conda environments should be stored. Including this means if we use the workflow on a different dataset somewhere else in the future, it will re-use the same conda environments rather than make new ones. The value listed here, `${CONDA_PREFIX}/envs`, is the default location for conda environments (the variable `${CONDA_PREFIX}` will be expanded to the appropriate location on whichever system it is run on).
+* `-j` – this lets us set how many jobs Snakemake should run concurrently (keep in mind that many of the thread and cpu parameters set in the config.yaml file will be multiplied by this)
+* `-p` – specifies to print out each command being run to the screen
+
+See `snakemake -h` for more options and details.
 
 ---
-
-Contents of ['example-output' directory](example-output):
-
-```
-##################################################################################
-## This directory holds processed data for NASA GLDS-286 (example)              ##
-## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-286/                ##
-##                                                                              ##
-## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
-## Based on GL-DPPD-XXXX for Illumina metagenomics data                         ##
-## Annotated code is in "processing_info/"                                      ##
-##################################################################################
-
-Summary of contents:
-
-    - README.txt                                             - this file
-
-    - processing_info                                        - processing code and files
-        - unique-sample-IDs.txt                              - single-column file of unique sample identifiers
-        - Snakefile                                          - Snakemake workflow file
-        - snakemake-run.log                                  - Snakemake log file
-        - environment.yml                                    - conda environment file
-        - envs/                                              - individual conda envs per rule
-
-    - Raw_Data/                                              - initial fastq files
-
-    - FastQC_Outputs/                                        - multiQC summary reports of FastQC runs
-
-    - Filtered_Sequence_Data/                                - quality-filtered sequence fastq files
-        - *.fastq.gz                                         - quality-filtered reads
-        - *.log                                              - log file of stdout/stderr from bbduk
-
-    - Assembly-based_processing/                             - results generated from an assembly-based approach
-
-        - Assemblies/                                        - per-sample assembly files and info
-            - *-assembly.fasta                               - fasta files of individual sample assemblies
-            - *.log                                          - log files of assembly runs
-            - assembly-summaries.tsv                         - table of all assemblies' summary statistics
-
-        - Predicted_Genes/                                   - per-sample predicted gene files
-            - *.faa                                          - gene amino-acid sequences
-            - *.fasta                                        - gene nucleotide sequences
-            - *.gff                                          - predicted genes in general feature format
-
-        - Annotations_and_Taxonomy/                          - per-sample Kegg Orthology (KO) annotations, taxonomy, and coverages
-            - *-gene-coverage-annotation-tax.tsv             - tables with gene coverage, annotation, and taxonomy info
-            - *-contig-coverage-and-tax.tsv                  - tables with contig coverage and taxonomy info
-
-        - Mapping_Files/                                     - per-sample bam and coverage files
-            - *.bam                                          - bam files
-            - *.log                                          - mapping log files
-
-        - Combined_Outputs/                                  - summary outputs with all samples combined
-            - GLDS-286-KO-function-coverages.tsv             - table of combined, normalized KO coverages
-            - GLDS-286-taxonomy-coverages.tsv                - table of combined, normalized gene-level taxonomy coverages
-
-    - Read-based_processing/                                 - results generated from a read-based approach
-
-        - GLDS-286-gene-families.tsv                         - gene-family abundances
-        - GLDS-286-gene-families-grouped-by-taxa.tsv         - gene-family abundances grouped by taxa
-        - GLDS-286-gene-families-cpm.tsv                     - gene-family abundances normalized to copies-per-million
-        - GLDS-286-gene-families-KO-cpm.tsv                  - KO term abundances normalized to copies-per-million
-        - GLDS-286-pathway-abundances.tsv                    - pathway abundances
-        - GLDS-286-pathway-abundances-grouped-by-taxa.tsv    - pathway abundances grouped by taxa
-        - GLDS-286-pathway-abundances-cpm.tsv                - pathway abundances normalized to copies-per-million
-        - GLDS-286-pathway-coverages.tsv                     - pathway coverages
-        - GLDS-286-pathway-coverages-grouped-by-taxa.tsv     - pathway coverages grouped by taxa
-        - GLDS-286-metaphlan-taxonomy.tsv                    - metaphlan estimated taxonomic relative abundances
-```
