@@ -115,7 +115,7 @@ rule setup_kraken2_db:
     output:
         kraken2_db_trigger = config["REF_DB_ROOT_DIR"] + config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
     params:
-        ref_db_root_dir = config["REF_DB_ROOT_DIR"]
+        ref_db_root_dir = config["REF_DB_ROOT_DIR"],
         kraken2_db_dir = config["kraken2_db_dir"]
     shell:
         """
