@@ -23,7 +23,7 @@ Once we have conda, we can install snakemake like so:
 conda install -c conda-forge -c bioconda -c defaults snakemake
 ```
 
-All files required for utilizing the workflow are in the [workflow-template](workflow-template) directory. Copying the address of that directory and pasting it into [GitZip here](http://kinolien.github.io/gitzip/) will conveniently allow us to download just that directory. We can then modify the variables in the [config.yaml](workflow-template/config.yaml) file as needed, like pointing to the directory where our starting reads are located, and run the workflow. 
+All files required for utilizing the workflow are in the [workflow-template](workflow-template) directory. Copying the address of that directory and pasting it into [GitZip here](http://kinolien.github.io/gitzip/) will conveniently allow us to download just that directory. We can then modify the variables in the [config.yaml](workflow-template/config.yaml) file as needed, like pointing to the directory where our starting reads are located, and then run the workflow. 
 
 **Example command to run workflow**
 ```bash
