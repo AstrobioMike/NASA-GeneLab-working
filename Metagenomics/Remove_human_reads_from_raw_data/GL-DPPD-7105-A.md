@@ -5,8 +5,8 @@
 ---
 
 **Date:**  
-**Revision:**  A
-**Document Number:** GL-DPPD-7105  
+**Revision:** A  
+**Document Number:** GL-DPPD-7105-A  
 
 # Updates from previous version
 * 
