@@ -52,7 +52,7 @@ Anushree Sonic (Genelab Configuration Manager)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
->**\*** Exact versions are available along with the [processing code](glds_processing_scripts) for each specific dataset.
+> \* Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
 
@@ -481,3 +481,4 @@ write_biom(biom_object, "Taxonomy_and_counts.biom")
 * biom (count and taxonomy table in biom format)
 * read_count_tracking.tsv (read counts at each processing step)
 
+---
