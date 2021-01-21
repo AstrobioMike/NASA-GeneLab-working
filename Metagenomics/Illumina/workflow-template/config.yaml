@@ -71,11 +71,6 @@ trimmed_R1_suffix:
 trimmed_R2_suffix:
     "_R2_trimmed.fq.gz"
 
-trimmed_R1_fastqc_suffix:
-    "_R1_trimmed_fastqc.zip"
-trimmed_R2_fastqc_suffix:
-    "_R2_trimmed_fastqc.zip"
-
 ## output directories (all relative to processing directory, will be created)
 fastqc_out_dir:
     "../FastQC_Outputs/"
