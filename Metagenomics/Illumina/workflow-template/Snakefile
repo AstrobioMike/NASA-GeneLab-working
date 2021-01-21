@@ -55,7 +55,7 @@ rule all:
         config["bins_dir"] + "bins-overview.tsv",
         config["assemblies_dir"] + "assembly-summaries.tsv",
         config["fastqc_out_dir"] + "raw_multiqc_data.zip",
-        config["fastqc_out_dir"] + "filtered_multiqc_data.zip"
+        config["fastqc_out_dir"] + "filtered_multiqc_data.zip",
         config["read_based_dir"] + "Gene-families-cpm.tsv",
         config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
         config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
@@ -203,7 +203,7 @@ rule run_gtdbtk_on_MAGs:
 rule filtering_checkm_results_and_copying_MAGs:
     """ 
     Filters checkm results based on est. completion, redundancy, and strain heterogeneity set in 'config.yaml'
-    Defaults are conservatively 90, 10, and 0
+    Defaults are conservatively 90, 10, and 50
     """
 
     input:
