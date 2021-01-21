@@ -15,15 +15,15 @@
 sample_info_file:
     "unique-sample-names.txt"
 
-## raw reads directory (can be relative to workflow directory, or needs to be full path)
-raw_reads_dir:
+## input reads directory (can be relative to workflow directory, or needs to be full path)
+input_reads_dir:
     "example-reads/"
 
 ## raw read suffixes (region following the unique part of the sample names)
   # e.g. for "Sample-1_R1_raw.fastq.gz" would be "_R1_raw.fastq.gz"
-raw_R1_suffix:
+input_R1_suffix:
     "_R1.fastq.gz"
-raw_R2_suffix:
+input_R2_suffix:
     "_R2.fastq.gz"
 
 ## root directory of kraken2 reference databases (or where it will be downloaded if it doesn't exist yet)
