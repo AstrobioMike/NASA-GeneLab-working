@@ -59,8 +59,8 @@ rule run_kraken2:
     conda:
         "envs/kraken2.yaml"
     input:
-        R1 = config["input_reads_dir"] + "{ID}" + config["R1_suffix"],
-        R2 = config["input_reads_dir"] + "{ID}" + config["R2_suffix"],
+        R1 = config["input_reads_dir"] + "{ID}" + config["input_R1_suffix"],
+        R2 = config["input_reads_dir"] + "{ID}" + config["input_R2_suffix"],
         kraken2_db_trigger = config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
     output:
         main = config["output_reads_dir"] + "{ID}-kraken2-output.txt",
