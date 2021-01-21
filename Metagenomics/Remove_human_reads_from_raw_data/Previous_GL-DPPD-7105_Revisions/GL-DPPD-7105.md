@@ -4,9 +4,18 @@
 
 ---
 
-**Date:**  
+**Date:**  May 29, 2020
 **Revision:** -  
 **Document Number:** GL-DPPD-7105  
+
+**Submitted by:**  
+Amanda Saravia-Butler (GeneLab Data Processing Team)
+
+**Approved by:**  
+Sylvain Costes (GeneLab Project Manager)
+Samrawit Gebre (GeneLab Deputy Project Manager)
+Homer Fogle (GeneLab Data Processing Representative)
+Jonathan Galazka (GeneLab Project Scientist)
 
 ---
 
