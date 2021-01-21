@@ -107,7 +107,7 @@ logs_dir:
 ################# REFERENCE DATABASES #################
 #######################################################
 # The below variables probably shouldn't be changed unless we really want to for some reason.
-# The workflow will check the locations pointed to below and install the databases
+# The workflow will check the location pointed to above for the below databases, and install them
 # if they are not already there. It looks for the below "TRIGGER" filenames (they 
 # all end with "*_DB_SETUP") in the directory for each database, which it creates when
 # it sets them up initially. If we want to point to DBs that already exist on our setup,
