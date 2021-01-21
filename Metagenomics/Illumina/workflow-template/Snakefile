@@ -4,7 +4,6 @@
 ############################################################################################
 
 import os
-# import pandas as pd # here for when I re-implement co-assembly avenue
 
 configfile: "config.yaml"
 
