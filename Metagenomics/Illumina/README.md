@@ -37,7 +37,7 @@ snakemake --use-conda --conda-prefix ${CONDA_PREFIX}/envs -j 2 -p
 
 See `snakemake -h` for more options and details.
 
-**Note on reference databases**
+**Note on reference databases**  
 Many reference databases are relied upon throughout the workflow. They will be installed and setup automatically the first time the workflow is run. All together, after installed and unpacked, they will take up about 240 GB of storage. But they may require up to 500GB during installation and initial un-packing.
 
 ---
