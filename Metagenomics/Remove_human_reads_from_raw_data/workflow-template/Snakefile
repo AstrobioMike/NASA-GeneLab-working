@@ -91,7 +91,7 @@ rule run_kraken2:
         mv {params.R2_tmp_out_compressed} {output.R2}
 
         # making summary info
-        total_fragments=$(wc -l {output.main} | cut -f 1 -d " ")
+        total_fragments=$(wc -l {output.main} | sed 's/^ *//' | cut -f 1 -d " ")
         fragments_retained=$(grep -w -m 1 "unclassified" {output.report} | cut -f 2)
         perc_removed=$(printf "%.2f\n" $(echo "scale=4; 100 - ${{fragments_retained}} / ${{total_fragments}} * 100" | bc -l))
 
@@ -123,14 +123,18 @@ rule setup_kraken2_db:
 
         mkdir -p {params.ref_db_root_dir}
         cd {params.ref_db_root_dir}
-        cd ../
         rm -rf {params.kraken2_db_dir}
 
         curl -L -o kraken2-human-db.tar.gz https://ndownloader.figshare.com/files/25627058
         tar -xzvf kraken2-human-db.tar.gz
         rm kraken2-human-db.tar.gz
 
-        mv kraken2-human-db {params.kraken2_db_dir}
+        # dealing with the fact that the download directory comes in with the default name, but the user might have changed it
+        if [ {params.kraken2_db_dir} != "kraken2-human-db" ]; then
+            mkdir -p {params.kraken2_db_dir}
+            mv kraken2-human-db/* {params.kraken2_db_dir}
+            rmdir -r kraken2-human-db
+        fi
 
         cd ${{starting_dir}}
 
