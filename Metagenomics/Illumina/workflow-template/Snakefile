@@ -56,10 +56,10 @@ rule all:
         config["bins_dir"] + "bins-overview.tsv",
         config["assemblies_dir"] + "assembly-summaries.tsv",
         config["fastqc_out_dir"] + "raw_multiqc_data.zip",
-        config["fastqc_out_dir"] + "filtered_multiqc_data.zip",
-#        config["read_based_dir"] + "Gene-families-cpm.tsv",
-#        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
-#        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
+        config["fastqc_out_dir"] + "filtered_multiqc_data.zip"
+        config["read_based_dir"] + "Gene-families-cpm.tsv",
+        config["read_based_dir"] + "Gene-families-KO-cpm.tsv",
+        config["read_based_dir"] + "Metaphlan-taxonomy.tsv"
 
     shell:
         """
@@ -912,8 +912,8 @@ rule raw_multiqc:
     conda:
         "envs/qc.yaml"
     input:
-        expand(config["raw_reads_dir"] + "{ID}" + config["raw_R1_fastqc_suffix"], ID = sample_ID_list),
-        expand(config["raw_reads_dir"] + "{ID}" + config["raw_R2_fastqc_suffix"], ID = sample_ID_list)
+        expand(config["raw_reads_dir"] + "{ID}" + config["raw_R1_suffix"].rsplit(".", 2)[0] + "_fastqc.zip", ID = sample_ID_list),
+        expand(config["raw_reads_dir"] + "{ID}" + config["raw_R2_suffix"].rsplit(".", 2)[0] + "_fastqc.zip", ID = sample_ID_list)
     params:
         raw_reads_dir = config["raw_reads_dir"],
         fastqc_out_dir = config["fastqc_out_dir"]
@@ -939,8 +939,8 @@ rule raw_fastqc:
         config["raw_reads_dir"] + "{ID}" + config["raw_R1_suffix"],
         config["raw_reads_dir"] + "{ID}" + config["raw_R2_suffix"]
     output:
-        config["raw_reads_dir"] + "{ID}" + config["raw_R1_fastqc_suffix"],
-        config["raw_reads_dir"] + "{ID}" + config["raw_R2_fastqc_suffix"]
+        config["raw_reads_dir"] + "{ID}" + config["raw_R1_suffix"].rsplit(".", 2)[0] + "_fastqc.zip",
+        config["raw_reads_dir"] + "{ID}" + config["raw_R2_suffix"].rsplit(".", 2)[0] + "_fastqc.zip"
     shell:
         """
         fastqc {input} -t 2 -q
