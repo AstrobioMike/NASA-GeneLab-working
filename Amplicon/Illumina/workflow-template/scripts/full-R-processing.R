@@ -1,12 +1,9 @@
 ##################################################################################
-## R processing script for 16S data of GLDS-279                                 ##
-## https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-279/                ##
-##                                                                              ##
-## This code as written expects to be run within the Processing_Info/ directory ##
-## Processed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
+## R processing script for Illumina amplicon data                               ##
+## Developed by Michael D. Lee (Mike.Lee@nasa.gov)                              ##
 ##################################################################################
 
-# as called from the associated Snakefile, this expects to be run as: Rscript full-R-processing.R <left_trunc> <right_trunc> <left_maxEE> <right_maxEE> <TRUE/FALSE - GL trimmed primers or not> <unique-sample-IDs-file> <starting_reads_dir_for_R> <filtered_reads_dir> <input_file_R1_suffix> <input_file_R2_suffix> <filtered_filename_R1_suffix> <filtered_filename_R2_suffix> <final_outputs_directory> <filename_prefix>
+# as called from the associated Snakefile, this expects to be run as: Rscript full-R-processing.R <left_trunc> <right_trunc> <left_maxEE> <right_maxEE> <TRUE/FALSE - GL trimmed primers or not> <unique-sample-IDs-file> <starting_reads_dir_for_R> <filtered_reads_dir> <input_file_R1_suffix> <input_file_R2_suffix> <filtered_filename_R1_suffix> <filtered_filename_R2_suffix> <final_outputs_directory>
     # where <left_trim> and <right_trim> are the values to be passed to the truncLen parameter of dada2's filterAndTrim()
     # and <left_maxEE> and <right_maxEE> are the values to be passed to the maxEE parameter of dada2's filterAndTrim()
 
@@ -30,12 +27,6 @@ if (length(args) < 13) {
     suppressWarnings(filtered_filename_R1_suffix <- args[11])
     suppressWarnings(filtered_filename_R2_suffix <- args[12])
     suppressWarnings(final_outputs_dir <- args[13])
-
-    if ( ! is.na(args[14])) {
-        suppressWarnings(filename_prefix <- args[14])
-    } else {
-        filename_prefix <- ""
-    }
 
 }
 
@@ -63,12 +54,12 @@ library(biomformat); packageVersion("biomformat") # 1.12.0
 sample.names <- scan(sample_IDs_file, what="character")
 
     # setting variables holding the paths to the forward and reverse primer-trimmed reads (or "raw" if primers were trimmed prior to submission to GeneLab)
-forward_reads <- paste0(input_reads_dir, filename_prefix, sample.names, input_file_R1_suffix)
-reverse_reads <- paste0(input_reads_dir, filename_prefix, sample.names, input_file_R2_suffix)
+forward_reads <- paste0(input_reads_dir, sample.names, input_file_R1_suffix)
+reverse_reads <- paste0(input_reads_dir, sample.names, input_file_R2_suffix)
 
     # setting variables holding what will be the output paths of all forward and reverse filtered reads
-forward_filtered_reads <- paste0(filtered_reads_dir, filename_prefix, sample.names, filtered_filename_R1_suffix)
-reverse_filtered_reads <- paste0(filtered_reads_dir, filename_prefix, sample.names, filtered_filename_R2_suffix)
+forward_filtered_reads <- paste0(filtered_reads_dir, sample.names, filtered_filename_R1_suffix)
+reverse_filtered_reads <- paste0(filtered_reads_dir, sample.names, filtered_filename_R2_suffix)
 
     # adding sample names to the vectors holding the filtered-reads' paths
 names(forward_filtered_reads) <- sample.names
@@ -148,6 +139,7 @@ write.table(count_summary_tab, paste0(final_outputs_dir, "read-count-tracking.ts
 dna <- DNAStringSet(getSequences(seqtab.nochim))
 
     # downloading reference R taxonomy object (at some point this will be stored somewhere on GeneLab's server and we won't download it, but should leave the code here, just commented out)
+cat("\n\n  Downloading reference database...\n\n")
 download.file("http://www2.decipher.codes/Classification/TrainingSets/SILVA_SSU_r138_2019.RData", "SILVA_SSU_r138_2019.RData")
     # loading reference taxonomy object
 load("SILVA_SSU_r138_2019.RData")
@@ -155,6 +147,7 @@ load("SILVA_SSU_r138_2019.RData")
 file.remove("SILVA_SSU_r138_2019.RData")
 
     # classifying
+cat("\n\n  Assigning taxonomy...\n\n")
 tax_info <- IdTaxa(dna, trainingSet, strand="both", processors=NULL)
 
     ### generating and writing out standard outputs ###
@@ -166,6 +159,7 @@ for (i in 1:dim(seqtab.nochim)[2]) {
     asv_headers[i] <- paste(">ASV", i, sep="_")
 }
 
+cat("\n\n  Making and writing outputs...\n\n")
     # making and writing out a fasta of our final ASV seqs:
 asv_fasta <- c(rbind(asv_headers, asv_seqs))
 write(asv_fasta, paste0(final_outputs_dir, "ASVs.fasta"))
@@ -203,3 +197,6 @@ write_biom(biom_object, paste0(final_outputs_dir, "taxonomy-and-counts.biom"))
     # making a tsv of combined tax and counts
 tax_and_count_tab <- merge(tax_tab, asv_tab)
 write.table(tax_and_count_tab, paste0(final_outputs_dir, "taxonomy-and-counts.tsv"), sep="\t", quote=FALSE, row.names=FALSE)
+
+cat("\n\n  Session info:\n\n")
+sessionInfo()

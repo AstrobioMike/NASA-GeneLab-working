@@ -4,14 +4,12 @@
 
 ---
 
-**Date:** October 30, 2020  
+**Date:** January 13, 2021  
 **Revision:** -  
-**Document Number:** GL-DPPD-XXXX  
+**Document Number:** GL-DPPD-7106  
 
-**Submitted by:**  
-Michael D. Lee (GeneLab Analysis Team)
-
-**Approved by:**  
+**Develeped by:**  
+Michael D. Lee (Mike.Lee@nasa.gov) 
 
 ---
 
@@ -49,7 +47,7 @@ Michael D. Lee (GeneLab Analysis Team)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
->**\*** Exact versions are available along with the [processing code](GLDS_Processing_Scripts) for each specific dataset.
+>**\*** Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
 
 # Reference databases used
 
@@ -489,4 +487,4 @@ write.table(tax_and_count_tab, "taxonomy-and-counts.tsv", sep="\t", quote=FALSE,
 * taxonomy-and-counts.biom (biom formatted file with taxonomy of representative sequences and counts per sample)
 
 ---
----
+

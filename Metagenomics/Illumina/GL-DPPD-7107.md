@@ -57,13 +57,14 @@ Michael D. Lee (Mike.Lee@nasa.gov)
 |gtdbtk|`gtdbtk -v`|[https://github.com/Ecogenomics/GTDBTk](https://github.com/Ecogenomics/GTDBTk)|
 |HUMAnN3|`humann --version`|[https://huttenhower.sph.harvard.edu/humann3/](https://huttenhower.sph.harvard.edu/humann3/)|
 |MetaPhlAn3|`metaphlan --version`|[https://github.com/biobakery/MetaPhlAn/tree/3.0](https://github.com/biobakery/MetaPhlAn/tree/3.0)|
-|Snakemake|`snakemake -v`|[https://snakemake.readthedocs.io/en/stable/](https://snakemake.readthedocs.io/en/stable/)|
 
 >**\*** Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
 
 # General processing overview with example code
+
+> Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ## Pre-processing
 ### 1. Raw Data QC
@@ -1009,6 +1010,5 @@ merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.
 * pathway-coverages.tsv (pathway coverages)
 * pathway-coverages-grouped-by-taxa.tsv (pathway coverages grouped by taxa)
 * metaphlan-taxonomy.tsv (metaphlan estimated taxonomic relative abundances)
-
 
 ---
