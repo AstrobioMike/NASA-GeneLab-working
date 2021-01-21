@@ -61,7 +61,7 @@ rule run_kraken2:
     input:
         R1 = config["input_reads_dir"] + "{ID}" + config["input_R1_suffix"],
         R2 = config["input_reads_dir"] + "{ID}" + config["input_R2_suffix"],
-        kraken2_db_trigger = config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
+        kraken2_db_trigger = config["REF_DB_ROOT_DIR"] + config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
     output:
         main = config["output_reads_dir"] + "{ID}-kraken2-output.txt",
         report = config["output_reads_dir"] + "{ID}-kraken2-report.tsv",
@@ -74,7 +74,7 @@ rule run_kraken2:
         R2_tmp_out = config["output_reads_dir"] + "{ID}_R_2.fastq",
         R1_tmp_out_compressed = config["output_reads_dir"] + "{ID}_R_1.fastq.gz",
         R2_tmp_out_compressed = config["output_reads_dir"] + "{ID}_R_2.fastq.gz",
-        kraken2_db_dir = config["kraken2_db_dir"],
+        kraken2_db_dir = config["REF_DB_ROOT_DIR"] + config["kraken2_db_dir"],
         num_threads = config["num_threads"]
     log:
         config["output_reads_dir"] + "{ID}-kraken2-run.log"
@@ -113,22 +113,25 @@ rule combine_summary_info:
 
 rule setup_kraken2_db:
     output:
-        kraken2_db_trigger = config["kraken2_db_dir"] + config["KRAKEN2_TRIGGER_FILE"]
+        kraken2_db_trigger = config["REF_DB_ROOT_DIR"] + config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
     params:
+        ref_db_root_dir = config["REF_DB_ROOT_DIR"]
         kraken2_db_dir = config["kraken2_db_dir"]
     shell:
         """
         starting_dir=$(pwd)
 
-        mkdir -p {params.kraken2_db_dir}
-        cd {params.kraken2_db_dir}
+        mkdir -p {params.ref_db_root_dir}
+        cd {params.ref_db_root_dir}
         cd ../
-        rm -rf kraken2-human-db
+        rm -rf {params.kraken2_db_dir}
 
         curl -L -o kraken2-human-db.tar.gz https://ndownloader.figshare.com/files/25627058
         tar -xzvf kraken2-human-db.tar.gz
         rm kraken2-human-db.tar.gz
-        
+
+        mv kraken2-human-db {params.kraken2_db_dir}
+
         cd ${{starting_dir}}
 
         touch {output}
