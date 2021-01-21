@@ -113,7 +113,7 @@ rule combine_summary_info:
 
 rule setup_kraken2_db:
     output:
-        kraken2_db_trigger = config["kraken2_db_dir"] + "/" + config["KRAKEN2_TRIGGER_FILE"]
+        kraken2_db_trigger = config["kraken2_db_dir"] + config["KRAKEN2_TRIGGER_FILE"]
     params:
         kraken2_db_dir = config["kraken2_db_dir"]
     shell:
