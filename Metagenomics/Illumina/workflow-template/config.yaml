@@ -97,22 +97,22 @@ logs_dir:
 #############################
 #### REFERENCE DATABASES ####
 #############################
-### Note on reference databases ###
+### Note on reference databases (the below variables probably shouldn't be changed unless you really want to) ###
 # The workflow will check the locations pointed to below and install the databases
-# if they are not already there. It looks for the below filenames in the directory
-# for each database, which it creates when it sets them up initially. If we want to
-# point to DBs that already exist on our setup, rather than setting up new ones, we
+# if they are not already there. It looks for the below filenames ("*_DB_SETUP") in the
+# directory for each database, which it creates when it sets them up initially. If we want
+# to point to DBs that already exist on our setup, rather than setting up new ones, we
 # need to add these files to their respective directories. They should be empty, the
 # workflow just checks the file is there, to know it doesn't need to setup the DB.
 #
-# All together, after installed and unpacked, these will take up about 210 GB. But may 
+# All together, after installed and unpacked, these will take up about 240 GB. But may 
 # require up to 500 GB during installation and initial un-packing. 
 
 ## root directory of databases (or where they will be downloaded if they don't exist yet)
-    # the root should be the full path or relative path, the ~/ home shortcut is not expanded
-    # by snakemake's evaluation of files, so don't use that
+    # the root should be the full path or relative path (the ~/ home shortcut is not expanded
+    # by snakemake's evaluation of files, so don't use that)
 REF_DB_ROOT_DIR:
-    "/home/mdlee4/ref-dbs/"
+    "/path/to/ref-dbs/"
 
 ## specific database locations
 KOFAMSCAN_DIR:
