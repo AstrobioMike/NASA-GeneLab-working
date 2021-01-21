@@ -1,17 +1,15 @@
 # Bioinformatics pipeline for Illumina metagenomics data
 
-> **This page holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets.**
+> **This document holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets.**
 
 ---
 
-**Date:** September 26, 2020  
+**Date:** January 13, 2021  
 **Revision:** -  
-**Document Number:** GL-DPPD-XXXX  
+**Document Number:** GL-DPPD-7107  
 
-**Submitted by:**  
-Michael D. Lee  
-
-**In review**
+**Develeped by:  
+Michael D. Lee (Mike.Lee@nasa.gov) 
 
 ---
 
@@ -34,7 +32,7 @@ Michael D. Lee
     - [11. Combining gene-level coverage, taxonomy, and functional annotations into one table for each sample](#11-combining-gene-level-coverage-taxonomy-and-functional-annotations-into-one-table-for-each-sample)
     - [12. Combining contig-level coverage and taxonomy into one table for each sample](#12-combining-contig-level-coverage-and-taxonomy-into-one-table-for-each-sample)
     - [13. Generating normalized, gene-level-coverage summary tables of KO-annotations and taxonomy across samples](#13-generating-normalized-gene-level-coverage-summary-tables-of-ko-annotations-and-taxonomy-across-samples)
-    - [14. **M**etagenome-**A**ssembled **G**enome (MAG) recovery](#14-metagenome-assembled-genome-MAG-recovery)
+    - [14. **M**etagenome-**A**ssembled **G**enome (MAG) recovery](#14-metagenome-assembled-genome-mag-recovery)
   - [**Read-based processing**](#read-based-processing)
     - [15. Taxonomic and functional profiling](#15-taxonomic-and-functional-profiling)
 
@@ -61,15 +59,11 @@ Michael D. Lee
 |MetaPhlAn3|`metaphlan --version`|[https://github.com/biobakery/MetaPhlAn/tree/3.0](https://github.com/biobakery/MetaPhlAn/tree/3.0)|
 |Snakemake|`snakemake -v`|[https://snakemake.readthedocs.io/en/stable/](https://snakemake.readthedocs.io/en/stable/)|
 
->**\*** Exact versions are available along with the processing code for each specific dataset (this is depicted here like this due to how the system may need to be updated regularly).
+>**\*** Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
 
 # General processing overview with example code
-
-> Exact processing code for the review example dataset is in the [Snakefile here](example-output/processing_info/Snakefile).  
-
----
 
 ## Pre-processing
 ### 1. Raw Data QC
@@ -1016,7 +1010,5 @@ merge_metaphlan_tables.py *-humann3-out-dir/*_humann_temp/*_metaphlan_bugs_list.
 * pathway-coverages-grouped-by-taxa.tsv (pathway coverages grouped by taxa)
 * metaphlan-taxonomy.tsv (metaphlan estimated taxonomic relative abundances)
 
-
-<br>
 
 ---
