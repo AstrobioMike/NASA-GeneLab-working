@@ -9,7 +9,7 @@ Michael D. Lee (Mike.Lee@nasa.gov)
 ---
 
 <p align="center">
-<a href="https://github.com/AstrobioMike/mock-temp/blob/master/Metagenomics/images/GL-Illumina-metagenomics-overview.pdf"><img src="https://github.com/AstrobioMike/mock-temp/blob/master/Metagenomics/images/GL-Illumina-metagenomics-overview.png"></a>
+<a href="../images/GL-Illumina-metagenomics-overview.pdf"><img src="https://github.com/AstrobioMike/NASA-GeneLab-working/blob/master/Metagenomics/images/GL-Illumina-metagenomics-overview.png"></a>
 </p>
 
 --- 
