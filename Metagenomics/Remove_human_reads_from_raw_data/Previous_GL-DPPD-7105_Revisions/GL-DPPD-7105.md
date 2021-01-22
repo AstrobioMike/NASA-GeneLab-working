@@ -135,7 +135,7 @@ kraken2 --db kraken2-human-db --gzip-compressed --threads 4 --use-names \
 
 ---
 
-## 3. Generate kraken2 summary report
+## 3. Generate a kraken2 summary report
 Utilizes a Unix-like command-line.
 
 ```bash
