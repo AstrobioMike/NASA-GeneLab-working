@@ -4,17 +4,17 @@
 
 ---
 
-**Date:**  January, 13, 2021
+**Date:**  January, 13, 2021  
 **Revision:** A  
 **Document Number:** GL-DPPD-7105-A  
 
 **Submitted by:**  
-Michael D. Lee (GeneLab Science Team)
+Michael D. Lee (GeneLab Science Team)  
 
 **Approved by:**  
 Sylvain Costes (GeneLab Project Manager)  
 Samrawit Gebre (GeneLab Deputy Project Manager and Interim GeneLab Configuration Manager)  
-Amanda Saravia-Butler (GeneLab Data Processing Team)  
+Amanda Saravia-Butler (GeneLab Data Processing Lead)  
 Jonathan Galazka (GeneLab Project Scientist)  
 
 # Updates from previous revision
@@ -146,7 +146,7 @@ gzip sample-1-human-reads-removed.fastq
 
 ---
 
-## 3. Generate kraken2 summary report
+## 3. Generate a kraken2 summary report
 Utilizes a Unix-like command-line.
 
 ```bash
