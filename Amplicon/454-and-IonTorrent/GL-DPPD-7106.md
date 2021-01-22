@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for 454 and IonTorrent amplicon sequencing data  
 
-> **This page holds an overview and some example code of how GeneLab processes 454 and IonTorrent amplicon datasets. Exact processing code for specific datasets that have been released is available in this repository [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and some example commands of how GeneLab processes 454 and IonTorrent amplicon datasets. Exact processing commands for specific datasets that have been released is available in this repository [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
@@ -23,7 +23,7 @@ Jonathan Galazka (GeneLab Project Scientist)
 
 - [**Software used**](#software-used)
 - [**Reference databases used**](#reference-databases-used)
-- [**General processing overview with example code**](#general-processing-overview-with-example-code)
+- [**General processing overview with example commands**](#general-processing-overview-with-example-commands)
   - [**1. Raw Data QC**](#1-raw-data-qc)
     - [1a. Compile Raw Data QC](#1a-compile-raw-data-qc)
   - [**2. Trim Primers**](#2-trim-primers)
@@ -53,7 +53,7 @@ Jonathan Galazka (GeneLab Project Scientist)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
->**\*** Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
+>**\*** Exact versions utilized for a given dataset are available along with the processing commands for each specific dataset (this is due to how the system may need to be updated regularly).
 
 # Reference databases used
 
@@ -64,9 +64,9 @@ Jonathan Galazka (GeneLab Project Scientist)
 
 ---
 
-# General processing overview with example code
+# General processing overview with example commands
 
-> Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> Exact processing commands for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ---
 
@@ -122,7 +122,7 @@ multiqc -o raw_multiqc_output -n raw_multiqc -z raw_fastqc_output/
 
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
-The following example code shows how it was done for [GLDS-72](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-72/), which was 454 sequencing of the 16S gene using these primers:  
+The following example command shows how it was done for [GLDS-72](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-72/), which was 454 sequencing of the 16S gene using these primers:  
 * forward: 5’-AGAGTTTGATCCTGGCTCAG-3’  
 * reverse: 5’- GCTGCCTCCCGTAGGAGT-3’  
 
