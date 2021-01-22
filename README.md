@@ -1,4 +1,4 @@
-<img src="NASA_GeneLab_logo-2019.png" align="left" alt=""/>
+<img src="images/NASA_GeneLab_logo-2019.png" align="left" alt=""/>
 
 ## About
 The [NASA GeneLab](https://genelab.nasa.gov/) Data Processing Team and [Analysis Working Group](https://genelab.nasa.gov/awg/charter) members have created standard pipelines for processing omics data from spaceflight and space-relevant experiments. This repository contains the processing pipelines that have been standardized to date for the assay types indicated below. Each sub-directory in this repository holds current and previous pipeline versions for the respective assay type, including detailed descriptions and processing instructions as well as the exact processing commands used to generate processed data for datasets hosted in the [GeneLab Data Repository](https://genelab-data.ndc.nasa.gov/genelab/projects).
