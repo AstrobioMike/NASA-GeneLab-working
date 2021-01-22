@@ -17,7 +17,7 @@ Samrawit Gebre (GeneLab Deputy Project Manager and Interim GeneLab Configuration
 Amanda Saravia-Butler (GeneLab Data Processing Lead)  
 Jonathan Galazka (GeneLab Project Scientist)  
 
-# Updates from previous revision
+## Updates from previous revision
 * In [Step 1](#1-build-kraken2-database), added the `--no-masking` flag to the `--download-library` command to err on the side of being more conservative in that it will now filter out reads that match to anywhere in the human reference genome (including low-complexity regions). 
 * Also in [Step 1](#1-build-kraken2-database), used the default `--minimizer-spaces` setting (7), which has higher sensitivity and virtually identical accuracy than the 6 that was set in prior version (e.g. see Fig. 1E [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1891-0)).
 * In [Step 3](#3-generate-a-kraken2-summary-report), changed `total_fragments=$(wc -l sample-1-kraken2-output.txt | cut -f 1 -d " ")` to `total_fragments=$(wc -l sample-1-kraken2-output.txt | sed 's/^ *//' | cut -f 1 -d " ")` for better portability across Unix-like systems.
