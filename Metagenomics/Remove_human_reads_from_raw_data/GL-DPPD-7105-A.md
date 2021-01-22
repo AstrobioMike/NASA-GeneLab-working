@@ -1,6 +1,6 @@
 # GeneLab removal of human reads from metagenomics datasets
 
-> **It is NASA's policy that any human reads are to be removed from metagenomics datasets prior to being hosted in [GeneLab's data repository](https://genelab-data.ndc.nasa.gov/genelab/projects). As such, all metagenomics datasets are screened against a human reference-genome [kraken2](https://github.com/DerrickWood/kraken2/wiki) database. This document holds an overview and some example code of how GeneLab does performs this.**
+> **It is NASA's policy that any human reads are to be removed from metagenomics datasets prior to being hosted in [GeneLab's data repository](https://genelab-data.ndc.nasa.gov/genelab/projects). As such, all metagenomics datasets are screened against a human reference-genome [kraken2](https://github.com/DerrickWood/kraken2/wiki) database. This document holds an overview and some example commands of how GeneLab does performs this.**
 
 ---
 
@@ -27,7 +27,7 @@ Jonathan Galazka (GeneLab Project Scientist)
 # Table of contents
 
 - [**Software used**](#software-used)
-- [**General processing overview with example code**](#general-processing-overview-with-example-code)
+- [**General processing overview with example commands**](#general-processing-overview-with-example-commands)
   - [**1. Build kraken2 database**](#1-build-kraken2-database)
   - [**2. Filter out human-classified reads**](#2-filter-out-human-classified-reads)
     - [Example if paired-end reads](example-if-paired-end-reads)
@@ -42,9 +42,11 @@ Jonathan Galazka (GeneLab Project Scientist)
 |:------|:-----:|------:|
 |kraken2|`kraken2 -v`|[https://github.com/DerrickWood/kraken2/wiki](https://github.com/DerrickWood/kraken2/wiki)|
 
-> \* Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
+> \* Exact versions utilized for a given dataset are available along with the processing commands for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
+
+# General processing overview with example commands
 
 ## 1. Build kraken2 database
 
