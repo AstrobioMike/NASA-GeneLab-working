@@ -1,15 +1,15 @@
-# GeneLab processing code for GLDS-126
-This dataset was processed with [GL-DPPD-7104-A](https://github.com/AstrobioMike/mock-temp/blob/master/amplicon/GL-DPPD-7104-A.md).
+# GeneLab processing commands for GLDS-126
+This dataset was processed with [GL-DPPD-7104-A](../../GL-DPPD-7104-A.md).
 
 The raw and processed data are available from: [https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-126/](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-126/)
 
-The `full-command-line-log.sh` file holds all commands as the processing was performed, which calls the two R scripts `16S-universal-full-R-processing.R` and `16S-archaeal-full-R-processing.R`. 
+The [full-command-line-log.sh](full-command-line-log.sh) file holds all commands as the processing was performed, which calls the two R scripts [16S-universal-full-R-processing.R](16S-universal-full-R-processing.R) and [16S-archaeal-full-R-processing.R](16S-archaeal-full-R-processing.R). 
 
 
 ## Software used  
 
 |Program|Version|Relevant Links|
-|:------|:-----:|-------------:|
+|:------|:-----:|:-------------|
 |FastQC|0.11.8|[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|
 |MultiQC|1.7|[https://multiqc.info/](https://multiqc.info/)|
 |Cutadapt|2.3|[https://cutadapt.readthedocs.io/en/stable/](https://cutadapt.readthedocs.io/en/stable/)|

@@ -1,18 +1,18 @@
-# Bioinformatics pipeline for Illumina amplicon sequencing data  
+# Bioinformatics pipeline for amplicon Illumina sequencing data  
 
-> **This page holds an overview and some example commands of how GeneLab processes Illumina amplicon datasets. Exact processing commands for specific datasets that have been released is available in this repository [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This page holds an overview and instructions for how GeneLab processes Illumina amplicon datasets. Exact processing commands for specific datasets that have been released is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
 **Date:** May 13, 2020  
 **Revision:** A  
-**Document Number:** GL-DPPD-7104  
+**Document Number:** GL-DPPD-7104-A  
 
 **Submitted by:**  
-Michael D. Lee (GeneLab Analysis Team)  
+Michael D. Lee (GeneLab Data Processing Team)
 
 **Approved by:**  
-Sylvain Costes (GeneLab Project Manager)    
+Sylvain Costes (GeneLab Project Manager)  
 Samrawit Gebre (GeneLab Deputy Project Manager)  
 Homer Fogle (GeneLab Data Processing Representative)  
 Jonathan Galazka (GeneLab Project Scientist)  
@@ -33,18 +33,18 @@ Anushree Sonic (Genelab Configuration Manager)
   - [**5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables**](#5-calculate-error-model-apply-dada2-algorithm-assign-taxonomy-and-create-output-tables)
     - [Learning the error rates](#learning-the-error-rates)
     - [Inferring sequences](#inferring-sequences)
-    - [Merging forward and reverse reads](#merging-forward-and-reverse-reads)
+    - [Merging forward and reverse reads](#merging-forward-and-reverse-reads-not-needed-if-data-are-single-end)
     - [Generating sequence table with counts per sample](#generating-sequence-table-with-counts-per-sample)
     - [Removing putative chimeras](#removing-putative-chimeras)
     - [Assigning taxonomy](#assigning-taxonomy)
-    - [Generating and writing out standard outputs](#generating-and-writing-out-standard-outputs)
+    - [Generating and writing standard outputs](#generating-and-writing-standard-outputs)
 
 ---
 
 # Software used  
 
 |Program|Version*|Relevant Links|
-|:------|:-----:|-------------:|
+|:------|:------:|:-------------|
 |FastQC|`fastqc -v`|[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)|
 |MultiQC|`multiqc -v`|[https://multiqc.info/](https://multiqc.info/)|
 |Cutadapt|`cutadapt --version`|[https://cutadapt.readthedocs.io/en/stable/](https://cutadapt.readthedocs.io/en/stable/)|
@@ -52,7 +52,7 @@ Anushree Sonic (Genelab Configuration Manager)
 |DECIPHER|`packageVersion("DECIPHER")`|[https://bioconductor.org/packages/release/bioc/html/DECIPHER.html](https://bioconductor.org/packages/release/bioc/html/DECIPHER.html)|
 |biomformat|`packageVersion("biomformat")`|[https://github.com/joey711/biomformat](https://github.com/joey711/biomformat)|
 
-> \* Exact versions utilized for a given dataset are available along with the processing commands for each specific dataset (this is due to how the system may need to be updated regularly).
+>**\*** Exact versions are available along with the processing commands for each specific dataset.
 
 ---
 
@@ -73,11 +73,11 @@ fastqc -o raw_fastqc_output *.fastq.gz
 * `-o` – the output directory to store results
 * `*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them
 
-**Input data:**
+**Input Data:**
 
 * fastq, compressed or uncompressed
 
-**Output data:**
+**Output Data:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -96,11 +96,11 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 *	`-o` – the output directory to store results
 *	`raw_fastqc_output/` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input data:**
+**Input Data:**
 
 * fastqc.zip (FastQC output data)
 
-**Output data:**
+**Output Data:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -113,9 +113,9 @@ multiqc -o raw_multiqc_output raw_fastqc_output
 
 The location and orientation of primers in the data is important to understand in deciding how to do this step. `cutadapt` has many options for primer identification and removal. They are described in detail on their documentation page here: [https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types](https://cutadapt.readthedocs.io/en/stable/guide.html#adapter-types)  
 
-The following example commands shows how it was done for some samples of [GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/), which was 2x250 sequencing of the 16S gene using these primers:  
-* forward: 5’-GTGCCAGCMGCCGCGGTAA-3’  
-* reverse: 5’- GGACTACVSGGGTATCTAAT-3’  
+The following example commands show how it was done for some samples of [GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/), which was 2x250 sequencing of the 16S gene using these primers:  
+* forward: 5’-GTGCCAGCMGCCGCGGTAA-3’  ## Is there supposed to be a M in the sequence? If so, please define what M represents ##
+* reverse: 5’- GGACTACVSGGGTATCTAAT-3’  ## Is there supposed to be a V and S in the sequence? If so, please define what V and S represent ##
 
 Due to the size of the target amplicon and the type of sequencing done here, both forward and reverse primers are expected to be on each of the forward and reverse reads. It therefore takes “linked” primers as input for forward and reverse reads, specified above by the `...` between them. It also expects that the primers start at the first position of the reads (“anchored”), specified with the leading `^` characters.  
 
@@ -142,11 +142,11 @@ cutadapt -a ^GTGCCAGCMGCCGCGGTAA...ATTAGATACCCSBGTAGTCC -A ^GGACTACVSGGGTATCTAAT
 
 -	`--discard-untrimmed` – this filters out those reads? where the primers were not found as expected
 
-**Input data:**
+**Input Data:**
 
 * fastq, compressed or uncompressed (original reads)
 
-**Output data:**
+**Output Data:**
 
 * fastq, compressed or uncompressed (trimmed reads)
 * tsv (per sample read counts before and after trimming)
@@ -203,11 +203,11 @@ filtered_out <- filterAndTrim(fwd=“Primer-trimmed-R1.fq.gz”, filt=“Filtere
 
 *	`multithread=TRUE` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
-**Input data:**
+**Input Data:**
 
 * fastq, compressed or uncompressed (primer-trimmed reads)
 
-**Output data:**
+**Output Data:**
 
 * fastq, compressed or uncompressed (filtered reads)
 * tsv (per sample read counts before and after filtering)
@@ -226,11 +226,11 @@ fastqc -o filtered_fastqc_output/ filtered*.fastq.gz
 *	`-o` – the output directory to store results  
 *	`filtered*.fastq.gz` – the input reads are specified as a positional argument, and can be given all at once with wildcards like this, or as individual arguments with spaces in between them  
 
-**Input data:**
+**Input Data:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output data:**
+**Output Data:**
 
 * fastqc.html (FastQC output html summary)
 * fastqc.zip (FastQC output data)
@@ -247,11 +247,11 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 *	`-o` – the output directory to store results
 *	`filtered_fastqc_output` – the directory holding the output data from the fastqc run, provided as a positional argument
 
-**Input data:**
+**Input Data:**
 
 * fastqc.zip (FastQC output data)
 
-**Output data:**
+**Output Data:**
 
 * multiqc_report.html (multiqc output html summary)
 * multiqc_data (directory containing multiqc output data)
@@ -263,7 +263,7 @@ multiqc -o filtered_multiqc_output  filtered_fastqc_output
 ## 5. Calculate error model, apply DADA2 algorithm, assign taxonomy, and create output tables
 > The following is run in an R environment.  
 
-This example command as written assumes paired-end data, with notes included on what would be different if working with single-end data. The taxonomy reference database used below is as an example only, suitable for the example 16S dataset ([GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/)) used here. But others designed for DECIPHER can be found here: [http://www2.decipher.codes/Downloads.html](http://www2.decipher.codes/Downloads.html)  
+These example commands as written assumes paired-end data, with notes included on what would be different if working with single-end data. The taxonomy reference database used below is as an example only, suitable for the example 16S dataset ([GLDS-200](https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-200/)) used here. But others designed for DECIPHER can be found here: [http://www2.decipher.codes/Downloads.html](http://www2.decipher.codes/Downloads.html)  
 
 <br>
 
@@ -416,7 +416,7 @@ tax_info <- IdTaxa(test=dna, trainingSet=trainingSet, strand=“both”, process
 
 *	`trainingSet=` – specifying the reference database we downloaded and loaded above
 
-*	`strand=“both”` – specifying to check taxonomy assignment in both orientations ## What would this need to be if SE? ##
+*	`strand=“both”` – specifying to check taxonomy assignment in both orientations 
 
 *	`processors=NULL` – determine number of cores available and run in parallel when possible (can also take an integer specifying the number to run)
 
@@ -469,16 +469,22 @@ biom_object <- make_biom(data=asv_tab, observation_metadata=tax_tab)
 write_biom(biom_object, "Taxonomy_and_counts.biom")
 ```
 
-**Input data:**
+Making a combined taxonomy and count table
+```R
+tax_and_count_tab <- merge(tax_tab, asv_tab)
+write.table(tax_and_count_tab, "Taxonomy_and_counts.tsv", sep="\t", quote=FALSE, row.names=FALSE)
+```
+
+**Input Data:**
 
 * fastq, compressed or uncompressed (filtered reads)
 
-**Output data:**
+**Output Data:**
 
 * fasta (inferred sequences)
 * count_table.tsv (count table)
 * taxonomy_table.tsv (taxonomy table)
+* taxonomy_and_counts.tsv (combined taxonomy and count table)
 * biom (count and taxonomy table in biom format)
 * read_count_tracking.tsv (read counts at each processing step)
 
----
