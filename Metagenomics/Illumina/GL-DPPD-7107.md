@@ -1,6 +1,6 @@
 # Bioinformatics pipeline for Illumina metagenomics data
 
-> **This document holds an overview and some example code of how GeneLab processes Illumina metagenomics datasets. Exact processing code for specific datasets that have been released is available in this repository [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
+> **This document holds an overview and some example commands of how GeneLab processes Illumina metagenomics datasets. Exact processing commands for specific datasets that have been released is available in this repository [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory and is also provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).**  
 
 ---
 
@@ -22,7 +22,7 @@ Jonathan Galazka (GeneLab Project Scientist)
 # Table of contents
 
 - [**Software used**](#software-used)
-- [**General processing overview with example code**](#general-processing-overview-with-example-code)
+- [**General processing overview with example commands**](#general-processing-overview-with-example-commands)
   - [**Pre-processing**](#pre-processing)
     - [1. Raw Data QC](#1-raw-data-qc)
     - [2. Quality filtering/trimming](#2-quality-filteringtrimming)
@@ -64,13 +64,13 @@ Jonathan Galazka (GeneLab Project Scientist)
 |HUMAnN3|`humann --version`|[https://huttenhower.sph.harvard.edu/humann3/](https://huttenhower.sph.harvard.edu/humann3/)|
 |MetaPhlAn3|`metaphlan --version`|[https://github.com/biobakery/MetaPhlAn/tree/3.0](https://github.com/biobakery/MetaPhlAn/tree/3.0)|
 
->**\*** Exact versions utilized for a given dataset are available along with the processing code for each specific dataset (this is due to how the system may need to be updated regularly).
+>**\*** Exact versions utilized for a given dataset are available along with the processing commands for each specific dataset (this is due to how the system may need to be updated regularly).
 
 ---
 
-# General processing overview with example code
+# General processing overview with example commands
 
-> Exact processing code for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
+> Exact processing commands for specific datasets is available in the [GLDS_Processing_Scripts](GLDS_Processing_Scripts) sub-directory of this repository, as well as being provided with their processed data in the [GeneLab Data Systems (GLDS) repository](https://genelab-data.ndc.nasa.gov/genelab/projects).  
 
 ## Pre-processing
 ### 1. Raw Data QC
