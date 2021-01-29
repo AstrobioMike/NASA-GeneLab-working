@@ -923,7 +923,7 @@ rule assemble:
         # removing output directory if exists already but rule still needs to be run (because there is no --force option to megahit i dont't think):
         rm -rf {params.assemblies_dir}{wildcards.ID}-megahit-out/
 
-        megahit -1 {input.R1} -2 {input.R2} -m {params.max_mem} -t {params.num_threads} --min-contig-len 500 -o {params.assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
+        megahit -1 {input.R1} -2 {input.R1} -m {params.max_mem} -t {params.num_threads} --min-contig-len 500 -o {params.assemblies_dir}{wildcards.ID}-megahit-out > {log} 2>&1
         bit-rename-fasta-headers -i {params.assemblies_dir}{wildcards.ID}-megahit-out/final.contigs.fa -w c_{wildcards.ID} -o {output}
 
         rm -rf {params.assemblies_dir}{wildcards.ID}-megahit-out/
